@@ -8,7 +8,7 @@ constexpr char kWifiSsid[] = "Nguyen Van Hai";
 constexpr char kWifiPassword[] = "0964822864";
 constexpr char kMqttHost[] = "192.168.1.2";
 constexpr uint16_t kMqttPort = 1883;
-constexpr char kDeviceId[] = "esp32-automation-1";
+constexpr char kDeviceId[] = "automation";
 constexpr char kBaseTopic[] = "homeassistant";
 
 // ---- Hardware configuration ----
@@ -24,6 +24,7 @@ bool ledIsOn = false;
 unsigned long lastSensorPostMs = 0;
 WiFiClient wifiClient;
 PubSubClient mqttClient(wifiClient);
+String clientId;
 
 String telemetryTopic() {
     return String(kBaseTopic) + "/" + kDeviceId + "/telemetry";
@@ -49,7 +50,6 @@ void ensureMqttConnected() {
         return;
     }
     while (!mqttClient.connected()) {
-        String clientId = String("esp32-") + String(kDeviceId) + "-" + String(random(0xffff), HEX);
         Serial.printf("Connecting to MQTT broker %s:%u as %s\n", kMqttHost, kMqttPort, clientId.c_str());
         if (mqttClient.connect(clientId.c_str())) {
             mqttClient.subscribe(commandTopic().c_str(), 1);
@@ -172,6 +172,7 @@ void setup() {
     pinMode(kLightSensorPin, INPUT);
 
     connectWiFi();
+
     mqttClient.setServer(kMqttHost, kMqttPort);
     mqttClient.setCallback(handleMqttMessage);
     randomSeed(micros());

@@ -4,3 +4,6 @@
 .vscode/launch.json
 .vscode/ipch
 data/
+server/node_modules/
+client/node_modules/
+.DS_Store
