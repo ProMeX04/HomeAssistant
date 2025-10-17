@@ -1,47 +1,36 @@
-#include "driver/i2s.h"
-#include "esp_timer.h"
-#include "lwip/def.h"
 #include <Arduino.h>
+#include <PubSubClient.h>
 #include <WiFi.h>
-#include <WiFiUdp.h>
 #include <algorithm>
-#include <array>
-#include <cstring>
 
 // ---- Network configuration ----
 constexpr char kWifiSsid[] = "Nguyen Van Hai";
 constexpr char kWifiPassword[] = "0964822864";
-constexpr char kServerHost[] = "192.168.1.2"; // Server IP/domain (DNS hoặc IP)
-constexpr uint16_t kServerPort = 5000;        // UDP port server lắng nghe
-constexpr uint16_t kLocalUdpPort = 6000;      // Cổng UDP thiết bị sử dụng
+constexpr char kMqttHost[] = "192.168.1.2";
+constexpr uint16_t kMqttPort = 1883;
+constexpr char kDeviceId[] = "esp32-automation-1";
+constexpr char kBaseTopic[] = "homeassistant";
 
-// ---- Trigger configuration ----
-constexpr gpio_num_t kTriggerPin = GPIO_NUM_14; // Công tắc bật ghi (đổi theo phần cứng)
-constexpr bool kTriggerActiveLow = true;        // Công tắc nối GND khi bật → dùng PULLUP
+// ---- Hardware configuration ----
+constexpr gpio_num_t kLedPin = GPIO_NUM_2;             // D2 on many ESP32 dev boards
+constexpr gpio_num_t kHumiditySensorPin = GPIO_NUM_34; // Analog humidity sensor
+constexpr gpio_num_t kLightSensorPin = GPIO_NUM_35;    // Analog light sensor
 
-// ---- Audio configuration ----
-constexpr i2s_port_t kI2SPort = I2S_NUM_0;
-constexpr uint32_t kSampleRate = 16000; // Hz
-constexpr size_t kFrameSamples = 256;   // 16 ms @16 kHz để giảm độ trễ/bộ nhớ
-constexpr i2s_bits_per_sample_t kBitsPerSample = I2S_BITS_PER_SAMPLE_32BIT;
-constexpr i2s_channel_fmt_t kChannelFormat = I2S_CHANNEL_FMT_ONLY_LEFT;
-constexpr i2s_comm_format_t kCommFormat = static_cast<i2s_comm_format_t>(
-    I2S_COMM_FORMAT_STAND_I2S | I2S_COMM_FORMAT_I2S_MSB);
+// ---- Behaviour configuration ----
+constexpr uint32_t kSensorIntervalMs = 10000; // Post sensor telemetry every 10 seconds
 
-int32_t i2sRawBuffer[kFrameSamples];
-int16_t pcmBuffer[kFrameSamples];
-WiFiUDP udpClient;
-IPAddress serverIp;
-bool serverResolved = false;
-uint32_t packetSequence = 0;
-bool isStreamingEnabled = false;
+bool dataCollectionEnabled = true;
+bool ledIsOn = false;
+unsigned long lastSensorPostMs = 0;
+WiFiClient wifiClient;
+PubSubClient mqttClient(wifiClient);
 
-bool readTriggerState() {
-    int level = digitalRead(kTriggerPin);
-    if (kTriggerActiveLow) {
-        return level == LOW;
-    }
-    return level == HIGH;
+String telemetryTopic() {
+    return String(kBaseTopic) + "/" + kDeviceId + "/telemetry";
+}
+
+String commandTopic() {
+    return String(kBaseTopic) + "/" + kDeviceId + "/command";
 }
 
 void connectWiFi() {
@@ -55,111 +44,149 @@ void connectWiFi() {
     Serial.printf("\nConnected. IP: %s\n", WiFi.localIP().toString().c_str());
 }
 
-void resolveServerIp() {
-    if (WiFi.hostByName(kServerHost, serverIp)) {
-        serverResolved = true;
-        Serial.printf("Resolved server %s -> %s\n", kServerHost, serverIp.toString().c_str());
+void ensureMqttConnected() {
+    if (mqttClient.connected()) {
+        return;
+    }
+    while (!mqttClient.connected()) {
+        String clientId = String("esp32-") + String(kDeviceId) + "-" + String(random(0xffff), HEX);
+        Serial.printf("Connecting to MQTT broker %s:%u as %s\n", kMqttHost, kMqttPort, clientId.c_str());
+        if (mqttClient.connect(clientId.c_str())) {
+            mqttClient.subscribe(commandTopic().c_str(), 1);
+            Serial.println("MQTT connected and subscribed to command topic");
+        } else {
+            Serial.printf("MQTT connect failed rc=%d, retrying...\n", mqttClient.state());
+            delay(2000);
+        }
+    }
+}
+
+float analogToPercent(int rawValue) {
+    constexpr float kMax = 4095.0f;
+    float clamped = std::max(0, std::min(rawValue, 4095));
+    return (clamped / kMax) * 100.0f;
+}
+
+float readHumidityPercent() {
+    int raw = analogRead(kHumiditySensorPin);
+    return analogToPercent(raw);
+}
+
+float readLightPercent() {
+    int raw = analogRead(kLightSensorPin);
+    return analogToPercent(raw);
+}
+
+void reportSensorData() {
+    if (!dataCollectionEnabled || WiFi.status() != WL_CONNECTED) {
+        return;
+    }
+
+    ensureMqttConnected();
+    if (!mqttClient.connected()) {
+        return;
+    }
+
+    float humidity = readHumidityPercent();
+    float light = readLightPercent();
+    char payload[160];
+    snprintf(payload, sizeof(payload),
+             "{\"humidity\":%.1f,\"light\":%.1f,\"timestamp\":%lu}", humidity, light,
+             millis());
+    bool ok = mqttClient.publish(telemetryTopic().c_str(), payload, false);
+    if (ok) {
+        Serial.printf("Published telemetry humidity=%.1f%% light=%.1f%%\n", humidity, light);
     } else {
-        serverResolved = false;
-        Serial.printf("Failed to resolve server %s\n", kServerHost);
+        Serial.println("Failed to publish telemetry");
     }
 }
 
-void configureI2S() {
-    i2s_config_t i2s_config = {};
-    i2s_config.mode = static_cast<i2s_mode_t>(I2S_MODE_MASTER | I2S_MODE_RX);
-    i2s_config.sample_rate = kSampleRate;
-    i2s_config.bits_per_sample = kBitsPerSample;
-    i2s_config.channel_format = kChannelFormat;
-    i2s_config.communication_format = kCommFormat;
-    i2s_config.intr_alloc_flags = ESP_INTR_FLAG_LEVEL1;
-    i2s_config.dma_buf_count = 4;
-    i2s_config.dma_buf_len = kFrameSamples;
-    i2s_config.use_apll = false;
-    i2s_config.tx_desc_auto_clear = false;
-    i2s_config.fixed_mclk = 0;
-
-    i2s_pin_config_t pin_config = {};
-    pin_config.bck_io_num = 26;   // INMP441 SCK
-    pin_config.ws_io_num = 25;    // INMP441 L/R
-    pin_config.data_out_num = -1; // Not used (RX only)
-    pin_config.data_in_num = 33;  // INMP441 DOUT
-
-    ESP_ERROR_CHECK(i2s_driver_install(kI2SPort, &i2s_config, 0, nullptr));
-    ESP_ERROR_CHECK(i2s_set_pin(kI2SPort, &pin_config));
-    ESP_ERROR_CHECK(i2s_set_clk(kI2SPort, kSampleRate, kBitsPerSample, I2S_CHANNEL_MONO));
+String extractJsonString(const String &payload, const char *key) {
+    String searchKey = String("\"") + key + "\":";
+    int start = payload.indexOf(searchKey);
+    if (start < 0) {
+        return "";
+    }
+    start += searchKey.length();
+    while (start < payload.length() && (payload[start] == ' ' || payload[start] == '\"')) {
+        if (payload[start] == '\"') {
+            start++;
+            int end = payload.indexOf('\"', start);
+            if (end < 0) {
+                return "";
+            }
+            return payload.substring(start, end);
+        }
+        start++;
+    }
+    int end = start;
+    while (end < payload.length() && payload[end] != ',' && payload[end] != '}' && payload[end] != ' ') {
+        end++;
+    }
+    return payload.substring(start, end);
 }
 
-void streamAudioFrame() {
-    if (!serverResolved) {
+void applyCommand(const String &command, const String &payload) {
+    if (command == "set_led") {
+        String state = extractJsonString(payload, "state");
+        bool turnOn = state.equalsIgnoreCase("on") || state == "1";
+        ledIsOn = turnOn;
+        digitalWrite(kLedPin, ledIsOn ? HIGH : LOW);
+        Serial.printf("LED state set to %s\n", ledIsOn ? "ON" : "OFF");
+    } else if (command == "set_collection") {
+        String state = extractJsonString(payload, "state");
+        dataCollectionEnabled = !(state.equalsIgnoreCase("off") || state == "0");
+        Serial.printf("Data collection %s\n", dataCollectionEnabled ? "enabled" : "paused");
+    } else {
+        Serial.printf("Unknown command '%s'\n", command.c_str());
+    }
+}
+
+void handleMqttMessage(char *topic, byte *payload, unsigned int length) {
+    String topicStr(topic);
+    String expected = commandTopic();
+    if (!topicStr.equals(expected)) {
         return;
     }
-
-    size_t bytesRead = 0;
-    esp_err_t result = i2s_read(kI2SPort, reinterpret_cast<void *>(i2sRawBuffer),
-                                sizeof(i2sRawBuffer), &bytesRead, 10 / portTICK_PERIOD_MS);
-    if (result != ESP_OK || bytesRead == 0) {
+    String body;
+    body.reserve(length + 1);
+    for (unsigned int i = 0; i < length; ++i) {
+        body += static_cast<char>(payload[i]);
+    }
+    String command = extractJsonString(body, "command");
+    if (command.length() == 0) {
+        Serial.println("MQTT message missing command");
         return;
     }
-
-    size_t sampleCount = bytesRead / sizeof(int32_t);
-    for (size_t i = 0; i < sampleCount; ++i) {
-        int32_t sample = i2sRawBuffer[i] >> 14; // Convert 32-bit to ~18-bit
-        sample = std::max(-32768, std::min(32767, sample));
-        pcmBuffer[i] = static_cast<int16_t>(sample);
-    }
-
-    const uint32_t timestampMs = static_cast<uint32_t>(esp_timer_get_time() / 1000ULL);
-    const uint32_t sequenceNet = htonl(packetSequence++);
-    const uint32_t timestampNet = htonl(timestampMs);
-    const uint16_t sampleCountNet = htons(static_cast<uint16_t>(sampleCount));
-    const uint16_t sampleRateNet = htons(static_cast<uint16_t>(kSampleRate));
-
-    std::array<uint8_t, 12> header{};
-    memcpy(header.data(), &sequenceNet, sizeof(sequenceNet));
-    memcpy(header.data() + 4, &timestampNet, sizeof(timestampNet));
-    memcpy(header.data() + 8, &sampleCountNet, sizeof(sampleCountNet));
-    memcpy(header.data() + 10, &sampleRateNet, sizeof(sampleRateNet));
-
-    const uint8_t *payload = reinterpret_cast<uint8_t *>(pcmBuffer);
-    const size_t payloadBytes = sampleCount * sizeof(int16_t);
-
-    if (udpClient.beginPacket(serverIp, kServerPort)) {
-        udpClient.write(header.data(), header.size());
-        udpClient.write(payload, payloadBytes);
-        udpClient.endPacket();
-    }
+    Serial.printf("MQTT command received: %s\n", body.c_str());
+    applyCommand(command, body);
 }
 
 void setup() {
     Serial.begin(115200);
     delay(500);
-    pinMode(kTriggerPin, kTriggerActiveLow ? INPUT_PULLUP : INPUT);
+
+    pinMode(kLedPin, OUTPUT);
+    digitalWrite(kLedPin, LOW);
+    pinMode(kHumiditySensorPin, INPUT);
+    pinMode(kLightSensorPin, INPUT);
+
     connectWiFi();
-    configureI2S();
-    udpClient.begin(kLocalUdpPort);
-    resolveServerIp();
+    mqttClient.setServer(kMqttHost, kMqttPort);
+    mqttClient.setCallback(handleMqttMessage);
+    randomSeed(micros());
 }
 
 void loop() {
-    if (!serverResolved && WiFi.status() == WL_CONNECTED) {
-        resolveServerIp();
-    }
-    bool shouldStream = readTriggerState();
-    if (shouldStream != isStreamingEnabled) {
-        isStreamingEnabled = shouldStream;
-        if (isStreamingEnabled) {
-            packetSequence = 0;
-            i2s_zero_dma_buffer(kI2SPort);
-            Serial.println("Trigger active → bắt đầu stream âm thanh");
-        } else {
-            Serial.println("Trigger inactive → tạm dừng stream");
-        }
+    unsigned long now = millis();
+
+    ensureMqttConnected();
+    mqttClient.loop();
+
+    if (now - lastSensorPostMs >= kSensorIntervalMs) {
+        lastSensorPostMs = now;
+        reportSensorData();
     }
 
-    if (isStreamingEnabled) {
-        streamAudioFrame();
-    } else {
-        delay(5);
-    }
+    delay(10);
 }

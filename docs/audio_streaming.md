@@ -1,128 +1,56 @@
-# Truyền âm thanh thời gian thực từ ESP32 + INMP441 tới server
+# Hệ thống giám sát và điều khiển ESP32 qua trợ lý chat
 
-Tài liệu này mô tả một kiến trúc mẫu để đọc âm thanh từ microphone INMP441 qua giao tiếp I2S, gửi luồng PCM/Opus thời gian thực tới server để xử lý (ví dụ chuyển giọng nói thành văn bản và trả lời như một trợ lý ảo), đồng thời đảm bảo sử dụng ít RAM trên ESP32.
+Tài liệu này mô tả kiến trúc mới thay thế cho giải pháp truyền âm thanh cũ. ESP32 hiện đóng vai trò thiết bị thu thập dữ liệu cảm biến (độ ẩm, ánh sáng) và nhận lệnh điều khiển thông qua máy chủ FastAPI. Người vận hành tương tác bằng giao diện web/chat, backend sử dụng Gemini để hiểu ngôn ngữ tự nhiên, đồng thời ghi log vào cơ sở dữ liệu SQLite.
 
-## 1. Kiến trúc tổng quan
+## 1. Luồng tổng quan
 
-1. **ESP32** đọc mẫu âm thanh 32-bit từ INMP441 bằng DMA của I2S, gộp thành các frame nhỏ (ví dụ 20–40 ms) để tránh buffer lớn.
-2. **Công tắc vật lý** (push-to-talk) nối vào chân số hoá, khi người dùng nhấn mới kích hoạt việc đọc + gửi frame nhằm giảm âm nền và kiểm soát quyền riêng tư.
-3. **Gửi UDP** tới server ngay khi có frame mới trong lúc công tắc đang bật. UDP cho phép độ trễ cực thấp, overhead nhỏ và không yêu cầu duy trì kết nối.
-4. **Server** nhận packet UDP, ghép lại thành luồng theo `sequence`, `timestamp`, chạy pipeline chuyển giọng nói sang văn bản bằng Whisper và (tùy chọn) trả về phản hồi. Kênh phản hồi (văn bản/âm thanh) có thể sử dụng WebSocket hoặc HTTP riêng.
+1. **Giao diện web** (`/ui/index.html`) cho phép người dùng nhập lệnh tiếng Việt. Lịch sử hội thoại hiển thị song song với số liệu cảm biến mới nhất và danh sách lệnh đã lập lịch.
+2. **Backend FastAPI** (`server/app.py`) nhận yêu cầu từ UI, gọi Gemini (nếu có khóa `GEMINI_API_KEY`) để phân tích lệnh → trích xuất hành động (`set_led`, `set_collection`, hoặc lập lịch tắt thiết bị). Backend lưu log vào SQLite (`data/homeassistant.db`) và xếp lệnh chờ thực thi.
+3. **ESP32** (`src/main.cpp`) định kỳ publish dữ liệu cảm biến lên topic MQTT `homeassistant/<device_id>/telemetry` và lắng nghe lệnh tại `homeassistant/<device_id>/command`. Khi nhận được lệnh phù hợp, thiết bị điều khiển đèn D2 hoặc bật/tắt việc thu thập dữ liệu.
+4. **Tác vụ lập lịch**: khi người dùng yêu cầu "tắt đèn sau 30 phút", backend lưu lệnh với `execute_at` tương ứng. ESP32 chỉ nhận được lệnh khi thời điểm này đã đến, đảm bảo thực thi đúng lịch.
 
-Hướng dẫn này tập trung vào UDP để tối ưu độ trễ và RAM. Mỗi packet gồm header 12 byte (sequence, timestamp, số mẫu, sample rate) + payload PCM 16-bit. Server dùng thông tin này để phát hiện packet mất hoặc trễ.
+## 2. ESP32 firmware
 
-## 2. Cấu hình ESP32 (Arduino/PlatformIO)
+- Wi-Fi STA kết nối tới mạng cấu hình trong `kWifiSsid`/`kWifiPassword`.
+- Đọc cảm biến analog qua `GPIO34` (độ ẩm) và `GPIO35` (ánh sáng), chuyển đổi thang 0–4095 thành phần trăm.
+- Mỗi 10 giây publish JSON dạng `{"humidity": 54.2, "light": 20.5}` lên broker MQTT.
+- Lắng nghe topic lệnh và phản hồi ngay khi nhận được tin nhắn. Lệnh hỗ trợ:
+  - `set_led` với `state` = `on`/`off` (điều khiển D2).
+  - `set_collection` với `state` = `on`/`off` (bật/tắt gửi dữ liệu cảm biến).
+- Audio INMP441/I2S đã được loại bỏ hoàn toàn.
 
-File `src/main.cpp` đính kèm minh hoạ:
+## 3. Backend FastAPI + SQLite
 
-- Khởi tạo Wi-Fi STA.
-- Cấu hình I2S ở chế độ `MASTER | RX`, tần số 16 kHz, mono.
-- Mỗi lần đọc `256` mẫu (≈16 ms @16 kHz), chuyển đổi 32-bit đọc từ INMP441 sang 16-bit PCM rồi đóng gói header UDP (12 byte) + payload.
-- Header gồm `sequence` (uint32), `timestamp_ms` (uint32), `sample_count` (uint16) và `sample_rate` (uint16) theo network-order (`htonl/htons`).
-- Sử dụng `WiFiUDP` gửi packet ngay khi đọc xong **và chỉ khi công tắc push-to-talk đang bật**; nếu DNS chưa phân giải thành công thì thử lại định kỳ.
-- Các hằng `kTriggerPin`, `kTriggerActiveLow` trong mã nguồn xác định chân công tắc và mức kích hoạt. Khi trạng thái chuyển sang bật, ESP32 sẽ xoá DMA buffer (`i2s_zero_dma_buffer`) và reset `sequence` để bắt đầu phiên mới.
+- Chạy bằng `uvicorn server.app:app --reload` (cài đặt phụ thuộc trong `server/requirements.txt`).
+- Endpoint chính:
+  - `POST /api/chat`: nhận tin nhắn người dùng, gọi Gemini, tạo lệnh/schedule.
+  - `GET /api/devices/{device_id}/commands`: danh sách lệnh pending/done.
+  - `GET /api/devices/{device_id}/sensors/recent`: trả dữ liệu cảm biến gần nhất cho UI.
+- Bridge MQTT (`server/mqtt_manager.py`) chạy song song với FastAPI:
+  - Đăng ký topic `homeassistant/+/telemetry` để lưu dữ liệu vào SQLite.
+  - Gửi lệnh đến topic `homeassistant/<device_id>/command` khi lệnh đến hạn (bao gồm cả lập lịch tắt đèn).
+- CSDL (`server/storage.py`) tự tạo bảng khi khởi động: `device_sensor_logs`, `device_actions`, `pending_commands`.
+- Tích hợp Gemini (`server/gemini_client.py`):
+  - Nếu có API key → gọi model `gemini-pro` và buộc trả JSON (`reply`, `command`, `delay_seconds`, `parameters`).
+  - Nếu không có → dùng heuristic tiếng Việt ("bật", "tắt", "sau X phút", "dừng", "tiếp tục").
 
-> Lưu ý đổi `kWifiSsid`, `kWifiPassword`, địa chỉ server (`kServerHost`, `kServerPort`) và chân I2S cho phù hợp phần cứng.
+## 4. Giao diện web
 
-### Giảm sử dụng RAM
+- Tập tin tĩnh trong `server/static/` (dùng route `/ui`).
+- `app.js` gọi API chat, cập nhật lịch lệnh và số liệu cảm biến, hiển thị log hội thoại.
+- `styles.css` tạo theme nền tối và bố cục hai cột.
 
-- **DMA buffer nhỏ**: `dma_buf_len = 512` và chỉ dùng 4 buffer luân phiên (≈8 KB RAM).
-- **Xử lý tại chỗ**: dùng chung buffer thô (`int32_t`) và buffer PCM (`int16_t`) với kích thước bằng nhau, chuyển đổi xong gửi ngay, không giữ lịch sử dài.
-- **Không cấp phát động**: tất cả buffer khai báo tĩnh.
+## 5. Quy trình vận hành
 
-## 3. Lựa chọn nén/định dạng
+1. Khởi chạy broker MQTT (ví dụ `mosquitto`) ở địa chỉ cố định.
+2. Thiết lập biến môi trường `MQTT_HOST`, `MQTT_PORT` (nếu khác mặc định) trước khi chạy backend: `uvicorn server.app:app --host 0.0.0.0 --port 8000`.
+3. Mở trình duyệt tới `http://<server>:8000/ui/` để sử dụng giao diện chat.
+4. ESP32 flash firmware mới, cấu hình `kMqttHost` và `kMqttPort` khớp với broker.
+5. Theo dõi log backend/Serial để kiểm tra dữ liệu cảm biến và lệnh.
+6. Khi cần lập lịch tắt thiết bị: nhập "tắt đèn sau 30 phút" → backend lưu lệnh, bridge MQTT gửi tín hiệu đúng thời điểm, ESP32 tắt D2 ngay khi nhận được.
 
-| Định dạng | Ưu điểm | Nhược điểm | Ghi chú |
-|-----------|---------|------------|--------|
-| PCM 16-bit | Đơn giản, ít CPU | Băng thông cao (~512 byte/frame) | Dễ tích hợp với STT cloud |
-| Opus | Nén mạnh, chất lượng cao | Cần thư viện ngoài, CPU cao hơn | Có thể dùng thư viện [libopus](https://github.com/espressif/esp-adf/tree/master/components/opus) hoặc ESP-ADF |
-| Speex | Tối ưu giọng nói, nhẹ hơn Opus | Ít phổ biến hơn | Thích hợp 8–16 kHz |
-| ADPCM | Nhẹ, có sẵn trong ESP-ADF | Chất lượng thấp hơn | Giảm băng thông 4:1 |
+## 6. Ghi chú bảo mật & mở rộng
 
-Nếu server đặt gần và băng thông Wi-Fi đủ, bắt đầu với PCM để đơn giản. Khi cần tối ưu băng thông, cân nhắc tích hợp Opus hoặc Speex:
-
-- Chuyển mỗi frame PCM sang Opus (frame 20 ms @16 kHz → 320 mẫu) trước khi gửi.
-- Gửi kèm header nhỏ chỉ ra codec, kích thước, timestamp.
-
-## 4. Server mẫu (Python + Whisper trên Mac mini M4)
-
-Thư mục `server/` chứa script `udp_receiver.py`. Phiên bản mới bổ sung:
-
-- Gom các packet thành từng **phiên** dựa trên công tắc (khi không nhận thêm gói trong
-  một khoảng thời gian cấu hình, phiên sẽ kết thúc).
-- Tự động chạy Whisper để chuyển giọng nói sang văn bản (mặc định tiếng Việt) khi một
-  phiên kết thúc và in kết quả ra terminal.
-- Tùy chọn lưu mỗi phiên thành file WAV riêng (`--session-dir`) hoặc ghi toàn bộ luồng
-  vào một file duy nhất (`--output`).
-
-### Chuẩn bị môi trường trên macOS (Mac mini M4)
-
-1. Cài `ffmpeg` – Whisper sử dụng để đọc/ghi WAV:
-
-   ```bash
-   brew install ffmpeg
-   ```
-
-2. Tạo môi trường ảo và cài thư viện (PyTorch hỗ trợ Metal/CPU trên Apple Silicon):
-
-   ```bash
-   python3 -m venv .venv
-   source .venv/bin/activate
-   pip install --upgrade pip
-   pip install torch torchvision torchaudio
-   pip install openai-whisper numpy
-   ```
-
-   > Nếu không dùng Metal có thể cài bản CPU: `pip install torch --index-url https://download.pytorch.org/whl/cpu`.
-
-### Chạy server và nhận dạng tiếng Việt
-
-Ví dụ cấu hình session timeout 1.2 giây và lưu các phiên vào thư mục `recordings`:
-
-```bash
-python server/udp_receiver.py \
-  --host 0.0.0.0 --port 5000 \
-  --session-dir recordings \
-  --session-timeout 1.2 \
-  --whisper-model small \
-  --language vi
-```
-
-Các tuỳ chọn quan trọng:
-
-- `--session-timeout`: khoảng im lặng (giây) để đánh dấu một phiên kết thúc.
-- `--session-dir`: lưu file WAV cho từng phiên (tự tạo thư mục nếu chưa có).
-- `--output`: ghi toàn bộ luồng vào một file WAV duy nhất (giống phiên bản trước).
-- `--no-whisper`: tắt pipeline Whisper nếu chỉ muốn kiểm tra đường truyền.
-- `--whisper-model`: chọn kích thước model (`tiny`, `small`, `medium`, `large-v3`, ...).
-- `--language`: mã ngôn ngữ ISO cho Whisper, mặc định `vi` (tiếng Việt).
-
-Ví dụ log khi công tắc bật/tắt:
-
-```
-▶️  Bắt đầu phiên mới từ 192.168.1.50:6000 (sample_rate=16000)
-⏹️  Kết thúc phiên từ 192.168.1.50:6000 — Packets: 120, lost: 0, duration: 2.05s, rate: 58.4/s
-📝  Đang nhận dạng 2.05s audio bằng Whisper model 'small' (ngôn ngữ=vi)
-→ Văn bản: xin chào trợ lý, bật đèn phòng khách giúp tôi
-```
-
-## 5. Đồng bộ & chống mất gói
-
-- Header UDP đã chứa `sequence` + `timestamp_ms` giúp phát hiện mất/đảo gói.
-- Server gom từng phiên dựa trên thời gian im lặng (điều chỉnh bằng `--session-timeout`). Nếu cần phản hồi hoàn toàn thời gian thực, có thể tích hợp pipeline streaming (ví dụ Whisper streaming) thay vì chờ kết thúc phiên.
-- Nếu cần nén, đóng gói codec (Opus, Speex) vào payload và báo kích thước trong header phụ.
-
-## 6. Bảo mật & mở rộng
-
-- Sử dụng WPA2-Enterprise hoặc mạng riêng cho Wi-Fi, và cân nhắc DTLS/SRTP nếu cần mã hoá UDP.
-- Dùng kênh điều khiển (HTTP/WebSocket/MQTT) để server yêu cầu bắt đầu/kết thúc ghi, hoặc gửi phản hồi.
-- Triển khai cơ chế VAD (Voice Activity Detection) trên server hoặc client để giảm lưu lượng khi im lặng.
-
-## 7. Kiểm thử
-
-1. Chạy server Python UDP ở trên.
-2. Flash firmware ESP32 với mã trong `src/main.cpp`.
-3. Mở Serial Monitor (`pio device monitor -b 115200`) kiểm tra log Wi-Fi/DNS.
-4. Nói vào microphone, xác nhận log trên server hiển thị phiên mới + kết quả Whisper.
-
-Sau khi pipeline push-to-talk + Whisper hoạt động ổn định, có thể bổ sung thêm lớp xử lý ngôn ngữ (LLM) và kênh phản hồi âm thanh/văn bản để hoàn thiện trợ lý ảo.
+- Cần thêm cơ chế xác thực giữa ESP32 và backend (token, HTTPS) trước khi đưa vào sản xuất.
+- Có thể mở rộng bảng log để lưu thêm nhiệt độ, trạng thái thiết bị khác hoặc lịch sử hội thoại.
+- Scheduler không còn phụ thuộc vào ESP32 polling; bridge MQTT gửi lệnh ngay khi đến hạn, có thể mở rộng thêm QoS hoặc retain tùy nhu cầu.
