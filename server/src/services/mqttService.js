@@ -4,6 +4,19 @@ import SensorReading from '../models/SensorReading.js';
 
 let mqttClient = null;
 
+const splitTopics = (value) =>
+  value
+    .split(',')
+    .map((topic) => topic.trim())
+    .filter((topic) => topic.length > 0);
+
+const getDiscoveryTopics = () => {
+  const configured = toTrimmedString(process.env.MQTT_DISCOVERY_TOPICS);
+  const topics = configured ? splitTopics(configured) : ['homeassistant/#'];
+  console.log(`[MQTT DEBUG] Discovery topics:`, topics);
+  return topics;
+};
+
 const toTrimmedString = (value) => {
   if (typeof value !== 'string') {
     return null;
@@ -124,14 +137,21 @@ const extractSensorName = (payload) => {
 };
 
 const ensureDeviceForMessage = async (topic, payload, messageType) => {
+  console.log(`[MQTT DEBUG] ensureDeviceForMessage called with topic: ${topic}, messageType: ${messageType}`);
+
   const identifier = extractDeviceIdentifier(payload);
+  console.log(`[MQTT DEBUG] Extracted device identifier: ${identifier}`);
+
   let device = await findDeviceByTopic(topic);
+  console.log(`[MQTT DEBUG] Device found by topic:`, device ? device.name : 'null');
 
   const topicFromPayload =
     messageType === 'sensor'
       ? extractTopicFromPayload(payload, 'topicState', 'stateTopic')
       : extractTopicFromPayload(payload, 'topicTelemetry', 'telemetryTopic');
   const commandTopicFromPayload = extractTopicFromPayload(payload, 'topicCommand', 'commandTopic');
+
+  console.log(`[MQTT DEBUG] Topics from payload - State: ${topicFromPayload}, Command: ${commandTopicFromPayload}`);
 
   const applyTopicUpdates = async (doc) => {
     const updates = {};
@@ -194,12 +214,17 @@ const ensureDeviceForMessage = async (topic, payload, messageType) => {
   }
 
   if (!identifier) {
+    console.log(`[MQTT DEBUG] No device identifier found, cannot create device`);
     return null;
   }
+
+  console.log(`[MQTT DEBUG] Creating new device with identifier: ${identifier}`);
 
   const name = await ensureUniqueDeviceName(
     extractDeviceName(payload) || `Thiết bị ${identifier.slice(-4)}`,
   );
+
+  console.log(`[MQTT DEBUG] Generated device name: ${name}`);
 
   const newDevice = await Device.create({
     identifier,
@@ -210,6 +235,8 @@ const ensureDeviceForMessage = async (topic, payload, messageType) => {
     topicState: messageType === 'sensor' ? topicFromPayload || undefined : topic,
     topicTelemetry: messageType === 'sensor' ? topic : topicFromPayload || undefined,
   });
+
+  console.log(`[MQTT DEBUG] Created new device:`, newDevice.name);
 
   await registerDeviceTopics(newDevice);
   return newDevice;
@@ -275,31 +302,35 @@ const resolveOptions = () => {
   return options;
 };
 
-export const initializeMqtt = async () => {
-  if (mqttClient) {
-    return mqttClient;
+const subscribeToTopics = (topics, { logOnSuccess = true } = {}) => {
+  if (!mqttClient || mqttClient.disconnected) {
+    console.log(`[MQTT DEBUG] Cannot subscribe - MQTT client not connected`);
+    return;
   }
 
-  mqttClient = mqtt.connect(getMqttUrl(), resolveOptions());
+  console.log(`[MQTT DEBUG] Subscribing to topics:`, topics);
 
-  mqttClient.on('connect', async () => {
-    console.log('Connected to MQTT broker');
-    await subscribeToDeviceTopics();
-  });
+  topics
+    .filter((topic) => Boolean(topic))
+    .forEach((topic) => {
+      console.log(`[MQTT DEBUG] Attempting to subscribe to: ${topic}`);
+      mqttClient.subscribe(topic, (error) => {
+        if (error) {
+          console.error(`[MQTT DEBUG] Failed to subscribe to topic ${topic}`, error);
+        } else if (logOnSuccess) {
+          console.log(`[MQTT DEBUG] Successfully subscribed to topic ${topic}`);
+        }
+      });
+    });
+};
 
-  mqttClient.on('message', async (topic, payload) => {
-    try {
-      await handleIncomingMessage(topic, payload);
-    } catch (error) {
-      console.error('Failed to process MQTT message', error);
-    }
-  });
+const subscribeToDiscoveryTopics = () => {
+  const topics = getDiscoveryTopics();
+  if (topics.length === 0) {
+    return;
+  }
 
-  mqttClient.on('error', (error) => {
-    console.error('MQTT client error', error);
-  });
-
-  return mqttClient;
+  subscribeToTopics(topics, { logOnSuccess: false });
 };
 
 const subscribeToDeviceTopics = async () => {
@@ -309,34 +340,51 @@ const subscribeToDeviceTopics = async () => {
 
   const devices = await Device.find();
   devices.forEach((device) => {
-    [device.topicState, device.topicTelemetry]
-      .filter((topic) => Boolean(topic))
-      .forEach((topic) => {
-        mqttClient.subscribe(topic, (error) => {
-          if (error) {
-            console.error(`Failed to subscribe to topic ${topic}`, error);
-          } else {
-            console.log(`Subscribed to topic ${topic}`);
-          }
-        });
-      });
+    subscribeToTopics([device.topicState, device.topicTelemetry]);
   });
 };
 
 export const registerDeviceTopics = async (device) => {
-  if (!mqttClient || mqttClient.disconnected) {
-    return;
+  subscribeToTopics([device.topicState, device.topicTelemetry], { logOnSuccess: false });
+};
+
+export const initializeMqtt = async () => {
+  if (mqttClient) {
+    console.log(`[MQTT DEBUG] MQTT client already exists`);
+    return mqttClient;
   }
 
-  [device.topicState, device.topicTelemetry]
-    .filter((topic) => Boolean(topic))
-    .forEach((topic) => {
-      mqttClient.subscribe(topic, (error) => {
-        if (error) {
-          console.error(`Failed to subscribe to topic ${topic}`, error);
-        }
-      });
-    });
+  const mqttUrl = getMqttUrl();
+  console.log(`[MQTT DEBUG] Connecting to MQTT broker: ${mqttUrl}`);
+
+  mqttClient = mqtt.connect(mqttUrl, resolveOptions());
+
+  mqttClient.on('connect', async () => {
+    console.log('[MQTT DEBUG] Connected to MQTT broker successfully');
+    console.log('[MQTT DEBUG] Subscribing to discovery topics...');
+    subscribeToDiscoveryTopics();
+    console.log('[MQTT DEBUG] Subscribing to device topics...');
+    await subscribeToDeviceTopics();
+  });
+
+  mqttClient.on('message', async (topic, payload) => {
+    console.log(`[MQTT DEBUG] MQTT message received on topic: ${topic}`);
+    try {
+      await handleIncomingMessage(topic, payload);
+    } catch (error) {
+      console.error('[MQTT DEBUG] Failed to process MQTT message', error);
+    }
+  });
+
+  mqttClient.on('error', (error) => {
+    console.error('[MQTT DEBUG] MQTT client error', error);
+  });
+
+  mqttClient.on('disconnect', () => {
+    console.log('[MQTT DEBUG] MQTT client disconnected');
+  });
+
+  return mqttClient;
 };
 
 async function findDeviceByTopic(topic) {
@@ -346,25 +394,39 @@ async function findDeviceByTopic(topic) {
 }
 
 const handleIncomingMessage = async (topic, payloadBuffer) => {
+  console.log(`[MQTT DEBUG] Received message on topic: ${topic}`);
+
   const payloadText = payloadBuffer.toString();
+  console.log(`[MQTT DEBUG] Raw payload: ${payloadText}`);
+
   let payload;
   try {
     payload = JSON.parse(payloadText);
+    console.log(`[MQTT DEBUG] Parsed payload:`, payload);
   } catch (error) {
+    console.log(`[MQTT DEBUG] Failed to parse JSON payload:`, error.message);
     payload = { raw: payloadText };
   }
 
   const messageType = payload.type || 'state';
+  console.log(`[MQTT DEBUG] Message type: ${messageType}`);
 
   const device = await ensureDeviceForMessage(topic, payload, messageType);
+  console.log(`[MQTT DEBUG] Device found/created:`, device ? device.name : 'null');
+
   if (!device) {
+    console.log(`[MQTT DEBUG] No device found/created, skipping message processing`);
     return;
   }
 
   if (messageType === 'sensor') {
+    console.log(`[MQTT DEBUG] Processing sensor data`);
+
     const recordedAt = payload.recordedAt ? new Date(payload.recordedAt) : new Date();
     const sensorId = extractSensorIdentifier(payload);
     const sensorName = extractSensorName(payload);
+
+    console.log(`[MQTT DEBUG] Sensor details - ID: ${sensorId}, Name: ${sensorName}, Metric: ${payload.metric}, Value: ${payload.value}`);
 
     await SensorReading.create({
       device: device._id,
@@ -376,6 +438,8 @@ const handleIncomingMessage = async (topic, payloadBuffer) => {
       recordedAt,
     });
 
+    console.log(`[MQTT DEBUG] Created sensor reading for device: ${device.name}`);
+
     await upsertSensorMetadata(device._id, payload, recordedAt);
     await Device.findByIdAndUpdate(device._id, {
       $set: {
@@ -385,6 +449,8 @@ const handleIncomingMessage = async (topic, payloadBuffer) => {
     });
     return;
   }
+
+  console.log(`[MQTT DEBUG] Processing state update for device: ${device.name}`);
 
   await Device.findByIdAndUpdate(device._id, {
     $set: {
