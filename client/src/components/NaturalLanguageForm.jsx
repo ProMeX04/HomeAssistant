@@ -8,23 +8,21 @@ const NaturalLanguageForm = ({ onSubmit, disabled }) => {
     event.preventDefault();
     if (!prompt.trim()) return;
     onSubmit(prompt.trim());
+    setPrompt('');
   };
 
   return (
     <form className="nl-form" onSubmit={handleSubmit}>
-      <label htmlFor="prompt" className="nl-form__label">
-        Enter a natural language command (Vietnamese or English):
-      </label>
       <textarea
         id="prompt"
         className="nl-form__input"
         value={prompt}
         onChange={(event) => setPrompt(event.target.value)}
-        placeholder="Ví dụ: Hãy tắt quạt phòng ngủ sau 10 phút"
-        rows={3}
+        placeholder="Nhập yêu cầu cho trợ lý..."
+        rows={2}
       />
-      <button type="submit" disabled={disabled}>
-        Send to assistant
+      <button type="submit" disabled={disabled || !prompt.trim()}>
+        Gửi
       </button>
     </form>
   );

@@ -34,6 +34,70 @@ export const createDevice = async (req, res) => {
   res.status(201).json({ device });
 };
 
+export const updateDevice = async (req, res, next) => {
+  try {
+    const { id } = req.params;
+    const { name, location } = req.body || {};
+
+    const setUpdate = {};
+    const unsetUpdate = {};
+
+    if (name !== undefined) {
+      if (typeof name !== 'string' || name.trim().length === 0) {
+        return res.status(400).json({ message: 'Device name is required' });
+      }
+
+      const trimmedName = name.trim();
+      const nameInUse = await Device.exists({ _id: { $ne: id }, name: trimmedName });
+      if (nameInUse) {
+        return res.status(409).json({ message: 'Device name is already in use' });
+      }
+
+      setUpdate.name = trimmedName;
+    }
+
+    if (location !== undefined) {
+      if (location === null) {
+        unsetUpdate.location = '';
+      } else if (typeof location === 'string') {
+        const trimmedLocation = location.trim();
+        if (trimmedLocation.length === 0) {
+          unsetUpdate.location = '';
+        } else {
+          setUpdate.location = trimmedLocation;
+        }
+      } else {
+        return res.status(400).json({ message: 'Location must be a string or null' });
+      }
+    }
+
+    if (Object.keys(setUpdate).length === 0 && Object.keys(unsetUpdate).length === 0) {
+      return res.status(400).json({ message: 'No update fields provided' });
+    }
+
+    const update = {};
+    if (Object.keys(setUpdate).length > 0) {
+      update.$set = setUpdate;
+    }
+    if (Object.keys(unsetUpdate).length > 0) {
+      update.$unset = unsetUpdate;
+    }
+
+    const device = await Device.findByIdAndUpdate(id, update, {
+      new: true,
+      runValidators: true,
+    });
+
+    if (!device) {
+      return res.status(404).json({ message: 'Device not found' });
+    }
+
+    res.json({ device });
+  } catch (error) {
+    next(error);
+  }
+};
+
 export const sendDeviceCommand = async (req, res, next) => {
   try {
     const { action, payload } = req.body;

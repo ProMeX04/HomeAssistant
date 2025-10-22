@@ -58,6 +58,19 @@ function App() {
     }
   };
 
+  const handleDeviceUpdate = async (deviceId, updates) => {
+    setIsSending(true);
+    try {
+      await api.patch(`/devices/${deviceId}`, updates);
+      await loadData();
+    } catch (err) {
+      setError(err.response?.data?.message || err.message);
+      throw err;
+    } finally {
+      setIsSending(false);
+    }
+  };
+
   const handleNaturalLanguage = async (prompt) => {
     setIsSending(true);
     try {
@@ -87,43 +100,38 @@ function App() {
 
   return (
     <div className="app">
-      <header className="app__header">
-        <h1>Home Assistant Dashboard</h1>
-        {latestUpdate && <span className="app__timestamp">Last update: {latestUpdate}</span>}
-      </header>
+      <aside className="app__sidebar">
+        <div className="app__sidebar-header">
+          <h1>Home Assistant</h1>
+          {latestUpdate && <span className="app__timestamp">Cập nhật: {latestUpdate}</span>}
+          {loading && <span className="app__status">Đang tải dữ liệu…</span>}
+          {error && <p className="app__error">{error}</p>}
+        </div>
 
-      {error && <div className="app__error">{error}</div>}
-
-      <div className="app__content">
-        <section className="panel">
-          <header className="panel__header">
-            <h2>Devices</h2>
-            {loading && <span className="panel__status">Loading...</span>}
-          </header>
-          <DeviceList devices={devices} onSendCommand={handleDirectCommand} disabled={isSending} />
+        <section className="sidebar-section">
+          <h2 className="sidebar-section__title">Thiết bị</h2>
+          <DeviceList
+            devices={devices}
+            onSendCommand={handleDirectCommand}
+            onUpdateDevice={handleDeviceUpdate}
+            disabled={isSending}
+          />
         </section>
 
-        <section className="panel">
-          <header className="panel__header">
-            <h2>Natural language control</h2>
-          </header>
-          <NaturalLanguageForm onSubmit={handleNaturalLanguage} disabled={isSending} />
-        </section>
-
-        <section className="panel">
-          <header className="panel__header">
-            <h2>Upcoming schedules</h2>
-          </header>
+        <section className="sidebar-section">
+          <h2 className="sidebar-section__title">Lịch hẹn</h2>
           <ScheduleList schedules={schedules} />
         </section>
+      </aside>
 
-        <section className="panel">
-          <header className="panel__header">
-            <h2>Command log</h2>
-          </header>
+      <main className="app__main">
+        <div className="chat-window">
           <CommandLog logs={logs} />
-        </section>
-      </div>
+        </div>
+        <div className="chat-input">
+          <NaturalLanguageForm onSubmit={handleNaturalLanguage} disabled={isSending} />
+        </div>
+      </main>
     </div>
   );
 }
