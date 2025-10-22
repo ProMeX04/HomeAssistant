@@ -98,22 +98,20 @@ void publishDeviceStateSnapshot(const char *status) {
         return;
     }
 
-    String topic = stateTopic();
-    String telemetry = telemetryTopic();
-    String command = commandTopic();
     const char *statusValue = status ? status : "online";
     const char *ledState = ledIsOn ? "on" : "off";
     const char *collectionState = dataCollectionEnabled ? "true" : "false";
 
-    char payload[256];
+    // Simplified state payload - essential device info only
+    char payload[128];
     snprintf(payload, sizeof(payload),
              "{\"type\":\"state\",\"deviceId\":\"%s\",\"deviceName\":\"%s\",\"location\":\"%s\","
              "\"topicTelemetry\":\"%s\",\"topicCommand\":\"%s\",\"topicState\":\"%s\",\"status\":\"%s\","
              "\"led\":\"%s\",\"collectionEnabled\":%s}",
-             kDeviceId, kDeviceName, kDeviceLocation, telemetry.c_str(), command.c_str(), topic.c_str(),
+             kDeviceId, kDeviceName, kDeviceLocation, telemetryTopic().c_str(), commandTopic().c_str(), stateTopic().c_str(),
              statusValue, ledState, collectionState);
 
-    if (mqttClient.publish(topic.c_str(), payload, true)) {
+    if (mqttClient.publish(stateTopic().c_str(), payload, true)) {
         Serial.printf("Published device state: %s\n", payload);
     } else {
         Serial.println("Failed to publish device state");
@@ -126,19 +124,13 @@ void publishSensorReading(const char *sensorId, const char *sensorName, const ch
         return;
     }
 
-    String telemetry = telemetryTopic();
-    String state = stateTopic();
-    String command = commandTopic();
-
-    char payload[256];
+    // Simplified payload for sensor readings - only essential data
+    char payload[128];
     snprintf(payload, sizeof(payload),
-             "{\"type\":\"sensor\",\"deviceId\":\"%s\",\"deviceName\":\"%s\",\"location\":\"%s\","
-             "\"topicState\":\"%s\",\"topicTelemetry\":\"%s\",\"topicCommand\":\"%s\",\"sensorId\":\"%s\","
-             "\"sensorName\":\"%s\",\"metric\":\"%s\",\"unit\":\"%s\",\"value\":%.1f}",
-             kDeviceId, kDeviceName, kDeviceLocation, state.c_str(), telemetry.c_str(), command.c_str(), sensorId,
-             sensorName, metric, unit, value);
+             "{\"type\":\"sensor\",\"deviceId\":\"%s\",\"sensorId\":\"%s\",\"metric\":\"%s\",\"value\":%.1f,\"unit\":\"%s\"}",
+             kDeviceId, sensorId, metric, value, unit);
 
-    if (mqttClient.publish(telemetry.c_str(), payload, false)) {
+    if (mqttClient.publish(telemetryTopic().c_str(), payload, false)) {
         Serial.printf("Published %s reading: %.1f %s\n", metric, value, unit);
     } else {
         Serial.printf("Failed to publish %s reading\n", metric);

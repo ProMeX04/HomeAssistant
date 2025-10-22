@@ -1,5 +1,5 @@
-import PropTypes from 'prop-types';
 import dayjs from 'dayjs';
+import PropTypes from 'prop-types';
 
 const formatState = (state) => {
   if (!state) return 'Unknown';
@@ -35,14 +35,14 @@ const DeviceList = ({ devices, onSendCommand, disabled }) => {
             </p>
           )}
           <div className="device-card__actions">
-            <button type="button" disabled={disabled} onClick={() => onSendCommand(device._id, 'on')}>
+            <button type="button" disabled={disabled} onClick={() => onSendCommand(device._id, 'set_led', { command: 'set_led', state: 'on' })}>
               Turn on
             </button>
-            <button type="button" disabled={disabled} onClick={() => onSendCommand(device._id, 'off')}>
+            <button type="button" disabled={disabled} onClick={() => onSendCommand(device._id, 'set_led', { command: 'set_led', state: 'off' })}>
               Turn off
             </button>
-            <button type="button" disabled={disabled} onClick={() => onSendCommand(device._id, 'toggle')}>
-              Toggle
+            <button type="button" disabled={disabled} onClick={() => onSendCommand(device._id, 'set_collection', { command: 'set_collection', state: 'off' })}>
+              Pause collection
             </button>
           </div>
         </div>
