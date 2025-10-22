@@ -6,10 +6,14 @@
 // ---- Network configuration ----
 constexpr char kWifiSsid[] = "Nguyen Van Hai";
 constexpr char kWifiPassword[] = "0964822864";
-constexpr char kMqttHost[] = "192.168.1.2";
+constexpr char kMqttHost[] = "192.168.1.5";
 constexpr uint16_t kMqttPort = 1883;
 constexpr char kDeviceId[] = "automation";
+constexpr char kDeviceName[] = "Automation Controller";
+constexpr char kDeviceLocation[] = "Living Room";
 constexpr char kBaseTopic[] = "homeassistant";
+constexpr char kHumiditySensorId[] = "humidity";
+constexpr char kLightSensorId[] = "light";
 
 // ---- Hardware configuration ----
 constexpr gpio_num_t kLedPin = GPIO_NUM_2;             // D2 on many ESP32 dev boards
@@ -26,12 +30,19 @@ WiFiClient wifiClient;
 PubSubClient mqttClient(wifiClient);
 String clientId;
 
+void publishDeviceStateSnapshot(const char *status = nullptr);
+void publishSensorReading(const char *sensorId, const char *sensorName, const char *metric, float value, const char *unit);
+
 String telemetryTopic() {
     return String(kBaseTopic) + "/" + kDeviceId + "/telemetry";
 }
 
 String commandTopic() {
     return String(kBaseTopic) + "/" + kDeviceId + "/command";
+}
+
+String stateTopic() {
+    return String(kBaseTopic) + "/" + kDeviceId + "/state";
 }
 
 void connectWiFi() {
@@ -43,6 +54,10 @@ void connectWiFi() {
         Serial.print('.');
     }
     Serial.printf("\nConnected. IP: %s\n", WiFi.localIP().toString().c_str());
+
+    String mac = WiFi.macAddress();
+    mac.replace(":", "");
+    clientId = String(kDeviceId) + "-" + mac;
 }
 
 void ensureMqttConnected() {
@@ -54,6 +69,7 @@ void ensureMqttConnected() {
         if (mqttClient.connect(clientId.c_str())) {
             mqttClient.subscribe(commandTopic().c_str(), 1);
             Serial.println("MQTT connected and subscribed to command topic");
+            publishDeviceStateSnapshot("online");
         } else {
             Serial.printf("MQTT connect failed rc=%d, retrying...\n", mqttClient.state());
             delay(2000);
@@ -77,6 +93,58 @@ float readLightPercent() {
     return analogToPercent(raw);
 }
 
+void publishDeviceStateSnapshot(const char *status) {
+    if (!mqttClient.connected()) {
+        return;
+    }
+
+    String topic = stateTopic();
+    String telemetry = telemetryTopic();
+    String command = commandTopic();
+    const char *statusValue = status ? status : "online";
+    const char *ledState = ledIsOn ? "on" : "off";
+    const char *collectionState = dataCollectionEnabled ? "true" : "false";
+
+    char payload[256];
+    snprintf(payload, sizeof(payload),
+             "{\"type\":\"state\",\"deviceId\":\"%s\",\"deviceName\":\"%s\",\"location\":\"%s\","
+             "\"topicTelemetry\":\"%s\",\"topicCommand\":\"%s\",\"topicState\":\"%s\",\"status\":\"%s\","
+             "\"led\":\"%s\",\"collectionEnabled\":%s}",
+             kDeviceId, kDeviceName, kDeviceLocation, telemetry.c_str(), command.c_str(), topic.c_str(),
+             statusValue, ledState, collectionState);
+
+    if (mqttClient.publish(topic.c_str(), payload, true)) {
+        Serial.printf("Published device state: %s\n", payload);
+    } else {
+        Serial.println("Failed to publish device state");
+    }
+}
+
+void publishSensorReading(const char *sensorId, const char *sensorName, const char *metric, float value,
+                          const char *unit) {
+    if (!mqttClient.connected()) {
+        return;
+    }
+
+    String telemetry = telemetryTopic();
+    String state = stateTopic();
+    String command = commandTopic();
+
+    char payload[256];
+    snprintf(payload, sizeof(payload),
+             "{\"type\":\"sensor\",\"deviceId\":\"%s\",\"deviceName\":\"%s\",\"location\":\"%s\","
+             "\"topicState\":\"%s\",\"topicTelemetry\":\"%s\",\"topicCommand\":\"%s\",\"sensorId\":\"%s\","
+             "\"sensorName\":\"%s\",\"metric\":\"%s\",\"unit\":\"%s\",\"value\":%.1f}",
+             kDeviceId, kDeviceName, kDeviceLocation, state.c_str(), telemetry.c_str(), command.c_str(), sensorId,
+             sensorName, metric, unit, value);
+
+    if (mqttClient.publish(telemetry.c_str(), payload, false)) {
+        Serial.printf("Published %s reading: %.1f %s\n", metric, value, unit);
+    } else {
+        Serial.printf("Failed to publish %s reading\n", metric);
+    }
+}
+
 void reportSensorData() {
     if (!dataCollectionEnabled || WiFi.status() != WL_CONNECTED) {
         return;
@@ -89,16 +157,8 @@ void reportSensorData() {
 
     float humidity = readHumidityPercent();
     float light = readLightPercent();
-    char payload[160];
-    snprintf(payload, sizeof(payload),
-             "{\"humidity\":%.1f,\"light\":%.1f,\"timestamp\":%lu}", humidity, light,
-             millis());
-    bool ok = mqttClient.publish(telemetryTopic().c_str(), payload, false);
-    if (ok) {
-        Serial.printf("Published telemetry humidity=%.1f%% light=%.1f%%\n", humidity, light);
-    } else {
-        Serial.println("Failed to publish telemetry");
-    }
+    publishSensorReading(kHumiditySensorId, "Độ ẩm", "humidity", humidity, "%");
+    publishSensorReading(kLightSensorId, "Ánh sáng", "light", light, "%");
 }
 
 String extractJsonString(const String &payload, const char *key) {
@@ -139,7 +199,10 @@ void applyCommand(const String &command, const String &payload) {
         Serial.printf("Data collection %s\n", dataCollectionEnabled ? "enabled" : "paused");
     } else {
         Serial.printf("Unknown command '%s'\n", command.c_str());
+        return;
     }
+
+    publishDeviceStateSnapshot();
 }
 
 void handleMqttMessage(char *topic, byte *payload, unsigned int length) {
@@ -174,6 +237,7 @@ void setup() {
     connectWiFi();
 
     mqttClient.setServer(kMqttHost, kMqttPort);
+    mqttClient.setBufferSize(512);
     mqttClient.setCallback(handleMqttMessage);
     randomSeed(micros());
 }

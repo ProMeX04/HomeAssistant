@@ -9,13 +9,26 @@ export const listDevices = async (_req, res) => {
 };
 
 export const createDevice = async (req, res) => {
+  const sensors = Array.isArray(req.body.sensors)
+    ? req.body.sensors.map((sensor) => ({
+        sensorId: sensor.sensorId,
+        name: sensor.name,
+        metric: sensor.metric,
+        unit: sensor.unit,
+        lastValue: sensor.lastValue,
+        lastRecordedAt: sensor.lastRecordedAt,
+      }))
+    : undefined;
+
   const device = await Device.create({
+    identifier: req.body.identifier,
     name: req.body.name,
     type: req.body.type,
     location: req.body.location,
     topicCommand: req.body.topicCommand,
     topicState: req.body.topicState,
     topicTelemetry: req.body.topicTelemetry,
+    sensors,
   });
   await registerDeviceTopics(device);
   res.status(201).json({ device });

@@ -3,6 +3,8 @@ import mongoose from 'mongoose';
 const sensorReadingSchema = new mongoose.Schema(
   {
     device: { type: mongoose.Schema.Types.ObjectId, ref: 'Device', required: true },
+    sensorId: { type: String },
+    sensorName: { type: String },
     metric: { type: String, required: true },
     value: { type: mongoose.Schema.Types.Mixed, required: true },
     unit: { type: String },
