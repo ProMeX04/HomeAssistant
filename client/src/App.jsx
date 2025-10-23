@@ -1,4 +1,4 @@
-import { useEffect, useMemo, useState } from 'react';
+import { useEffect, useMemo, useState, useRef } from 'react';
 import dayjs from 'dayjs';
 import api from './api/client';
 import DeviceList from './components/DeviceList';
@@ -16,6 +16,12 @@ function App() {
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
   const [isSending, setIsSending] = useState(false);
+  const [sidebarOpen, setSidebarOpen] = useState(false);
+  const chatEndRef = useRef(null);
+
+  const scrollToBottom = () => {
+    chatEndRef.current?.scrollIntoView({ behavior: 'smooth' });
+  };
 
   const loadData = async () => {
     try {
@@ -42,6 +48,10 @@ function App() {
     const interval = setInterval(loadData, REFRESH_INTERVAL);
     return () => clearInterval(interval);
   }, []);
+
+  useEffect(() => {
+    scrollToBottom();
+  }, [logs]);
 
   const handleDirectCommand = async (deviceId, action, payload) => {
     setIsSending(true);
@@ -83,6 +93,28 @@ function App() {
     }
   };
 
+  const handleAudioSubmit = async (audioBlob) => {
+    setIsSending(true);
+    try {
+      const formData = new FormData();
+      formData.append('audio', audioBlob, 'recording.webm');
+
+      const response = await api.post('/commands/transcribe', formData, {
+        headers: {
+          'Content-Type': 'multipart/form-data',
+        },
+      });
+
+      if (response.data.transcription) {
+        await handleNaturalLanguage(response.data.transcription);
+      }
+    } catch (err) {
+      setError(err.response?.data?.message || err.message);
+    } finally {
+      setIsSending(false);
+    }
+  };
+
   const latestUpdate = useMemo(() => {
     const timestamps = [
       ...devices.map((device) => device.updatedAt),
@@ -100,9 +132,20 @@ function App() {
 
   return (
     <div className="app">
-      <aside className="app__sidebar">
+      {/* Sidebar Toggle Button */}
+      <button 
+        className="sidebar-toggle" 
+        onClick={() => setSidebarOpen(!sidebarOpen)}
+        aria-label="Toggle sidebar"
+      >
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
+          <path d="M3 12h18M3 6h18M3 18h18" stroke="currentColor" strokeWidth="2" strokeLinecap="round"/>
+        </svg>
+      </button>
+
+      <aside className={`app__sidebar ${sidebarOpen ? 'app__sidebar--open' : ''}`}>
         <div className="app__sidebar-header">
-          <h1>Home Assistant</h1>
+          <h1>🏠 Home Assistant</h1>
           {latestUpdate && <span className="app__timestamp">Cập nhật: {latestUpdate}</span>}
           {loading && <span className="app__status">Đang tải dữ liệu…</span>}
           {error && <p className="app__error">{error}</p>}
@@ -126,10 +169,15 @@ function App() {
 
       <main className="app__main">
         <div className="chat-window">
-          <CommandLog logs={logs} />
+          <CommandLog logs={logs} isLoading={isSending} />
+          <div ref={chatEndRef} />
         </div>
-        <div className="chat-input">
-          <NaturalLanguageForm onSubmit={handleNaturalLanguage} disabled={isSending} />
+        <div className="chat-input-container">
+          <NaturalLanguageForm 
+            onSubmit={handleNaturalLanguage}
+            onAudioSubmit={handleAudioSubmit}
+            disabled={isSending} 
+          />
         </div>
       </main>
     </div>

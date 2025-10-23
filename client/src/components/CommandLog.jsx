@@ -11,9 +11,17 @@ const formatPayload = (payload) => {
   }
 };
 
-const CommandLog = ({ logs }) => {
-  if (!logs.length) {
-    return <p className="empty">Chưa có lệnh nào được gửi.</p>;
+const CommandLog = ({ logs, isLoading }) => {
+  if (!logs.length && !isLoading) {
+    return (
+      <div className="empty-state">
+        <svg width="64" height="64" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5">
+          <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z" strokeLinecap="round" strokeLinejoin="round"/>
+        </svg>
+        <p>Bắt đầu trò chuyện với Home Assistant</p>
+        <p className="empty-state__subtitle">Gõ tin nhắn hoặc sử dụng microphone để điều khiển thiết bị</p>
+      </div>
+    );
   }
 
   return (
@@ -39,6 +47,18 @@ const CommandLog = ({ logs }) => {
           </div>
         );
       })}
+      
+      {isLoading && (
+        <div className="chat-log__message chat-log__message--assistant">
+          <div className="chat-log__bubble">
+            <div className="chat-log__loading">
+              <span className="dot"></span>
+              <span className="dot"></span>
+              <span className="dot"></span>
+            </div>
+          </div>
+        </div>
+      )}
     </div>
   );
 };
@@ -53,10 +73,12 @@ CommandLog.propTypes = {
     createdAt: PropTypes.string,
     deviceName: PropTypes.string,
   })),
+  isLoading: PropTypes.bool,
 };
 
 CommandLog.defaultProps = {
   logs: [],
+  isLoading: false,
 };
 
 export default CommandLog;

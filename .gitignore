@@ -6,4 +6,6 @@
 data/
 server/node_modules/
 client/node_modules/
+server/uploads/
+server/.env
 .DS_Store

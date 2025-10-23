@@ -15,14 +15,11 @@ constexpr char kBaseTopic[] = "homeassistant";
 constexpr char kHumiditySensorId[] = "humidity";
 constexpr char kLightSensorId[] = "light";
 
-// ---- Hardware configuration ----
-constexpr gpio_num_t kLedPin = GPIO_NUM_2;             // D2 on many ESP32 dev boards
-constexpr gpio_num_t kHumiditySensorPin = GPIO_NUM_34; // Analog humidity sensor
-constexpr gpio_num_t kLightSensorPin = GPIO_NUM_35;    // Analog light sensor
+constexpr gpio_num_t kLedPin = GPIO_NUM_2;
+constexpr gpio_num_t kHumiditySensorPin = GPIO_NUM_34;
+constexpr gpio_num_t kLightSensorPin = GPIO_NUM_35;
 
-// ---- Behaviour configuration ----
-constexpr uint32_t kSensorIntervalMs = 10000; // Post sensor telemetry every 10 seconds
-
+constexpr uint32_t kSensorIntervalMs = 10000;
 bool dataCollectionEnabled = true;
 bool ledIsOn = false;
 unsigned long lastSensorPostMs = 0;
@@ -33,23 +30,28 @@ String clientId;
 void publishDeviceStateSnapshot(const char *status = nullptr);
 void publishSensorReading(const char *sensorId, const char *sensorName, const char *metric, float value, const char *unit);
 
-String telemetryTopic() {
+String telemetryTopic()
+{
     return String(kBaseTopic) + "/" + kDeviceId + "/telemetry";
 }
 
-String commandTopic() {
+String commandTopic()
+{
     return String(kBaseTopic) + "/" + kDeviceId + "/command";
 }
 
-String stateTopic() {
+String stateTopic()
+{
     return String(kBaseTopic) + "/" + kDeviceId + "/state";
 }
 
-void connectWiFi() {
+void connectWiFi()
+{
     WiFi.mode(WIFI_STA);
     WiFi.begin(kWifiSsid, kWifiPassword);
     Serial.printf("Connecting to %s", kWifiSsid);
-    while (WiFi.status() != WL_CONNECTED) {
+    while (WiFi.status() != WL_CONNECTED)
+    {
         delay(500);
         Serial.print('.');
     }
@@ -60,41 +62,52 @@ void connectWiFi() {
     clientId = String(kDeviceId) + "-" + mac;
 }
 
-void ensureMqttConnected() {
-    if (mqttClient.connected()) {
+void ensureMqttConnected()
+{
+    if (mqttClient.connected())
+    {
         return;
     }
-    while (!mqttClient.connected()) {
+    while (!mqttClient.connected())
+    {
         Serial.printf("Connecting to MQTT broker %s:%u as %s\n", kMqttHost, kMqttPort, clientId.c_str());
-        if (mqttClient.connect(clientId.c_str())) {
+        if (mqttClient.connect(clientId.c_str()))
+        {
             mqttClient.subscribe(commandTopic().c_str(), 1);
             Serial.println("MQTT connected and subscribed to command topic");
             publishDeviceStateSnapshot("online");
-        } else {
+        }
+        else
+        {
             Serial.printf("MQTT connect failed rc=%d, retrying...\n", mqttClient.state());
             delay(2000);
         }
     }
 }
 
-float analogToPercent(int rawValue) {
+float analogToPercent(int rawValue)
+{
     constexpr float kMax = 4095.0f;
     float clamped = std::max(0, std::min(rawValue, 4095));
     return (clamped / kMax) * 100.0f;
 }
 
-float readHumidityPercent() {
+float readHumidityPercent()
+{
     int raw = analogRead(kHumiditySensorPin);
     return analogToPercent(raw);
 }
 
-float readLightPercent() {
+float readLightPercent()
+{
     int raw = analogRead(kLightSensorPin);
     return analogToPercent(raw);
 }
 
-void publishDeviceStateSnapshot(const char *status) {
-    if (!mqttClient.connected()) {
+void publishDeviceStateSnapshot(const char *status)
+{
+    if (!mqttClient.connected())
+    {
         return;
     }
 
@@ -111,16 +124,21 @@ void publishDeviceStateSnapshot(const char *status) {
              kDeviceId, kDeviceName, kDeviceLocation, telemetryTopic().c_str(), commandTopic().c_str(), stateTopic().c_str(),
              statusValue, ledState, collectionState);
 
-    if (mqttClient.publish(stateTopic().c_str(), payload, true)) {
+    if (mqttClient.publish(stateTopic().c_str(), payload, true))
+    {
         Serial.printf("Published device state: %s\n", payload);
-    } else {
+    }
+    else
+    {
         Serial.println("Failed to publish device state");
     }
 }
 
 void publishSensorReading(const char *sensorId, const char *sensorName, const char *metric, float value,
-                          const char *unit) {
-    if (!mqttClient.connected()) {
+                          const char *unit)
+{
+    if (!mqttClient.connected())
+    {
         return;
     }
 
@@ -130,20 +148,26 @@ void publishSensorReading(const char *sensorId, const char *sensorName, const ch
              "{\"type\":\"sensor\",\"deviceId\":\"%s\",\"sensorId\":\"%s\",\"metric\":\"%s\",\"value\":%.1f,\"unit\":\"%s\"}",
              kDeviceId, sensorId, metric, value, unit);
 
-    if (mqttClient.publish(telemetryTopic().c_str(), payload, false)) {
+    if (mqttClient.publish(telemetryTopic().c_str(), payload, false))
+    {
         Serial.printf("Published %s reading: %.1f %s\n", metric, value, unit);
-    } else {
+    }
+    else
+    {
         Serial.printf("Failed to publish %s reading\n", metric);
     }
 }
 
-void reportSensorData() {
-    if (!dataCollectionEnabled || WiFi.status() != WL_CONNECTED) {
+void reportSensorData()
+{
+    if (!dataCollectionEnabled || WiFi.status() != WL_CONNECTED)
+    {
         return;
     }
 
     ensureMqttConnected();
-    if (!mqttClient.connected()) {
+    if (!mqttClient.connected())
+    {
         return;
     }
 
@@ -153,18 +177,23 @@ void reportSensorData() {
     publishSensorReading(kLightSensorId, "Ánh sáng", "light", light, "%");
 }
 
-String extractJsonString(const String &payload, const char *key) {
+String extractJsonString(const String &payload, const char *key)
+{
     String searchKey = String("\"") + key + "\":";
     int start = payload.indexOf(searchKey);
-    if (start < 0) {
+    if (start < 0)
+    {
         return "";
     }
     start += searchKey.length();
-    while (start < payload.length() && (payload[start] == ' ' || payload[start] == '\"')) {
-        if (payload[start] == '\"') {
+    while (start < payload.length() && (payload[start] == ' ' || payload[start] == '\"'))
+    {
+        if (payload[start] == '\"')
+        {
             start++;
             int end = payload.indexOf('\"', start);
-            if (end < 0) {
+            if (end < 0)
+            {
                 return "";
             }
             return payload.substring(start, end);
@@ -172,24 +201,31 @@ String extractJsonString(const String &payload, const char *key) {
         start++;
     }
     int end = start;
-    while (end < payload.length() && payload[end] != ',' && payload[end] != '}' && payload[end] != ' ') {
+    while (end < payload.length() && payload[end] != ',' && payload[end] != '}' && payload[end] != ' ')
+    {
         end++;
     }
     return payload.substring(start, end);
 }
 
-void applyCommand(const String &command, const String &payload) {
-    if (command == "set_led") {
+void applyCommand(const String &command, const String &payload)
+{
+    if (command == "set_led")
+    {
         String state = extractJsonString(payload, "state");
         bool turnOn = state.equalsIgnoreCase("on") || state == "1";
         ledIsOn = turnOn;
         digitalWrite(kLedPin, ledIsOn ? HIGH : LOW);
         Serial.printf("LED state set to %s\n", ledIsOn ? "ON" : "OFF");
-    } else if (command == "set_collection") {
+    }
+    else if (command == "set_collection")
+    {
         String state = extractJsonString(payload, "state");
         dataCollectionEnabled = !(state.equalsIgnoreCase("off") || state == "0");
         Serial.printf("Data collection %s\n", dataCollectionEnabled ? "enabled" : "paused");
-    } else {
+    }
+    else
+    {
         Serial.printf("Unknown command '%s'\n", command.c_str());
         return;
     }
@@ -197,19 +233,23 @@ void applyCommand(const String &command, const String &payload) {
     publishDeviceStateSnapshot();
 }
 
-void handleMqttMessage(char *topic, byte *payload, unsigned int length) {
+void handleMqttMessage(char *topic, byte *payload, unsigned int length)
+{
     String topicStr(topic);
     String expected = commandTopic();
-    if (!topicStr.equals(expected)) {
+    if (!topicStr.equals(expected))
+    {
         return;
     }
     String body;
     body.reserve(length + 1);
-    for (unsigned int i = 0; i < length; ++i) {
+    for (unsigned int i = 0; i < length; ++i)
+    {
         body += static_cast<char>(payload[i]);
     }
     String command = extractJsonString(body, "command");
-    if (command.length() == 0) {
+    if (command.length() == 0)
+    {
         Serial.println("MQTT message missing command");
         return;
     }
@@ -217,7 +257,8 @@ void handleMqttMessage(char *topic, byte *payload, unsigned int length) {
     applyCommand(command, body);
 }
 
-void setup() {
+void setup()
+{
     Serial.begin(115200);
     delay(500);
 
@@ -234,13 +275,15 @@ void setup() {
     randomSeed(micros());
 }
 
-void loop() {
+void loop()
+{
     unsigned long now = millis();
 
     ensureMqttConnected();
     mqttClient.loop();
 
-    if (now - lastSensorPostMs >= kSensorIntervalMs) {
+    if (now - lastSensorPostMs >= kSensorIntervalMs)
+    {
         lastSensorPostMs = now;
         reportSensorData();
     }
