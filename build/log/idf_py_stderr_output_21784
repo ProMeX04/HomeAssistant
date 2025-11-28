@@ -1,0 +1,6 @@
+/Users/promex04/Desktop/guild/speech_recognition/wwe/LyratMini_RecordPlay/main/main_ws.c:151:13: warning: 'deinit_play_pipeline' defined but not used [-Wunused-function]
+  151 | static void deinit_play_pipeline(void) {
+      |             ^~~~~~~~~~~~~~~~~~~~
+/Users/promex04/Desktop/guild/speech_recognition/wwe/LyratMini_RecordPlay/main/main_ws.c:98:13: warning: 'generate_wav_header' defined but not used [-Wunused-function]
+   98 | static void generate_wav_header(wav_header_t *header, int sample_rate, int bits, int channels, int data_len) {
+      |             ^~~~~~~~~~~~~~~~~~~

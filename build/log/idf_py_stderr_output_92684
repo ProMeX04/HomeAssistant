@@ -1,0 +1,4 @@
+/Users/promex04/Desktop/guild/speech_recognition/wwe/LyratMini_RecordPlay/main/main.c: In function 'recorder_stream_task':
+/Users/promex04/Desktop/guild/speech_recognition/wwe/LyratMini_RecordPlay/main/main.c:419:27: warning: unused variable 'expected_bps' [-Wunused-variable]
+  419 |                     float expected_bps = 16000 * 2 * 1;  // 16kHz * 2 bytes * 1 ch = 32000
+      |                           ^~~~~~~~~~~~

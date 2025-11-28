@@ -1,0 +1,10 @@
+/Users/promex04/Desktop/guild/speech_recognition/wwe/LyratMini_RecordPlay/main/main.c: In function 'start_recorder':
+/Users/promex04/Desktop/guild/speech_recognition/wwe/LyratMini_RecordPlay/main/main.c:262:12: error: 'i2s_stream_cfg_t' has no member named 'dma_buf_count'
+  262 |     i2s_cfg.dma_buf_count = 6;
+      |            ^
+/Users/promex04/Desktop/guild/speech_recognition/wwe/LyratMini_RecordPlay/main/main.c:263:12: error: 'i2s_stream_cfg_t' has no member named 'dma_buf_len'
+  263 |     i2s_cfg.dma_buf_len = 1024;
+      |            ^
+make[2]: *** [esp-idf/main/CMakeFiles/__idf_main.dir/main.c.obj] Error 1
+make[1]: *** [esp-idf/main/CMakeFiles/__idf_main.dir/all] Error 2
+make: *** [all] Error 2

@@ -1,0 +1,7 @@
+--flash_mode dio --flash_freq 80m --flash_size 8MB
+0x1000 bootloader/bootloader.bin
+0x10000 lyrat_record_play.bin
+0x8000 partition_table/partition-table.bin
+0xd000 ota_data_initial.bin
+0x2a0000 srmodels/srmodels.bin
+0x4a0000 ../../tone/audio_tone.bin

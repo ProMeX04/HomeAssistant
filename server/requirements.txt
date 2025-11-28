@@ -1,0 +1,10 @@
+flask>=3.0.0
+google-generativeai>=0.8.0
+openai-whisper>=20231117
+edge-tts>=6.1.9
+pydub>=0.25.1
+gunicorn>=21.2.0
+flask-sock>=0.7.0
+simple-websocket>=1.0.0
+websockets>=12.0
+google-genai>=0.3.0

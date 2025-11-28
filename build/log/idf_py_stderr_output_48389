@@ -1,0 +1,8 @@
+/Users/promex04/Desktop/guild/speech_recognition/wwe/LyratMini_RecordPlay/main/main_ws.c: In function 'websocket_stream_task':
+/Users/promex04/Desktop/guild/speech_recognition/wwe/LyratMini_RecordPlay/main/main_ws.c:310:26: error: implicit declaration of function 'esp_timer_get_time'; did you mean 'timer_gettime'? [-Wimplicit-function-declaration]
+  310 |     int64_t start_time = esp_timer_get_time();
+      |                          ^~~~~~~~~~~~~~~~~~
+      |                          timer_gettime
+make[2]: *** [esp-idf/main/CMakeFiles/__idf_main.dir/main_ws.c.obj] Error 1
+make[1]: *** [esp-idf/main/CMakeFiles/__idf_main.dir/all] Error 2
+make: *** [all] Error 2

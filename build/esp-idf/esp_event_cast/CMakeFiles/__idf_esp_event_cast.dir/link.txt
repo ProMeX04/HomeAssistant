@@ -1,0 +1,2 @@
+/Users/promex04/.espressif/tools/xtensa-esp-elf/esp-14.2.0_20250730/xtensa-esp-elf/bin/xtensa-esp32-elf-ar qc libesp_event_cast.a CMakeFiles/__idf_esp_event_cast.dir/esp_event_cast.c.obj
+/Users/promex04/.espressif/tools/xtensa-esp-elf/esp-14.2.0_20250730/xtensa-esp-elf/bin/xtensa-esp32-elf-ranlib libesp_event_cast.a

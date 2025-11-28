@@ -1,0 +1,36 @@
+esp-idf/espressif__zlib/CMakeFiles/__idf_espressif__zlib.dir/zlib/uncompr.c.obj: \
+ /Users/promex04/Desktop/guild/speech_recognition/wwe/LyratMini_RecordPlay/managed_components/espressif__zlib/zlib/uncompr.c \
+ /Users/promex04/Desktop/guild/speech_recognition/wwe/LyratMini_RecordPlay/managed_components/espressif__zlib/zlib/zlib.h \
+ /Users/promex04/Desktop/guild/speech_recognition/wwe/LyratMini_RecordPlay/managed_components/espressif__zlib/zlib/zconf.h \
+ /Users/promex04/.espressif/tools/xtensa-esp-elf/esp-14.2.0_20250730/xtensa-esp-elf/lib/gcc/xtensa-esp-elf/14.2.0/include/stddef.h \
+ /Users/promex04/.espressif/tools/xtensa-esp-elf/esp-14.2.0_20250730/xtensa-esp-elf/lib/gcc/xtensa-esp-elf/14.2.0/include/limits.h \
+ /Users/promex04/.espressif/tools/xtensa-esp-elf/esp-14.2.0_20250730/xtensa-esp-elf/lib/gcc/xtensa-esp-elf/14.2.0/include/syslimits.h \
+ /Users/promex04/.espressif/tools/xtensa-esp-elf/esp-14.2.0_20250730/xtensa-esp-elf/xtensa-esp-elf/include/limits.h \
+ /Users/promex04/.espressif/tools/xtensa-esp-elf/esp-14.2.0_20250730/xtensa-esp-elf/xtensa-esp-elf/include/newlib.h \
+ /Users/promex04/.espressif/tools/xtensa-esp-elf/esp-14.2.0_20250730/xtensa-esp-elf/xtensa-esp-elf/include/_newlib_version.h \
+ /Users/promex04/.espressif/tools/xtensa-esp-elf/esp-14.2.0_20250730/xtensa-esp-elf/xtensa-esp-elf/include/sys/cdefs.h \
+ /Users/promex04/.espressif/tools/xtensa-esp-elf/esp-14.2.0_20250730/xtensa-esp-elf/xtensa-esp-elf/include/machine/_default_types.h \
+ /Users/promex04/.espressif/tools/xtensa-esp-elf/esp-14.2.0_20250730/xtensa-esp-elf/xtensa-esp-elf/include/sys/features.h \
+ /Users/promex04/.espressif/tools/xtensa-esp-elf/esp-14.2.0_20250730/xtensa-esp-elf/xtensa-esp-elf/include/sys/syslimits.h \
+ /Users/promex04/.espressif/tools/xtensa-esp-elf/esp-14.2.0_20250730/xtensa-esp-elf/xtensa-esp-elf/include/sys/types.h \
+ /Users/promex04/.espressif/tools/xtensa-esp-elf/esp-14.2.0_20250730/xtensa-esp-elf/xtensa-esp-elf/include/_ansi.h \
+ /Users/promex04/.espressif/tools/xtensa-esp-elf/esp-14.2.0_20250730/xtensa-esp-elf/xtensa-esp-elf/include/sys/config.h \
+ /Users/promex04/.espressif/tools/xtensa-esp-elf/esp-14.2.0_20250730/xtensa-esp-elf/xtensa-esp-elf/include/machine/ieeefp.h \
+ /Users/promex04/.espressif/tools/xtensa-esp-elf/esp-14.2.0_20250730/xtensa-esp-elf/xtensa-esp-elf/include/machine/_types.h \
+ /Users/promex04/.espressif/tools/xtensa-esp-elf/esp-14.2.0_20250730/xtensa-esp-elf/xtensa-esp-elf/include/sys/_types.h \
+ /Users/promex04/.espressif/tools/xtensa-esp-elf/esp-14.2.0_20250730/xtensa-esp-elf/xtensa-esp-elf/include/sys/_stdint.h \
+ /Users/promex04/.espressif/tools/xtensa-esp-elf/esp-14.2.0_20250730/xtensa-esp-elf/xtensa-esp-elf/include/machine/endian.h \
+ /Users/promex04/.espressif/tools/xtensa-esp-elf/esp-14.2.0_20250730/xtensa-esp-elf/xtensa-esp-elf/include/machine/_endian.h \
+ /Users/promex04/esp/esp-idf/components/newlib/platform_include/sys/select.h \
+ /Users/promex04/.espressif/tools/xtensa-esp-elf/esp-14.2.0_20250730/xtensa-esp-elf/xtensa-esp-elf/include/sys/select.h \
+ /Users/promex04/.espressif/tools/xtensa-esp-elf/esp-14.2.0_20250730/xtensa-esp-elf/xtensa-esp-elf/include/sys/_sigset.h \
+ /Users/promex04/.espressif/tools/xtensa-esp-elf/esp-14.2.0_20250730/xtensa-esp-elf/xtensa-esp-elf/include/sys/_timeval.h \
+ /Users/promex04/.espressif/tools/xtensa-esp-elf/esp-14.2.0_20250730/xtensa-esp-elf/xtensa-esp-elf/include/sys/timespec.h \
+ /Users/promex04/.espressif/tools/xtensa-esp-elf/esp-14.2.0_20250730/xtensa-esp-elf/xtensa-esp-elf/include/sys/_timespec.h \
+ /Users/promex04/.espressif/tools/xtensa-esp-elf/esp-14.2.0_20250730/xtensa-esp-elf/xtensa-esp-elf/include/sys/_pthreadtypes.h \
+ /Users/promex04/.espressif/tools/xtensa-esp-elf/esp-14.2.0_20250730/xtensa-esp-elf/xtensa-esp-elf/include/sys/sched.h \
+ /Users/promex04/.espressif/tools/xtensa-esp-elf/esp-14.2.0_20250730/xtensa-esp-elf/xtensa-esp-elf/include/machine/types.h \
+ /Users/promex04/.espressif/tools/xtensa-esp-elf/esp-14.2.0_20250730/xtensa-esp-elf/lib/gcc/xtensa-esp-elf/14.2.0/include/stdarg.h \
+ /Users/promex04/.espressif/tools/xtensa-esp-elf/esp-14.2.0_20250730/xtensa-esp-elf/xtensa-esp-elf/include/unistd.h \
+ /Users/promex04/esp/esp-idf/components/newlib/platform_include/sys/unistd.h \
+ /Users/promex04/.espressif/tools/xtensa-esp-elf/esp-14.2.0_20250730/xtensa-esp-elf/xtensa-esp-elf/include/sys/unistd.h

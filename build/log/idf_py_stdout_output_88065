@@ -1,0 +1,174 @@
+[0;32mI (354) quad_psram: This chip is ESP32-D0WD[0m
+[0;32mI (355) esp_psram: Found 8MB PSRAM device[0m
+[0;32mI (355) esp_psram: Speed: 80MHz[0m
+[0;32mI (357) esp_psram: PSRAM initialized, cache is in low/high (2-core) mode.[0m
+[0;33mW (364) esp_psram: Virtual address not enough for PSRAM, map as much as we can. 4MB is mapped[0m
+[0;32mI (373) cpu_start: Multicore app[0m
+[0;32mI (867) esp_psram: SPI SRAM memory test OK[0m
+[0;32mI (875) cpu_start: Pro cpu start user code[0m
+[0;32mI (875) cpu_start: cpu freq: 240000000 Hz[0m
+[0;32mI (875) app_init: Application information:[0m
+[0;32mI (878) app_init: Project name:     lyrat_record_play[0m
+[0;32mI (883) app_init: App version:      1[0m
+[0;32mI (888) app_init: Compile time:     Nov 25 2025 19:38:18[0m
+[0;32mI (894) app_init: ELF file SHA256:  367ac41fc...[0m
+[0;32mI (899) app_init: ESP-IDF:          v5.4.3-357-gb8af6f5141-dirty[0m
+[0;32mI (906) efuse_init: Min chip rev:     v0.0[0m
+[0;32mI (910) efuse_init: Max chip rev:     v3.99 [0m
+[0;32mI (915) efuse_init: Chip rev:         v3.1[0m
+[0;32mI (920) heap_init: Initializing. RAM available for dynamic allocation:[0m
+[0;32mI (927) heap_init: At 3FFAE6E0 len 00001920 (6 KiB): DRAM[0m
+[0;32mI (933) heap_init: At 3FFBA480 len 00025B80 (150 KiB): DRAM[0m
+[0;32mI (940) heap_init: At 3FFE0440 len 00003AE0 (14 KiB): D/IRAM[0m
+[0;32mI (946) heap_init: At 3FFE4350 len 0001BCB0 (111 KiB): D/IRAM[0m
+[0;32mI (952) heap_init: At 400980EC len 00007F14 (31 KiB): IRAM[0m
+[0;32mI (959) esp_psram: Adding pool of 4096K of PSRAM memory to heap allocator[0m
+[0;32mI (967) spi_flash: detected chip: generic[0m
+[0;32mI (971) spi_flash: flash io: dio[0m
+[0;32mI (976) main_task: Started on CPU0[0m
+[0;32mI (979) esp_psram: Reserving pool of 32K of internal memory for DMA/internal allocations[0m
+[0;32mI (988) main_task: Calling app_main()[0m
+[0;32mI (1019) LYRAT_MINI_WWE: Connecting to WiFi...[0m
+[0;32mI (2555) LYRAT_MINI_WWE: Initializing Audio Board...[0m
+[0;33mW (2556) i2c_bus_v2: I2C master handle is NULL, will create new one[0m
+[0;32mI (2611) LYRAT_MINI_WWE: Initializing WakeNet...[0m
+
+/********** General AFE (Audio Front End) Parameter **********/
+pcm_config.total_ch_num: 2
+pcm_config.mic_num: 1: [ ch1 ]
+pcm_config.ref_num: 1: [ ch0 ]
+pcm_config.sample_rate: 16000
+afe_type: SR
+afe_mode: HIGH PERF
+afe_perferred_core: 0
+afe_perferred_priority: 5
+afe_ringbuf_size: 50
+memory_alloc_mode: 3
+afe_linear_gain: 0.0
+debug_init: false
+fixed_first_channel: false
+
+/********** AEC (Acoustic Echo Cancellation) **********/
+aec_init: true
+aec mode: SR_HIGH_PERF
+aec_filter_length: 4
+
+/********** SE (Speech Enhancement, Microphone Array Processing) **********/
+se_init: false, model: BSS
+
+/********** NS (Noise Suppression) **********/
+ns_init: false
+ns model name: WEBRTC
+
+/********** VAD (Voice Activity Detection) **********/
+vad_init: true
+vad_mode: 3
+vad_model_name: NULL
+vad_min_speech_ms: 128
+vad_min_noise_ms: 1000
+vad_delay_ms: 128
+vad_mute_playback: false
+vad_enable_channel_trigger: false
+
+/********** WakeNet (Wake Word Engine) **********/
+wakenet_init: true
+wakenet_model_name: wn9_jarvis_tts
+wakenet_model_name_2: NULL
+wakenet_mode: 0
+
+/********** AGC (Automatic Gain Control) **********/
+agc_init: false
+agc_mode: WEBRTC
+agc_compression_gain_db: 9
+agc_target_level_dbfs: 9
+
+/**************************************************/
+MC Quantized wakenet9: wakenet9l_tts1h8_Jarvis_3_0.627_0.632, tigger:v4, mode:0, p:0, (Aug 11 2025 15:20:26)
+[0;32mI (2928) LYRAT_MINI_WWE: System Ready. Say 'Jarvis'![0m
+[0;32mI (354) quad_psram: This chip is ESP32-D0WD[0m
+[0;32mI (355) esp_psram: Found 8MB PSRAM device[0m
+[0;32mI (355) esp_psram: Speed: 80MHz[0m
+[0;32mI (357) esp_psram: PSRAM initialized, cache is in low/high (2-core) mode.[0m
+[0;33mW (364) esp_psram: Virtual address not enough for PSRAM, map as much as we can. 4MB is mapped[0m
+[0;32mI (373) cpu_start: Multicore app[0m
+[0;32mI (867) esp_psram: SPI SRAM memory test OK[0m
+[0;32mI (875) cpu_start: Pro cpu start user code[0m
+[0;32mI (875) cpu_start: cpu freq: 240000000 Hz[0m
+[0;32mI (875) app_init: Application information:[0m
+[0;32mI (878) app_init: Project name:     lyrat_record_play[0m
+[0;32mI (883) app_init: App version:      1[0m
+[0;32mI (888) app_init: Compile time:     Nov 25 2025 19:38:18[0m
+[0;32mI (894) app_init: ELF file SHA256:  367ac41fc...[0m
+[0;32mI (899) app_init: ESP-IDF:          v5.4.3-357-gb8af6f5141-dirty[0m
+[0;32mI (906) efuse_init: Min chip rev:     v0.0[0m
+[0;32mI (910) efuse_init: Max chip rev:     v3.99 [0m
+[0;32mI (915) efuse_init: Chip rev:         v3.1[0m
+[0;32mI (920) heap_init: Initializing. RAM available for dynamic allocation:[0m
+[0;32mI (927) heap_init: At 3FFAE6E0 len 00001920 (6 KiB): DRAM[0m
+[0;32mI (933) heap_init: At 3FFBA480 len 00025B80 (150 KiB): DRAM[0m
+[0;32mI (940) heap_init: At 3FFE0440 len 00003AE0 (14 KiB): D/IRAM[0m
+[0;32mI (946) heap_init: At 3FFE4350 len 0001BCB0 (111 KiB): D/IRAM[0m
+[0;32mI (952) heap_init: At 400980EC len 00007F14 (31 KiB): IRAM[0m
+[0;32mI (959) esp_psram: Adding pool of 4096K of PSRAM memory to heap allocator[0m
+[0;32mI (967) spi_flash: detected chip: generic[0m
+[0;32mI (971) spi_flash: flash io: dio[0m
+[0;32mI (976) main_task: Started on CPU0[0m
+[0;32mI (979) esp_psram: Reserving pool of 32K of internal memory for DMA/internal allocations[0m
+[0;32mI (988) main_task: Calling app_main()[0m
+[0;32mI (1019) LYRAT_MINI_WWE: Connecting to WiFi...[0m
+[0;32mI (2494) LYRAT_MINI_WWE: Initializing Audio Board...[0m
+[0;33mW (2495) i2c_bus_v2: I2C master handle is NULL, will create new one[0m
+[0;32mI (2552) LYRAT_MINI_WWE: Initializing WakeNet...[0m
+
+/********** General AFE (Audio Front End) Parameter **********/
+pcm_config.total_ch_num: 2
+pcm_config.mic_num: 1: [ ch1 ]
+pcm_config.ref_num: 1: [ ch0 ]
+pcm_config.sample_rate: 16000
+afe_type: SR
+afe_mode: HIGH PERF
+afe_perferred_core: 0
+afe_perferred_priority: 5
+afe_ringbuf_size: 50
+memory_alloc_mode: 3
+afe_linear_gain: 0.0
+debug_init: false
+fixed_first_channel: false
+
+/********** AEC (Acoustic Echo Cancellation) **********/
+aec_init: true
+aec mode: SR_HIGH_PERF
+aec_filter_length: 4
+
+/********** SE (Speech Enhancement, Microphone Array Processing) **********/
+se_init: false, model: BSS
+
+/********** NS (Noise Suppression) **********/
+ns_init: false
+ns model name: WEBRTC
+
+/********** VAD (Voice Activity Detection) **********/
+vad_init: true
+vad_mode: 3
+vad_model_name: NULL
+vad_min_speech_ms: 128
+vad_min_noise_ms: 1000
+vad_delay_ms: 128
+vad_mute_playback: false
+vad_enable_channel_trigger: false
+
+/********** WakeNet (Wake Word Engine) **********/
+wakenet_init: true
+wakenet_model_name: wn9_jarvis_tts
+wakenet_model_name_2: NULL
+wakenet_mode: 0
+
+/********** AGC (Automatic Gain Control) **********/
+agc_init: false
+agc_mode: WEBRTC
+agc_compression_gain_db: 9
+agc_target_level_dbfs: 9
+
+/**************************************************/
+MC Quantized wakenet9: wakenet9l_tts1h8_Jarvis_3_0.627_0.632, tigger:v4, mode:0, p:0, (Aug 11 2025 15:20:26)
+[0;32mI (2868) LYRAT_MINI_WWE: System Ready. Say 'Jarvis'![0m

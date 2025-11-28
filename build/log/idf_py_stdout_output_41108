@@ -1,0 +1,268 @@
+[  0%] Built target sections.ld.in
+[  2%] Built target blank_ota_data
+[  2%] Built target srmodels_bin
+[  2%] Built target custom_bundle
+[  2%] Built target _project_elf_src
+[  2%] Built target partition_table_bin
+[  2%] Built target memory.ld
+[  2%] Performing build step for 'bootloader'
+[  3%] Built target __idf_esp_https_ota
+[  3%] Built target __idf_esp_http_server
+[  1%] Built target _project_elf_src
+[  5%] Built target __idf_log
+[  4%] Built target __idf_esp_http_client
+[ 13%] Built target __idf_esp_rom
+[  5%] Built target __idf_tcp_transport
+[ 15%] Built target __idf_esp_common
+[  5%] Built target __idf_esp_psram
+[ 25%] Built target __idf_esp_hw_support
+[  6%] Built target __idf_esp_adc
+[ 26%] Built target __idf_esp_system
+[  6%] Built target __idf_esp-tls
+[ 34%] Built target __idf_efuse
+[  6%] Built target __idf_http_parser
+[ 55%] Built target __idf_bootloader_support
+[  6%] Built target __idf_esp_gdbstub
+[ 56%] Built target __idf_esp_bootloader_format
+[  7%] Built target __idf_esp_wifi
+[  7%] Built target __idf_esp_coex
+[ 58%] Built target __idf_spi_flash
+[ 13%] Built target __idf_wpa_supplicant
+[ 65%] Built target __idf_hal
+[ 67%] Built target __idf_micro-ecc
+[ 14%] Built target __idf_esp_netif
+[ 91%] Built target __idf_soc
+[ 93%] Built target __idf_xtensa
+[ 21%] Built target __idf_lwip
+[ 95%] Built target __idf_main
+[ 21%] Built target __idf_vfs
+[ 98%] Built target bootloader.elf
+[ 21%] Built target __idf_esp_vfs_console
+[100%] Built target gen_project_binary
+[ 21%] Built target __idf_esp_phy
+Bootloader binary size 0x5d70 bytes. 0x1290 bytes (17%) free.
+[ 22%] Built target __idf_driver
+[100%] Built target bootloader_check_size
+[ 22%] Built target __idf_esp_driver_ledc
+[100%] Built target app
+[ 22%] No install step for 'bootloader'
+[ 23%] Built target __idf_esp_driver_i2c
+[ 23%] Completed 'bootloader'
+[ 23%] Built target __idf_esp_driver_sdm
+[ 23%] Built target bootloader
+[ 23%] Built target __idf_esp_driver_rmt
+[ 24%] Built target __idf_esp_driver_dac
+[ 24%] Built target __idf_esp_driver_sdio
+[ 24%] Built target __idf_esp_driver_sdspi
+[ 25%] Built target __idf_esp_driver_sdmmc
+[ 26%] Built target __idf_sdmmc
+[ 26%] Built target __idf_esp_driver_i2s
+[ 27%] Built target __idf_esp_driver_mcpwm
+[ 27%] Built target __idf_esp_driver_spi
+[ 27%] Built target __idf_esp_driver_pcnt
+[ 28%] Built target __idf_nvs_flash
+[ 29%] Built target __idf_esp_event
+[ 29%] Built target __idf_esp_driver_uart
+[ 29%] Built target __idf_esp_ringbuf
+[ 29%] Built target __idf_esp_driver_gptimer
+[ 29%] Built target __idf_esp_timer
+[ 29%] Built target __idf_cxx
+[ 30%] Built target __idf_pthread
+[ 31%] Built target __idf_newlib
+[ 32%] Built target __idf_freertos
+[ 35%] Built target __idf_esp_hw_support
+[ 35%] Built target __idf_esp_security
+[ 37%] Built target __idf_soc
+[ 38%] Built target __idf_heap
+[ 38%] Built target __idf_log
+[ 41%] Built target __idf_hal
+[ 42%] Built target __idf_esp_rom
+[ 43%] Built target __idf_esp_common
+[ 46%] Built target __idf_esp_system
+[ 47%] Built target __idf_spi_flash
+[ 47%] Built target __idf_esp_mm
+[ 48%] Built target __idf_bootloader_support
+[ 49%] Built target __idf_efuse
+[ 49%] Built target __idf_esp_partition
+[ 49%] Built target __idf_app_update
+[ 49%] Built target __idf_esp_bootloader_format
+[ 49%] Built target __idf_esp_app_format
+[ 50%] Built target mbedtls
+[ 51%] Built target mbedx509
+[ 58%] Built target mbedcrypto
+[ 58%] Built target p256m
+[ 59%] Built target everest
+[ 59%] Built target __idf_mbedtls
+[ 60%] Built target __idf_esp_pm
+[ 60%] Built target __idf_esp_driver_gpio
+[ 60%] Built target __idf_xtensa
+[ 61%] Built target __idf_app_trace
+[ 61%] Built target __idf_protobuf-c
+[ 61%] Built target __idf_esp_https_server
+[ 61%] Built target __idf_esp_driver_cam
+[ 61%] Built target __idf_audio_sal
+[ 61%] Built target __idf_esp_lcd
+[ 62%] Built target __idf_unity
+[ 63%] Built target __idf_wear_levelling
+[ 63%] Built target __idf_esp_hid
+[ 64%] Built target __idf_espcoredump
+[ 65%] Built target __idf_esp_eth
+[ 66%] Built target __idf_console
+[ 66%] Built target __idf_perfmon
+[ 66%] Built target __idf_nvs_sec_provider
+[ 67%] Built target __idf_json
+[ 68%] Built target __idf_mqtt
+[ 68%] Built target __idf_rt
+[ 69%] Built target __idf_espressif__dl_fft
+[ 69%] Built target __idf_espressif__esp_lcd_ili9341
+[ 69%] Built target __idf_esp_dispatcher
+[ 69%] Built target __idf_spiffs
+[ 70%] Built target __idf_espressif__zlib
+[ 72%] Built target __idf_espressif__nghttp
+[ 72%] Built target __idf_adf_utils
+[ 72%] Built target __idf_espressif__esp_websocket_client
+[ 72%] Built target __idf_esp_event_cast
+[ 73%] Built target __idf_esp_codec_dev
+[ 74%] Built target __idf_cmock
+[ 74%] Built target __idf_protocomm
+[ 80%] Built target __idf_coredump_upload_service
+[ 85%] Built target __idf_espressif__esp-dsp
+[ 86%] Built target __idf_fatfs
+[ 86%] Built target __idf_playlist
+[ 86%] Built target __idf_audio_pipeline
+[ 86%] Built target __idf_esp_coze
+[ 86%] Built target __idf_esp-sr
+[ 87%] Built target __idf_wifi_provisioning
+[ 87%] Built target __idf_esp_local_ctrl
+[ 89%] Built target __idf_esp-adf-libs
+[ 89%] Built target __idf_audio_mixer
+[ 90%] Built target __idf_audio_recorder
+[ 91%] Built target __idf_audio_hal
+[ 92%] Built target __idf_audio_board
+[ 94%] Built target __idf_esp_peripherals
+[ 95%] Built target __idf_display_service
+[ 95%] Built target __idf_input_key_service
+[ 95%] Built target __idf_battery_service
+[ 96%] Built target __idf_esp_actions
+[ 96%] Built target __idf_dueros_service
+[ 97%] Built target __idf_wifi_service
+[ 97%] Built target __idf_tone_partition
+[ 99%] Built target __idf_audio_stream
+[ 99%] Built target __idf_bluetooth_service
+[100%] Built target __idf_ota_service
+[100%] Built target __idf_main
+[100%] Built target __ldgen_output_sections.ld
+[100%] Built target lyrat_record_play.elf
+[100%] Built target gen_project_binary
+lyrat_record_play.bin binary size 0x132b50 bytes. Smallest app partition is 0x290000 bytes. 0x15d4b0 bytes (53%) free.
+[100%] Built target app_check_size
+[100%] Built target app
+esptool.py --chip esp32 -p /dev/cu.usbserial-3140 -b 460800 --before=default_reset --after=hard_reset write_flash --flash_mode dio --flash_freq 80m --flash_size 8MB 0x1000 bootloader/bootloader.bin 0x10000 lyrat_record_play.bin 0x8000 partition_table/partition-table.bin 0xd000 ota_data_initial.bin 0x2a0000 srmodels/srmodels.bin 0x4a0000 ../../tone/audio_tone.bin
+esptool.py v4.10.0
+Serial port /dev/cu.usbserial-3140
+Connecting....
+Chip is ESP32-D0WD-V3 (revision v3.1)
+Features: WiFi, BT, Dual Core, 240MHz, VRef calibration in efuse, Coding Scheme None
+Crystal is 40MHz
+MAC: d4:8c:49:a0:42:60
+Uploading stub...
+Running stub...
+Stub running...
+Changing baud rate to 460800
+Changed.
+Configuring flash size...
+Flash will be erased from 0x00001000 to 0x00006fff...
+Flash will be erased from 0x00010000 to 0x00142fff...
+Flash will be erased from 0x00008000 to 0x00008fff...
+Flash will be erased from 0x0000d000 to 0x0000efff...
+Flash will be erased from 0x002a0000 to 0x002e7fff...
+Flash will be erased from 0x004a0000 to 0x004a3fff...
+SHA digest in image updated
+Compressed 23920 bytes to 15249...
+Writing at 0x00001000... (100 %)
+Wrote 23920 bytes (15249 compressed) at 0x00001000 in 0.6 seconds (effective 329.2 kbit/s)...
+Hash of data verified.
+Compressed 1256272 bytes to 817593...
+Writing at 0x00010000... (2 %)
+Writing at 0x0001d7a5... (4 %)
+Writing at 0x0002b99b... (6 %)
+Writing at 0x000350f2... (8 %)
+Writing at 0x0003c9d9... (10 %)
+Writing at 0x00045920... (12 %)
+Writing at 0x0004e478... (14 %)
+Writing at 0x000542ac... (16 %)
+Writing at 0x00059872... (18 %)
+Writing at 0x0005ecd9... (20 %)
+Writing at 0x00064065... (22 %)
+Writing at 0x00069748... (24 %)
+Writing at 0x0006e755... (26 %)
+Writing at 0x00073a75... (28 %)
+Writing at 0x000793e5... (30 %)
+Writing at 0x0007e8ee... (32 %)
+Writing at 0x00084463... (34 %)
+Writing at 0x00089cee... (36 %)
+Writing at 0x0008f63a... (38 %)
+Writing at 0x0009526b... (40 %)
+Writing at 0x0009ad17... (42 %)
+Writing at 0x000a080e... (44 %)
+Writing at 0x000a62f8... (46 %)
+Writing at 0x000abdd0... (48 %)
+Writing at 0x000b180d... (50 %)
+Writing at 0x000b6cf2... (52 %)
+Writing at 0x000bc02b... (54 %)
+Writing at 0x000c1cb9... (56 %)
+Writing at 0x000c7795... (58 %)
+Writing at 0x000ccfad... (60 %)
+Writing at 0x000d29ac... (62 %)
+Writing at 0x000d8928... (64 %)
+Writing at 0x000de109... (66 %)
+Writing at 0x000e32e9... (68 %)
+Writing at 0x000e8862... (70 %)
+Writing at 0x000ede1b... (72 %)
+Writing at 0x000f30d1... (74 %)
+Writing at 0x000f829a... (76 %)
+Writing at 0x000fd6c9... (78 %)
+Writing at 0x001028f2... (80 %)
+Writing at 0x00107b97... (82 %)
+Writing at 0x0010d5b0... (84 %)
+Writing at 0x00113151... (86 %)
+Writing at 0x00119a50... (88 %)
+Writing at 0x00121a85... (90 %)
+Writing at 0x00127403... (92 %)
+Writing at 0x0012d432... (94 %)
+Writing at 0x00132b2d... (96 %)
+Writing at 0x001382e5... (98 %)
+Writing at 0x0013db38... (100 %)
+Wrote 1256272 bytes (817593 compressed) at 0x00010000 in 18.6 seconds (effective 540.0 kbit/s)...
+Hash of data verified.
+Compressed 3072 bytes to 151...
+Writing at 0x00008000... (100 %)
+Wrote 3072 bytes (151 compressed) at 0x00008000 in 0.0 seconds (effective 580.7 kbit/s)...
+Hash of data verified.
+Compressed 8192 bytes to 31...
+Writing at 0x0000d000... (100 %)
+Wrote 8192 bytes (31 compressed) at 0x0000d000 in 0.1 seconds (effective 1289.3 kbit/s)...
+Hash of data verified.
+Compressed 291168 bytes to 181444...
+Writing at 0x002a0000... (8 %)
+Writing at 0x002a4a20... (16 %)
+Writing at 0x002abe30... (25 %)
+Writing at 0x002b13c9... (33 %)
+Writing at 0x002b6272... (41 %)
+Writing at 0x002be8b3... (50 %)
+Writing at 0x002c4590... (58 %)
+Writing at 0x002c9962... (66 %)
+Writing at 0x002cf750... (75 %)
+Writing at 0x002d49eb... (83 %)
+Writing at 0x002dc6e0... (91 %)
+Writing at 0x002e5fd0... (100 %)
+Wrote 291168 bytes (181444 compressed) at 0x002a0000 in 4.3 seconds (effective 545.7 kbit/s)...
+Hash of data verified.
+Compressed 15312 bytes to 8876...
+Writing at 0x004a0000... (100 %)
+Wrote 15312 bytes (8876 compressed) at 0x004a0000 in 0.4 seconds (effective 349.5 kbit/s)...
+Hash of data verified.
+
+Leaving...
+Hard resetting via RTS pin...
+[100%] Built target flash

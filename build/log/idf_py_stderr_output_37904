@@ -1,0 +1,50 @@
+/Users/promex04/Desktop/guild/speech_recognition/wwe/LyratMini_RecordPlay/main/main_ws.c: In function 'periph_event_handler':
+/Users/promex04/Desktop/guild/speech_recognition/wwe/LyratMini_RecordPlay/main/main_ws.c:67:22: error: 'USER_KEY_VOL_UP' undeclared (first use in this function)
+   67 |                 case USER_KEY_VOL_UP:
+      |                      ^~~~~~~~~~~~~~~
+/Users/promex04/Desktop/guild/speech_recognition/wwe/LyratMini_RecordPlay/main/main_ws.c:67:22: note: each undeclared identifier is reported only once for each function it appears in
+/Users/promex04/Desktop/guild/speech_recognition/wwe/LyratMini_RecordPlay/main/main_ws.c:77:22: error: 'USER_KEY_VOL_DOWN' undeclared (first use in this function)
+   77 |                 case USER_KEY_VOL_DOWN:
+      |                      ^~~~~~~~~~~~~~~~~
+/Users/promex04/Desktop/guild/speech_recognition/wwe/LyratMini_RecordPlay/main/main_ws.c:87:22: error: 'USER_KEY_MODE' undeclared (first use in this function); did you mean 'USER_KEY_MAX'?
+   87 |                 case USER_KEY_MODE:
+      |                      ^~~~~~~~~~~~~
+      |                      USER_KEY_MAX
+/Users/promex04/Desktop/guild/speech_recognition/wwe/LyratMini_RecordPlay/main/main_ws.c:92:25: error: implicit declaration of function 'play_tone' [-Wimplicit-function-declaration]
+   92 |                         play_tone("flash://tone/0_dingdong.mp3");
+      |                         ^~~~~~~~~
+/Users/promex04/Desktop/guild/speech_recognition/wwe/LyratMini_RecordPlay/main/main_ws.c:108:22: error: 'USER_KEY_PLAY' undeclared (first use in this function); did you mean 'USER_KEY_MAX'?
+  108 |                 case USER_KEY_PLAY:
+      |                      ^~~~~~~~~~~~~
+      |                      USER_KEY_MAX
+/Users/promex04/Desktop/guild/speech_recognition/wwe/LyratMini_RecordPlay/main/main_ws.c:111:29: error: implicit declaration of function 'audio_pipeline_get_state'; did you mean 'audio_pipeline_change_state'? [-Wimplicit-function-declaration]
+  111 |                         if (audio_pipeline_get_state(pipeline_music) == AEL_STATE_RUNNING) {
+      |                             ^~~~~~~~~~~~~~~~~~~~~~~~
+      |                             audio_pipeline_change_state
+/Users/promex04/Desktop/guild/speech_recognition/wwe/LyratMini_RecordPlay/main/main_ws.c:119:22: error: 'USER_KEY_REC' undeclared (first use in this function); did you mean 'USER_KEY_MAX'?
+  119 |                 case USER_KEY_REC:
+      |                      ^~~~~~~~~~~~
+      |                      USER_KEY_MAX
+/Users/promex04/Desktop/guild/speech_recognition/wwe/LyratMini_RecordPlay/main/main_ws.c:124:37: error: 'websocket_stream_task' undeclared (first use in this function)
+  124 |                         xTaskCreate(websocket_stream_task, "ws_stream", STREAM_TASK_STACK_SIZE, NULL, STREAM_TASK_PRIORITY, &stream_task_handle);
+      |                                     ^~~~~~~~~~~~~~~~~~~~~
+/Users/promex04/Desktop/guild/speech_recognition/wwe/LyratMini_RecordPlay/main/main_ws.c:128:22: error: 'USER_KEY_SET' undeclared (first use in this function); did you mean 'USER_KEY_MAX'?
+  128 |                 case USER_KEY_SET:
+      |                      ^~~~~~~~~~~~
+      |                      USER_KEY_MAX
+/Users/promex04/Desktop/guild/speech_recognition/wwe/LyratMini_RecordPlay/main/main_ws.c: At top level:
+/Users/promex04/Desktop/guild/speech_recognition/wwe/LyratMini_RecordPlay/main/main_ws.c:252:13: warning: conflicting types for 'play_tone'; have 'void(const char *)'
+  252 | static void play_tone(const char *uri) {
+      |             ^~~~~~~~~
+/Users/promex04/Desktop/guild/speech_recognition/wwe/LyratMini_RecordPlay/main/main_ws.c:252:13: error: static declaration of 'play_tone' follows non-static declaration
+/Users/promex04/Desktop/guild/speech_recognition/wwe/LyratMini_RecordPlay/main/main_ws.c:92:25: note: previous implicit declaration of 'play_tone' with type 'void(const char *)'
+   92 |                         play_tone("flash://tone/0_dingdong.mp3");
+      |                         ^~~~~~~~~
+/Users/promex04/Desktop/guild/speech_recognition/wwe/LyratMini_RecordPlay/main/main_ws.c: In function 'app_main':
+/Users/promex04/Desktop/guild/speech_recognition/wwe/LyratMini_RecordPlay/main/main_ws.c:525:34: error: 'BSD_SD_CARD_OPEN_FILE_NUM' undeclared (first use in this function); did you mean 'SD_CARD_OPEN_FILE_NUM'?
+  525 |     audio_board_sdcard_init(set, BSD_SD_CARD_OPEN_FILE_NUM);
+      |                                  ^~~~~~~~~~~~~~~~~~~~~~~~~
+      |                                  SD_CARD_OPEN_FILE_NUM
+make[2]: *** [esp-idf/main/CMakeFiles/__idf_main.dir/main_ws.c.obj] Error 1
+make[1]: *** [esp-idf/main/CMakeFiles/__idf_main.dir/all] Error 2
+make: *** [all] Error 2

@@ -1,0 +1,2 @@
+/Users/promex04/.espressif/tools/xtensa-esp-elf/esp-14.2.0_20250730/xtensa-esp-elf/bin/xtensa-esp32-elf-ar qc libaudio_pipeline.a CMakeFiles/__idf_audio_pipeline.dir/audio_element.c.obj CMakeFiles/__idf_audio_pipeline.dir/audio_event_iface.c.obj CMakeFiles/__idf_audio_pipeline.dir/audio_pipeline.c.obj CMakeFiles/__idf_audio_pipeline.dir/ringbuf.c.obj
+/Users/promex04/.espressif/tools/xtensa-esp-elf/esp-14.2.0_20250730/xtensa-esp-elf/bin/xtensa-esp32-elf-ranlib libaudio_pipeline.a

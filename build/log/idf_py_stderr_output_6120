@@ -1,0 +1,13 @@
+/Users/promex04/Desktop/guild/speech_recognition/wwe/LyratMini_RecordPlay/main/main_ws.c: In function 'app_main':
+/Users/promex04/Desktop/guild/speech_recognition/wwe/LyratMini_RecordPlay/main/main_ws.c:134:56: error: '%s' directive output may be truncated writing up to 255 bytes into a region of size 248 [-Werror=format-truncation=]
+  134 |             snprintf(full_path, sizeof(full_path), "%s/%s", MP3_BASE_PATH, entry->d_name);
+      |                                                        ^~
+In function 'scan_mp3_files',
+    inlined from 'app_main' at /Users/promex04/Desktop/guild/speech_recognition/wwe/LyratMini_RecordPlay/main/main_ws.c:913:9:
+/Users/promex04/Desktop/guild/speech_recognition/wwe/LyratMini_RecordPlay/main/main_ws.c:134:13: note: 'snprintf' output between 9 and 264 bytes into a destination of size 256
+  134 |             snprintf(full_path, sizeof(full_path), "%s/%s", MP3_BASE_PATH, entry->d_name);
+      |             ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+cc1: some warnings being treated as errors
+make[2]: *** [esp-idf/main/CMakeFiles/__idf_main.dir/main_ws.c.obj] Error 1
+make[1]: *** [esp-idf/main/CMakeFiles/__idf_main.dir/all] Error 2
+make: *** [all] Error 2

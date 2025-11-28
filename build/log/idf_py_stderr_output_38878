@@ -1,0 +1,8 @@
+/Users/promex04/Desktop/guild/speech_recognition/wwe/LyratMini_RecordPlay/main/main_ws.c: In function 'periph_event_handler':
+/Users/promex04/Desktop/guild/speech_recognition/wwe/LyratMini_RecordPlay/main/main_ws.c:123:29: error: implicit declaration of function 'audio_pipeline_get_state'; did you mean 'audio_pipeline_change_state'? [-Wimplicit-function-declaration]
+  123 |                         if (audio_pipeline_get_state(pipeline_music) == AEL_STATE_RUNNING) {
+      |                             ^~~~~~~~~~~~~~~~~~~~~~~~
+      |                             audio_pipeline_change_state
+make[2]: *** [esp-idf/main/CMakeFiles/__idf_main.dir/main_ws.c.obj] Error 1
+make[1]: *** [esp-idf/main/CMakeFiles/__idf_main.dir/all] Error 2
+make: *** [all] Error 2

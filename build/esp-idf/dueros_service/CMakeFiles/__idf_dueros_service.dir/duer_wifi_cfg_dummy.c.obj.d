@@ -1,0 +1,29 @@
+esp-idf/dueros_service/CMakeFiles/__idf_dueros_service.dir/duer_wifi_cfg_dummy.c.obj: \
+ /Users/promex04/esp/esp-adf/components/dueros_service/duer_wifi_cfg_dummy.c \
+ /Users/promex04/esp/esp-adf/components/dueros_service/duer_wifi_cfg_if.h \
+ /Users/promex04/esp/esp-idf/components/esp_common/include/esp_types.h \
+ /Users/promex04/.espressif/tools/xtensa-esp-elf/esp-14.2.0_20250730/xtensa-esp-elf/xtensa-esp-elf/include/sys/cdefs.h \
+ /Users/promex04/.espressif/tools/xtensa-esp-elf/esp-14.2.0_20250730/xtensa-esp-elf/xtensa-esp-elf/include/machine/_default_types.h \
+ /Users/promex04/.espressif/tools/xtensa-esp-elf/esp-14.2.0_20250730/xtensa-esp-elf/xtensa-esp-elf/include/sys/features.h \
+ /Users/promex04/.espressif/tools/xtensa-esp-elf/esp-14.2.0_20250730/xtensa-esp-elf/xtensa-esp-elf/include/_newlib_version.h \
+ /Users/promex04/.espressif/tools/xtensa-esp-elf/esp-14.2.0_20250730/xtensa-esp-elf/lib/gcc/xtensa-esp-elf/14.2.0/include/stddef.h \
+ /Users/promex04/.espressif/tools/xtensa-esp-elf/esp-14.2.0_20250730/xtensa-esp-elf/lib/gcc/xtensa-esp-elf/14.2.0/include/stdint.h \
+ /Users/promex04/.espressif/tools/xtensa-esp-elf/esp-14.2.0_20250730/xtensa-esp-elf/xtensa-esp-elf/include/stdint.h \
+ /Users/promex04/.espressif/tools/xtensa-esp-elf/esp-14.2.0_20250730/xtensa-esp-elf/xtensa-esp-elf/include/sys/_intsup.h \
+ /Users/promex04/.espressif/tools/xtensa-esp-elf/esp-14.2.0_20250730/xtensa-esp-elf/xtensa-esp-elf/include/sys/_stdint.h \
+ /Users/promex04/.espressif/tools/xtensa-esp-elf/esp-14.2.0_20250730/xtensa-esp-elf/lib/gcc/xtensa-esp-elf/14.2.0/include/stdbool.h \
+ /Users/promex04/esp/esp-idf/components/log/include/esp_log.h \
+ /Users/promex04/.espressif/tools/xtensa-esp-elf/esp-14.2.0_20250730/xtensa-esp-elf/lib/gcc/xtensa-esp-elf/14.2.0/include/stdarg.h \
+ /Users/promex04/.espressif/tools/xtensa-esp-elf/esp-14.2.0_20250730/xtensa-esp-elf/xtensa-esp-elf/include/inttypes.h \
+ /Users/promex04/.espressif/tools/xtensa-esp-elf/esp-14.2.0_20250730/xtensa-esp-elf/xtensa-esp-elf/include/newlib.h \
+ /Users/promex04/.espressif/tools/xtensa-esp-elf/esp-14.2.0_20250730/xtensa-esp-elf/xtensa-esp-elf/include/sys/config.h \
+ /Users/promex04/.espressif/tools/xtensa-esp-elf/esp-14.2.0_20250730/xtensa-esp-elf/xtensa-esp-elf/include/machine/ieeefp.h \
+ /Users/promex04/.espressif/tools/xtensa-esp-elf/esp-14.2.0_20250730/xtensa-esp-elf/xtensa-esp-elf/include/_ansi.h \
+ /Users/promex04/.espressif/tools/xtensa-esp-elf/esp-14.2.0_20250730/xtensa-esp-elf/xtensa-esp-elf/include/sys/_locale.h \
+ /Users/promex04/Desktop/guild/speech_recognition/wwe/LyratMini_RecordPlay/build/config/sdkconfig.h \
+ /Users/promex04/esp/esp-idf/components/esp_rom/include/esp_rom_sys.h \
+ /Users/promex04/esp/esp-idf/components/soc/esp32/include/soc/reset_reasons.h \
+ /Users/promex04/esp/esp-idf/components/log/include/esp_log_level.h \
+ /Users/promex04/esp/esp-idf/components/log/include/esp_log_color.h \
+ /Users/promex04/esp/esp-idf/components/log/include/esp_log_buffer.h \
+ /Users/promex04/esp/esp-idf/components/log/include/esp_log_timestamp.h

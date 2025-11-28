@@ -1,0 +1,11 @@
+file(REMOVE_RECURSE
+  "config/sdkconfig.h"
+  "config/sdkconfig.cmake"
+  "bootloader/bootloader.elf"
+  "bootloader/bootloader.bin"
+  "bootloader/bootloader.map"
+  "lyrat_record_play.bin"
+  "flash_project_args"
+  "lyrat_record_play.map"
+  "project_elf_src_esp32.c"
+)

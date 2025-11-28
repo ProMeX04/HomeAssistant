@@ -1,0 +1,31 @@
+/Users/promex04/Desktop/guild/speech_recognition/wwe/LyratMini_RecordPlay/main/main_ws.c: In function 'websocket_event_handler':
+/Users/promex04/Desktop/guild/speech_recognition/wwe/LyratMini_RecordPlay/main/main_ws.c:247:29: error: 'websocket_stream_task' undeclared (first use in this function)
+  247 |                 xTaskCreate(websocket_stream_task, "ws_stream", 4096, NULL, 5, &stream_task_handle);
+      |                             ^~~~~~~~~~~~~~~~~~~~~
+/Users/promex04/Desktop/guild/speech_recognition/wwe/LyratMini_RecordPlay/main/main_ws.c:247:29: note: each undeclared identifier is reported only once for each function it appears in
+/Users/promex04/Desktop/guild/speech_recognition/wwe/LyratMini_RecordPlay/main/main_ws.c: In function 'websocket_stream_task':
+/Users/promex04/Desktop/guild/speech_recognition/wwe/LyratMini_RecordPlay/main/main_ws.c:376:58: error: 'read_len' undeclared (first use in this function)
+  376 |     if (esp_websocket_client_send_bin(ws_client, buffer, read_len, pdMS_TO_TICKS(WS_SEND_TIMEOUT_MS)) < 0) {
+      |                                                          ^~~~~~~~
+/Users/promex04/Desktop/guild/speech_recognition/wwe/LyratMini_RecordPlay/main/main_ws.c:388:13: error: 'total_sent' undeclared (first use in this function)
+  388 |             total_sent += read_len;
+      |             ^~~~~~~~~~
+/Users/promex04/Desktop/guild/speech_recognition/wwe/LyratMini_RecordPlay/main/main_ws.c:422:12: error: invalid storage class for function 'input_cb_for_afe'
+  422 | static int input_cb_for_afe(int16_t *buffer, int buf_sz, void *user_ctx, TickType_t ticks) {
+      |            ^~~~~~~~~~~~~~~~
+/Users/promex04/Desktop/guild/speech_recognition/wwe/LyratMini_RecordPlay/main/main_ws.c:432:18: error: invalid storage class for function 'recorder_event_cb'
+  432 | static esp_err_t recorder_event_cb(audio_rec_evt_t *event, void *user_data) {
+      |                  ^~~~~~~~~~~~~~~~~
+/Users/promex04/Desktop/guild/speech_recognition/wwe/LyratMini_RecordPlay/main/main_ws.c:584:1: error: expected declaration or statement at end of input
+  584 | }
+      | ^
+/Users/promex04/Desktop/guild/speech_recognition/wwe/LyratMini_RecordPlay/main/main_ws.c: At top level:
+/Users/promex04/Desktop/guild/speech_recognition/wwe/LyratMini_RecordPlay/main/main_ws.c:452:6: warning: 'app_main' defined but not used [-Wunused-function]
+  452 | void app_main(void) {
+      |      ^~~~~~~~
+/Users/promex04/Desktop/guild/speech_recognition/wwe/LyratMini_RecordPlay/main/main_ws.c:76:14: warning: 'calculate_rms' defined but not used [-Wunused-function]
+   76 | static float calculate_rms(int16_t *buffer, int len) {
+      |              ^~~~~~~~~~~~~
+make[2]: *** [esp-idf/main/CMakeFiles/__idf_main.dir/main_ws.c.obj] Error 1
+make[1]: *** [esp-idf/main/CMakeFiles/__idf_main.dir/all] Error 2
+make: *** [all] Error 2

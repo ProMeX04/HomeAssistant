@@ -1,0 +1,2 @@
+/Users/promex04/.espressif/tools/xtensa-esp-elf/esp-14.2.0_20250730/xtensa-esp-elf/bin/xtensa-esp32-elf-ar qc libespressif__esp_lcd_ili9341.a CMakeFiles/__idf_espressif__esp_lcd_ili9341.dir/esp_lcd_ili9341.c.obj
+/Users/promex04/.espressif/tools/xtensa-esp-elf/esp-14.2.0_20250730/xtensa-esp-elf/bin/xtensa-esp32-elf-ranlib libespressif__esp_lcd_ili9341.a

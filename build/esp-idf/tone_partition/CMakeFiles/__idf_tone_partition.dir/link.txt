@@ -1,0 +1,2 @@
+/Users/promex04/.espressif/tools/xtensa-esp-elf/esp-14.2.0_20250730/xtensa-esp-elf/bin/xtensa-esp32-elf-ar qc libtone_partition.a CMakeFiles/__idf_tone_partition.dir/tone_partition.c.obj
+/Users/promex04/.espressif/tools/xtensa-esp-elf/esp-14.2.0_20250730/xtensa-esp-elf/bin/xtensa-esp32-elf-ranlib libtone_partition.a

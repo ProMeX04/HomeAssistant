@@ -1,0 +1,10 @@
+/Users/promex04/Desktop/guild/speech_recognition/wwe/LyratMini_RecordPlay/main/main.c: In function 'http_stream_task':
+/Users/promex04/Desktop/guild/speech_recognition/wwe/LyratMini_RecordPlay/main/main.c:278:9: error: redefinition of 'content_length'
+  278 |     int content_length = esp_http_client_fetch_headers(client);
+      |         ^~~~~~~~~~~~~~
+/Users/promex04/Desktop/guild/speech_recognition/wwe/LyratMini_RecordPlay/main/main.c:237:9: note: previous definition of 'content_length' with type 'int'
+  237 |     int content_length = sizeof(wav_header_t) + total_data_bytes;
+      |         ^~~~~~~~~~~~~~
+make[2]: *** [esp-idf/main/CMakeFiles/__idf_main.dir/main.c.obj] Error 1
+make[1]: *** [esp-idf/main/CMakeFiles/__idf_main.dir/all] Error 2
+make: *** [all] Error 2

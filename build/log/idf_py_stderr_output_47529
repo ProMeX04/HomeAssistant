@@ -1,0 +1,19 @@
+/Users/promex04/Desktop/guild/speech_recognition/wwe/LyratMini_RecordPlay/main/main_ws.c: In function 'app_main':
+/Users/promex04/Desktop/guild/speech_recognition/wwe/LyratMini_RecordPlay/main/main_ws.c:388:16: error: 'WEBSOCKET_URI' undeclared (first use in this function); did you mean 'WEBSOCKET_EVENTS'?
+  388 |         .uri = WEBSOCKET_URI,
+      |                ^~~~~~~~~~~~~
+      |                WEBSOCKET_EVENTS
+/Users/promex04/Desktop/guild/speech_recognition/wwe/LyratMini_RecordPlay/main/main_ws.c:388:16: note: each undeclared identifier is reported only once for each function it appears in
+/Users/promex04/Desktop/guild/speech_recognition/wwe/LyratMini_RecordPlay/main/main_ws.c:391:10: error: 'esp_websocket_client_config_t' has no member named 'ping_interval'; did you mean 'ping_interval_sec'?
+  391 |         .ping_interval = 10,
+      |          ^~~~~~~~~~~~~
+      |          ping_interval_sec
+/Users/promex04/Desktop/guild/speech_recognition/wwe/LyratMini_RecordPlay/main/main_ws.c:392:10: error: 'esp_websocket_client_config_t' has no member named 'ping_response_timeout'
+  392 |         .ping_response_timeout = 10,
+      |          ^~~~~~~~~~~~~~~~~~~~~
+/Users/promex04/Desktop/guild/speech_recognition/wwe/LyratMini_RecordPlay/main/main_ws.c:393:10: error: 'esp_websocket_client_config_t' has no member named 'auto_reconnect'
+  393 |         .auto_reconnect = true,
+      |          ^~~~~~~~~~~~~~
+make[2]: *** [esp-idf/main/CMakeFiles/__idf_main.dir/main_ws.c.obj] Error 1
+make[1]: *** [esp-idf/main/CMakeFiles/__idf_main.dir/all] Error 2
+make: *** [all] Error 2

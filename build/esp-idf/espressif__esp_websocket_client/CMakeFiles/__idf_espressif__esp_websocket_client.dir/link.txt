@@ -1,0 +1,2 @@
+/Users/promex04/.espressif/tools/xtensa-esp-elf/esp-14.2.0_20250730/xtensa-esp-elf/bin/xtensa-esp32-elf-ar qc libespressif__esp_websocket_client.a CMakeFiles/__idf_espressif__esp_websocket_client.dir/esp_websocket_client.c.obj
+/Users/promex04/.espressif/tools/xtensa-esp-elf/esp-14.2.0_20250730/xtensa-esp-elf/bin/xtensa-esp32-elf-ranlib libespressif__esp_websocket_client.a

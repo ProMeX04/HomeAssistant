@@ -1,0 +1,21 @@
+[  0%] Built target _project_elf_src
+[  0%] Built target partition_table_bin
+[  0%] Built target sections.ld.in
+[  1%] Built target srmodels_bin
+[  2%] Built target blank_ota_data
+[  2%] Built target memory.ld
+[  2%] Built target custom_bundle
+[  2%] Performing build step for 'bootloader'
+[  3%] Built target __idf_esp_https_ota
+[  3%] Built target __idf_esp_http_server
+[  1%] Built target _project_elf_src
+[  5%] Built target __idf_log
+[  4%] Built target __idf_esp_http_client
+[ 13%] Built target __idf_esp_rom
+[  5%] Built target __idf_tcp_transport
+[ 15%] Built target __idf_esp_common
+[  5%] Built target __idf_esp_psram
+[ 25%] Built target __idf_esp_hw_support
+[  6%] Built target __idf_esp_adc
+[ 26%] Built target __idf_esp_system
+[  6%] Built target __idf_esp-tls
