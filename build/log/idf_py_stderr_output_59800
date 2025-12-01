@@ -1,8 +1,0 @@
-/Users/promex04/Desktop/guild/speech_recognition/wwe/LyratMini_RecordPlay/main/main_ws.c: In function 'mp3_playback_task':
-/Users/promex04/Desktop/guild/speech_recognition/wwe/LyratMini_RecordPlay/main/main_ws.c:191:5: error: implicit declaration of function 'raw_stream_set_tick'; did you mean 'i2s_stream_set_clk'? [-Wimplicit-function-declaration]
-  191 |     raw_stream_set_tick(raw_reader, 0); // Mark end of stream
-      |     ^~~~~~~~~~~~~~~~~~~
-      |     i2s_stream_set_clk
-make[2]: *** [esp-idf/main/CMakeFiles/__idf_main.dir/main_ws.c.obj] Error 1
-make[1]: *** [esp-idf/main/CMakeFiles/__idf_main.dir/all] Error 2
-make: *** [all] Error 2

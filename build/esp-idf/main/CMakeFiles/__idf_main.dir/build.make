@@ -100,19 +100,35 @@ esp-idf/main/CMakeFiles/__idf_main.dir/wifi_helper.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling C source to assembly CMakeFiles/__idf_main.dir/wifi_helper.c.s"
 	cd /Users/promex04/Desktop/guild/speech_recognition/wwe/LyratMini_RecordPlay/build/esp-idf/main && /Users/promex04/.espressif/tools/xtensa-esp-elf/esp-14.2.0_20250730/xtensa-esp-elf/bin/xtensa-esp32-elf-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /Users/promex04/Desktop/guild/speech_recognition/wwe/LyratMini_RecordPlay/main/wifi_helper.c -o CMakeFiles/__idf_main.dir/wifi_helper.c.s
 
+esp-idf/main/CMakeFiles/__idf_main.dir/settings.c.obj: esp-idf/main/CMakeFiles/__idf_main.dir/flags.make
+esp-idf/main/CMakeFiles/__idf_main.dir/settings.c.obj: /Users/promex04/Desktop/guild/speech_recognition/wwe/LyratMini_RecordPlay/main/settings.c
+esp-idf/main/CMakeFiles/__idf_main.dir/settings.c.obj: esp-idf/main/CMakeFiles/__idf_main.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/Users/promex04/Desktop/guild/speech_recognition/wwe/LyratMini_RecordPlay/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building C object esp-idf/main/CMakeFiles/__idf_main.dir/settings.c.obj"
+	cd /Users/promex04/Desktop/guild/speech_recognition/wwe/LyratMini_RecordPlay/build/esp-idf/main && /Users/promex04/.espressif/tools/xtensa-esp-elf/esp-14.2.0_20250730/xtensa-esp-elf/bin/xtensa-esp32-elf-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT esp-idf/main/CMakeFiles/__idf_main.dir/settings.c.obj -MF CMakeFiles/__idf_main.dir/settings.c.obj.d -o CMakeFiles/__idf_main.dir/settings.c.obj -c /Users/promex04/Desktop/guild/speech_recognition/wwe/LyratMini_RecordPlay/main/settings.c
+
+esp-idf/main/CMakeFiles/__idf_main.dir/settings.c.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing C source to CMakeFiles/__idf_main.dir/settings.c.i"
+	cd /Users/promex04/Desktop/guild/speech_recognition/wwe/LyratMini_RecordPlay/build/esp-idf/main && /Users/promex04/.espressif/tools/xtensa-esp-elf/esp-14.2.0_20250730/xtensa-esp-elf/bin/xtensa-esp32-elf-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /Users/promex04/Desktop/guild/speech_recognition/wwe/LyratMini_RecordPlay/main/settings.c > CMakeFiles/__idf_main.dir/settings.c.i
+
+esp-idf/main/CMakeFiles/__idf_main.dir/settings.c.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling C source to assembly CMakeFiles/__idf_main.dir/settings.c.s"
+	cd /Users/promex04/Desktop/guild/speech_recognition/wwe/LyratMini_RecordPlay/build/esp-idf/main && /Users/promex04/.espressif/tools/xtensa-esp-elf/esp-14.2.0_20250730/xtensa-esp-elf/bin/xtensa-esp32-elf-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /Users/promex04/Desktop/guild/speech_recognition/wwe/LyratMini_RecordPlay/main/settings.c -o CMakeFiles/__idf_main.dir/settings.c.s
+
 # Object files for target __idf_main
 __idf_main_OBJECTS = \
 "CMakeFiles/__idf_main.dir/main_ws.c.obj" \
-"CMakeFiles/__idf_main.dir/wifi_helper.c.obj"
+"CMakeFiles/__idf_main.dir/wifi_helper.c.obj" \
+"CMakeFiles/__idf_main.dir/settings.c.obj"
 
 # External object files for target __idf_main
 __idf_main_EXTERNAL_OBJECTS =
 
 esp-idf/main/libmain.a: esp-idf/main/CMakeFiles/__idf_main.dir/main_ws.c.obj
 esp-idf/main/libmain.a: esp-idf/main/CMakeFiles/__idf_main.dir/wifi_helper.c.obj
+esp-idf/main/libmain.a: esp-idf/main/CMakeFiles/__idf_main.dir/settings.c.obj
 esp-idf/main/libmain.a: esp-idf/main/CMakeFiles/__idf_main.dir/build.make
 esp-idf/main/libmain.a: esp-idf/main/CMakeFiles/__idf_main.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --bold --progress-dir=/Users/promex04/Desktop/guild/speech_recognition/wwe/LyratMini_RecordPlay/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Linking C static library libmain.a"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --bold --progress-dir=/Users/promex04/Desktop/guild/speech_recognition/wwe/LyratMini_RecordPlay/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Linking C static library libmain.a"
 	cd /Users/promex04/Desktop/guild/speech_recognition/wwe/LyratMini_RecordPlay/build/esp-idf/main && $(CMAKE_COMMAND) -P CMakeFiles/__idf_main.dir/cmake_clean_target.cmake
 	cd /Users/promex04/Desktop/guild/speech_recognition/wwe/LyratMini_RecordPlay/build/esp-idf/main && $(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/__idf_main.dir/link.txt --verbose=$(VERBOSE)
 

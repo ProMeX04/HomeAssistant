@@ -549,7 +549,52 @@ endif()
 
 if(NOT CMAKE_INSTALL_LOCAL_ONLY)
   # Include the install script for the subdirectory.
+  include("/Users/promex04/Desktop/guild/speech_recognition/wwe/LyratMini_RecordPlay/build/esp-idf/espressif__dl_fft/cmake_install.cmake")
+endif()
+
+if(NOT CMAKE_INSTALL_LOCAL_ONLY)
+  # Include the install script for the subdirectory.
+  include("/Users/promex04/Desktop/guild/speech_recognition/wwe/LyratMini_RecordPlay/build/esp-idf/espressif__esp-dsp/cmake_install.cmake")
+endif()
+
+if(NOT CMAKE_INSTALL_LOCAL_ONLY)
+  # Include the install script for the subdirectory.
+  include("/Users/promex04/Desktop/guild/speech_recognition/wwe/LyratMini_RecordPlay/build/esp-idf/esp-sr/cmake_install.cmake")
+endif()
+
+if(NOT CMAKE_INSTALL_LOCAL_ONLY)
+  # Include the install script for the subdirectory.
+  include("/Users/promex04/Desktop/guild/speech_recognition/wwe/LyratMini_RecordPlay/build/esp-idf/main/cmake_install.cmake")
+endif()
+
+if(NOT CMAKE_INSTALL_LOCAL_ONLY)
+  # Include the install script for the subdirectory.
+  include("/Users/promex04/Desktop/guild/speech_recognition/wwe/LyratMini_RecordPlay/build/esp-idf/espressif__jsmn/cmake_install.cmake")
+endif()
+
+if(NOT CMAKE_INSTALL_LOCAL_ONLY)
+  # Include the install script for the subdirectory.
   include("/Users/promex04/Desktop/guild/speech_recognition/wwe/LyratMini_RecordPlay/build/esp-idf/audio_sal/cmake_install.cmake")
+endif()
+
+if(NOT CMAKE_INSTALL_LOCAL_ONLY)
+  # Include the install script for the subdirectory.
+  include("/Users/promex04/Desktop/guild/speech_recognition/wwe/LyratMini_RecordPlay/build/esp-idf/adf_utils/cmake_install.cmake")
+endif()
+
+if(NOT CMAKE_INSTALL_LOCAL_ONLY)
+  # Include the install script for the subdirectory.
+  include("/Users/promex04/Desktop/guild/speech_recognition/wwe/LyratMini_RecordPlay/build/esp-idf/display_service/cmake_install.cmake")
+endif()
+
+if(NOT CMAKE_INSTALL_LOCAL_ONLY)
+  # Include the install script for the subdirectory.
+  include("/Users/promex04/Desktop/guild/speech_recognition/wwe/LyratMini_RecordPlay/build/esp-idf/esp_dispatcher/cmake_install.cmake")
+endif()
+
+if(NOT CMAKE_INSTALL_LOCAL_ONLY)
+  # Include the install script for the subdirectory.
+  include("/Users/promex04/Desktop/guild/speech_recognition/wwe/LyratMini_RecordPlay/build/esp-idf/audio_hal/cmake_install.cmake")
 endif()
 
 if(NOT CMAKE_INSTALL_LOCAL_ONLY)
@@ -565,16 +610,6 @@ endif()
 if(NOT CMAKE_INSTALL_LOCAL_ONLY)
   # Include the install script for the subdirectory.
   include("/Users/promex04/Desktop/guild/speech_recognition/wwe/LyratMini_RecordPlay/build/esp-idf/audio_pipeline/cmake_install.cmake")
-endif()
-
-if(NOT CMAKE_INSTALL_LOCAL_ONLY)
-  # Include the install script for the subdirectory.
-  include("/Users/promex04/Desktop/guild/speech_recognition/wwe/LyratMini_RecordPlay/build/esp-idf/display_service/cmake_install.cmake")
-endif()
-
-if(NOT CMAKE_INSTALL_LOCAL_ONLY)
-  # Include the install script for the subdirectory.
-  include("/Users/promex04/Desktop/guild/speech_recognition/wwe/LyratMini_RecordPlay/build/esp-idf/esp_dispatcher/cmake_install.cmake")
 endif()
 
 if(NOT CMAKE_INSTALL_LOCAL_ONLY)
@@ -599,7 +634,12 @@ endif()
 
 if(NOT CMAKE_INSTALL_LOCAL_ONLY)
   # Include the install script for the subdirectory.
-  include("/Users/promex04/Desktop/guild/speech_recognition/wwe/LyratMini_RecordPlay/build/esp-idf/audio_hal/cmake_install.cmake")
+  include("/Users/promex04/Desktop/guild/speech_recognition/wwe/LyratMini_RecordPlay/build/esp-idf/audio_mixer/cmake_install.cmake")
+endif()
+
+if(NOT CMAKE_INSTALL_LOCAL_ONLY)
+  # Include the install script for the subdirectory.
+  include("/Users/promex04/Desktop/guild/speech_recognition/wwe/LyratMini_RecordPlay/build/esp-idf/audio_recorder/cmake_install.cmake")
 endif()
 
 if(NOT CMAKE_INSTALL_LOCAL_ONLY)
@@ -615,26 +655,6 @@ endif()
 if(NOT CMAKE_INSTALL_LOCAL_ONLY)
   # Include the install script for the subdirectory.
   include("/Users/promex04/Desktop/guild/speech_recognition/wwe/LyratMini_RecordPlay/build/esp-idf/clouds/cmake_install.cmake")
-endif()
-
-if(NOT CMAKE_INSTALL_LOCAL_ONLY)
-  # Include the install script for the subdirectory.
-  include("/Users/promex04/Desktop/guild/speech_recognition/wwe/LyratMini_RecordPlay/build/esp-idf/espressif__dl_fft/cmake_install.cmake")
-endif()
-
-if(NOT CMAKE_INSTALL_LOCAL_ONLY)
-  # Include the install script for the subdirectory.
-  include("/Users/promex04/Desktop/guild/speech_recognition/wwe/LyratMini_RecordPlay/build/esp-idf/espressif__esp-dsp/cmake_install.cmake")
-endif()
-
-if(NOT CMAKE_INSTALL_LOCAL_ONLY)
-  # Include the install script for the subdirectory.
-  include("/Users/promex04/Desktop/guild/speech_recognition/wwe/LyratMini_RecordPlay/build/esp-idf/esp-sr/cmake_install.cmake")
-endif()
-
-if(NOT CMAKE_INSTALL_LOCAL_ONLY)
-  # Include the install script for the subdirectory.
-  include("/Users/promex04/Desktop/guild/speech_recognition/wwe/LyratMini_RecordPlay/build/esp-idf/audio_recorder/cmake_install.cmake")
 endif()
 
 if(NOT CMAKE_INSTALL_LOCAL_ONLY)
@@ -659,36 +679,6 @@ endif()
 
 if(NOT CMAKE_INSTALL_LOCAL_ONLY)
   # Include the install script for the subdirectory.
-  include("/Users/promex04/Desktop/guild/speech_recognition/wwe/LyratMini_RecordPlay/build/esp-idf/espressif__esp_websocket_client/cmake_install.cmake")
-endif()
-
-if(NOT CMAKE_INSTALL_LOCAL_ONLY)
-  # Include the install script for the subdirectory.
-  include("/Users/promex04/Desktop/guild/speech_recognition/wwe/LyratMini_RecordPlay/build/esp-idf/input_key_service/cmake_install.cmake")
-endif()
-
-if(NOT CMAKE_INSTALL_LOCAL_ONLY)
-  # Include the install script for the subdirectory.
-  include("/Users/promex04/Desktop/guild/speech_recognition/wwe/LyratMini_RecordPlay/build/esp-idf/main/cmake_install.cmake")
-endif()
-
-if(NOT CMAKE_INSTALL_LOCAL_ONLY)
-  # Include the install script for the subdirectory.
-  include("/Users/promex04/Desktop/guild/speech_recognition/wwe/LyratMini_RecordPlay/build/esp-idf/espressif__jsmn/cmake_install.cmake")
-endif()
-
-if(NOT CMAKE_INSTALL_LOCAL_ONLY)
-  # Include the install script for the subdirectory.
-  include("/Users/promex04/Desktop/guild/speech_recognition/wwe/LyratMini_RecordPlay/build/esp-idf/adf_utils/cmake_install.cmake")
-endif()
-
-if(NOT CMAKE_INSTALL_LOCAL_ONLY)
-  # Include the install script for the subdirectory.
-  include("/Users/promex04/Desktop/guild/speech_recognition/wwe/LyratMini_RecordPlay/build/esp-idf/audio_mixer/cmake_install.cmake")
-endif()
-
-if(NOT CMAKE_INSTALL_LOCAL_ONLY)
-  # Include the install script for the subdirectory.
   include("/Users/promex04/Desktop/guild/speech_recognition/wwe/LyratMini_RecordPlay/build/esp-idf/battery_service/cmake_install.cmake")
 endif()
 
@@ -709,12 +699,22 @@ endif()
 
 if(NOT CMAKE_INSTALL_LOCAL_ONLY)
   # Include the install script for the subdirectory.
+  include("/Users/promex04/Desktop/guild/speech_recognition/wwe/LyratMini_RecordPlay/build/esp-idf/espressif__esp_websocket_client/cmake_install.cmake")
+endif()
+
+if(NOT CMAKE_INSTALL_LOCAL_ONLY)
+  # Include the install script for the subdirectory.
   include("/Users/promex04/Desktop/guild/speech_recognition/wwe/LyratMini_RecordPlay/build/esp-idf/esp_coze/cmake_install.cmake")
 endif()
 
 if(NOT CMAKE_INSTALL_LOCAL_ONLY)
   # Include the install script for the subdirectory.
   include("/Users/promex04/Desktop/guild/speech_recognition/wwe/LyratMini_RecordPlay/build/esp-idf/esp_event_cast/cmake_install.cmake")
+endif()
+
+if(NOT CMAKE_INSTALL_LOCAL_ONLY)
+  # Include the install script for the subdirectory.
+  include("/Users/promex04/Desktop/guild/speech_recognition/wwe/LyratMini_RecordPlay/build/esp-idf/input_key_service/cmake_install.cmake")
 endif()
 
 if(NOT CMAKE_INSTALL_LOCAL_ONLY)

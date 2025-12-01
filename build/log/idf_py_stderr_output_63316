@@ -1,3 +1,0 @@
-/Users/promex04/Desktop/guild/speech_recognition/wwe/LyratMini_RecordPlay/main/main.c:60:32: warning: 'pipeline_play' defined but not used [-Wunused-variable]
-   60 | static audio_pipeline_handle_t pipeline_play = NULL;
-      |                                ^~~~~~~~~~~~~

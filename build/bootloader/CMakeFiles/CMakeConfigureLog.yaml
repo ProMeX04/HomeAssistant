@@ -57,7 +57,6 @@ events:
       - "/Users/promex04/.local/bin/"
       - "/Users/promex04/.lmstudio/bin/"
       - "/Users/promex04/.antigravity/extensions/ms-python.debugpy-2025.16.0-darwin-arm64/bundled/scripts/noConfigScripts/"
-      - "/Users/promex04/.antigravity/extensions/vscjava.vscode-java-debug-0.58.3/bundled/scripts/noConfigScripts/"
     searched_directories:
       - "/Users/promex04/esp/esp-idf/components/espcoredump/git"
       - "/Users/promex04/esp/esp-idf/components/partition_table/git"
@@ -112,13 +111,23 @@ events:
         - "/Applications/VMware Fusion.app/Contents/Public"
         - "/usr/local/share/dotnet"
         - "~/.dotnet/tools"
+        - "/Users/promex04/esp/esp-idf/components/espcoredump"
+        - "/Users/promex04/esp/esp-idf/components/partition_table"
+        - "/Users/promex04/esp/esp-idf/components/app_update"
+        - "/Users/promex04/.espressif/tools/xtensa-esp-elf-gdb/16.3_20250913/xtensa-esp-elf-gdb/bin"
+        - "/Users/promex04/.espressif/tools/riscv32-esp-elf-gdb/16.3_20250913/riscv32-esp-elf-gdb/bin"
+        - "/Users/promex04/.espressif/tools/xtensa-esp-elf/esp-14.2.0_20250730/xtensa-esp-elf/bin"
+        - "/Users/promex04/.espressif/tools/riscv32-esp-elf/esp-14.2.0_20250730/riscv32-esp-elf/bin"
+        - "/Users/promex04/.espressif/tools/esp32ulp-elf/2.38_20240113/esp32ulp-elf/bin"
+        - "/Users/promex04/.espressif/tools/openocd-esp32/v0.12.0-esp32-20250707/openocd-esp32/bin"
+        - "/Users/promex04/.espressif/python_env/idf5.4_py3.14_env/bin"
+        - "/Users/promex04/esp/esp-idf/tools"
         - "/Users/promex04/.nvm/versions/node/v22.14.0/bin"
         - "/opt/homebrew/opt/maven/bin"
         - "/opt/homebrew/opt/openjdk@11/bin"
         - "/Users/promex04/.local/bin"
         - "/Users/promex04/.lmstudio/bin"
         - "/Users/promex04/.antigravity/extensions/ms-python.debugpy-2025.16.0-darwin-arm64/bundled/scripts/noConfigScripts"
-        - "/Users/promex04/.antigravity/extensions/vscjava.vscode-java-debug-0.58.3/bundled/scripts/noConfigScripts"
         - "/Users/promex04/.local/bin"
         - "/Users/promex04/.lmstudio/bin"
   -
@@ -175,7 +184,6 @@ events:
       - "/Users/promex04/.local/bin/"
       - "/Users/promex04/.lmstudio/bin/"
       - "/Users/promex04/.antigravity/extensions/ms-python.debugpy-2025.16.0-darwin-arm64/bundled/scripts/noConfigScripts/"
-      - "/Users/promex04/.antigravity/extensions/vscjava.vscode-java-debug-0.58.3/bundled/scripts/noConfigScripts/"
     searched_directories:
       - "/Users/promex04/esp/esp-idf/components/espcoredump/uname"
       - "/Users/promex04/esp/esp-idf/components/partition_table/uname"
@@ -230,13 +238,23 @@ events:
         - "/Applications/VMware Fusion.app/Contents/Public"
         - "/usr/local/share/dotnet"
         - "~/.dotnet/tools"
+        - "/Users/promex04/esp/esp-idf/components/espcoredump"
+        - "/Users/promex04/esp/esp-idf/components/partition_table"
+        - "/Users/promex04/esp/esp-idf/components/app_update"
+        - "/Users/promex04/.espressif/tools/xtensa-esp-elf-gdb/16.3_20250913/xtensa-esp-elf-gdb/bin"
+        - "/Users/promex04/.espressif/tools/riscv32-esp-elf-gdb/16.3_20250913/riscv32-esp-elf-gdb/bin"
+        - "/Users/promex04/.espressif/tools/xtensa-esp-elf/esp-14.2.0_20250730/xtensa-esp-elf/bin"
+        - "/Users/promex04/.espressif/tools/riscv32-esp-elf/esp-14.2.0_20250730/riscv32-esp-elf/bin"
+        - "/Users/promex04/.espressif/tools/esp32ulp-elf/2.38_20240113/esp32ulp-elf/bin"
+        - "/Users/promex04/.espressif/tools/openocd-esp32/v0.12.0-esp32-20250707/openocd-esp32/bin"
+        - "/Users/promex04/.espressif/python_env/idf5.4_py3.14_env/bin"
+        - "/Users/promex04/esp/esp-idf/tools"
         - "/Users/promex04/.nvm/versions/node/v22.14.0/bin"
         - "/opt/homebrew/opt/maven/bin"
         - "/opt/homebrew/opt/openjdk@11/bin"
         - "/Users/promex04/.local/bin"
         - "/Users/promex04/.lmstudio/bin"
         - "/Users/promex04/.antigravity/extensions/ms-python.debugpy-2025.16.0-darwin-arm64/bundled/scripts/noConfigScripts"
-        - "/Users/promex04/.antigravity/extensions/vscjava.vscode-java-debug-0.58.3/bundled/scripts/noConfigScripts"
         - "/Users/promex04/.local/bin"
         - "/Users/promex04/.lmstudio/bin"
   -
@@ -304,7 +322,6 @@ events:
       - "/Users/promex04/.local/bin/"
       - "/Users/promex04/.lmstudio/bin/"
       - "/Users/promex04/.antigravity/extensions/ms-python.debugpy-2025.16.0-darwin-arm64/bundled/scripts/noConfigScripts/"
-      - "/Users/promex04/.antigravity/extensions/vscjava.vscode-java-debug-0.58.3/bundled/scripts/noConfigScripts/"
     searched_directories:
       - "/Users/promex04/esp/esp-idf/components/espcoredump/gmake"
       - "/Users/promex04/esp/esp-idf/components/partition_table/gmake"
@@ -340,7 +357,6 @@ events:
       - "/Users/promex04/.local/bin/gmake"
       - "/Users/promex04/.lmstudio/bin/gmake"
       - "/Users/promex04/.antigravity/extensions/ms-python.debugpy-2025.16.0-darwin-arm64/bundled/scripts/noConfigScripts/gmake"
-      - "/Users/promex04/.antigravity/extensions/vscjava.vscode-java-debug-0.58.3/bundled/scripts/noConfigScripts/gmake"
       - "/Users/promex04/esp/esp-idf/components/espcoredump/make"
       - "/Users/promex04/esp/esp-idf/components/partition_table/make"
       - "/Users/promex04/esp/esp-idf/components/app_update/make"
@@ -394,13 +410,23 @@ events:
         - "/Applications/VMware Fusion.app/Contents/Public"
         - "/usr/local/share/dotnet"
         - "~/.dotnet/tools"
+        - "/Users/promex04/esp/esp-idf/components/espcoredump"
+        - "/Users/promex04/esp/esp-idf/components/partition_table"
+        - "/Users/promex04/esp/esp-idf/components/app_update"
+        - "/Users/promex04/.espressif/tools/xtensa-esp-elf-gdb/16.3_20250913/xtensa-esp-elf-gdb/bin"
+        - "/Users/promex04/.espressif/tools/riscv32-esp-elf-gdb/16.3_20250913/riscv32-esp-elf-gdb/bin"
+        - "/Users/promex04/.espressif/tools/xtensa-esp-elf/esp-14.2.0_20250730/xtensa-esp-elf/bin"
+        - "/Users/promex04/.espressif/tools/riscv32-esp-elf/esp-14.2.0_20250730/riscv32-esp-elf/bin"
+        - "/Users/promex04/.espressif/tools/esp32ulp-elf/2.38_20240113/esp32ulp-elf/bin"
+        - "/Users/promex04/.espressif/tools/openocd-esp32/v0.12.0-esp32-20250707/openocd-esp32/bin"
+        - "/Users/promex04/.espressif/python_env/idf5.4_py3.14_env/bin"
+        - "/Users/promex04/esp/esp-idf/tools"
         - "/Users/promex04/.nvm/versions/node/v22.14.0/bin"
         - "/opt/homebrew/opt/maven/bin"
         - "/opt/homebrew/opt/openjdk@11/bin"
         - "/Users/promex04/.local/bin"
         - "/Users/promex04/.lmstudio/bin"
         - "/Users/promex04/.antigravity/extensions/ms-python.debugpy-2025.16.0-darwin-arm64/bundled/scripts/noConfigScripts"
-        - "/Users/promex04/.antigravity/extensions/vscjava.vscode-java-debug-0.58.3/bundled/scripts/noConfigScripts"
         - "/Users/promex04/.local/bin"
         - "/Users/promex04/.lmstudio/bin"
   -
@@ -458,7 +484,6 @@ events:
       - "/Users/promex04/.local/bin/"
       - "/Users/promex04/.lmstudio/bin/"
       - "/Users/promex04/.antigravity/extensions/ms-python.debugpy-2025.16.0-darwin-arm64/bundled/scripts/noConfigScripts/"
-      - "/Users/promex04/.antigravity/extensions/vscjava.vscode-java-debug-0.58.3/bundled/scripts/noConfigScripts/"
     searched_directories:
       - "/Users/promex04/esp/esp-idf/components/espcoredump/xtensa-esp32-elf-gcc"
       - "/Users/promex04/esp/esp-idf/components/partition_table/xtensa-esp32-elf-gcc"
@@ -499,13 +524,23 @@ events:
         - "/Applications/VMware Fusion.app/Contents/Public"
         - "/usr/local/share/dotnet"
         - "~/.dotnet/tools"
+        - "/Users/promex04/esp/esp-idf/components/espcoredump"
+        - "/Users/promex04/esp/esp-idf/components/partition_table"
+        - "/Users/promex04/esp/esp-idf/components/app_update"
+        - "/Users/promex04/.espressif/tools/xtensa-esp-elf-gdb/16.3_20250913/xtensa-esp-elf-gdb/bin"
+        - "/Users/promex04/.espressif/tools/riscv32-esp-elf-gdb/16.3_20250913/riscv32-esp-elf-gdb/bin"
+        - "/Users/promex04/.espressif/tools/xtensa-esp-elf/esp-14.2.0_20250730/xtensa-esp-elf/bin"
+        - "/Users/promex04/.espressif/tools/riscv32-esp-elf/esp-14.2.0_20250730/riscv32-esp-elf/bin"
+        - "/Users/promex04/.espressif/tools/esp32ulp-elf/2.38_20240113/esp32ulp-elf/bin"
+        - "/Users/promex04/.espressif/tools/openocd-esp32/v0.12.0-esp32-20250707/openocd-esp32/bin"
+        - "/Users/promex04/.espressif/python_env/idf5.4_py3.14_env/bin"
+        - "/Users/promex04/esp/esp-idf/tools"
         - "/Users/promex04/.nvm/versions/node/v22.14.0/bin"
         - "/opt/homebrew/opt/maven/bin"
         - "/opt/homebrew/opt/openjdk@11/bin"
         - "/Users/promex04/.local/bin"
         - "/Users/promex04/.lmstudio/bin"
         - "/Users/promex04/.antigravity/extensions/ms-python.debugpy-2025.16.0-darwin-arm64/bundled/scripts/noConfigScripts"
-        - "/Users/promex04/.antigravity/extensions/vscjava.vscode-java-debug-0.58.3/bundled/scripts/noConfigScripts"
         - "/Users/promex04/.local/bin"
         - "/Users/promex04/.lmstudio/bin"
   -
@@ -569,13 +604,23 @@ events:
         - "/Applications/VMware Fusion.app/Contents/Public"
         - "/usr/local/share/dotnet"
         - "~/.dotnet/tools"
+        - "/Users/promex04/esp/esp-idf/components/espcoredump"
+        - "/Users/promex04/esp/esp-idf/components/partition_table"
+        - "/Users/promex04/esp/esp-idf/components/app_update"
+        - "/Users/promex04/.espressif/tools/xtensa-esp-elf-gdb/16.3_20250913/xtensa-esp-elf-gdb/bin"
+        - "/Users/promex04/.espressif/tools/riscv32-esp-elf-gdb/16.3_20250913/riscv32-esp-elf-gdb/bin"
+        - "/Users/promex04/.espressif/tools/xtensa-esp-elf/esp-14.2.0_20250730/xtensa-esp-elf/bin"
+        - "/Users/promex04/.espressif/tools/riscv32-esp-elf/esp-14.2.0_20250730/riscv32-esp-elf/bin"
+        - "/Users/promex04/.espressif/tools/esp32ulp-elf/2.38_20240113/esp32ulp-elf/bin"
+        - "/Users/promex04/.espressif/tools/openocd-esp32/v0.12.0-esp32-20250707/openocd-esp32/bin"
+        - "/Users/promex04/.espressif/python_env/idf5.4_py3.14_env/bin"
+        - "/Users/promex04/esp/esp-idf/tools"
         - "/Users/promex04/.nvm/versions/node/v22.14.0/bin"
         - "/opt/homebrew/opt/maven/bin"
         - "/opt/homebrew/opt/openjdk@11/bin"
         - "/Users/promex04/.local/bin"
         - "/Users/promex04/.lmstudio/bin"
         - "/Users/promex04/.antigravity/extensions/ms-python.debugpy-2025.16.0-darwin-arm64/bundled/scripts/noConfigScripts"
-        - "/Users/promex04/.antigravity/extensions/vscjava.vscode-java-debug-0.58.3/bundled/scripts/noConfigScripts"
         - "/Users/promex04/.local/bin"
         - "/Users/promex04/.lmstudio/bin"
   -
@@ -657,7 +702,6 @@ events:
       - "/Users/promex04/.local/bin/"
       - "/Users/promex04/.lmstudio/bin/"
       - "/Users/promex04/.antigravity/extensions/ms-python.debugpy-2025.16.0-darwin-arm64/bundled/scripts/noConfigScripts/"
-      - "/Users/promex04/.antigravity/extensions/vscjava.vscode-java-debug-0.58.3/bundled/scripts/noConfigScripts/"
     found: "/Users/promex04/.espressif/tools/xtensa-esp-elf/esp-14.2.0_20250730/xtensa-esp-elf/bin/xtensa-esp32-elf-ar"
     search_context:
       ENV{PATH}:
@@ -692,13 +736,23 @@ events:
         - "/Applications/VMware Fusion.app/Contents/Public"
         - "/usr/local/share/dotnet"
         - "~/.dotnet/tools"
+        - "/Users/promex04/esp/esp-idf/components/espcoredump"
+        - "/Users/promex04/esp/esp-idf/components/partition_table"
+        - "/Users/promex04/esp/esp-idf/components/app_update"
+        - "/Users/promex04/.espressif/tools/xtensa-esp-elf-gdb/16.3_20250913/xtensa-esp-elf-gdb/bin"
+        - "/Users/promex04/.espressif/tools/riscv32-esp-elf-gdb/16.3_20250913/riscv32-esp-elf-gdb/bin"
+        - "/Users/promex04/.espressif/tools/xtensa-esp-elf/esp-14.2.0_20250730/xtensa-esp-elf/bin"
+        - "/Users/promex04/.espressif/tools/riscv32-esp-elf/esp-14.2.0_20250730/riscv32-esp-elf/bin"
+        - "/Users/promex04/.espressif/tools/esp32ulp-elf/2.38_20240113/esp32ulp-elf/bin"
+        - "/Users/promex04/.espressif/tools/openocd-esp32/v0.12.0-esp32-20250707/openocd-esp32/bin"
+        - "/Users/promex04/.espressif/python_env/idf5.4_py3.14_env/bin"
+        - "/Users/promex04/esp/esp-idf/tools"
         - "/Users/promex04/.nvm/versions/node/v22.14.0/bin"
         - "/opt/homebrew/opt/maven/bin"
         - "/opt/homebrew/opt/openjdk@11/bin"
         - "/Users/promex04/.local/bin"
         - "/Users/promex04/.lmstudio/bin"
         - "/Users/promex04/.antigravity/extensions/ms-python.debugpy-2025.16.0-darwin-arm64/bundled/scripts/noConfigScripts"
-        - "/Users/promex04/.antigravity/extensions/vscjava.vscode-java-debug-0.58.3/bundled/scripts/noConfigScripts"
         - "/Users/promex04/.local/bin"
         - "/Users/promex04/.lmstudio/bin"
   -
@@ -757,7 +811,6 @@ events:
       - "/Users/promex04/.local/bin/"
       - "/Users/promex04/.lmstudio/bin/"
       - "/Users/promex04/.antigravity/extensions/ms-python.debugpy-2025.16.0-darwin-arm64/bundled/scripts/noConfigScripts/"
-      - "/Users/promex04/.antigravity/extensions/vscjava.vscode-java-debug-0.58.3/bundled/scripts/noConfigScripts/"
     found: "/Users/promex04/.espressif/tools/xtensa-esp-elf/esp-14.2.0_20250730/xtensa-esp-elf/bin/xtensa-esp32-elf-ranlib"
     search_context:
       ENV{PATH}:
@@ -792,13 +845,23 @@ events:
         - "/Applications/VMware Fusion.app/Contents/Public"
         - "/usr/local/share/dotnet"
         - "~/.dotnet/tools"
+        - "/Users/promex04/esp/esp-idf/components/espcoredump"
+        - "/Users/promex04/esp/esp-idf/components/partition_table"
+        - "/Users/promex04/esp/esp-idf/components/app_update"
+        - "/Users/promex04/.espressif/tools/xtensa-esp-elf-gdb/16.3_20250913/xtensa-esp-elf-gdb/bin"
+        - "/Users/promex04/.espressif/tools/riscv32-esp-elf-gdb/16.3_20250913/riscv32-esp-elf-gdb/bin"
+        - "/Users/promex04/.espressif/tools/xtensa-esp-elf/esp-14.2.0_20250730/xtensa-esp-elf/bin"
+        - "/Users/promex04/.espressif/tools/riscv32-esp-elf/esp-14.2.0_20250730/riscv32-esp-elf/bin"
+        - "/Users/promex04/.espressif/tools/esp32ulp-elf/2.38_20240113/esp32ulp-elf/bin"
+        - "/Users/promex04/.espressif/tools/openocd-esp32/v0.12.0-esp32-20250707/openocd-esp32/bin"
+        - "/Users/promex04/.espressif/python_env/idf5.4_py3.14_env/bin"
+        - "/Users/promex04/esp/esp-idf/tools"
         - "/Users/promex04/.nvm/versions/node/v22.14.0/bin"
         - "/opt/homebrew/opt/maven/bin"
         - "/opt/homebrew/opt/openjdk@11/bin"
         - "/Users/promex04/.local/bin"
         - "/Users/promex04/.lmstudio/bin"
         - "/Users/promex04/.antigravity/extensions/ms-python.debugpy-2025.16.0-darwin-arm64/bundled/scripts/noConfigScripts"
-        - "/Users/promex04/.antigravity/extensions/vscjava.vscode-java-debug-0.58.3/bundled/scripts/noConfigScripts"
         - "/Users/promex04/.local/bin"
         - "/Users/promex04/.lmstudio/bin"
   -
@@ -857,7 +920,6 @@ events:
       - "/Users/promex04/.local/bin/"
       - "/Users/promex04/.lmstudio/bin/"
       - "/Users/promex04/.antigravity/extensions/ms-python.debugpy-2025.16.0-darwin-arm64/bundled/scripts/noConfigScripts/"
-      - "/Users/promex04/.antigravity/extensions/vscjava.vscode-java-debug-0.58.3/bundled/scripts/noConfigScripts/"
     found: "/Users/promex04/.espressif/tools/xtensa-esp-elf/esp-14.2.0_20250730/xtensa-esp-elf/bin/xtensa-esp32-elf-strip"
     search_context:
       ENV{PATH}:
@@ -892,13 +954,23 @@ events:
         - "/Applications/VMware Fusion.app/Contents/Public"
         - "/usr/local/share/dotnet"
         - "~/.dotnet/tools"
+        - "/Users/promex04/esp/esp-idf/components/espcoredump"
+        - "/Users/promex04/esp/esp-idf/components/partition_table"
+        - "/Users/promex04/esp/esp-idf/components/app_update"
+        - "/Users/promex04/.espressif/tools/xtensa-esp-elf-gdb/16.3_20250913/xtensa-esp-elf-gdb/bin"
+        - "/Users/promex04/.espressif/tools/riscv32-esp-elf-gdb/16.3_20250913/riscv32-esp-elf-gdb/bin"
+        - "/Users/promex04/.espressif/tools/xtensa-esp-elf/esp-14.2.0_20250730/xtensa-esp-elf/bin"
+        - "/Users/promex04/.espressif/tools/riscv32-esp-elf/esp-14.2.0_20250730/riscv32-esp-elf/bin"
+        - "/Users/promex04/.espressif/tools/esp32ulp-elf/2.38_20240113/esp32ulp-elf/bin"
+        - "/Users/promex04/.espressif/tools/openocd-esp32/v0.12.0-esp32-20250707/openocd-esp32/bin"
+        - "/Users/promex04/.espressif/python_env/idf5.4_py3.14_env/bin"
+        - "/Users/promex04/esp/esp-idf/tools"
         - "/Users/promex04/.nvm/versions/node/v22.14.0/bin"
         - "/opt/homebrew/opt/maven/bin"
         - "/opt/homebrew/opt/openjdk@11/bin"
         - "/Users/promex04/.local/bin"
         - "/Users/promex04/.lmstudio/bin"
         - "/Users/promex04/.antigravity/extensions/ms-python.debugpy-2025.16.0-darwin-arm64/bundled/scripts/noConfigScripts"
-        - "/Users/promex04/.antigravity/extensions/vscjava.vscode-java-debug-0.58.3/bundled/scripts/noConfigScripts"
         - "/Users/promex04/.local/bin"
         - "/Users/promex04/.lmstudio/bin"
   -
@@ -957,7 +1029,6 @@ events:
       - "/Users/promex04/.local/bin/"
       - "/Users/promex04/.lmstudio/bin/"
       - "/Users/promex04/.antigravity/extensions/ms-python.debugpy-2025.16.0-darwin-arm64/bundled/scripts/noConfigScripts/"
-      - "/Users/promex04/.antigravity/extensions/vscjava.vscode-java-debug-0.58.3/bundled/scripts/noConfigScripts/"
     found: "/Users/promex04/.espressif/tools/xtensa-esp-elf/esp-14.2.0_20250730/xtensa-esp-elf/bin/xtensa-esp32-elf-ld"
     search_context:
       ENV{PATH}:
@@ -992,13 +1063,23 @@ events:
         - "/Applications/VMware Fusion.app/Contents/Public"
         - "/usr/local/share/dotnet"
         - "~/.dotnet/tools"
+        - "/Users/promex04/esp/esp-idf/components/espcoredump"
+        - "/Users/promex04/esp/esp-idf/components/partition_table"
+        - "/Users/promex04/esp/esp-idf/components/app_update"
+        - "/Users/promex04/.espressif/tools/xtensa-esp-elf-gdb/16.3_20250913/xtensa-esp-elf-gdb/bin"
+        - "/Users/promex04/.espressif/tools/riscv32-esp-elf-gdb/16.3_20250913/riscv32-esp-elf-gdb/bin"
+        - "/Users/promex04/.espressif/tools/xtensa-esp-elf/esp-14.2.0_20250730/xtensa-esp-elf/bin"
+        - "/Users/promex04/.espressif/tools/riscv32-esp-elf/esp-14.2.0_20250730/riscv32-esp-elf/bin"
+        - "/Users/promex04/.espressif/tools/esp32ulp-elf/2.38_20240113/esp32ulp-elf/bin"
+        - "/Users/promex04/.espressif/tools/openocd-esp32/v0.12.0-esp32-20250707/openocd-esp32/bin"
+        - "/Users/promex04/.espressif/python_env/idf5.4_py3.14_env/bin"
+        - "/Users/promex04/esp/esp-idf/tools"
         - "/Users/promex04/.nvm/versions/node/v22.14.0/bin"
         - "/opt/homebrew/opt/maven/bin"
         - "/opt/homebrew/opt/openjdk@11/bin"
         - "/Users/promex04/.local/bin"
         - "/Users/promex04/.lmstudio/bin"
         - "/Users/promex04/.antigravity/extensions/ms-python.debugpy-2025.16.0-darwin-arm64/bundled/scripts/noConfigScripts"
-        - "/Users/promex04/.antigravity/extensions/vscjava.vscode-java-debug-0.58.3/bundled/scripts/noConfigScripts"
         - "/Users/promex04/.local/bin"
         - "/Users/promex04/.lmstudio/bin"
   -
@@ -1057,7 +1138,6 @@ events:
       - "/Users/promex04/.local/bin/"
       - "/Users/promex04/.lmstudio/bin/"
       - "/Users/promex04/.antigravity/extensions/ms-python.debugpy-2025.16.0-darwin-arm64/bundled/scripts/noConfigScripts/"
-      - "/Users/promex04/.antigravity/extensions/vscjava.vscode-java-debug-0.58.3/bundled/scripts/noConfigScripts/"
     found: "/Users/promex04/.espressif/tools/xtensa-esp-elf/esp-14.2.0_20250730/xtensa-esp-elf/bin/xtensa-esp32-elf-nm"
     search_context:
       ENV{PATH}:
@@ -1092,13 +1172,23 @@ events:
         - "/Applications/VMware Fusion.app/Contents/Public"
         - "/usr/local/share/dotnet"
         - "~/.dotnet/tools"
+        - "/Users/promex04/esp/esp-idf/components/espcoredump"
+        - "/Users/promex04/esp/esp-idf/components/partition_table"
+        - "/Users/promex04/esp/esp-idf/components/app_update"
+        - "/Users/promex04/.espressif/tools/xtensa-esp-elf-gdb/16.3_20250913/xtensa-esp-elf-gdb/bin"
+        - "/Users/promex04/.espressif/tools/riscv32-esp-elf-gdb/16.3_20250913/riscv32-esp-elf-gdb/bin"
+        - "/Users/promex04/.espressif/tools/xtensa-esp-elf/esp-14.2.0_20250730/xtensa-esp-elf/bin"
+        - "/Users/promex04/.espressif/tools/riscv32-esp-elf/esp-14.2.0_20250730/riscv32-esp-elf/bin"
+        - "/Users/promex04/.espressif/tools/esp32ulp-elf/2.38_20240113/esp32ulp-elf/bin"
+        - "/Users/promex04/.espressif/tools/openocd-esp32/v0.12.0-esp32-20250707/openocd-esp32/bin"
+        - "/Users/promex04/.espressif/python_env/idf5.4_py3.14_env/bin"
+        - "/Users/promex04/esp/esp-idf/tools"
         - "/Users/promex04/.nvm/versions/node/v22.14.0/bin"
         - "/opt/homebrew/opt/maven/bin"
         - "/opt/homebrew/opt/openjdk@11/bin"
         - "/Users/promex04/.local/bin"
         - "/Users/promex04/.lmstudio/bin"
         - "/Users/promex04/.antigravity/extensions/ms-python.debugpy-2025.16.0-darwin-arm64/bundled/scripts/noConfigScripts"
-        - "/Users/promex04/.antigravity/extensions/vscjava.vscode-java-debug-0.58.3/bundled/scripts/noConfigScripts"
         - "/Users/promex04/.local/bin"
         - "/Users/promex04/.lmstudio/bin"
   -
@@ -1157,7 +1247,6 @@ events:
       - "/Users/promex04/.local/bin/"
       - "/Users/promex04/.lmstudio/bin/"
       - "/Users/promex04/.antigravity/extensions/ms-python.debugpy-2025.16.0-darwin-arm64/bundled/scripts/noConfigScripts/"
-      - "/Users/promex04/.antigravity/extensions/vscjava.vscode-java-debug-0.58.3/bundled/scripts/noConfigScripts/"
     found: "/Users/promex04/.espressif/tools/xtensa-esp-elf/esp-14.2.0_20250730/xtensa-esp-elf/bin/xtensa-esp32-elf-objdump"
     search_context:
       ENV{PATH}:
@@ -1192,13 +1281,23 @@ events:
         - "/Applications/VMware Fusion.app/Contents/Public"
         - "/usr/local/share/dotnet"
         - "~/.dotnet/tools"
+        - "/Users/promex04/esp/esp-idf/components/espcoredump"
+        - "/Users/promex04/esp/esp-idf/components/partition_table"
+        - "/Users/promex04/esp/esp-idf/components/app_update"
+        - "/Users/promex04/.espressif/tools/xtensa-esp-elf-gdb/16.3_20250913/xtensa-esp-elf-gdb/bin"
+        - "/Users/promex04/.espressif/tools/riscv32-esp-elf-gdb/16.3_20250913/riscv32-esp-elf-gdb/bin"
+        - "/Users/promex04/.espressif/tools/xtensa-esp-elf/esp-14.2.0_20250730/xtensa-esp-elf/bin"
+        - "/Users/promex04/.espressif/tools/riscv32-esp-elf/esp-14.2.0_20250730/riscv32-esp-elf/bin"
+        - "/Users/promex04/.espressif/tools/esp32ulp-elf/2.38_20240113/esp32ulp-elf/bin"
+        - "/Users/promex04/.espressif/tools/openocd-esp32/v0.12.0-esp32-20250707/openocd-esp32/bin"
+        - "/Users/promex04/.espressif/python_env/idf5.4_py3.14_env/bin"
+        - "/Users/promex04/esp/esp-idf/tools"
         - "/Users/promex04/.nvm/versions/node/v22.14.0/bin"
         - "/opt/homebrew/opt/maven/bin"
         - "/opt/homebrew/opt/openjdk@11/bin"
         - "/Users/promex04/.local/bin"
         - "/Users/promex04/.lmstudio/bin"
         - "/Users/promex04/.antigravity/extensions/ms-python.debugpy-2025.16.0-darwin-arm64/bundled/scripts/noConfigScripts"
-        - "/Users/promex04/.antigravity/extensions/vscjava.vscode-java-debug-0.58.3/bundled/scripts/noConfigScripts"
         - "/Users/promex04/.local/bin"
         - "/Users/promex04/.lmstudio/bin"
   -
@@ -1257,7 +1356,6 @@ events:
       - "/Users/promex04/.local/bin/"
       - "/Users/promex04/.lmstudio/bin/"
       - "/Users/promex04/.antigravity/extensions/ms-python.debugpy-2025.16.0-darwin-arm64/bundled/scripts/noConfigScripts/"
-      - "/Users/promex04/.antigravity/extensions/vscjava.vscode-java-debug-0.58.3/bundled/scripts/noConfigScripts/"
     found: "/Users/promex04/.espressif/tools/xtensa-esp-elf/esp-14.2.0_20250730/xtensa-esp-elf/bin/xtensa-esp32-elf-objcopy"
     search_context:
       ENV{PATH}:
@@ -1292,13 +1390,23 @@ events:
         - "/Applications/VMware Fusion.app/Contents/Public"
         - "/usr/local/share/dotnet"
         - "~/.dotnet/tools"
+        - "/Users/promex04/esp/esp-idf/components/espcoredump"
+        - "/Users/promex04/esp/esp-idf/components/partition_table"
+        - "/Users/promex04/esp/esp-idf/components/app_update"
+        - "/Users/promex04/.espressif/tools/xtensa-esp-elf-gdb/16.3_20250913/xtensa-esp-elf-gdb/bin"
+        - "/Users/promex04/.espressif/tools/riscv32-esp-elf-gdb/16.3_20250913/riscv32-esp-elf-gdb/bin"
+        - "/Users/promex04/.espressif/tools/xtensa-esp-elf/esp-14.2.0_20250730/xtensa-esp-elf/bin"
+        - "/Users/promex04/.espressif/tools/riscv32-esp-elf/esp-14.2.0_20250730/riscv32-esp-elf/bin"
+        - "/Users/promex04/.espressif/tools/esp32ulp-elf/2.38_20240113/esp32ulp-elf/bin"
+        - "/Users/promex04/.espressif/tools/openocd-esp32/v0.12.0-esp32-20250707/openocd-esp32/bin"
+        - "/Users/promex04/.espressif/python_env/idf5.4_py3.14_env/bin"
+        - "/Users/promex04/esp/esp-idf/tools"
         - "/Users/promex04/.nvm/versions/node/v22.14.0/bin"
         - "/opt/homebrew/opt/maven/bin"
         - "/opt/homebrew/opt/openjdk@11/bin"
         - "/Users/promex04/.local/bin"
         - "/Users/promex04/.lmstudio/bin"
         - "/Users/promex04/.antigravity/extensions/ms-python.debugpy-2025.16.0-darwin-arm64/bundled/scripts/noConfigScripts"
-        - "/Users/promex04/.antigravity/extensions/vscjava.vscode-java-debug-0.58.3/bundled/scripts/noConfigScripts"
         - "/Users/promex04/.local/bin"
         - "/Users/promex04/.lmstudio/bin"
   -
@@ -1357,7 +1465,6 @@ events:
       - "/Users/promex04/.local/bin/"
       - "/Users/promex04/.lmstudio/bin/"
       - "/Users/promex04/.antigravity/extensions/ms-python.debugpy-2025.16.0-darwin-arm64/bundled/scripts/noConfigScripts/"
-      - "/Users/promex04/.antigravity/extensions/vscjava.vscode-java-debug-0.58.3/bundled/scripts/noConfigScripts/"
     found: "/Users/promex04/.espressif/tools/xtensa-esp-elf/esp-14.2.0_20250730/xtensa-esp-elf/bin/xtensa-esp32-elf-readelf"
     search_context:
       ENV{PATH}:
@@ -1392,13 +1499,23 @@ events:
         - "/Applications/VMware Fusion.app/Contents/Public"
         - "/usr/local/share/dotnet"
         - "~/.dotnet/tools"
+        - "/Users/promex04/esp/esp-idf/components/espcoredump"
+        - "/Users/promex04/esp/esp-idf/components/partition_table"
+        - "/Users/promex04/esp/esp-idf/components/app_update"
+        - "/Users/promex04/.espressif/tools/xtensa-esp-elf-gdb/16.3_20250913/xtensa-esp-elf-gdb/bin"
+        - "/Users/promex04/.espressif/tools/riscv32-esp-elf-gdb/16.3_20250913/riscv32-esp-elf-gdb/bin"
+        - "/Users/promex04/.espressif/tools/xtensa-esp-elf/esp-14.2.0_20250730/xtensa-esp-elf/bin"
+        - "/Users/promex04/.espressif/tools/riscv32-esp-elf/esp-14.2.0_20250730/riscv32-esp-elf/bin"
+        - "/Users/promex04/.espressif/tools/esp32ulp-elf/2.38_20240113/esp32ulp-elf/bin"
+        - "/Users/promex04/.espressif/tools/openocd-esp32/v0.12.0-esp32-20250707/openocd-esp32/bin"
+        - "/Users/promex04/.espressif/python_env/idf5.4_py3.14_env/bin"
+        - "/Users/promex04/esp/esp-idf/tools"
         - "/Users/promex04/.nvm/versions/node/v22.14.0/bin"
         - "/opt/homebrew/opt/maven/bin"
         - "/opt/homebrew/opt/openjdk@11/bin"
         - "/Users/promex04/.local/bin"
         - "/Users/promex04/.lmstudio/bin"
         - "/Users/promex04/.antigravity/extensions/ms-python.debugpy-2025.16.0-darwin-arm64/bundled/scripts/noConfigScripts"
-        - "/Users/promex04/.antigravity/extensions/vscjava.vscode-java-debug-0.58.3/bundled/scripts/noConfigScripts"
         - "/Users/promex04/.local/bin"
         - "/Users/promex04/.lmstudio/bin"
   -
@@ -1457,7 +1574,6 @@ events:
       - "/Users/promex04/.local/bin/"
       - "/Users/promex04/.lmstudio/bin/"
       - "/Users/promex04/.antigravity/extensions/ms-python.debugpy-2025.16.0-darwin-arm64/bundled/scripts/noConfigScripts/"
-      - "/Users/promex04/.antigravity/extensions/vscjava.vscode-java-debug-0.58.3/bundled/scripts/noConfigScripts/"
     searched_directories:
       - "/Users/promex04/.espressif/tools/xtensa-esp-elf/esp-14.2.0_20250730/xtensa-esp-elf/bin/xtensa-esp32-elf-dlltool"
       - "/Users/promex04/esp/esp-idf/components/espcoredump/xtensa-esp32-elf-dlltool"
@@ -1493,7 +1609,6 @@ events:
       - "/Users/promex04/.local/bin/xtensa-esp32-elf-dlltool"
       - "/Users/promex04/.lmstudio/bin/xtensa-esp32-elf-dlltool"
       - "/Users/promex04/.antigravity/extensions/ms-python.debugpy-2025.16.0-darwin-arm64/bundled/scripts/noConfigScripts/xtensa-esp32-elf-dlltool"
-      - "/Users/promex04/.antigravity/extensions/vscjava.vscode-java-debug-0.58.3/bundled/scripts/noConfigScripts/xtensa-esp32-elf-dlltool"
       - "/Users/promex04/.espressif/tools/xtensa-esp-elf/esp-14.2.0_20250730/xtensa-esp-elf/bin/dlltool"
       - "/Users/promex04/esp/esp-idf/components/espcoredump/dlltool"
       - "/Users/promex04/esp/esp-idf/components/partition_table/dlltool"
@@ -1528,7 +1643,6 @@ events:
       - "/Users/promex04/.local/bin/dlltool"
       - "/Users/promex04/.lmstudio/bin/dlltool"
       - "/Users/promex04/.antigravity/extensions/ms-python.debugpy-2025.16.0-darwin-arm64/bundled/scripts/noConfigScripts/dlltool"
-      - "/Users/promex04/.antigravity/extensions/vscjava.vscode-java-debug-0.58.3/bundled/scripts/noConfigScripts/dlltool"
     found: false
     search_context:
       ENV{PATH}:
@@ -1563,13 +1677,23 @@ events:
         - "/Applications/VMware Fusion.app/Contents/Public"
         - "/usr/local/share/dotnet"
         - "~/.dotnet/tools"
+        - "/Users/promex04/esp/esp-idf/components/espcoredump"
+        - "/Users/promex04/esp/esp-idf/components/partition_table"
+        - "/Users/promex04/esp/esp-idf/components/app_update"
+        - "/Users/promex04/.espressif/tools/xtensa-esp-elf-gdb/16.3_20250913/xtensa-esp-elf-gdb/bin"
+        - "/Users/promex04/.espressif/tools/riscv32-esp-elf-gdb/16.3_20250913/riscv32-esp-elf-gdb/bin"
+        - "/Users/promex04/.espressif/tools/xtensa-esp-elf/esp-14.2.0_20250730/xtensa-esp-elf/bin"
+        - "/Users/promex04/.espressif/tools/riscv32-esp-elf/esp-14.2.0_20250730/riscv32-esp-elf/bin"
+        - "/Users/promex04/.espressif/tools/esp32ulp-elf/2.38_20240113/esp32ulp-elf/bin"
+        - "/Users/promex04/.espressif/tools/openocd-esp32/v0.12.0-esp32-20250707/openocd-esp32/bin"
+        - "/Users/promex04/.espressif/python_env/idf5.4_py3.14_env/bin"
+        - "/Users/promex04/esp/esp-idf/tools"
         - "/Users/promex04/.nvm/versions/node/v22.14.0/bin"
         - "/opt/homebrew/opt/maven/bin"
         - "/opt/homebrew/opt/openjdk@11/bin"
         - "/Users/promex04/.local/bin"
         - "/Users/promex04/.lmstudio/bin"
         - "/Users/promex04/.antigravity/extensions/ms-python.debugpy-2025.16.0-darwin-arm64/bundled/scripts/noConfigScripts"
-        - "/Users/promex04/.antigravity/extensions/vscjava.vscode-java-debug-0.58.3/bundled/scripts/noConfigScripts"
         - "/Users/promex04/.local/bin"
         - "/Users/promex04/.lmstudio/bin"
   -
@@ -1628,7 +1752,6 @@ events:
       - "/Users/promex04/.local/bin/"
       - "/Users/promex04/.lmstudio/bin/"
       - "/Users/promex04/.antigravity/extensions/ms-python.debugpy-2025.16.0-darwin-arm64/bundled/scripts/noConfigScripts/"
-      - "/Users/promex04/.antigravity/extensions/vscjava.vscode-java-debug-0.58.3/bundled/scripts/noConfigScripts/"
     found: "/Users/promex04/.espressif/tools/xtensa-esp-elf/esp-14.2.0_20250730/xtensa-esp-elf/bin/xtensa-esp32-elf-addr2line"
     search_context:
       ENV{PATH}:
@@ -1663,13 +1786,23 @@ events:
         - "/Applications/VMware Fusion.app/Contents/Public"
         - "/usr/local/share/dotnet"
         - "~/.dotnet/tools"
+        - "/Users/promex04/esp/esp-idf/components/espcoredump"
+        - "/Users/promex04/esp/esp-idf/components/partition_table"
+        - "/Users/promex04/esp/esp-idf/components/app_update"
+        - "/Users/promex04/.espressif/tools/xtensa-esp-elf-gdb/16.3_20250913/xtensa-esp-elf-gdb/bin"
+        - "/Users/promex04/.espressif/tools/riscv32-esp-elf-gdb/16.3_20250913/riscv32-esp-elf-gdb/bin"
+        - "/Users/promex04/.espressif/tools/xtensa-esp-elf/esp-14.2.0_20250730/xtensa-esp-elf/bin"
+        - "/Users/promex04/.espressif/tools/riscv32-esp-elf/esp-14.2.0_20250730/riscv32-esp-elf/bin"
+        - "/Users/promex04/.espressif/tools/esp32ulp-elf/2.38_20240113/esp32ulp-elf/bin"
+        - "/Users/promex04/.espressif/tools/openocd-esp32/v0.12.0-esp32-20250707/openocd-esp32/bin"
+        - "/Users/promex04/.espressif/python_env/idf5.4_py3.14_env/bin"
+        - "/Users/promex04/esp/esp-idf/tools"
         - "/Users/promex04/.nvm/versions/node/v22.14.0/bin"
         - "/opt/homebrew/opt/maven/bin"
         - "/opt/homebrew/opt/openjdk@11/bin"
         - "/Users/promex04/.local/bin"
         - "/Users/promex04/.lmstudio/bin"
         - "/Users/promex04/.antigravity/extensions/ms-python.debugpy-2025.16.0-darwin-arm64/bundled/scripts/noConfigScripts"
-        - "/Users/promex04/.antigravity/extensions/vscjava.vscode-java-debug-0.58.3/bundled/scripts/noConfigScripts"
         - "/Users/promex04/.local/bin"
         - "/Users/promex04/.lmstudio/bin"
   -
@@ -1728,7 +1861,6 @@ events:
       - "/Users/promex04/.local/bin/"
       - "/Users/promex04/.lmstudio/bin/"
       - "/Users/promex04/.antigravity/extensions/ms-python.debugpy-2025.16.0-darwin-arm64/bundled/scripts/noConfigScripts/"
-      - "/Users/promex04/.antigravity/extensions/vscjava.vscode-java-debug-0.58.3/bundled/scripts/noConfigScripts/"
     searched_directories:
       - "/Users/promex04/.espressif/tools/xtensa-esp-elf/esp-14.2.0_20250730/xtensa-esp-elf/bin/xtensa-esp32-elf-tapi"
       - "/Users/promex04/esp/esp-idf/components/espcoredump/xtensa-esp32-elf-tapi"
@@ -1764,7 +1896,6 @@ events:
       - "/Users/promex04/.local/bin/xtensa-esp32-elf-tapi"
       - "/Users/promex04/.lmstudio/bin/xtensa-esp32-elf-tapi"
       - "/Users/promex04/.antigravity/extensions/ms-python.debugpy-2025.16.0-darwin-arm64/bundled/scripts/noConfigScripts/xtensa-esp32-elf-tapi"
-      - "/Users/promex04/.antigravity/extensions/vscjava.vscode-java-debug-0.58.3/bundled/scripts/noConfigScripts/xtensa-esp32-elf-tapi"
       - "/Users/promex04/.espressif/tools/xtensa-esp-elf/esp-14.2.0_20250730/xtensa-esp-elf/bin/tapi"
       - "/Users/promex04/esp/esp-idf/components/espcoredump/tapi"
       - "/Users/promex04/esp/esp-idf/components/partition_table/tapi"
@@ -1799,7 +1930,6 @@ events:
       - "/Users/promex04/.local/bin/tapi"
       - "/Users/promex04/.lmstudio/bin/tapi"
       - "/Users/promex04/.antigravity/extensions/ms-python.debugpy-2025.16.0-darwin-arm64/bundled/scripts/noConfigScripts/tapi"
-      - "/Users/promex04/.antigravity/extensions/vscjava.vscode-java-debug-0.58.3/bundled/scripts/noConfigScripts/tapi"
     found: false
     search_context:
       ENV{PATH}:
@@ -1834,13 +1964,23 @@ events:
         - "/Applications/VMware Fusion.app/Contents/Public"
         - "/usr/local/share/dotnet"
         - "~/.dotnet/tools"
+        - "/Users/promex04/esp/esp-idf/components/espcoredump"
+        - "/Users/promex04/esp/esp-idf/components/partition_table"
+        - "/Users/promex04/esp/esp-idf/components/app_update"
+        - "/Users/promex04/.espressif/tools/xtensa-esp-elf-gdb/16.3_20250913/xtensa-esp-elf-gdb/bin"
+        - "/Users/promex04/.espressif/tools/riscv32-esp-elf-gdb/16.3_20250913/riscv32-esp-elf-gdb/bin"
+        - "/Users/promex04/.espressif/tools/xtensa-esp-elf/esp-14.2.0_20250730/xtensa-esp-elf/bin"
+        - "/Users/promex04/.espressif/tools/riscv32-esp-elf/esp-14.2.0_20250730/riscv32-esp-elf/bin"
+        - "/Users/promex04/.espressif/tools/esp32ulp-elf/2.38_20240113/esp32ulp-elf/bin"
+        - "/Users/promex04/.espressif/tools/openocd-esp32/v0.12.0-esp32-20250707/openocd-esp32/bin"
+        - "/Users/promex04/.espressif/python_env/idf5.4_py3.14_env/bin"
+        - "/Users/promex04/esp/esp-idf/tools"
         - "/Users/promex04/.nvm/versions/node/v22.14.0/bin"
         - "/opt/homebrew/opt/maven/bin"
         - "/opt/homebrew/opt/openjdk@11/bin"
         - "/Users/promex04/.local/bin"
         - "/Users/promex04/.lmstudio/bin"
         - "/Users/promex04/.antigravity/extensions/ms-python.debugpy-2025.16.0-darwin-arm64/bundled/scripts/noConfigScripts"
-        - "/Users/promex04/.antigravity/extensions/vscjava.vscode-java-debug-0.58.3/bundled/scripts/noConfigScripts"
         - "/Users/promex04/.local/bin"
         - "/Users/promex04/.lmstudio/bin"
   -
@@ -1901,7 +2041,6 @@ events:
       - "/Users/promex04/.local/bin/"
       - "/Users/promex04/.lmstudio/bin/"
       - "/Users/promex04/.antigravity/extensions/ms-python.debugpy-2025.16.0-darwin-arm64/bundled/scripts/noConfigScripts/"
-      - "/Users/promex04/.antigravity/extensions/vscjava.vscode-java-debug-0.58.3/bundled/scripts/noConfigScripts/"
     searched_directories:
       - "/Users/promex04/.espressif/tools/xtensa-esp-elf/esp-14.2.0_20250730/xtensa-esp-elf/bin/xtensa-esp32-elf-gcc-ar-14.2"
       - "/Users/promex04/esp/esp-idf/components/espcoredump/xtensa-esp32-elf-gcc-ar-14.2"
@@ -1937,7 +2076,6 @@ events:
       - "/Users/promex04/.local/bin/xtensa-esp32-elf-gcc-ar-14.2"
       - "/Users/promex04/.lmstudio/bin/xtensa-esp32-elf-gcc-ar-14.2"
       - "/Users/promex04/.antigravity/extensions/ms-python.debugpy-2025.16.0-darwin-arm64/bundled/scripts/noConfigScripts/xtensa-esp32-elf-gcc-ar-14.2"
-      - "/Users/promex04/.antigravity/extensions/vscjava.vscode-java-debug-0.58.3/bundled/scripts/noConfigScripts/xtensa-esp32-elf-gcc-ar-14.2"
       - "/Users/promex04/.espressif/tools/xtensa-esp-elf/esp-14.2.0_20250730/xtensa-esp-elf/bin/xtensa-esp32-elf-gcc-ar-14"
       - "/Users/promex04/esp/esp-idf/components/espcoredump/xtensa-esp32-elf-gcc-ar-14"
       - "/Users/promex04/esp/esp-idf/components/partition_table/xtensa-esp32-elf-gcc-ar-14"
@@ -1972,7 +2110,6 @@ events:
       - "/Users/promex04/.local/bin/xtensa-esp32-elf-gcc-ar-14"
       - "/Users/promex04/.lmstudio/bin/xtensa-esp32-elf-gcc-ar-14"
       - "/Users/promex04/.antigravity/extensions/ms-python.debugpy-2025.16.0-darwin-arm64/bundled/scripts/noConfigScripts/xtensa-esp32-elf-gcc-ar-14"
-      - "/Users/promex04/.antigravity/extensions/vscjava.vscode-java-debug-0.58.3/bundled/scripts/noConfigScripts/xtensa-esp32-elf-gcc-ar-14"
       - "/Users/promex04/.espressif/tools/xtensa-esp-elf/esp-14.2.0_20250730/xtensa-esp-elf/bin/xtensa-esp32-elf-gcc-ar14"
       - "/Users/promex04/esp/esp-idf/components/espcoredump/xtensa-esp32-elf-gcc-ar14"
       - "/Users/promex04/esp/esp-idf/components/partition_table/xtensa-esp32-elf-gcc-ar14"
@@ -2007,7 +2144,6 @@ events:
       - "/Users/promex04/.local/bin/xtensa-esp32-elf-gcc-ar14"
       - "/Users/promex04/.lmstudio/bin/xtensa-esp32-elf-gcc-ar14"
       - "/Users/promex04/.antigravity/extensions/ms-python.debugpy-2025.16.0-darwin-arm64/bundled/scripts/noConfigScripts/xtensa-esp32-elf-gcc-ar14"
-      - "/Users/promex04/.antigravity/extensions/vscjava.vscode-java-debug-0.58.3/bundled/scripts/noConfigScripts/xtensa-esp32-elf-gcc-ar14"
     found: "/Users/promex04/.espressif/tools/xtensa-esp-elf/esp-14.2.0_20250730/xtensa-esp-elf/bin/xtensa-esp32-elf-gcc-ar"
     search_context:
       ENV{PATH}:
@@ -2042,13 +2178,23 @@ events:
         - "/Applications/VMware Fusion.app/Contents/Public"
         - "/usr/local/share/dotnet"
         - "~/.dotnet/tools"
+        - "/Users/promex04/esp/esp-idf/components/espcoredump"
+        - "/Users/promex04/esp/esp-idf/components/partition_table"
+        - "/Users/promex04/esp/esp-idf/components/app_update"
+        - "/Users/promex04/.espressif/tools/xtensa-esp-elf-gdb/16.3_20250913/xtensa-esp-elf-gdb/bin"
+        - "/Users/promex04/.espressif/tools/riscv32-esp-elf-gdb/16.3_20250913/riscv32-esp-elf-gdb/bin"
+        - "/Users/promex04/.espressif/tools/xtensa-esp-elf/esp-14.2.0_20250730/xtensa-esp-elf/bin"
+        - "/Users/promex04/.espressif/tools/riscv32-esp-elf/esp-14.2.0_20250730/riscv32-esp-elf/bin"
+        - "/Users/promex04/.espressif/tools/esp32ulp-elf/2.38_20240113/esp32ulp-elf/bin"
+        - "/Users/promex04/.espressif/tools/openocd-esp32/v0.12.0-esp32-20250707/openocd-esp32/bin"
+        - "/Users/promex04/.espressif/python_env/idf5.4_py3.14_env/bin"
+        - "/Users/promex04/esp/esp-idf/tools"
         - "/Users/promex04/.nvm/versions/node/v22.14.0/bin"
         - "/opt/homebrew/opt/maven/bin"
         - "/opt/homebrew/opt/openjdk@11/bin"
         - "/Users/promex04/.local/bin"
         - "/Users/promex04/.lmstudio/bin"
         - "/Users/promex04/.antigravity/extensions/ms-python.debugpy-2025.16.0-darwin-arm64/bundled/scripts/noConfigScripts"
-        - "/Users/promex04/.antigravity/extensions/vscjava.vscode-java-debug-0.58.3/bundled/scripts/noConfigScripts"
         - "/Users/promex04/.local/bin"
         - "/Users/promex04/.lmstudio/bin"
   -
@@ -2109,7 +2255,6 @@ events:
       - "/Users/promex04/.local/bin/"
       - "/Users/promex04/.lmstudio/bin/"
       - "/Users/promex04/.antigravity/extensions/ms-python.debugpy-2025.16.0-darwin-arm64/bundled/scripts/noConfigScripts/"
-      - "/Users/promex04/.antigravity/extensions/vscjava.vscode-java-debug-0.58.3/bundled/scripts/noConfigScripts/"
     searched_directories:
       - "/Users/promex04/.espressif/tools/xtensa-esp-elf/esp-14.2.0_20250730/xtensa-esp-elf/bin/xtensa-esp32-elf-gcc-ranlib-14.2"
       - "/Users/promex04/esp/esp-idf/components/espcoredump/xtensa-esp32-elf-gcc-ranlib-14.2"
@@ -2145,7 +2290,6 @@ events:
       - "/Users/promex04/.local/bin/xtensa-esp32-elf-gcc-ranlib-14.2"
       - "/Users/promex04/.lmstudio/bin/xtensa-esp32-elf-gcc-ranlib-14.2"
       - "/Users/promex04/.antigravity/extensions/ms-python.debugpy-2025.16.0-darwin-arm64/bundled/scripts/noConfigScripts/xtensa-esp32-elf-gcc-ranlib-14.2"
-      - "/Users/promex04/.antigravity/extensions/vscjava.vscode-java-debug-0.58.3/bundled/scripts/noConfigScripts/xtensa-esp32-elf-gcc-ranlib-14.2"
       - "/Users/promex04/.espressif/tools/xtensa-esp-elf/esp-14.2.0_20250730/xtensa-esp-elf/bin/xtensa-esp32-elf-gcc-ranlib-14"
       - "/Users/promex04/esp/esp-idf/components/espcoredump/xtensa-esp32-elf-gcc-ranlib-14"
       - "/Users/promex04/esp/esp-idf/components/partition_table/xtensa-esp32-elf-gcc-ranlib-14"
@@ -2180,7 +2324,6 @@ events:
       - "/Users/promex04/.local/bin/xtensa-esp32-elf-gcc-ranlib-14"
       - "/Users/promex04/.lmstudio/bin/xtensa-esp32-elf-gcc-ranlib-14"
       - "/Users/promex04/.antigravity/extensions/ms-python.debugpy-2025.16.0-darwin-arm64/bundled/scripts/noConfigScripts/xtensa-esp32-elf-gcc-ranlib-14"
-      - "/Users/promex04/.antigravity/extensions/vscjava.vscode-java-debug-0.58.3/bundled/scripts/noConfigScripts/xtensa-esp32-elf-gcc-ranlib-14"
       - "/Users/promex04/.espressif/tools/xtensa-esp-elf/esp-14.2.0_20250730/xtensa-esp-elf/bin/xtensa-esp32-elf-gcc-ranlib14"
       - "/Users/promex04/esp/esp-idf/components/espcoredump/xtensa-esp32-elf-gcc-ranlib14"
       - "/Users/promex04/esp/esp-idf/components/partition_table/xtensa-esp32-elf-gcc-ranlib14"
@@ -2215,7 +2358,6 @@ events:
       - "/Users/promex04/.local/bin/xtensa-esp32-elf-gcc-ranlib14"
       - "/Users/promex04/.lmstudio/bin/xtensa-esp32-elf-gcc-ranlib14"
       - "/Users/promex04/.antigravity/extensions/ms-python.debugpy-2025.16.0-darwin-arm64/bundled/scripts/noConfigScripts/xtensa-esp32-elf-gcc-ranlib14"
-      - "/Users/promex04/.antigravity/extensions/vscjava.vscode-java-debug-0.58.3/bundled/scripts/noConfigScripts/xtensa-esp32-elf-gcc-ranlib14"
     found: "/Users/promex04/.espressif/tools/xtensa-esp-elf/esp-14.2.0_20250730/xtensa-esp-elf/bin/xtensa-esp32-elf-gcc-ranlib"
     search_context:
       ENV{PATH}:
@@ -2250,13 +2392,23 @@ events:
         - "/Applications/VMware Fusion.app/Contents/Public"
         - "/usr/local/share/dotnet"
         - "~/.dotnet/tools"
+        - "/Users/promex04/esp/esp-idf/components/espcoredump"
+        - "/Users/promex04/esp/esp-idf/components/partition_table"
+        - "/Users/promex04/esp/esp-idf/components/app_update"
+        - "/Users/promex04/.espressif/tools/xtensa-esp-elf-gdb/16.3_20250913/xtensa-esp-elf-gdb/bin"
+        - "/Users/promex04/.espressif/tools/riscv32-esp-elf-gdb/16.3_20250913/riscv32-esp-elf-gdb/bin"
+        - "/Users/promex04/.espressif/tools/xtensa-esp-elf/esp-14.2.0_20250730/xtensa-esp-elf/bin"
+        - "/Users/promex04/.espressif/tools/riscv32-esp-elf/esp-14.2.0_20250730/riscv32-esp-elf/bin"
+        - "/Users/promex04/.espressif/tools/esp32ulp-elf/2.38_20240113/esp32ulp-elf/bin"
+        - "/Users/promex04/.espressif/tools/openocd-esp32/v0.12.0-esp32-20250707/openocd-esp32/bin"
+        - "/Users/promex04/.espressif/python_env/idf5.4_py3.14_env/bin"
+        - "/Users/promex04/esp/esp-idf/tools"
         - "/Users/promex04/.nvm/versions/node/v22.14.0/bin"
         - "/opt/homebrew/opt/maven/bin"
         - "/opt/homebrew/opt/openjdk@11/bin"
         - "/Users/promex04/.local/bin"
         - "/Users/promex04/.lmstudio/bin"
         - "/Users/promex04/.antigravity/extensions/ms-python.debugpy-2025.16.0-darwin-arm64/bundled/scripts/noConfigScripts"
-        - "/Users/promex04/.antigravity/extensions/vscjava.vscode-java-debug-0.58.3/bundled/scripts/noConfigScripts"
         - "/Users/promex04/.local/bin"
         - "/Users/promex04/.lmstudio/bin"
   -
@@ -2314,7 +2466,6 @@ events:
       - "/Users/promex04/.local/bin/"
       - "/Users/promex04/.lmstudio/bin/"
       - "/Users/promex04/.antigravity/extensions/ms-python.debugpy-2025.16.0-darwin-arm64/bundled/scripts/noConfigScripts/"
-      - "/Users/promex04/.antigravity/extensions/vscjava.vscode-java-debug-0.58.3/bundled/scripts/noConfigScripts/"
     searched_directories:
       - "/Users/promex04/esp/esp-idf/components/espcoredump/xtensa-esp32-elf-g++"
       - "/Users/promex04/esp/esp-idf/components/partition_table/xtensa-esp32-elf-g++"
@@ -2355,13 +2506,23 @@ events:
         - "/Applications/VMware Fusion.app/Contents/Public"
         - "/usr/local/share/dotnet"
         - "~/.dotnet/tools"
+        - "/Users/promex04/esp/esp-idf/components/espcoredump"
+        - "/Users/promex04/esp/esp-idf/components/partition_table"
+        - "/Users/promex04/esp/esp-idf/components/app_update"
+        - "/Users/promex04/.espressif/tools/xtensa-esp-elf-gdb/16.3_20250913/xtensa-esp-elf-gdb/bin"
+        - "/Users/promex04/.espressif/tools/riscv32-esp-elf-gdb/16.3_20250913/riscv32-esp-elf-gdb/bin"
+        - "/Users/promex04/.espressif/tools/xtensa-esp-elf/esp-14.2.0_20250730/xtensa-esp-elf/bin"
+        - "/Users/promex04/.espressif/tools/riscv32-esp-elf/esp-14.2.0_20250730/riscv32-esp-elf/bin"
+        - "/Users/promex04/.espressif/tools/esp32ulp-elf/2.38_20240113/esp32ulp-elf/bin"
+        - "/Users/promex04/.espressif/tools/openocd-esp32/v0.12.0-esp32-20250707/openocd-esp32/bin"
+        - "/Users/promex04/.espressif/python_env/idf5.4_py3.14_env/bin"
+        - "/Users/promex04/esp/esp-idf/tools"
         - "/Users/promex04/.nvm/versions/node/v22.14.0/bin"
         - "/opt/homebrew/opt/maven/bin"
         - "/opt/homebrew/opt/openjdk@11/bin"
         - "/Users/promex04/.local/bin"
         - "/Users/promex04/.lmstudio/bin"
         - "/Users/promex04/.antigravity/extensions/ms-python.debugpy-2025.16.0-darwin-arm64/bundled/scripts/noConfigScripts"
-        - "/Users/promex04/.antigravity/extensions/vscjava.vscode-java-debug-0.58.3/bundled/scripts/noConfigScripts"
         - "/Users/promex04/.local/bin"
         - "/Users/promex04/.lmstudio/bin"
   -
@@ -2425,13 +2586,23 @@ events:
         - "/Applications/VMware Fusion.app/Contents/Public"
         - "/usr/local/share/dotnet"
         - "~/.dotnet/tools"
+        - "/Users/promex04/esp/esp-idf/components/espcoredump"
+        - "/Users/promex04/esp/esp-idf/components/partition_table"
+        - "/Users/promex04/esp/esp-idf/components/app_update"
+        - "/Users/promex04/.espressif/tools/xtensa-esp-elf-gdb/16.3_20250913/xtensa-esp-elf-gdb/bin"
+        - "/Users/promex04/.espressif/tools/riscv32-esp-elf-gdb/16.3_20250913/riscv32-esp-elf-gdb/bin"
+        - "/Users/promex04/.espressif/tools/xtensa-esp-elf/esp-14.2.0_20250730/xtensa-esp-elf/bin"
+        - "/Users/promex04/.espressif/tools/riscv32-esp-elf/esp-14.2.0_20250730/riscv32-esp-elf/bin"
+        - "/Users/promex04/.espressif/tools/esp32ulp-elf/2.38_20240113/esp32ulp-elf/bin"
+        - "/Users/promex04/.espressif/tools/openocd-esp32/v0.12.0-esp32-20250707/openocd-esp32/bin"
+        - "/Users/promex04/.espressif/python_env/idf5.4_py3.14_env/bin"
+        - "/Users/promex04/esp/esp-idf/tools"
         - "/Users/promex04/.nvm/versions/node/v22.14.0/bin"
         - "/opt/homebrew/opt/maven/bin"
         - "/opt/homebrew/opt/openjdk@11/bin"
         - "/Users/promex04/.local/bin"
         - "/Users/promex04/.lmstudio/bin"
         - "/Users/promex04/.antigravity/extensions/ms-python.debugpy-2025.16.0-darwin-arm64/bundled/scripts/noConfigScripts"
-        - "/Users/promex04/.antigravity/extensions/vscjava.vscode-java-debug-0.58.3/bundled/scripts/noConfigScripts"
         - "/Users/promex04/.local/bin"
         - "/Users/promex04/.lmstudio/bin"
   -
@@ -2515,7 +2686,6 @@ events:
       - "/Users/promex04/.local/bin/"
       - "/Users/promex04/.lmstudio/bin/"
       - "/Users/promex04/.antigravity/extensions/ms-python.debugpy-2025.16.0-darwin-arm64/bundled/scripts/noConfigScripts/"
-      - "/Users/promex04/.antigravity/extensions/vscjava.vscode-java-debug-0.58.3/bundled/scripts/noConfigScripts/"
     searched_directories:
       - "/Users/promex04/.espressif/tools/xtensa-esp-elf/esp-14.2.0_20250730/xtensa-esp-elf/bin/xtensa-esp32-elf-gcc-ar-14.2"
       - "/Users/promex04/esp/esp-idf/components/espcoredump/xtensa-esp32-elf-gcc-ar-14.2"
@@ -2551,7 +2721,6 @@ events:
       - "/Users/promex04/.local/bin/xtensa-esp32-elf-gcc-ar-14.2"
       - "/Users/promex04/.lmstudio/bin/xtensa-esp32-elf-gcc-ar-14.2"
       - "/Users/promex04/.antigravity/extensions/ms-python.debugpy-2025.16.0-darwin-arm64/bundled/scripts/noConfigScripts/xtensa-esp32-elf-gcc-ar-14.2"
-      - "/Users/promex04/.antigravity/extensions/vscjava.vscode-java-debug-0.58.3/bundled/scripts/noConfigScripts/xtensa-esp32-elf-gcc-ar-14.2"
       - "/Users/promex04/.espressif/tools/xtensa-esp-elf/esp-14.2.0_20250730/xtensa-esp-elf/bin/xtensa-esp32-elf-gcc-ar-14"
       - "/Users/promex04/esp/esp-idf/components/espcoredump/xtensa-esp32-elf-gcc-ar-14"
       - "/Users/promex04/esp/esp-idf/components/partition_table/xtensa-esp32-elf-gcc-ar-14"
@@ -2586,7 +2755,6 @@ events:
       - "/Users/promex04/.local/bin/xtensa-esp32-elf-gcc-ar-14"
       - "/Users/promex04/.lmstudio/bin/xtensa-esp32-elf-gcc-ar-14"
       - "/Users/promex04/.antigravity/extensions/ms-python.debugpy-2025.16.0-darwin-arm64/bundled/scripts/noConfigScripts/xtensa-esp32-elf-gcc-ar-14"
-      - "/Users/promex04/.antigravity/extensions/vscjava.vscode-java-debug-0.58.3/bundled/scripts/noConfigScripts/xtensa-esp32-elf-gcc-ar-14"
       - "/Users/promex04/.espressif/tools/xtensa-esp-elf/esp-14.2.0_20250730/xtensa-esp-elf/bin/xtensa-esp32-elf-gcc-ar14"
       - "/Users/promex04/esp/esp-idf/components/espcoredump/xtensa-esp32-elf-gcc-ar14"
       - "/Users/promex04/esp/esp-idf/components/partition_table/xtensa-esp32-elf-gcc-ar14"
@@ -2621,7 +2789,6 @@ events:
       - "/Users/promex04/.local/bin/xtensa-esp32-elf-gcc-ar14"
       - "/Users/promex04/.lmstudio/bin/xtensa-esp32-elf-gcc-ar14"
       - "/Users/promex04/.antigravity/extensions/ms-python.debugpy-2025.16.0-darwin-arm64/bundled/scripts/noConfigScripts/xtensa-esp32-elf-gcc-ar14"
-      - "/Users/promex04/.antigravity/extensions/vscjava.vscode-java-debug-0.58.3/bundled/scripts/noConfigScripts/xtensa-esp32-elf-gcc-ar14"
     found: "/Users/promex04/.espressif/tools/xtensa-esp-elf/esp-14.2.0_20250730/xtensa-esp-elf/bin/xtensa-esp32-elf-gcc-ar"
     search_context:
       ENV{PATH}:
@@ -2656,13 +2823,23 @@ events:
         - "/Applications/VMware Fusion.app/Contents/Public"
         - "/usr/local/share/dotnet"
         - "~/.dotnet/tools"
+        - "/Users/promex04/esp/esp-idf/components/espcoredump"
+        - "/Users/promex04/esp/esp-idf/components/partition_table"
+        - "/Users/promex04/esp/esp-idf/components/app_update"
+        - "/Users/promex04/.espressif/tools/xtensa-esp-elf-gdb/16.3_20250913/xtensa-esp-elf-gdb/bin"
+        - "/Users/promex04/.espressif/tools/riscv32-esp-elf-gdb/16.3_20250913/riscv32-esp-elf-gdb/bin"
+        - "/Users/promex04/.espressif/tools/xtensa-esp-elf/esp-14.2.0_20250730/xtensa-esp-elf/bin"
+        - "/Users/promex04/.espressif/tools/riscv32-esp-elf/esp-14.2.0_20250730/riscv32-esp-elf/bin"
+        - "/Users/promex04/.espressif/tools/esp32ulp-elf/2.38_20240113/esp32ulp-elf/bin"
+        - "/Users/promex04/.espressif/tools/openocd-esp32/v0.12.0-esp32-20250707/openocd-esp32/bin"
+        - "/Users/promex04/.espressif/python_env/idf5.4_py3.14_env/bin"
+        - "/Users/promex04/esp/esp-idf/tools"
         - "/Users/promex04/.nvm/versions/node/v22.14.0/bin"
         - "/opt/homebrew/opt/maven/bin"
         - "/opt/homebrew/opt/openjdk@11/bin"
         - "/Users/promex04/.local/bin"
         - "/Users/promex04/.lmstudio/bin"
         - "/Users/promex04/.antigravity/extensions/ms-python.debugpy-2025.16.0-darwin-arm64/bundled/scripts/noConfigScripts"
-        - "/Users/promex04/.antigravity/extensions/vscjava.vscode-java-debug-0.58.3/bundled/scripts/noConfigScripts"
         - "/Users/promex04/.local/bin"
         - "/Users/promex04/.lmstudio/bin"
   -
@@ -2723,7 +2900,6 @@ events:
       - "/Users/promex04/.local/bin/"
       - "/Users/promex04/.lmstudio/bin/"
       - "/Users/promex04/.antigravity/extensions/ms-python.debugpy-2025.16.0-darwin-arm64/bundled/scripts/noConfigScripts/"
-      - "/Users/promex04/.antigravity/extensions/vscjava.vscode-java-debug-0.58.3/bundled/scripts/noConfigScripts/"
     searched_directories:
       - "/Users/promex04/.espressif/tools/xtensa-esp-elf/esp-14.2.0_20250730/xtensa-esp-elf/bin/xtensa-esp32-elf-gcc-ranlib-14.2"
       - "/Users/promex04/esp/esp-idf/components/espcoredump/xtensa-esp32-elf-gcc-ranlib-14.2"
@@ -2759,7 +2935,6 @@ events:
       - "/Users/promex04/.local/bin/xtensa-esp32-elf-gcc-ranlib-14.2"
       - "/Users/promex04/.lmstudio/bin/xtensa-esp32-elf-gcc-ranlib-14.2"
       - "/Users/promex04/.antigravity/extensions/ms-python.debugpy-2025.16.0-darwin-arm64/bundled/scripts/noConfigScripts/xtensa-esp32-elf-gcc-ranlib-14.2"
-      - "/Users/promex04/.antigravity/extensions/vscjava.vscode-java-debug-0.58.3/bundled/scripts/noConfigScripts/xtensa-esp32-elf-gcc-ranlib-14.2"
       - "/Users/promex04/.espressif/tools/xtensa-esp-elf/esp-14.2.0_20250730/xtensa-esp-elf/bin/xtensa-esp32-elf-gcc-ranlib-14"
       - "/Users/promex04/esp/esp-idf/components/espcoredump/xtensa-esp32-elf-gcc-ranlib-14"
       - "/Users/promex04/esp/esp-idf/components/partition_table/xtensa-esp32-elf-gcc-ranlib-14"
@@ -2794,7 +2969,6 @@ events:
       - "/Users/promex04/.local/bin/xtensa-esp32-elf-gcc-ranlib-14"
       - "/Users/promex04/.lmstudio/bin/xtensa-esp32-elf-gcc-ranlib-14"
       - "/Users/promex04/.antigravity/extensions/ms-python.debugpy-2025.16.0-darwin-arm64/bundled/scripts/noConfigScripts/xtensa-esp32-elf-gcc-ranlib-14"
-      - "/Users/promex04/.antigravity/extensions/vscjava.vscode-java-debug-0.58.3/bundled/scripts/noConfigScripts/xtensa-esp32-elf-gcc-ranlib-14"
       - "/Users/promex04/.espressif/tools/xtensa-esp-elf/esp-14.2.0_20250730/xtensa-esp-elf/bin/xtensa-esp32-elf-gcc-ranlib14"
       - "/Users/promex04/esp/esp-idf/components/espcoredump/xtensa-esp32-elf-gcc-ranlib14"
       - "/Users/promex04/esp/esp-idf/components/partition_table/xtensa-esp32-elf-gcc-ranlib14"
@@ -2829,7 +3003,6 @@ events:
       - "/Users/promex04/.local/bin/xtensa-esp32-elf-gcc-ranlib14"
       - "/Users/promex04/.lmstudio/bin/xtensa-esp32-elf-gcc-ranlib14"
       - "/Users/promex04/.antigravity/extensions/ms-python.debugpy-2025.16.0-darwin-arm64/bundled/scripts/noConfigScripts/xtensa-esp32-elf-gcc-ranlib14"
-      - "/Users/promex04/.antigravity/extensions/vscjava.vscode-java-debug-0.58.3/bundled/scripts/noConfigScripts/xtensa-esp32-elf-gcc-ranlib14"
     found: "/Users/promex04/.espressif/tools/xtensa-esp-elf/esp-14.2.0_20250730/xtensa-esp-elf/bin/xtensa-esp32-elf-gcc-ranlib"
     search_context:
       ENV{PATH}:
@@ -2864,13 +3037,23 @@ events:
         - "/Applications/VMware Fusion.app/Contents/Public"
         - "/usr/local/share/dotnet"
         - "~/.dotnet/tools"
+        - "/Users/promex04/esp/esp-idf/components/espcoredump"
+        - "/Users/promex04/esp/esp-idf/components/partition_table"
+        - "/Users/promex04/esp/esp-idf/components/app_update"
+        - "/Users/promex04/.espressif/tools/xtensa-esp-elf-gdb/16.3_20250913/xtensa-esp-elf-gdb/bin"
+        - "/Users/promex04/.espressif/tools/riscv32-esp-elf-gdb/16.3_20250913/riscv32-esp-elf-gdb/bin"
+        - "/Users/promex04/.espressif/tools/xtensa-esp-elf/esp-14.2.0_20250730/xtensa-esp-elf/bin"
+        - "/Users/promex04/.espressif/tools/riscv32-esp-elf/esp-14.2.0_20250730/riscv32-esp-elf/bin"
+        - "/Users/promex04/.espressif/tools/esp32ulp-elf/2.38_20240113/esp32ulp-elf/bin"
+        - "/Users/promex04/.espressif/tools/openocd-esp32/v0.12.0-esp32-20250707/openocd-esp32/bin"
+        - "/Users/promex04/.espressif/python_env/idf5.4_py3.14_env/bin"
+        - "/Users/promex04/esp/esp-idf/tools"
         - "/Users/promex04/.nvm/versions/node/v22.14.0/bin"
         - "/opt/homebrew/opt/maven/bin"
         - "/opt/homebrew/opt/openjdk@11/bin"
         - "/Users/promex04/.local/bin"
         - "/Users/promex04/.lmstudio/bin"
         - "/Users/promex04/.antigravity/extensions/ms-python.debugpy-2025.16.0-darwin-arm64/bundled/scripts/noConfigScripts"
-        - "/Users/promex04/.antigravity/extensions/vscjava.vscode-java-debug-0.58.3/bundled/scripts/noConfigScripts"
         - "/Users/promex04/.local/bin"
         - "/Users/promex04/.lmstudio/bin"
   -
@@ -2928,7 +3111,6 @@ events:
       - "/Users/promex04/.local/bin/"
       - "/Users/promex04/.lmstudio/bin/"
       - "/Users/promex04/.antigravity/extensions/ms-python.debugpy-2025.16.0-darwin-arm64/bundled/scripts/noConfigScripts/"
-      - "/Users/promex04/.antigravity/extensions/vscjava.vscode-java-debug-0.58.3/bundled/scripts/noConfigScripts/"
     searched_directories:
       - "/Users/promex04/esp/esp-idf/components/espcoredump/xtensa-esp32-elf-gcc"
       - "/Users/promex04/esp/esp-idf/components/partition_table/xtensa-esp32-elf-gcc"
@@ -2969,13 +3151,23 @@ events:
         - "/Applications/VMware Fusion.app/Contents/Public"
         - "/usr/local/share/dotnet"
         - "~/.dotnet/tools"
+        - "/Users/promex04/esp/esp-idf/components/espcoredump"
+        - "/Users/promex04/esp/esp-idf/components/partition_table"
+        - "/Users/promex04/esp/esp-idf/components/app_update"
+        - "/Users/promex04/.espressif/tools/xtensa-esp-elf-gdb/16.3_20250913/xtensa-esp-elf-gdb/bin"
+        - "/Users/promex04/.espressif/tools/riscv32-esp-elf-gdb/16.3_20250913/riscv32-esp-elf-gdb/bin"
+        - "/Users/promex04/.espressif/tools/xtensa-esp-elf/esp-14.2.0_20250730/xtensa-esp-elf/bin"
+        - "/Users/promex04/.espressif/tools/riscv32-esp-elf/esp-14.2.0_20250730/riscv32-esp-elf/bin"
+        - "/Users/promex04/.espressif/tools/esp32ulp-elf/2.38_20240113/esp32ulp-elf/bin"
+        - "/Users/promex04/.espressif/tools/openocd-esp32/v0.12.0-esp32-20250707/openocd-esp32/bin"
+        - "/Users/promex04/.espressif/python_env/idf5.4_py3.14_env/bin"
+        - "/Users/promex04/esp/esp-idf/tools"
         - "/Users/promex04/.nvm/versions/node/v22.14.0/bin"
         - "/opt/homebrew/opt/maven/bin"
         - "/opt/homebrew/opt/openjdk@11/bin"
         - "/Users/promex04/.local/bin"
         - "/Users/promex04/.lmstudio/bin"
         - "/Users/promex04/.antigravity/extensions/ms-python.debugpy-2025.16.0-darwin-arm64/bundled/scripts/noConfigScripts"
-        - "/Users/promex04/.antigravity/extensions/vscjava.vscode-java-debug-0.58.3/bundled/scripts/noConfigScripts"
         - "/Users/promex04/.local/bin"
         - "/Users/promex04/.lmstudio/bin"
   -
@@ -3050,7 +3242,6 @@ events:
       - "/Users/promex04/.local/bin/"
       - "/Users/promex04/.lmstudio/bin/"
       - "/Users/promex04/.antigravity/extensions/ms-python.debugpy-2025.16.0-darwin-arm64/bundled/scripts/noConfigScripts/"
-      - "/Users/promex04/.antigravity/extensions/vscjava.vscode-java-debug-0.58.3/bundled/scripts/noConfigScripts/"
     searched_directories:
       - "/Users/promex04/.espressif/tools/xtensa-esp-elf/esp-14.2.0_20250730/xtensa-esp-elf/bin/xtensa-esp32-elf-gcc-ar-"
       - "/Users/promex04/esp/esp-idf/components/espcoredump/xtensa-esp32-elf-gcc-ar-"
@@ -3086,7 +3277,6 @@ events:
       - "/Users/promex04/.local/bin/xtensa-esp32-elf-gcc-ar-"
       - "/Users/promex04/.lmstudio/bin/xtensa-esp32-elf-gcc-ar-"
       - "/Users/promex04/.antigravity/extensions/ms-python.debugpy-2025.16.0-darwin-arm64/bundled/scripts/noConfigScripts/xtensa-esp32-elf-gcc-ar-"
-      - "/Users/promex04/.antigravity/extensions/vscjava.vscode-java-debug-0.58.3/bundled/scripts/noConfigScripts/xtensa-esp32-elf-gcc-ar-"
       - "/Users/promex04/.espressif/tools/xtensa-esp-elf/esp-14.2.0_20250730/xtensa-esp-elf/bin/xtensa-esp32-elf-gcc-ar-"
       - "/Users/promex04/esp/esp-idf/components/espcoredump/xtensa-esp32-elf-gcc-ar-"
       - "/Users/promex04/esp/esp-idf/components/partition_table/xtensa-esp32-elf-gcc-ar-"
@@ -3121,7 +3311,6 @@ events:
       - "/Users/promex04/.local/bin/xtensa-esp32-elf-gcc-ar-"
       - "/Users/promex04/.lmstudio/bin/xtensa-esp32-elf-gcc-ar-"
       - "/Users/promex04/.antigravity/extensions/ms-python.debugpy-2025.16.0-darwin-arm64/bundled/scripts/noConfigScripts/xtensa-esp32-elf-gcc-ar-"
-      - "/Users/promex04/.antigravity/extensions/vscjava.vscode-java-debug-0.58.3/bundled/scripts/noConfigScripts/xtensa-esp32-elf-gcc-ar-"
     found: "/Users/promex04/.espressif/tools/xtensa-esp-elf/esp-14.2.0_20250730/xtensa-esp-elf/bin/xtensa-esp32-elf-gcc-ar"
     search_context:
       ENV{PATH}:
@@ -3156,13 +3345,23 @@ events:
         - "/Applications/VMware Fusion.app/Contents/Public"
         - "/usr/local/share/dotnet"
         - "~/.dotnet/tools"
+        - "/Users/promex04/esp/esp-idf/components/espcoredump"
+        - "/Users/promex04/esp/esp-idf/components/partition_table"
+        - "/Users/promex04/esp/esp-idf/components/app_update"
+        - "/Users/promex04/.espressif/tools/xtensa-esp-elf-gdb/16.3_20250913/xtensa-esp-elf-gdb/bin"
+        - "/Users/promex04/.espressif/tools/riscv32-esp-elf-gdb/16.3_20250913/riscv32-esp-elf-gdb/bin"
+        - "/Users/promex04/.espressif/tools/xtensa-esp-elf/esp-14.2.0_20250730/xtensa-esp-elf/bin"
+        - "/Users/promex04/.espressif/tools/riscv32-esp-elf/esp-14.2.0_20250730/riscv32-esp-elf/bin"
+        - "/Users/promex04/.espressif/tools/esp32ulp-elf/2.38_20240113/esp32ulp-elf/bin"
+        - "/Users/promex04/.espressif/tools/openocd-esp32/v0.12.0-esp32-20250707/openocd-esp32/bin"
+        - "/Users/promex04/.espressif/python_env/idf5.4_py3.14_env/bin"
+        - "/Users/promex04/esp/esp-idf/tools"
         - "/Users/promex04/.nvm/versions/node/v22.14.0/bin"
         - "/opt/homebrew/opt/maven/bin"
         - "/opt/homebrew/opt/openjdk@11/bin"
         - "/Users/promex04/.local/bin"
         - "/Users/promex04/.lmstudio/bin"
         - "/Users/promex04/.antigravity/extensions/ms-python.debugpy-2025.16.0-darwin-arm64/bundled/scripts/noConfigScripts"
-        - "/Users/promex04/.antigravity/extensions/vscjava.vscode-java-debug-0.58.3/bundled/scripts/noConfigScripts"
         - "/Users/promex04/.local/bin"
         - "/Users/promex04/.lmstudio/bin"
   -
@@ -3223,7 +3422,6 @@ events:
       - "/Users/promex04/.local/bin/"
       - "/Users/promex04/.lmstudio/bin/"
       - "/Users/promex04/.antigravity/extensions/ms-python.debugpy-2025.16.0-darwin-arm64/bundled/scripts/noConfigScripts/"
-      - "/Users/promex04/.antigravity/extensions/vscjava.vscode-java-debug-0.58.3/bundled/scripts/noConfigScripts/"
     searched_directories:
       - "/Users/promex04/.espressif/tools/xtensa-esp-elf/esp-14.2.0_20250730/xtensa-esp-elf/bin/xtensa-esp32-elf-gcc-ranlib-"
       - "/Users/promex04/esp/esp-idf/components/espcoredump/xtensa-esp32-elf-gcc-ranlib-"
@@ -3259,7 +3457,6 @@ events:
       - "/Users/promex04/.local/bin/xtensa-esp32-elf-gcc-ranlib-"
       - "/Users/promex04/.lmstudio/bin/xtensa-esp32-elf-gcc-ranlib-"
       - "/Users/promex04/.antigravity/extensions/ms-python.debugpy-2025.16.0-darwin-arm64/bundled/scripts/noConfigScripts/xtensa-esp32-elf-gcc-ranlib-"
-      - "/Users/promex04/.antigravity/extensions/vscjava.vscode-java-debug-0.58.3/bundled/scripts/noConfigScripts/xtensa-esp32-elf-gcc-ranlib-"
       - "/Users/promex04/.espressif/tools/xtensa-esp-elf/esp-14.2.0_20250730/xtensa-esp-elf/bin/xtensa-esp32-elf-gcc-ranlib-"
       - "/Users/promex04/esp/esp-idf/components/espcoredump/xtensa-esp32-elf-gcc-ranlib-"
       - "/Users/promex04/esp/esp-idf/components/partition_table/xtensa-esp32-elf-gcc-ranlib-"
@@ -3294,7 +3491,6 @@ events:
       - "/Users/promex04/.local/bin/xtensa-esp32-elf-gcc-ranlib-"
       - "/Users/promex04/.lmstudio/bin/xtensa-esp32-elf-gcc-ranlib-"
       - "/Users/promex04/.antigravity/extensions/ms-python.debugpy-2025.16.0-darwin-arm64/bundled/scripts/noConfigScripts/xtensa-esp32-elf-gcc-ranlib-"
-      - "/Users/promex04/.antigravity/extensions/vscjava.vscode-java-debug-0.58.3/bundled/scripts/noConfigScripts/xtensa-esp32-elf-gcc-ranlib-"
     found: "/Users/promex04/.espressif/tools/xtensa-esp-elf/esp-14.2.0_20250730/xtensa-esp-elf/bin/xtensa-esp32-elf-gcc-ranlib"
     search_context:
       ENV{PATH}:
@@ -3329,13 +3525,23 @@ events:
         - "/Applications/VMware Fusion.app/Contents/Public"
         - "/usr/local/share/dotnet"
         - "~/.dotnet/tools"
+        - "/Users/promex04/esp/esp-idf/components/espcoredump"
+        - "/Users/promex04/esp/esp-idf/components/partition_table"
+        - "/Users/promex04/esp/esp-idf/components/app_update"
+        - "/Users/promex04/.espressif/tools/xtensa-esp-elf-gdb/16.3_20250913/xtensa-esp-elf-gdb/bin"
+        - "/Users/promex04/.espressif/tools/riscv32-esp-elf-gdb/16.3_20250913/riscv32-esp-elf-gdb/bin"
+        - "/Users/promex04/.espressif/tools/xtensa-esp-elf/esp-14.2.0_20250730/xtensa-esp-elf/bin"
+        - "/Users/promex04/.espressif/tools/riscv32-esp-elf/esp-14.2.0_20250730/riscv32-esp-elf/bin"
+        - "/Users/promex04/.espressif/tools/esp32ulp-elf/2.38_20240113/esp32ulp-elf/bin"
+        - "/Users/promex04/.espressif/tools/openocd-esp32/v0.12.0-esp32-20250707/openocd-esp32/bin"
+        - "/Users/promex04/.espressif/python_env/idf5.4_py3.14_env/bin"
+        - "/Users/promex04/esp/esp-idf/tools"
         - "/Users/promex04/.nvm/versions/node/v22.14.0/bin"
         - "/opt/homebrew/opt/maven/bin"
         - "/opt/homebrew/opt/openjdk@11/bin"
         - "/Users/promex04/.local/bin"
         - "/Users/promex04/.lmstudio/bin"
         - "/Users/promex04/.antigravity/extensions/ms-python.debugpy-2025.16.0-darwin-arm64/bundled/scripts/noConfigScripts"
-        - "/Users/promex04/.antigravity/extensions/vscjava.vscode-java-debug-0.58.3/bundled/scripts/noConfigScripts"
         - "/Users/promex04/.local/bin"
         - "/Users/promex04/.lmstudio/bin"
   -
@@ -3348,8 +3554,8 @@ events:
     checks:
       - "Detecting C compiler ABI info"
     directories:
-      source: "/Users/promex04/Desktop/guild/speech_recognition/wwe/LyratMini_RecordPlay/build/bootloader/CMakeFiles/CMakeScratch/TryCompile-mXKXiN"
-      binary: "/Users/promex04/Desktop/guild/speech_recognition/wwe/LyratMini_RecordPlay/build/bootloader/CMakeFiles/CMakeScratch/TryCompile-mXKXiN"
+      source: "/Users/promex04/Desktop/guild/speech_recognition/wwe/LyratMini_RecordPlay/build/bootloader/CMakeFiles/CMakeScratch/TryCompile-alX9XK"
+      binary: "/Users/promex04/Desktop/guild/speech_recognition/wwe/LyratMini_RecordPlay/build/bootloader/CMakeFiles/CMakeScratch/TryCompile-alX9XK"
     cmakeVariables:
       CMAKE_C_FLAGS: "-mlongcalls -Wno-frame-address  -fno-builtin-memcpy -fno-builtin-memset -fno-builtin-bzero -fno-builtin-stpcpy -fno-builtin-strncpy"
       CMAKE_C_FLAGS_DEBUG: "-g"
@@ -3359,12 +3565,12 @@ events:
       variable: "CMAKE_C_ABI_COMPILED"
       cached: true
       stdout: |
-        Change Dir: '/Users/promex04/Desktop/guild/speech_recognition/wwe/LyratMini_RecordPlay/build/bootloader/CMakeFiles/CMakeScratch/TryCompile-mXKXiN'
+        Change Dir: '/Users/promex04/Desktop/guild/speech_recognition/wwe/LyratMini_RecordPlay/build/bootloader/CMakeFiles/CMakeScratch/TryCompile-alX9XK'
         
-        Run Build Command(s): /opt/homebrew/bin/cmake -E env VERBOSE=1 /usr/bin/make -f Makefile cmTC_55fcc/fast
-        /Library/Developer/CommandLineTools/usr/bin/make  -f CMakeFiles/cmTC_55fcc.dir/build.make CMakeFiles/cmTC_55fcc.dir/build
-        Building C object CMakeFiles/cmTC_55fcc.dir/CMakeCCompilerABI.c.obj
-        /Users/promex04/.espressif/tools/xtensa-esp-elf/esp-14.2.0_20250730/xtensa-esp-elf/bin/xtensa-esp32-elf-gcc   -mlongcalls -Wno-frame-address  -fno-builtin-memcpy -fno-builtin-memset -fno-builtin-bzero -fno-builtin-stpcpy -fno-builtin-strncpy    -v -o CMakeFiles/cmTC_55fcc.dir/CMakeCCompilerABI.c.obj -c /opt/homebrew/share/cmake/Modules/CMakeCCompilerABI.c
+        Run Build Command(s): /opt/homebrew/bin/cmake -E env VERBOSE=1 /usr/bin/make -f Makefile cmTC_0ce71/fast
+        /Library/Developer/CommandLineTools/usr/bin/make  -f CMakeFiles/cmTC_0ce71.dir/build.make CMakeFiles/cmTC_0ce71.dir/build
+        Building C object CMakeFiles/cmTC_0ce71.dir/CMakeCCompilerABI.c.obj
+        /Users/promex04/.espressif/tools/xtensa-esp-elf/esp-14.2.0_20250730/xtensa-esp-elf/bin/xtensa-esp32-elf-gcc   -mlongcalls -Wno-frame-address  -fno-builtin-memcpy -fno-builtin-memset -fno-builtin-bzero -fno-builtin-stpcpy -fno-builtin-strncpy    -v -o CMakeFiles/cmTC_0ce71.dir/CMakeCCompilerABI.c.obj -c /opt/homebrew/share/cmake/Modules/CMakeCCompilerABI.c
         Using built-in specs.
         COLLECT_GCC=/Users/promex04/.espressif/tools/xtensa-esp-elf/esp-14.2.0_20250730/xtensa-esp-elf/bin/xtensa-esp-elf-gcc
         Target: xtensa-esp-elf
@@ -3372,8 +3578,8 @@ events:
         Thread model: posix
         Supported LTO compression algorithms: zlib
         gcc version 14.2.0 (crosstool-NG esp-14.2.0_20250730) 
-        COLLECT_GCC_OPTIONS='-mdynconfig=xtensa_esp32.so' '-mlongcalls' '-Wno-frame-address' '-fno-builtin-memcpy' '-fno-builtin-memset' '-fno-builtin-bzero' '-fno-builtin-stpcpy' '-fno-builtin-strncpy' '-v' '-o' 'CMakeFiles/cmTC_55fcc.dir/CMakeCCompilerABI.c.obj' '-c' '-dumpdir' 'CMakeFiles/cmTC_55fcc.dir/'
-         /Users/promex04/.espressif/tools/xtensa-esp-elf/esp-14.2.0_20250730/xtensa-esp-elf/bin/../libexec/gcc/xtensa-esp-elf/14.2.0/cc1 -quiet -v -imultilib esp32 -iprefix /Users/promex04/.espressif/tools/xtensa-esp-elf/esp-14.2.0_20250730/xtensa-esp-elf/bin/../lib/gcc/xtensa-esp-elf/14.2.0/ -isysroot /Users/promex04/.espressif/tools/xtensa-esp-elf/esp-14.2.0_20250730/xtensa-esp-elf/bin/../xtensa-esp-elf /opt/homebrew/share/cmake/Modules/CMakeCCompilerABI.c -quiet -dumpdir CMakeFiles/cmTC_55fcc.dir/ -dumpbase CMakeCCompilerABI.c.c -dumpbase-ext .c -mdynconfig=xtensa_esp32.so -mlongcalls -Wno-frame-address -version -fno-builtin-memcpy -fno-builtin-memset -fno-builtin-bzero -fno-builtin-stpcpy -fno-builtin-strncpy -o /var/folders/bk/40lzr35s3gg2hfbtrw2rg5x00000gn/T//ccIT3WuV.s
+        COLLECT_GCC_OPTIONS='-mdynconfig=xtensa_esp32.so' '-mlongcalls' '-Wno-frame-address' '-fno-builtin-memcpy' '-fno-builtin-memset' '-fno-builtin-bzero' '-fno-builtin-stpcpy' '-fno-builtin-strncpy' '-v' '-o' 'CMakeFiles/cmTC_0ce71.dir/CMakeCCompilerABI.c.obj' '-c' '-dumpdir' 'CMakeFiles/cmTC_0ce71.dir/'
+         /Users/promex04/.espressif/tools/xtensa-esp-elf/esp-14.2.0_20250730/xtensa-esp-elf/bin/../libexec/gcc/xtensa-esp-elf/14.2.0/cc1 -quiet -v -imultilib esp32 -iprefix /Users/promex04/.espressif/tools/xtensa-esp-elf/esp-14.2.0_20250730/xtensa-esp-elf/bin/../lib/gcc/xtensa-esp-elf/14.2.0/ -isysroot /Users/promex04/.espressif/tools/xtensa-esp-elf/esp-14.2.0_20250730/xtensa-esp-elf/bin/../xtensa-esp-elf /opt/homebrew/share/cmake/Modules/CMakeCCompilerABI.c -quiet -dumpdir CMakeFiles/cmTC_0ce71.dir/ -dumpbase CMakeCCompilerABI.c.c -dumpbase-ext .c -mdynconfig=xtensa_esp32.so -mlongcalls -Wno-frame-address -version -fno-builtin-memcpy -fno-builtin-memset -fno-builtin-bzero -fno-builtin-stpcpy -fno-builtin-strncpy -o /var/folders/bk/40lzr35s3gg2hfbtrw2rg5x00000gn/T//ccVTZ4eD.s
         GNU C17 (crosstool-NG esp-14.2.0_20250730) version 14.2.0 (xtensa-esp-elf)
         	compiled by GNU C version Debian Clang 11.0.1, GMP version 6.2.1, MPFR version 4.2.1, MPC version 1.2.1, isl version isl-0.26-GMP
         
@@ -3390,13 +3596,13 @@ events:
          /Users/promex04/.espressif/tools/xtensa-esp-elf/esp-14.2.0_20250730/xtensa-esp-elf/bin/../lib/gcc/xtensa-esp-elf/14.2.0/../../../../xtensa-esp-elf/include
         End of search list.
         Compiler executable checksum: eca473d4084d9d1acc528c06af450494
-        COLLECT_GCC_OPTIONS='-mdynconfig=xtensa_esp32.so' '-mlongcalls' '-Wno-frame-address' '-fno-builtin-memcpy' '-fno-builtin-memset' '-fno-builtin-bzero' '-fno-builtin-stpcpy' '-fno-builtin-strncpy' '-v' '-o' 'CMakeFiles/cmTC_55fcc.dir/CMakeCCompilerABI.c.obj' '-c' '-dumpdir' 'CMakeFiles/cmTC_55fcc.dir/'
-         /Users/promex04/.espressif/tools/xtensa-esp-elf/esp-14.2.0_20250730/xtensa-esp-elf/bin/../lib/gcc/xtensa-esp-elf/14.2.0/../../../../xtensa-esp-elf/bin/as --traditional-format --longcalls --dynconfig=xtensa_esp32.so -o CMakeFiles/cmTC_55fcc.dir/CMakeCCompilerABI.c.obj /var/folders/bk/40lzr35s3gg2hfbtrw2rg5x00000gn/T//ccIT3WuV.s
+        COLLECT_GCC_OPTIONS='-mdynconfig=xtensa_esp32.so' '-mlongcalls' '-Wno-frame-address' '-fno-builtin-memcpy' '-fno-builtin-memset' '-fno-builtin-bzero' '-fno-builtin-stpcpy' '-fno-builtin-strncpy' '-v' '-o' 'CMakeFiles/cmTC_0ce71.dir/CMakeCCompilerABI.c.obj' '-c' '-dumpdir' 'CMakeFiles/cmTC_0ce71.dir/'
+         /Users/promex04/.espressif/tools/xtensa-esp-elf/esp-14.2.0_20250730/xtensa-esp-elf/bin/../lib/gcc/xtensa-esp-elf/14.2.0/../../../../xtensa-esp-elf/bin/as --traditional-format --longcalls --dynconfig=xtensa_esp32.so -o CMakeFiles/cmTC_0ce71.dir/CMakeCCompilerABI.c.obj /var/folders/bk/40lzr35s3gg2hfbtrw2rg5x00000gn/T//ccVTZ4eD.s
         COMPILER_PATH=/Users/promex04/.espressif/tools/xtensa-esp-elf/esp-14.2.0_20250730/xtensa-esp-elf/bin/../libexec/gcc/xtensa-esp-elf/14.2.0/:/Users/promex04/.espressif/tools/xtensa-esp-elf/esp-14.2.0_20250730/xtensa-esp-elf/bin/../libexec/gcc/:/Users/promex04/.espressif/tools/xtensa-esp-elf/esp-14.2.0_20250730/xtensa-esp-elf/bin/../lib/gcc/xtensa-esp-elf/14.2.0/../../../../xtensa-esp-elf/bin/
         LIBRARY_PATH=/Users/promex04/.espressif/tools/xtensa-esp-elf/esp-14.2.0_20250730/xtensa-esp-elf/bin/../lib/gcc/xtensa-esp-elf/14.2.0/esp32/:/Users/promex04/.espressif/tools/xtensa-esp-elf/esp-14.2.0_20250730/xtensa-esp-elf/bin/../lib/gcc/xtensa-esp-elf/14.2.0/../../../../xtensa-esp-elf/lib/esp32/:/Users/promex04/.espressif/tools/xtensa-esp-elf/esp-14.2.0_20250730/xtensa-esp-elf/bin/../xtensa-esp-elf/lib/esp32/:/Users/promex04/.espressif/tools/xtensa-esp-elf/esp-14.2.0_20250730/xtensa-esp-elf/bin/../lib/gcc/xtensa-esp-elf/14.2.0/:/Users/promex04/.espressif/tools/xtensa-esp-elf/esp-14.2.0_20250730/xtensa-esp-elf/bin/../lib/gcc/:/Users/promex04/.espressif/tools/xtensa-esp-elf/esp-14.2.0_20250730/xtensa-esp-elf/bin/../lib/gcc/xtensa-esp-elf/14.2.0/../../../../xtensa-esp-elf/lib/:/Users/promex04/.espressif/tools/xtensa-esp-elf/esp-14.2.0_20250730/xtensa-esp-elf/bin/../xtensa-esp-elf/lib/:/Users/promex04/.espressif/tools/xtensa-esp-elf/esp-14.2.0_20250730/xtensa-esp-elf/bin/../xtensa-esp-elf/usr/lib/
-        COLLECT_GCC_OPTIONS='-mdynconfig=xtensa_esp32.so' '-mlongcalls' '-Wno-frame-address' '-fno-builtin-memcpy' '-fno-builtin-memset' '-fno-builtin-bzero' '-fno-builtin-stpcpy' '-fno-builtin-strncpy' '-v' '-o' 'CMakeFiles/cmTC_55fcc.dir/CMakeCCompilerABI.c.obj' '-c' '-dumpdir' 'CMakeFiles/cmTC_55fcc.dir/CMakeCCompilerABI.c.'
-        Linking C executable cmTC_55fcc
-        /opt/homebrew/bin/cmake -E cmake_link_script CMakeFiles/cmTC_55fcc.dir/link.txt --verbose=1
+        COLLECT_GCC_OPTIONS='-mdynconfig=xtensa_esp32.so' '-mlongcalls' '-Wno-frame-address' '-fno-builtin-memcpy' '-fno-builtin-memset' '-fno-builtin-bzero' '-fno-builtin-stpcpy' '-fno-builtin-strncpy' '-v' '-o' 'CMakeFiles/cmTC_0ce71.dir/CMakeCCompilerABI.c.obj' '-c' '-dumpdir' 'CMakeFiles/cmTC_0ce71.dir/CMakeCCompilerABI.c.'
+        Linking C executable cmTC_0ce71
+        /opt/homebrew/bin/cmake -E cmake_link_script CMakeFiles/cmTC_0ce71.dir/link.txt --verbose=1
         Using built-in specs.
         COLLECT_GCC=/Users/promex04/.espressif/tools/xtensa-esp-elf/esp-14.2.0_20250730/xtensa-esp-elf/bin/xtensa-esp-elf-gcc
         COLLECT_LTO_WRAPPER=/Users/promex04/.espressif/tools/xtensa-esp-elf/esp-14.2.0_20250730/xtensa-esp-elf/bin/../libexec/gcc/xtensa-esp-elf/14.2.0/lto-wrapper
@@ -3407,10 +3613,10 @@ events:
         gcc version 14.2.0 (crosstool-NG esp-14.2.0_20250730) 
         COMPILER_PATH=/Users/promex04/.espressif/tools/xtensa-esp-elf/esp-14.2.0_20250730/xtensa-esp-elf/bin/../libexec/gcc/xtensa-esp-elf/14.2.0/:/Users/promex04/.espressif/tools/xtensa-esp-elf/esp-14.2.0_20250730/xtensa-esp-elf/bin/../libexec/gcc/:/Users/promex04/.espressif/tools/xtensa-esp-elf/esp-14.2.0_20250730/xtensa-esp-elf/bin/../lib/gcc/xtensa-esp-elf/14.2.0/../../../../xtensa-esp-elf/bin/
         LIBRARY_PATH=/Users/promex04/.espressif/tools/xtensa-esp-elf/esp-14.2.0_20250730/xtensa-esp-elf/bin/../lib/gcc/xtensa-esp-elf/14.2.0/esp32/:/Users/promex04/.espressif/tools/xtensa-esp-elf/esp-14.2.0_20250730/xtensa-esp-elf/bin/../lib/gcc/xtensa-esp-elf/14.2.0/../../../../xtensa-esp-elf/lib/esp32/:/Users/promex04/.espressif/tools/xtensa-esp-elf/esp-14.2.0_20250730/xtensa-esp-elf/bin/../xtensa-esp-elf/lib/esp32/:/Users/promex04/.espressif/tools/xtensa-esp-elf/esp-14.2.0_20250730/xtensa-esp-elf/bin/../lib/gcc/xtensa-esp-elf/14.2.0/:/Users/promex04/.espressif/tools/xtensa-esp-elf/esp-14.2.0_20250730/xtensa-esp-elf/bin/../lib/gcc/:/Users/promex04/.espressif/tools/xtensa-esp-elf/esp-14.2.0_20250730/xtensa-esp-elf/bin/../lib/gcc/xtensa-esp-elf/14.2.0/../../../../xtensa-esp-elf/lib/:/Users/promex04/.espressif/tools/xtensa-esp-elf/esp-14.2.0_20250730/xtensa-esp-elf/bin/../xtensa-esp-elf/lib/:/Users/promex04/.espressif/tools/xtensa-esp-elf/esp-14.2.0_20250730/xtensa-esp-elf/bin/../xtensa-esp-elf/usr/lib/
-        COLLECT_GCC_OPTIONS='-mdynconfig=xtensa_esp32.so' '-mlongcalls' '-Wno-frame-address' '-fno-builtin-memcpy' '-fno-builtin-memset' '-fno-builtin-bzero' '-fno-builtin-stpcpy' '-fno-builtin-strncpy' '-v' '-o' 'cmTC_55fcc' '-dumpdir' 'cmTC_55fcc.'
-         /Users/promex04/.espressif/tools/xtensa-esp-elf/esp-14.2.0_20250730/xtensa-esp-elf/bin/../libexec/gcc/xtensa-esp-elf/14.2.0/collect2 -plugin /Users/promex04/.espressif/tools/xtensa-esp-elf/esp-14.2.0_20250730/xtensa-esp-elf/bin/../libexec/gcc/xtensa-esp-elf/14.2.0/liblto_plugin.so -plugin-opt=/Users/promex04/.espressif/tools/xtensa-esp-elf/esp-14.2.0_20250730/xtensa-esp-elf/bin/../libexec/gcc/xtensa-esp-elf/14.2.0/lto-wrapper -plugin-opt=-fresolution=/var/folders/bk/40lzr35s3gg2hfbtrw2rg5x00000gn/T//ccXNzWzW.res -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lc -plugin-opt=-pass-through=-lnosys -plugin-opt=-pass-through=-lc -plugin-opt=-pass-through=-lgcc --sysroot=/Users/promex04/.espressif/tools/xtensa-esp-elf/esp-14.2.0_20250730/xtensa-esp-elf/bin/../xtensa-esp-elf --dynconfig=xtensa_esp32.so -o cmTC_55fcc /Users/promex04/.espressif/tools/xtensa-esp-elf/esp-14.2.0_20250730/xtensa-esp-elf/bin/../lib/gcc/xtensa-esp-elf/14.2.0/../../../../xtensa-esp-elf/lib/esp32/crt0.o /Users/promex04/.espressif/tools/xtensa-esp-elf/esp-14.2.0_20250730/xtensa-esp-elf/bin/../lib/gcc/xtensa-esp-elf/14.2.0/esp32/crti.o /Users/promex04/.espressif/tools/xtensa-esp-elf/esp-14.2.0_20250730/xtensa-esp-elf/bin/../lib/gcc/xtensa-esp-elf/14.2.0/esp32/crtbegin.o -L/Users/promex04/.espressif/tools/xtensa-esp-elf/esp-14.2.0_20250730/xtensa-esp-elf/bin/../lib/gcc/xtensa-esp-elf/14.2.0/esp32 -L/Users/promex04/.espressif/tools/xtensa-esp-elf/esp-14.2.0_20250730/xtensa-esp-elf/bin/../lib/gcc/xtensa-esp-elf/14.2.0/../../../../xtensa-esp-elf/lib/esp32 -L/Users/promex04/.espressif/tools/xtensa-esp-elf/esp-14.2.0_20250730/xtensa-esp-elf/bin/../xtensa-esp-elf/lib/esp32 -L/Users/promex04/.espressif/tools/xtensa-esp-elf/esp-14.2.0_20250730/xtensa-esp-elf/bin/../lib/gcc/xtensa-esp-elf/14.2.0 -L/Users/promex04/.espressif/tools/xtensa-esp-elf/esp-14.2.0_20250730/xtensa-esp-elf/bin/../lib/gcc -L/Users/promex04/.espressif/tools/xtensa-esp-elf/esp-14.2.0_20250730/xtensa-esp-elf/bin/../lib/gcc/xtensa-esp-elf/14.2.0/../../../../xtensa-esp-elf/lib -L/Users/promex04/.espressif/tools/xtensa-esp-elf/esp-14.2.0_20250730/xtensa-esp-elf/bin/../xtensa-esp-elf/lib -L/Users/promex04/.espressif/tools/xtensa-esp-elf/esp-14.2.0_20250730/xtensa-esp-elf/bin/../xtensa-esp-elf/usr/lib CMakeFiles/cmTC_55fcc.dir/CMakeCCompilerABI.c.obj -lgcc -lc -lnosys -lc -lgcc /Users/promex04/.espressif/tools/xtensa-esp-elf/esp-14.2.0_20250730/xtensa-esp-elf/bin/../lib/gcc/xtensa-esp-elf/14.2.0/esp32/crtend.o /Users/promex04/.espressif/tools/xtensa-esp-elf/esp-14.2.0_20250730/xtensa-esp-elf/bin/../lib/gcc/xtensa-esp-elf/14.2.0/esp32/crtn.o
-        COLLECT_GCC_OPTIONS='-mdynconfig=xtensa_esp32.so' '-mlongcalls' '-Wno-frame-address' '-fno-builtin-memcpy' '-fno-builtin-memset' '-fno-builtin-bzero' '-fno-builtin-stpcpy' '-fno-builtin-strncpy' '-v' '-o' 'cmTC_55fcc' '-dumpdir' 'cmTC_55fcc.'
-        /Users/promex04/.espressif/tools/xtensa-esp-elf/esp-14.2.0_20250730/xtensa-esp-elf/bin/xtensa-esp32-elf-gcc -mlongcalls -Wno-frame-address  -fno-builtin-memcpy -fno-builtin-memset -fno-builtin-bzero -fno-builtin-stpcpy -fno-builtin-strncpy   -v CMakeFiles/cmTC_55fcc.dir/CMakeCCompilerABI.c.obj -o cmTC_55fcc
+        COLLECT_GCC_OPTIONS='-mdynconfig=xtensa_esp32.so' '-mlongcalls' '-Wno-frame-address' '-fno-builtin-memcpy' '-fno-builtin-memset' '-fno-builtin-bzero' '-fno-builtin-stpcpy' '-fno-builtin-strncpy' '-v' '-o' 'cmTC_0ce71' '-dumpdir' 'cmTC_0ce71.'
+         /Users/promex04/.espressif/tools/xtensa-esp-elf/esp-14.2.0_20250730/xtensa-esp-elf/bin/../libexec/gcc/xtensa-esp-elf/14.2.0/collect2 -plugin /Users/promex04/.espressif/tools/xtensa-esp-elf/esp-14.2.0_20250730/xtensa-esp-elf/bin/../libexec/gcc/xtensa-esp-elf/14.2.0/liblto_plugin.so -plugin-opt=/Users/promex04/.espressif/tools/xtensa-esp-elf/esp-14.2.0_20250730/xtensa-esp-elf/bin/../libexec/gcc/xtensa-esp-elf/14.2.0/lto-wrapper -plugin-opt=-fresolution=/var/folders/bk/40lzr35s3gg2hfbtrw2rg5x00000gn/T//cc2jnEx7.res -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lc -plugin-opt=-pass-through=-lnosys -plugin-opt=-pass-through=-lc -plugin-opt=-pass-through=-lgcc --sysroot=/Users/promex04/.espressif/tools/xtensa-esp-elf/esp-14.2.0_20250730/xtensa-esp-elf/bin/../xtensa-esp-elf --dynconfig=xtensa_esp32.so -o cmTC_0ce71 /Users/promex04/.espressif/tools/xtensa-esp-elf/esp-14.2.0_20250730/xtensa-esp-elf/bin/../lib/gcc/xtensa-esp-elf/14.2.0/../../../../xtensa-esp-elf/lib/esp32/crt0.o /Users/promex04/.espressif/tools/xtensa-esp-elf/esp-14.2.0_20250730/xtensa-esp-elf/bin/../lib/gcc/xtensa-esp-elf/14.2.0/esp32/crti.o /Users/promex04/.espressif/tools/xtensa-esp-elf/esp-14.2.0_20250730/xtensa-esp-elf/bin/../lib/gcc/xtensa-esp-elf/14.2.0/esp32/crtbegin.o -L/Users/promex04/.espressif/tools/xtensa-esp-elf/esp-14.2.0_20250730/xtensa-esp-elf/bin/../lib/gcc/xtensa-esp-elf/14.2.0/esp32 -L/Users/promex04/.espressif/tools/xtensa-esp-elf/esp-14.2.0_20250730/xtensa-esp-elf/bin/../lib/gcc/xtensa-esp-elf/14.2.0/../../../../xtensa-esp-elf/lib/esp32 -L/Users/promex04/.espressif/tools/xtensa-esp-elf/esp-14.2.0_20250730/xtensa-esp-elf/bin/../xtensa-esp-elf/lib/esp32 -L/Users/promex04/.espressif/tools/xtensa-esp-elf/esp-14.2.0_20250730/xtensa-esp-elf/bin/../lib/gcc/xtensa-esp-elf/14.2.0 -L/Users/promex04/.espressif/tools/xtensa-esp-elf/esp-14.2.0_20250730/xtensa-esp-elf/bin/../lib/gcc -L/Users/promex04/.espressif/tools/xtensa-esp-elf/esp-14.2.0_20250730/xtensa-esp-elf/bin/../lib/gcc/xtensa-esp-elf/14.2.0/../../../../xtensa-esp-elf/lib -L/Users/promex04/.espressif/tools/xtensa-esp-elf/esp-14.2.0_20250730/xtensa-esp-elf/bin/../xtensa-esp-elf/lib -L/Users/promex04/.espressif/tools/xtensa-esp-elf/esp-14.2.0_20250730/xtensa-esp-elf/bin/../xtensa-esp-elf/usr/lib CMakeFiles/cmTC_0ce71.dir/CMakeCCompilerABI.c.obj -lgcc -lc -lnosys -lc -lgcc /Users/promex04/.espressif/tools/xtensa-esp-elf/esp-14.2.0_20250730/xtensa-esp-elf/bin/../lib/gcc/xtensa-esp-elf/14.2.0/esp32/crtend.o /Users/promex04/.espressif/tools/xtensa-esp-elf/esp-14.2.0_20250730/xtensa-esp-elf/bin/../lib/gcc/xtensa-esp-elf/14.2.0/esp32/crtn.o
+        COLLECT_GCC_OPTIONS='-mdynconfig=xtensa_esp32.so' '-mlongcalls' '-Wno-frame-address' '-fno-builtin-memcpy' '-fno-builtin-memset' '-fno-builtin-bzero' '-fno-builtin-stpcpy' '-fno-builtin-strncpy' '-v' '-o' 'cmTC_0ce71' '-dumpdir' 'cmTC_0ce71.'
+        /Users/promex04/.espressif/tools/xtensa-esp-elf/esp-14.2.0_20250730/xtensa-esp-elf/bin/xtensa-esp32-elf-gcc -mlongcalls -Wno-frame-address  -fno-builtin-memcpy -fno-builtin-memset -fno-builtin-bzero -fno-builtin-stpcpy -fno-builtin-strncpy   -v CMakeFiles/cmTC_0ce71.dir/CMakeCCompilerABI.c.obj -o cmTC_0ce71
         
       exitCode: 0
   -
@@ -3445,12 +3651,12 @@ events:
       Parsed C implicit link information:
         link line regex: [^( *|.*[/\\])(ld[0-9]*(|\\.[a-rt-z][a-z]*|\\.s[a-np-z][a-z]*|\\.so[a-z]+)|CMAKE_LINK_STARTFILE-NOTFOUND|([^/\\]+-)?ld|collect2)[^/\\]*( |$)]
         linker tool regex: [^[ 	]*(->|")?[ 	]*(([^"]*[/\\])?(ld[0-9]*(|\\.[a-rt-z][a-z]*|\\.s[a-np-z][a-z]*|\\.so[a-z]+)))("|,| |$)]
-        ignore line: [Change Dir: '/Users/promex04/Desktop/guild/speech_recognition/wwe/LyratMini_RecordPlay/build/bootloader/CMakeFiles/CMakeScratch/TryCompile-mXKXiN']
+        ignore line: [Change Dir: '/Users/promex04/Desktop/guild/speech_recognition/wwe/LyratMini_RecordPlay/build/bootloader/CMakeFiles/CMakeScratch/TryCompile-alX9XK']
         ignore line: []
-        ignore line: [Run Build Command(s): /opt/homebrew/bin/cmake -E env VERBOSE=1 /usr/bin/make -f Makefile cmTC_55fcc/fast]
-        ignore line: [/Library/Developer/CommandLineTools/usr/bin/make  -f CMakeFiles/cmTC_55fcc.dir/build.make CMakeFiles/cmTC_55fcc.dir/build]
-        ignore line: [Building C object CMakeFiles/cmTC_55fcc.dir/CMakeCCompilerABI.c.obj]
-        ignore line: [/Users/promex04/.espressif/tools/xtensa-esp-elf/esp-14.2.0_20250730/xtensa-esp-elf/bin/xtensa-esp32-elf-gcc   -mlongcalls -Wno-frame-address  -fno-builtin-memcpy -fno-builtin-memset -fno-builtin-bzero -fno-builtin-stpcpy -fno-builtin-strncpy    -v -o CMakeFiles/cmTC_55fcc.dir/CMakeCCompilerABI.c.obj -c /opt/homebrew/share/cmake/Modules/CMakeCCompilerABI.c]
+        ignore line: [Run Build Command(s): /opt/homebrew/bin/cmake -E env VERBOSE=1 /usr/bin/make -f Makefile cmTC_0ce71/fast]
+        ignore line: [/Library/Developer/CommandLineTools/usr/bin/make  -f CMakeFiles/cmTC_0ce71.dir/build.make CMakeFiles/cmTC_0ce71.dir/build]
+        ignore line: [Building C object CMakeFiles/cmTC_0ce71.dir/CMakeCCompilerABI.c.obj]
+        ignore line: [/Users/promex04/.espressif/tools/xtensa-esp-elf/esp-14.2.0_20250730/xtensa-esp-elf/bin/xtensa-esp32-elf-gcc   -mlongcalls -Wno-frame-address  -fno-builtin-memcpy -fno-builtin-memset -fno-builtin-bzero -fno-builtin-stpcpy -fno-builtin-strncpy    -v -o CMakeFiles/cmTC_0ce71.dir/CMakeCCompilerABI.c.obj -c /opt/homebrew/share/cmake/Modules/CMakeCCompilerABI.c]
         ignore line: [Using built-in specs.]
         ignore line: [COLLECT_GCC=/Users/promex04/.espressif/tools/xtensa-esp-elf/esp-14.2.0_20250730/xtensa-esp-elf/bin/xtensa-esp-elf-gcc]
         ignore line: [Target: xtensa-esp-elf]
@@ -3458,8 +3664,8 @@ events:
         ignore line: [Thread model: posix]
         ignore line: [Supported LTO compression algorithms: zlib]
         ignore line: [gcc version 14.2.0 (crosstool-NG esp-14.2.0_20250730) ]
-        ignore line: [COLLECT_GCC_OPTIONS='-mdynconfig=xtensa_esp32.so' '-mlongcalls' '-Wno-frame-address' '-fno-builtin-memcpy' '-fno-builtin-memset' '-fno-builtin-bzero' '-fno-builtin-stpcpy' '-fno-builtin-strncpy' '-v' '-o' 'CMakeFiles/cmTC_55fcc.dir/CMakeCCompilerABI.c.obj' '-c' '-dumpdir' 'CMakeFiles/cmTC_55fcc.dir/']
-        ignore line: [ /Users/promex04/.espressif/tools/xtensa-esp-elf/esp-14.2.0_20250730/xtensa-esp-elf/bin/../libexec/gcc/xtensa-esp-elf/14.2.0/cc1 -quiet -v -imultilib esp32 -iprefix /Users/promex04/.espressif/tools/xtensa-esp-elf/esp-14.2.0_20250730/xtensa-esp-elf/bin/../lib/gcc/xtensa-esp-elf/14.2.0/ -isysroot /Users/promex04/.espressif/tools/xtensa-esp-elf/esp-14.2.0_20250730/xtensa-esp-elf/bin/../xtensa-esp-elf /opt/homebrew/share/cmake/Modules/CMakeCCompilerABI.c -quiet -dumpdir CMakeFiles/cmTC_55fcc.dir/ -dumpbase CMakeCCompilerABI.c.c -dumpbase-ext .c -mdynconfig=xtensa_esp32.so -mlongcalls -Wno-frame-address -version -fno-builtin-memcpy -fno-builtin-memset -fno-builtin-bzero -fno-builtin-stpcpy -fno-builtin-strncpy -o /var/folders/bk/40lzr35s3gg2hfbtrw2rg5x00000gn/T//ccIT3WuV.s]
+        ignore line: [COLLECT_GCC_OPTIONS='-mdynconfig=xtensa_esp32.so' '-mlongcalls' '-Wno-frame-address' '-fno-builtin-memcpy' '-fno-builtin-memset' '-fno-builtin-bzero' '-fno-builtin-stpcpy' '-fno-builtin-strncpy' '-v' '-o' 'CMakeFiles/cmTC_0ce71.dir/CMakeCCompilerABI.c.obj' '-c' '-dumpdir' 'CMakeFiles/cmTC_0ce71.dir/']
+        ignore line: [ /Users/promex04/.espressif/tools/xtensa-esp-elf/esp-14.2.0_20250730/xtensa-esp-elf/bin/../libexec/gcc/xtensa-esp-elf/14.2.0/cc1 -quiet -v -imultilib esp32 -iprefix /Users/promex04/.espressif/tools/xtensa-esp-elf/esp-14.2.0_20250730/xtensa-esp-elf/bin/../lib/gcc/xtensa-esp-elf/14.2.0/ -isysroot /Users/promex04/.espressif/tools/xtensa-esp-elf/esp-14.2.0_20250730/xtensa-esp-elf/bin/../xtensa-esp-elf /opt/homebrew/share/cmake/Modules/CMakeCCompilerABI.c -quiet -dumpdir CMakeFiles/cmTC_0ce71.dir/ -dumpbase CMakeCCompilerABI.c.c -dumpbase-ext .c -mdynconfig=xtensa_esp32.so -mlongcalls -Wno-frame-address -version -fno-builtin-memcpy -fno-builtin-memset -fno-builtin-bzero -fno-builtin-stpcpy -fno-builtin-strncpy -o /var/folders/bk/40lzr35s3gg2hfbtrw2rg5x00000gn/T//ccVTZ4eD.s]
         ignore line: [GNU C17 (crosstool-NG esp-14.2.0_20250730) version 14.2.0 (xtensa-esp-elf)]
         ignore line: [	compiled by GNU C version Debian Clang 11.0.1  GMP version 6.2.1  MPFR version 4.2.1  MPC version 1.2.1  isl version isl-0.26-GMP]
         ignore line: []
@@ -3476,13 +3682,13 @@ events:
         ignore line: [ /Users/promex04/.espressif/tools/xtensa-esp-elf/esp-14.2.0_20250730/xtensa-esp-elf/bin/../lib/gcc/xtensa-esp-elf/14.2.0/../../../../xtensa-esp-elf/include]
         ignore line: [End of search list.]
         ignore line: [Compiler executable checksum: eca473d4084d9d1acc528c06af450494]
-        ignore line: [COLLECT_GCC_OPTIONS='-mdynconfig=xtensa_esp32.so' '-mlongcalls' '-Wno-frame-address' '-fno-builtin-memcpy' '-fno-builtin-memset' '-fno-builtin-bzero' '-fno-builtin-stpcpy' '-fno-builtin-strncpy' '-v' '-o' 'CMakeFiles/cmTC_55fcc.dir/CMakeCCompilerABI.c.obj' '-c' '-dumpdir' 'CMakeFiles/cmTC_55fcc.dir/']
-        ignore line: [ /Users/promex04/.espressif/tools/xtensa-esp-elf/esp-14.2.0_20250730/xtensa-esp-elf/bin/../lib/gcc/xtensa-esp-elf/14.2.0/../../../../xtensa-esp-elf/bin/as --traditional-format --longcalls --dynconfig=xtensa_esp32.so -o CMakeFiles/cmTC_55fcc.dir/CMakeCCompilerABI.c.obj /var/folders/bk/40lzr35s3gg2hfbtrw2rg5x00000gn/T//ccIT3WuV.s]
+        ignore line: [COLLECT_GCC_OPTIONS='-mdynconfig=xtensa_esp32.so' '-mlongcalls' '-Wno-frame-address' '-fno-builtin-memcpy' '-fno-builtin-memset' '-fno-builtin-bzero' '-fno-builtin-stpcpy' '-fno-builtin-strncpy' '-v' '-o' 'CMakeFiles/cmTC_0ce71.dir/CMakeCCompilerABI.c.obj' '-c' '-dumpdir' 'CMakeFiles/cmTC_0ce71.dir/']
+        ignore line: [ /Users/promex04/.espressif/tools/xtensa-esp-elf/esp-14.2.0_20250730/xtensa-esp-elf/bin/../lib/gcc/xtensa-esp-elf/14.2.0/../../../../xtensa-esp-elf/bin/as --traditional-format --longcalls --dynconfig=xtensa_esp32.so -o CMakeFiles/cmTC_0ce71.dir/CMakeCCompilerABI.c.obj /var/folders/bk/40lzr35s3gg2hfbtrw2rg5x00000gn/T//ccVTZ4eD.s]
         ignore line: [COMPILER_PATH=/Users/promex04/.espressif/tools/xtensa-esp-elf/esp-14.2.0_20250730/xtensa-esp-elf/bin/../libexec/gcc/xtensa-esp-elf/14.2.0/:/Users/promex04/.espressif/tools/xtensa-esp-elf/esp-14.2.0_20250730/xtensa-esp-elf/bin/../libexec/gcc/:/Users/promex04/.espressif/tools/xtensa-esp-elf/esp-14.2.0_20250730/xtensa-esp-elf/bin/../lib/gcc/xtensa-esp-elf/14.2.0/../../../../xtensa-esp-elf/bin/]
         ignore line: [LIBRARY_PATH=/Users/promex04/.espressif/tools/xtensa-esp-elf/esp-14.2.0_20250730/xtensa-esp-elf/bin/../lib/gcc/xtensa-esp-elf/14.2.0/esp32/:/Users/promex04/.espressif/tools/xtensa-esp-elf/esp-14.2.0_20250730/xtensa-esp-elf/bin/../lib/gcc/xtensa-esp-elf/14.2.0/../../../../xtensa-esp-elf/lib/esp32/:/Users/promex04/.espressif/tools/xtensa-esp-elf/esp-14.2.0_20250730/xtensa-esp-elf/bin/../xtensa-esp-elf/lib/esp32/:/Users/promex04/.espressif/tools/xtensa-esp-elf/esp-14.2.0_20250730/xtensa-esp-elf/bin/../lib/gcc/xtensa-esp-elf/14.2.0/:/Users/promex04/.espressif/tools/xtensa-esp-elf/esp-14.2.0_20250730/xtensa-esp-elf/bin/../lib/gcc/:/Users/promex04/.espressif/tools/xtensa-esp-elf/esp-14.2.0_20250730/xtensa-esp-elf/bin/../lib/gcc/xtensa-esp-elf/14.2.0/../../../../xtensa-esp-elf/lib/:/Users/promex04/.espressif/tools/xtensa-esp-elf/esp-14.2.0_20250730/xtensa-esp-elf/bin/../xtensa-esp-elf/lib/:/Users/promex04/.espressif/tools/xtensa-esp-elf/esp-14.2.0_20250730/xtensa-esp-elf/bin/../xtensa-esp-elf/usr/lib/]
-        ignore line: [COLLECT_GCC_OPTIONS='-mdynconfig=xtensa_esp32.so' '-mlongcalls' '-Wno-frame-address' '-fno-builtin-memcpy' '-fno-builtin-memset' '-fno-builtin-bzero' '-fno-builtin-stpcpy' '-fno-builtin-strncpy' '-v' '-o' 'CMakeFiles/cmTC_55fcc.dir/CMakeCCompilerABI.c.obj' '-c' '-dumpdir' 'CMakeFiles/cmTC_55fcc.dir/CMakeCCompilerABI.c.']
-        ignore line: [Linking C executable cmTC_55fcc]
-        ignore line: [/opt/homebrew/bin/cmake -E cmake_link_script CMakeFiles/cmTC_55fcc.dir/link.txt --verbose=1]
+        ignore line: [COLLECT_GCC_OPTIONS='-mdynconfig=xtensa_esp32.so' '-mlongcalls' '-Wno-frame-address' '-fno-builtin-memcpy' '-fno-builtin-memset' '-fno-builtin-bzero' '-fno-builtin-stpcpy' '-fno-builtin-strncpy' '-v' '-o' 'CMakeFiles/cmTC_0ce71.dir/CMakeCCompilerABI.c.obj' '-c' '-dumpdir' 'CMakeFiles/cmTC_0ce71.dir/CMakeCCompilerABI.c.']
+        ignore line: [Linking C executable cmTC_0ce71]
+        ignore line: [/opt/homebrew/bin/cmake -E cmake_link_script CMakeFiles/cmTC_0ce71.dir/link.txt --verbose=1]
         ignore line: [Using built-in specs.]
         ignore line: [COLLECT_GCC=/Users/promex04/.espressif/tools/xtensa-esp-elf/esp-14.2.0_20250730/xtensa-esp-elf/bin/xtensa-esp-elf-gcc]
         ignore line: [COLLECT_LTO_WRAPPER=/Users/promex04/.espressif/tools/xtensa-esp-elf/esp-14.2.0_20250730/xtensa-esp-elf/bin/../libexec/gcc/xtensa-esp-elf/14.2.0/lto-wrapper]
@@ -3493,13 +3699,13 @@ events:
         ignore line: [gcc version 14.2.0 (crosstool-NG esp-14.2.0_20250730) ]
         ignore line: [COMPILER_PATH=/Users/promex04/.espressif/tools/xtensa-esp-elf/esp-14.2.0_20250730/xtensa-esp-elf/bin/../libexec/gcc/xtensa-esp-elf/14.2.0/:/Users/promex04/.espressif/tools/xtensa-esp-elf/esp-14.2.0_20250730/xtensa-esp-elf/bin/../libexec/gcc/:/Users/promex04/.espressif/tools/xtensa-esp-elf/esp-14.2.0_20250730/xtensa-esp-elf/bin/../lib/gcc/xtensa-esp-elf/14.2.0/../../../../xtensa-esp-elf/bin/]
         ignore line: [LIBRARY_PATH=/Users/promex04/.espressif/tools/xtensa-esp-elf/esp-14.2.0_20250730/xtensa-esp-elf/bin/../lib/gcc/xtensa-esp-elf/14.2.0/esp32/:/Users/promex04/.espressif/tools/xtensa-esp-elf/esp-14.2.0_20250730/xtensa-esp-elf/bin/../lib/gcc/xtensa-esp-elf/14.2.0/../../../../xtensa-esp-elf/lib/esp32/:/Users/promex04/.espressif/tools/xtensa-esp-elf/esp-14.2.0_20250730/xtensa-esp-elf/bin/../xtensa-esp-elf/lib/esp32/:/Users/promex04/.espressif/tools/xtensa-esp-elf/esp-14.2.0_20250730/xtensa-esp-elf/bin/../lib/gcc/xtensa-esp-elf/14.2.0/:/Users/promex04/.espressif/tools/xtensa-esp-elf/esp-14.2.0_20250730/xtensa-esp-elf/bin/../lib/gcc/:/Users/promex04/.espressif/tools/xtensa-esp-elf/esp-14.2.0_20250730/xtensa-esp-elf/bin/../lib/gcc/xtensa-esp-elf/14.2.0/../../../../xtensa-esp-elf/lib/:/Users/promex04/.espressif/tools/xtensa-esp-elf/esp-14.2.0_20250730/xtensa-esp-elf/bin/../xtensa-esp-elf/lib/:/Users/promex04/.espressif/tools/xtensa-esp-elf/esp-14.2.0_20250730/xtensa-esp-elf/bin/../xtensa-esp-elf/usr/lib/]
-        ignore line: [COLLECT_GCC_OPTIONS='-mdynconfig=xtensa_esp32.so' '-mlongcalls' '-Wno-frame-address' '-fno-builtin-memcpy' '-fno-builtin-memset' '-fno-builtin-bzero' '-fno-builtin-stpcpy' '-fno-builtin-strncpy' '-v' '-o' 'cmTC_55fcc' '-dumpdir' 'cmTC_55fcc.']
-        link line: [ /Users/promex04/.espressif/tools/xtensa-esp-elf/esp-14.2.0_20250730/xtensa-esp-elf/bin/../libexec/gcc/xtensa-esp-elf/14.2.0/collect2 -plugin /Users/promex04/.espressif/tools/xtensa-esp-elf/esp-14.2.0_20250730/xtensa-esp-elf/bin/../libexec/gcc/xtensa-esp-elf/14.2.0/liblto_plugin.so -plugin-opt=/Users/promex04/.espressif/tools/xtensa-esp-elf/esp-14.2.0_20250730/xtensa-esp-elf/bin/../libexec/gcc/xtensa-esp-elf/14.2.0/lto-wrapper -plugin-opt=-fresolution=/var/folders/bk/40lzr35s3gg2hfbtrw2rg5x00000gn/T//ccXNzWzW.res -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lc -plugin-opt=-pass-through=-lnosys -plugin-opt=-pass-through=-lc -plugin-opt=-pass-through=-lgcc --sysroot=/Users/promex04/.espressif/tools/xtensa-esp-elf/esp-14.2.0_20250730/xtensa-esp-elf/bin/../xtensa-esp-elf --dynconfig=xtensa_esp32.so -o cmTC_55fcc /Users/promex04/.espressif/tools/xtensa-esp-elf/esp-14.2.0_20250730/xtensa-esp-elf/bin/../lib/gcc/xtensa-esp-elf/14.2.0/../../../../xtensa-esp-elf/lib/esp32/crt0.o /Users/promex04/.espressif/tools/xtensa-esp-elf/esp-14.2.0_20250730/xtensa-esp-elf/bin/../lib/gcc/xtensa-esp-elf/14.2.0/esp32/crti.o /Users/promex04/.espressif/tools/xtensa-esp-elf/esp-14.2.0_20250730/xtensa-esp-elf/bin/../lib/gcc/xtensa-esp-elf/14.2.0/esp32/crtbegin.o -L/Users/promex04/.espressif/tools/xtensa-esp-elf/esp-14.2.0_20250730/xtensa-esp-elf/bin/../lib/gcc/xtensa-esp-elf/14.2.0/esp32 -L/Users/promex04/.espressif/tools/xtensa-esp-elf/esp-14.2.0_20250730/xtensa-esp-elf/bin/../lib/gcc/xtensa-esp-elf/14.2.0/../../../../xtensa-esp-elf/lib/esp32 -L/Users/promex04/.espressif/tools/xtensa-esp-elf/esp-14.2.0_20250730/xtensa-esp-elf/bin/../xtensa-esp-elf/lib/esp32 -L/Users/promex04/.espressif/tools/xtensa-esp-elf/esp-14.2.0_20250730/xtensa-esp-elf/bin/../lib/gcc/xtensa-esp-elf/14.2.0 -L/Users/promex04/.espressif/tools/xtensa-esp-elf/esp-14.2.0_20250730/xtensa-esp-elf/bin/../lib/gcc -L/Users/promex04/.espressif/tools/xtensa-esp-elf/esp-14.2.0_20250730/xtensa-esp-elf/bin/../lib/gcc/xtensa-esp-elf/14.2.0/../../../../xtensa-esp-elf/lib -L/Users/promex04/.espressif/tools/xtensa-esp-elf/esp-14.2.0_20250730/xtensa-esp-elf/bin/../xtensa-esp-elf/lib -L/Users/promex04/.espressif/tools/xtensa-esp-elf/esp-14.2.0_20250730/xtensa-esp-elf/bin/../xtensa-esp-elf/usr/lib CMakeFiles/cmTC_55fcc.dir/CMakeCCompilerABI.c.obj -lgcc -lc -lnosys -lc -lgcc /Users/promex04/.espressif/tools/xtensa-esp-elf/esp-14.2.0_20250730/xtensa-esp-elf/bin/../lib/gcc/xtensa-esp-elf/14.2.0/esp32/crtend.o /Users/promex04/.espressif/tools/xtensa-esp-elf/esp-14.2.0_20250730/xtensa-esp-elf/bin/../lib/gcc/xtensa-esp-elf/14.2.0/esp32/crtn.o]
+        ignore line: [COLLECT_GCC_OPTIONS='-mdynconfig=xtensa_esp32.so' '-mlongcalls' '-Wno-frame-address' '-fno-builtin-memcpy' '-fno-builtin-memset' '-fno-builtin-bzero' '-fno-builtin-stpcpy' '-fno-builtin-strncpy' '-v' '-o' 'cmTC_0ce71' '-dumpdir' 'cmTC_0ce71.']
+        link line: [ /Users/promex04/.espressif/tools/xtensa-esp-elf/esp-14.2.0_20250730/xtensa-esp-elf/bin/../libexec/gcc/xtensa-esp-elf/14.2.0/collect2 -plugin /Users/promex04/.espressif/tools/xtensa-esp-elf/esp-14.2.0_20250730/xtensa-esp-elf/bin/../libexec/gcc/xtensa-esp-elf/14.2.0/liblto_plugin.so -plugin-opt=/Users/promex04/.espressif/tools/xtensa-esp-elf/esp-14.2.0_20250730/xtensa-esp-elf/bin/../libexec/gcc/xtensa-esp-elf/14.2.0/lto-wrapper -plugin-opt=-fresolution=/var/folders/bk/40lzr35s3gg2hfbtrw2rg5x00000gn/T//cc2jnEx7.res -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lc -plugin-opt=-pass-through=-lnosys -plugin-opt=-pass-through=-lc -plugin-opt=-pass-through=-lgcc --sysroot=/Users/promex04/.espressif/tools/xtensa-esp-elf/esp-14.2.0_20250730/xtensa-esp-elf/bin/../xtensa-esp-elf --dynconfig=xtensa_esp32.so -o cmTC_0ce71 /Users/promex04/.espressif/tools/xtensa-esp-elf/esp-14.2.0_20250730/xtensa-esp-elf/bin/../lib/gcc/xtensa-esp-elf/14.2.0/../../../../xtensa-esp-elf/lib/esp32/crt0.o /Users/promex04/.espressif/tools/xtensa-esp-elf/esp-14.2.0_20250730/xtensa-esp-elf/bin/../lib/gcc/xtensa-esp-elf/14.2.0/esp32/crti.o /Users/promex04/.espressif/tools/xtensa-esp-elf/esp-14.2.0_20250730/xtensa-esp-elf/bin/../lib/gcc/xtensa-esp-elf/14.2.0/esp32/crtbegin.o -L/Users/promex04/.espressif/tools/xtensa-esp-elf/esp-14.2.0_20250730/xtensa-esp-elf/bin/../lib/gcc/xtensa-esp-elf/14.2.0/esp32 -L/Users/promex04/.espressif/tools/xtensa-esp-elf/esp-14.2.0_20250730/xtensa-esp-elf/bin/../lib/gcc/xtensa-esp-elf/14.2.0/../../../../xtensa-esp-elf/lib/esp32 -L/Users/promex04/.espressif/tools/xtensa-esp-elf/esp-14.2.0_20250730/xtensa-esp-elf/bin/../xtensa-esp-elf/lib/esp32 -L/Users/promex04/.espressif/tools/xtensa-esp-elf/esp-14.2.0_20250730/xtensa-esp-elf/bin/../lib/gcc/xtensa-esp-elf/14.2.0 -L/Users/promex04/.espressif/tools/xtensa-esp-elf/esp-14.2.0_20250730/xtensa-esp-elf/bin/../lib/gcc -L/Users/promex04/.espressif/tools/xtensa-esp-elf/esp-14.2.0_20250730/xtensa-esp-elf/bin/../lib/gcc/xtensa-esp-elf/14.2.0/../../../../xtensa-esp-elf/lib -L/Users/promex04/.espressif/tools/xtensa-esp-elf/esp-14.2.0_20250730/xtensa-esp-elf/bin/../xtensa-esp-elf/lib -L/Users/promex04/.espressif/tools/xtensa-esp-elf/esp-14.2.0_20250730/xtensa-esp-elf/bin/../xtensa-esp-elf/usr/lib CMakeFiles/cmTC_0ce71.dir/CMakeCCompilerABI.c.obj -lgcc -lc -lnosys -lc -lgcc /Users/promex04/.espressif/tools/xtensa-esp-elf/esp-14.2.0_20250730/xtensa-esp-elf/bin/../lib/gcc/xtensa-esp-elf/14.2.0/esp32/crtend.o /Users/promex04/.espressif/tools/xtensa-esp-elf/esp-14.2.0_20250730/xtensa-esp-elf/bin/../lib/gcc/xtensa-esp-elf/14.2.0/esp32/crtn.o]
           arg [/Users/promex04/.espressif/tools/xtensa-esp-elf/esp-14.2.0_20250730/xtensa-esp-elf/bin/../libexec/gcc/xtensa-esp-elf/14.2.0/collect2] ==> ignore
           arg [-plugin] ==> ignore
           arg [/Users/promex04/.espressif/tools/xtensa-esp-elf/esp-14.2.0_20250730/xtensa-esp-elf/bin/../libexec/gcc/xtensa-esp-elf/14.2.0/liblto_plugin.so] ==> ignore
           arg [-plugin-opt=/Users/promex04/.espressif/tools/xtensa-esp-elf/esp-14.2.0_20250730/xtensa-esp-elf/bin/../libexec/gcc/xtensa-esp-elf/14.2.0/lto-wrapper] ==> ignore
-          arg [-plugin-opt=-fresolution=/var/folders/bk/40lzr35s3gg2hfbtrw2rg5x00000gn/T//ccXNzWzW.res] ==> ignore
+          arg [-plugin-opt=-fresolution=/var/folders/bk/40lzr35s3gg2hfbtrw2rg5x00000gn/T//cc2jnEx7.res] ==> ignore
           arg [-plugin-opt=-pass-through=-lgcc] ==> ignore
           arg [-plugin-opt=-pass-through=-lc] ==> ignore
           arg [-plugin-opt=-pass-through=-lnosys] ==> ignore
@@ -3508,7 +3714,7 @@ events:
           arg [--sysroot=/Users/promex04/.espressif/tools/xtensa-esp-elf/esp-14.2.0_20250730/xtensa-esp-elf/bin/../xtensa-esp-elf] ==> ignore
           arg [--dynconfig=xtensa_esp32.so] ==> ignore
           arg [-o] ==> ignore
-          arg [cmTC_55fcc] ==> ignore
+          arg [cmTC_0ce71] ==> ignore
           arg [/Users/promex04/.espressif/tools/xtensa-esp-elf/esp-14.2.0_20250730/xtensa-esp-elf/bin/../lib/gcc/xtensa-esp-elf/14.2.0/../../../../xtensa-esp-elf/lib/esp32/crt0.o] ==> obj [/Users/promex04/.espressif/tools/xtensa-esp-elf/esp-14.2.0_20250730/xtensa-esp-elf/bin/../lib/gcc/xtensa-esp-elf/14.2.0/../../../../xtensa-esp-elf/lib/esp32/crt0.o]
           arg [/Users/promex04/.espressif/tools/xtensa-esp-elf/esp-14.2.0_20250730/xtensa-esp-elf/bin/../lib/gcc/xtensa-esp-elf/14.2.0/esp32/crti.o] ==> obj [/Users/promex04/.espressif/tools/xtensa-esp-elf/esp-14.2.0_20250730/xtensa-esp-elf/bin/../lib/gcc/xtensa-esp-elf/14.2.0/esp32/crti.o]
           arg [/Users/promex04/.espressif/tools/xtensa-esp-elf/esp-14.2.0_20250730/xtensa-esp-elf/bin/../lib/gcc/xtensa-esp-elf/14.2.0/esp32/crtbegin.o] ==> obj [/Users/promex04/.espressif/tools/xtensa-esp-elf/esp-14.2.0_20250730/xtensa-esp-elf/bin/../lib/gcc/xtensa-esp-elf/14.2.0/esp32/crtbegin.o]
@@ -3520,7 +3726,7 @@ events:
           arg [-L/Users/promex04/.espressif/tools/xtensa-esp-elf/esp-14.2.0_20250730/xtensa-esp-elf/bin/../lib/gcc/xtensa-esp-elf/14.2.0/../../../../xtensa-esp-elf/lib] ==> dir [/Users/promex04/.espressif/tools/xtensa-esp-elf/esp-14.2.0_20250730/xtensa-esp-elf/bin/../lib/gcc/xtensa-esp-elf/14.2.0/../../../../xtensa-esp-elf/lib]
           arg [-L/Users/promex04/.espressif/tools/xtensa-esp-elf/esp-14.2.0_20250730/xtensa-esp-elf/bin/../xtensa-esp-elf/lib] ==> dir [/Users/promex04/.espressif/tools/xtensa-esp-elf/esp-14.2.0_20250730/xtensa-esp-elf/bin/../xtensa-esp-elf/lib]
           arg [-L/Users/promex04/.espressif/tools/xtensa-esp-elf/esp-14.2.0_20250730/xtensa-esp-elf/bin/../xtensa-esp-elf/usr/lib] ==> dir [/Users/promex04/.espressif/tools/xtensa-esp-elf/esp-14.2.0_20250730/xtensa-esp-elf/bin/../xtensa-esp-elf/usr/lib]
-          arg [CMakeFiles/cmTC_55fcc.dir/CMakeCCompilerABI.c.obj] ==> ignore
+          arg [CMakeFiles/cmTC_0ce71.dir/CMakeCCompilerABI.c.obj] ==> ignore
           arg [-lgcc] ==> lib [gcc]
           arg [-lc] ==> lib [c]
           arg [-lnosys] ==> lib [nosys]
@@ -3528,8 +3734,8 @@ events:
           arg [-lgcc] ==> lib [gcc]
           arg [/Users/promex04/.espressif/tools/xtensa-esp-elf/esp-14.2.0_20250730/xtensa-esp-elf/bin/../lib/gcc/xtensa-esp-elf/14.2.0/esp32/crtend.o] ==> obj [/Users/promex04/.espressif/tools/xtensa-esp-elf/esp-14.2.0_20250730/xtensa-esp-elf/bin/../lib/gcc/xtensa-esp-elf/14.2.0/esp32/crtend.o]
           arg [/Users/promex04/.espressif/tools/xtensa-esp-elf/esp-14.2.0_20250730/xtensa-esp-elf/bin/../lib/gcc/xtensa-esp-elf/14.2.0/esp32/crtn.o] ==> obj [/Users/promex04/.espressif/tools/xtensa-esp-elf/esp-14.2.0_20250730/xtensa-esp-elf/bin/../lib/gcc/xtensa-esp-elf/14.2.0/esp32/crtn.o]
-        ignore line: [COLLECT_GCC_OPTIONS='-mdynconfig=xtensa_esp32.so' '-mlongcalls' '-Wno-frame-address' '-fno-builtin-memcpy' '-fno-builtin-memset' '-fno-builtin-bzero' '-fno-builtin-stpcpy' '-fno-builtin-strncpy' '-v' '-o' 'cmTC_55fcc' '-dumpdir' 'cmTC_55fcc.']
-        ignore line: [/Users/promex04/.espressif/tools/xtensa-esp-elf/esp-14.2.0_20250730/xtensa-esp-elf/bin/xtensa-esp32-elf-gcc -mlongcalls -Wno-frame-address  -fno-builtin-memcpy -fno-builtin-memset -fno-builtin-bzero -fno-builtin-stpcpy -fno-builtin-strncpy   -v CMakeFiles/cmTC_55fcc.dir/CMakeCCompilerABI.c.obj -o cmTC_55fcc]
+        ignore line: [COLLECT_GCC_OPTIONS='-mdynconfig=xtensa_esp32.so' '-mlongcalls' '-Wno-frame-address' '-fno-builtin-memcpy' '-fno-builtin-memset' '-fno-builtin-bzero' '-fno-builtin-stpcpy' '-fno-builtin-strncpy' '-v' '-o' 'cmTC_0ce71' '-dumpdir' 'cmTC_0ce71.']
+        ignore line: [/Users/promex04/.espressif/tools/xtensa-esp-elf/esp-14.2.0_20250730/xtensa-esp-elf/bin/xtensa-esp32-elf-gcc -mlongcalls -Wno-frame-address  -fno-builtin-memcpy -fno-builtin-memset -fno-builtin-bzero -fno-builtin-stpcpy -fno-builtin-strncpy   -v CMakeFiles/cmTC_0ce71.dir/CMakeCCompilerABI.c.obj -o cmTC_0ce71]
         ignore line: []
         ignore line: []
         collapse obj [/Users/promex04/.espressif/tools/xtensa-esp-elf/esp-14.2.0_20250730/xtensa-esp-elf/bin/../lib/gcc/xtensa-esp-elf/14.2.0/../../../../xtensa-esp-elf/lib/esp32/crt0.o] ==> [/Users/promex04/.espressif/tools/xtensa-esp-elf/esp-14.2.0_20250730/xtensa-esp-elf/xtensa-esp-elf/lib/esp32/crt0.o]
@@ -3561,8 +3767,8 @@ events:
     checks:
       - "Detecting CXX compiler ABI info"
     directories:
-      source: "/Users/promex04/Desktop/guild/speech_recognition/wwe/LyratMini_RecordPlay/build/bootloader/CMakeFiles/CMakeScratch/TryCompile-0Gx128"
-      binary: "/Users/promex04/Desktop/guild/speech_recognition/wwe/LyratMini_RecordPlay/build/bootloader/CMakeFiles/CMakeScratch/TryCompile-0Gx128"
+      source: "/Users/promex04/Desktop/guild/speech_recognition/wwe/LyratMini_RecordPlay/build/bootloader/CMakeFiles/CMakeScratch/TryCompile-3SwIej"
+      binary: "/Users/promex04/Desktop/guild/speech_recognition/wwe/LyratMini_RecordPlay/build/bootloader/CMakeFiles/CMakeScratch/TryCompile-3SwIej"
     cmakeVariables:
       CMAKE_CXX_FLAGS: "-mlongcalls -Wno-frame-address  -fno-builtin-memcpy -fno-builtin-memset -fno-builtin-bzero -fno-builtin-stpcpy -fno-builtin-strncpy"
       CMAKE_CXX_FLAGS_DEBUG: "-g"
@@ -3573,12 +3779,12 @@ events:
       variable: "CMAKE_CXX_ABI_COMPILED"
       cached: true
       stdout: |
-        Change Dir: '/Users/promex04/Desktop/guild/speech_recognition/wwe/LyratMini_RecordPlay/build/bootloader/CMakeFiles/CMakeScratch/TryCompile-0Gx128'
+        Change Dir: '/Users/promex04/Desktop/guild/speech_recognition/wwe/LyratMini_RecordPlay/build/bootloader/CMakeFiles/CMakeScratch/TryCompile-3SwIej'
         
-        Run Build Command(s): /opt/homebrew/bin/cmake -E env VERBOSE=1 /usr/bin/make -f Makefile cmTC_26912/fast
-        /Library/Developer/CommandLineTools/usr/bin/make  -f CMakeFiles/cmTC_26912.dir/build.make CMakeFiles/cmTC_26912.dir/build
-        Building CXX object CMakeFiles/cmTC_26912.dir/CMakeCXXCompilerABI.cpp.obj
-        /Users/promex04/.espressif/tools/xtensa-esp-elf/esp-14.2.0_20250730/xtensa-esp-elf/bin/xtensa-esp32-elf-g++   -mlongcalls -Wno-frame-address  -fno-builtin-memcpy -fno-builtin-memset -fno-builtin-bzero -fno-builtin-stpcpy -fno-builtin-strncpy    -v -o CMakeFiles/cmTC_26912.dir/CMakeCXXCompilerABI.cpp.obj -c /opt/homebrew/share/cmake/Modules/CMakeCXXCompilerABI.cpp
+        Run Build Command(s): /opt/homebrew/bin/cmake -E env VERBOSE=1 /usr/bin/make -f Makefile cmTC_84006/fast
+        /Library/Developer/CommandLineTools/usr/bin/make  -f CMakeFiles/cmTC_84006.dir/build.make CMakeFiles/cmTC_84006.dir/build
+        Building CXX object CMakeFiles/cmTC_84006.dir/CMakeCXXCompilerABI.cpp.obj
+        /Users/promex04/.espressif/tools/xtensa-esp-elf/esp-14.2.0_20250730/xtensa-esp-elf/bin/xtensa-esp32-elf-g++   -mlongcalls -Wno-frame-address  -fno-builtin-memcpy -fno-builtin-memset -fno-builtin-bzero -fno-builtin-stpcpy -fno-builtin-strncpy    -v -o CMakeFiles/cmTC_84006.dir/CMakeCXXCompilerABI.cpp.obj -c /opt/homebrew/share/cmake/Modules/CMakeCXXCompilerABI.cpp
         Using built-in specs.
         COLLECT_GCC=/Users/promex04/.espressif/tools/xtensa-esp-elf/esp-14.2.0_20250730/xtensa-esp-elf/bin/xtensa-esp-elf-g++
         Target: xtensa-esp-elf
@@ -3586,8 +3792,8 @@ events:
         Thread model: posix
         Supported LTO compression algorithms: zlib
         gcc version 14.2.0 (crosstool-NG esp-14.2.0_20250730) 
-        COLLECT_GCC_OPTIONS='-mdynconfig=xtensa_esp32.so' '-mlongcalls' '-Wno-frame-address' '-fno-builtin-memcpy' '-fno-builtin-memset' '-fno-builtin-bzero' '-fno-builtin-stpcpy' '-fno-builtin-strncpy' '-v' '-o' 'CMakeFiles/cmTC_26912.dir/CMakeCXXCompilerABI.cpp.obj' '-c' '-dumpdir' 'CMakeFiles/cmTC_26912.dir/'
-         /Users/promex04/.espressif/tools/xtensa-esp-elf/esp-14.2.0_20250730/xtensa-esp-elf/bin/../libexec/gcc/xtensa-esp-elf/14.2.0/cc1plus -quiet -v -imultilib esp32 -iprefix /Users/promex04/.espressif/tools/xtensa-esp-elf/esp-14.2.0_20250730/xtensa-esp-elf/bin/../lib/gcc/xtensa-esp-elf/14.2.0/ -isysroot /Users/promex04/.espressif/tools/xtensa-esp-elf/esp-14.2.0_20250730/xtensa-esp-elf/bin/../xtensa-esp-elf /opt/homebrew/share/cmake/Modules/CMakeCXXCompilerABI.cpp -quiet -dumpdir CMakeFiles/cmTC_26912.dir/ -dumpbase CMakeCXXCompilerABI.cpp.cpp -dumpbase-ext .cpp -mdynconfig=xtensa_esp32.so -mlongcalls -Wno-frame-address -version -fno-builtin-memcpy -fno-builtin-memset -fno-builtin-bzero -fno-builtin-stpcpy -fno-builtin-strncpy -o /var/folders/bk/40lzr35s3gg2hfbtrw2rg5x00000gn/T//cc9SQZ4t.s
+        COLLECT_GCC_OPTIONS='-mdynconfig=xtensa_esp32.so' '-mlongcalls' '-Wno-frame-address' '-fno-builtin-memcpy' '-fno-builtin-memset' '-fno-builtin-bzero' '-fno-builtin-stpcpy' '-fno-builtin-strncpy' '-v' '-o' 'CMakeFiles/cmTC_84006.dir/CMakeCXXCompilerABI.cpp.obj' '-c' '-dumpdir' 'CMakeFiles/cmTC_84006.dir/'
+         /Users/promex04/.espressif/tools/xtensa-esp-elf/esp-14.2.0_20250730/xtensa-esp-elf/bin/../libexec/gcc/xtensa-esp-elf/14.2.0/cc1plus -quiet -v -imultilib esp32 -iprefix /Users/promex04/.espressif/tools/xtensa-esp-elf/esp-14.2.0_20250730/xtensa-esp-elf/bin/../lib/gcc/xtensa-esp-elf/14.2.0/ -isysroot /Users/promex04/.espressif/tools/xtensa-esp-elf/esp-14.2.0_20250730/xtensa-esp-elf/bin/../xtensa-esp-elf /opt/homebrew/share/cmake/Modules/CMakeCXXCompilerABI.cpp -quiet -dumpdir CMakeFiles/cmTC_84006.dir/ -dumpbase CMakeCXXCompilerABI.cpp.cpp -dumpbase-ext .cpp -mdynconfig=xtensa_esp32.so -mlongcalls -Wno-frame-address -version -fno-builtin-memcpy -fno-builtin-memset -fno-builtin-bzero -fno-builtin-stpcpy -fno-builtin-strncpy -o /var/folders/bk/40lzr35s3gg2hfbtrw2rg5x00000gn/T//ccG6xz3d.s
         GNU C++17 (crosstool-NG esp-14.2.0_20250730) version 14.2.0 (xtensa-esp-elf)
         	compiled by GNU C version Debian Clang 11.0.1, GMP version 6.2.1, MPFR version 4.2.1, MPC version 1.2.1, isl version isl-0.26-GMP
         
@@ -3610,13 +3816,13 @@ events:
          /Users/promex04/.espressif/tools/xtensa-esp-elf/esp-14.2.0_20250730/xtensa-esp-elf/bin/../lib/gcc/xtensa-esp-elf/14.2.0/../../../../xtensa-esp-elf/include
         End of search list.
         Compiler executable checksum: b7407f1371e10441e5957a443827c2db
-        COLLECT_GCC_OPTIONS='-mdynconfig=xtensa_esp32.so' '-mlongcalls' '-Wno-frame-address' '-fno-builtin-memcpy' '-fno-builtin-memset' '-fno-builtin-bzero' '-fno-builtin-stpcpy' '-fno-builtin-strncpy' '-v' '-o' 'CMakeFiles/cmTC_26912.dir/CMakeCXXCompilerABI.cpp.obj' '-c' '-dumpdir' 'CMakeFiles/cmTC_26912.dir/'
-         /Users/promex04/.espressif/tools/xtensa-esp-elf/esp-14.2.0_20250730/xtensa-esp-elf/bin/../lib/gcc/xtensa-esp-elf/14.2.0/../../../../xtensa-esp-elf/bin/as --traditional-format --longcalls --dynconfig=xtensa_esp32.so -o CMakeFiles/cmTC_26912.dir/CMakeCXXCompilerABI.cpp.obj /var/folders/bk/40lzr35s3gg2hfbtrw2rg5x00000gn/T//cc9SQZ4t.s
+        COLLECT_GCC_OPTIONS='-mdynconfig=xtensa_esp32.so' '-mlongcalls' '-Wno-frame-address' '-fno-builtin-memcpy' '-fno-builtin-memset' '-fno-builtin-bzero' '-fno-builtin-stpcpy' '-fno-builtin-strncpy' '-v' '-o' 'CMakeFiles/cmTC_84006.dir/CMakeCXXCompilerABI.cpp.obj' '-c' '-dumpdir' 'CMakeFiles/cmTC_84006.dir/'
+         /Users/promex04/.espressif/tools/xtensa-esp-elf/esp-14.2.0_20250730/xtensa-esp-elf/bin/../lib/gcc/xtensa-esp-elf/14.2.0/../../../../xtensa-esp-elf/bin/as --traditional-format --longcalls --dynconfig=xtensa_esp32.so -o CMakeFiles/cmTC_84006.dir/CMakeCXXCompilerABI.cpp.obj /var/folders/bk/40lzr35s3gg2hfbtrw2rg5x00000gn/T//ccG6xz3d.s
         COMPILER_PATH=/Users/promex04/.espressif/tools/xtensa-esp-elf/esp-14.2.0_20250730/xtensa-esp-elf/bin/../libexec/gcc/xtensa-esp-elf/14.2.0/:/Users/promex04/.espressif/tools/xtensa-esp-elf/esp-14.2.0_20250730/xtensa-esp-elf/bin/../libexec/gcc/:/Users/promex04/.espressif/tools/xtensa-esp-elf/esp-14.2.0_20250730/xtensa-esp-elf/bin/../lib/gcc/xtensa-esp-elf/14.2.0/../../../../xtensa-esp-elf/bin/
         LIBRARY_PATH=/Users/promex04/.espressif/tools/xtensa-esp-elf/esp-14.2.0_20250730/xtensa-esp-elf/bin/../lib/gcc/xtensa-esp-elf/14.2.0/esp32/:/Users/promex04/.espressif/tools/xtensa-esp-elf/esp-14.2.0_20250730/xtensa-esp-elf/bin/../lib/gcc/xtensa-esp-elf/14.2.0/../../../../xtensa-esp-elf/lib/esp32/:/Users/promex04/.espressif/tools/xtensa-esp-elf/esp-14.2.0_20250730/xtensa-esp-elf/bin/../xtensa-esp-elf/lib/esp32/:/Users/promex04/.espressif/tools/xtensa-esp-elf/esp-14.2.0_20250730/xtensa-esp-elf/bin/../lib/gcc/xtensa-esp-elf/14.2.0/:/Users/promex04/.espressif/tools/xtensa-esp-elf/esp-14.2.0_20250730/xtensa-esp-elf/bin/../lib/gcc/:/Users/promex04/.espressif/tools/xtensa-esp-elf/esp-14.2.0_20250730/xtensa-esp-elf/bin/../lib/gcc/xtensa-esp-elf/14.2.0/../../../../xtensa-esp-elf/lib/:/Users/promex04/.espressif/tools/xtensa-esp-elf/esp-14.2.0_20250730/xtensa-esp-elf/bin/../xtensa-esp-elf/lib/:/Users/promex04/.espressif/tools/xtensa-esp-elf/esp-14.2.0_20250730/xtensa-esp-elf/bin/../xtensa-esp-elf/usr/lib/
-        COLLECT_GCC_OPTIONS='-mdynconfig=xtensa_esp32.so' '-mlongcalls' '-Wno-frame-address' '-fno-builtin-memcpy' '-fno-builtin-memset' '-fno-builtin-bzero' '-fno-builtin-stpcpy' '-fno-builtin-strncpy' '-v' '-o' 'CMakeFiles/cmTC_26912.dir/CMakeCXXCompilerABI.cpp.obj' '-c' '-dumpdir' 'CMakeFiles/cmTC_26912.dir/CMakeCXXCompilerABI.cpp.'
-        Linking CXX executable cmTC_26912
-        /opt/homebrew/bin/cmake -E cmake_link_script CMakeFiles/cmTC_26912.dir/link.txt --verbose=1
+        COLLECT_GCC_OPTIONS='-mdynconfig=xtensa_esp32.so' '-mlongcalls' '-Wno-frame-address' '-fno-builtin-memcpy' '-fno-builtin-memset' '-fno-builtin-bzero' '-fno-builtin-stpcpy' '-fno-builtin-strncpy' '-v' '-o' 'CMakeFiles/cmTC_84006.dir/CMakeCXXCompilerABI.cpp.obj' '-c' '-dumpdir' 'CMakeFiles/cmTC_84006.dir/CMakeCXXCompilerABI.cpp.'
+        Linking CXX executable cmTC_84006
+        /opt/homebrew/bin/cmake -E cmake_link_script CMakeFiles/cmTC_84006.dir/link.txt --verbose=1
         Using built-in specs.
         COLLECT_GCC=/Users/promex04/.espressif/tools/xtensa-esp-elf/esp-14.2.0_20250730/xtensa-esp-elf/bin/xtensa-esp-elf-g++
         COLLECT_LTO_WRAPPER=/Users/promex04/.espressif/tools/xtensa-esp-elf/esp-14.2.0_20250730/xtensa-esp-elf/bin/../libexec/gcc/xtensa-esp-elf/14.2.0/lto-wrapper
@@ -3627,10 +3833,10 @@ events:
         gcc version 14.2.0 (crosstool-NG esp-14.2.0_20250730) 
         COMPILER_PATH=/Users/promex04/.espressif/tools/xtensa-esp-elf/esp-14.2.0_20250730/xtensa-esp-elf/bin/../libexec/gcc/xtensa-esp-elf/14.2.0/:/Users/promex04/.espressif/tools/xtensa-esp-elf/esp-14.2.0_20250730/xtensa-esp-elf/bin/../libexec/gcc/:/Users/promex04/.espressif/tools/xtensa-esp-elf/esp-14.2.0_20250730/xtensa-esp-elf/bin/../lib/gcc/xtensa-esp-elf/14.2.0/../../../../xtensa-esp-elf/bin/
         LIBRARY_PATH=/Users/promex04/.espressif/tools/xtensa-esp-elf/esp-14.2.0_20250730/xtensa-esp-elf/bin/../lib/gcc/xtensa-esp-elf/14.2.0/esp32/:/Users/promex04/.espressif/tools/xtensa-esp-elf/esp-14.2.0_20250730/xtensa-esp-elf/bin/../lib/gcc/xtensa-esp-elf/14.2.0/../../../../xtensa-esp-elf/lib/esp32/:/Users/promex04/.espressif/tools/xtensa-esp-elf/esp-14.2.0_20250730/xtensa-esp-elf/bin/../xtensa-esp-elf/lib/esp32/:/Users/promex04/.espressif/tools/xtensa-esp-elf/esp-14.2.0_20250730/xtensa-esp-elf/bin/../lib/gcc/xtensa-esp-elf/14.2.0/:/Users/promex04/.espressif/tools/xtensa-esp-elf/esp-14.2.0_20250730/xtensa-esp-elf/bin/../lib/gcc/:/Users/promex04/.espressif/tools/xtensa-esp-elf/esp-14.2.0_20250730/xtensa-esp-elf/bin/../lib/gcc/xtensa-esp-elf/14.2.0/../../../../xtensa-esp-elf/lib/:/Users/promex04/.espressif/tools/xtensa-esp-elf/esp-14.2.0_20250730/xtensa-esp-elf/bin/../xtensa-esp-elf/lib/:/Users/promex04/.espressif/tools/xtensa-esp-elf/esp-14.2.0_20250730/xtensa-esp-elf/bin/../xtensa-esp-elf/usr/lib/
-        COLLECT_GCC_OPTIONS='-mdynconfig=xtensa_esp32.so' '-mlongcalls' '-Wno-frame-address' '-fno-builtin-memcpy' '-fno-builtin-memset' '-fno-builtin-bzero' '-fno-builtin-stpcpy' '-fno-builtin-strncpy' '-v' '-o' 'cmTC_26912' '-dumpdir' 'cmTC_26912.'
-         /Users/promex04/.espressif/tools/xtensa-esp-elf/esp-14.2.0_20250730/xtensa-esp-elf/bin/../libexec/gcc/xtensa-esp-elf/14.2.0/collect2 -plugin /Users/promex04/.espressif/tools/xtensa-esp-elf/esp-14.2.0_20250730/xtensa-esp-elf/bin/../libexec/gcc/xtensa-esp-elf/14.2.0/liblto_plugin.so -plugin-opt=/Users/promex04/.espressif/tools/xtensa-esp-elf/esp-14.2.0_20250730/xtensa-esp-elf/bin/../libexec/gcc/xtensa-esp-elf/14.2.0/lto-wrapper -plugin-opt=-fresolution=/var/folders/bk/40lzr35s3gg2hfbtrw2rg5x00000gn/T//cc3L2nt8.res -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lc -plugin-opt=-pass-through=-lnosys -plugin-opt=-pass-through=-lc -plugin-opt=-pass-through=-lgcc --sysroot=/Users/promex04/.espressif/tools/xtensa-esp-elf/esp-14.2.0_20250730/xtensa-esp-elf/bin/../xtensa-esp-elf --dynconfig=xtensa_esp32.so -o cmTC_26912 /Users/promex04/.espressif/tools/xtensa-esp-elf/esp-14.2.0_20250730/xtensa-esp-elf/bin/../lib/gcc/xtensa-esp-elf/14.2.0/../../../../xtensa-esp-elf/lib/esp32/crt0.o /Users/promex04/.espressif/tools/xtensa-esp-elf/esp-14.2.0_20250730/xtensa-esp-elf/bin/../lib/gcc/xtensa-esp-elf/14.2.0/esp32/crti.o /Users/promex04/.espressif/tools/xtensa-esp-elf/esp-14.2.0_20250730/xtensa-esp-elf/bin/../lib/gcc/xtensa-esp-elf/14.2.0/esp32/crtbegin.o -L/Users/promex04/.espressif/tools/xtensa-esp-elf/esp-14.2.0_20250730/xtensa-esp-elf/bin/../lib/gcc/xtensa-esp-elf/14.2.0/esp32 -L/Users/promex04/.espressif/tools/xtensa-esp-elf/esp-14.2.0_20250730/xtensa-esp-elf/bin/../lib/gcc/xtensa-esp-elf/14.2.0/../../../../xtensa-esp-elf/lib/esp32 -L/Users/promex04/.espressif/tools/xtensa-esp-elf/esp-14.2.0_20250730/xtensa-esp-elf/bin/../xtensa-esp-elf/lib/esp32 -L/Users/promex04/.espressif/tools/xtensa-esp-elf/esp-14.2.0_20250730/xtensa-esp-elf/bin/../lib/gcc/xtensa-esp-elf/14.2.0 -L/Users/promex04/.espressif/tools/xtensa-esp-elf/esp-14.2.0_20250730/xtensa-esp-elf/bin/../lib/gcc -L/Users/promex04/.espressif/tools/xtensa-esp-elf/esp-14.2.0_20250730/xtensa-esp-elf/bin/../lib/gcc/xtensa-esp-elf/14.2.0/../../../../xtensa-esp-elf/lib -L/Users/promex04/.espressif/tools/xtensa-esp-elf/esp-14.2.0_20250730/xtensa-esp-elf/bin/../xtensa-esp-elf/lib -L/Users/promex04/.espressif/tools/xtensa-esp-elf/esp-14.2.0_20250730/xtensa-esp-elf/bin/../xtensa-esp-elf/usr/lib CMakeFiles/cmTC_26912.dir/CMakeCXXCompilerABI.cpp.obj -lstdc++ -lm -lgcc -lc -lnosys -lc -lgcc /Users/promex04/.espressif/tools/xtensa-esp-elf/esp-14.2.0_20250730/xtensa-esp-elf/bin/../lib/gcc/xtensa-esp-elf/14.2.0/esp32/crtend.o /Users/promex04/.espressif/tools/xtensa-esp-elf/esp-14.2.0_20250730/xtensa-esp-elf/bin/../lib/gcc/xtensa-esp-elf/14.2.0/esp32/crtn.o
-        COLLECT_GCC_OPTIONS='-mdynconfig=xtensa_esp32.so' '-mlongcalls' '-Wno-frame-address' '-fno-builtin-memcpy' '-fno-builtin-memset' '-fno-builtin-bzero' '-fno-builtin-stpcpy' '-fno-builtin-strncpy' '-v' '-o' 'cmTC_26912' '-dumpdir' 'cmTC_26912.'
-        /Users/promex04/.espressif/tools/xtensa-esp-elf/esp-14.2.0_20250730/xtensa-esp-elf/bin/xtensa-esp32-elf-g++ -mlongcalls -Wno-frame-address  -fno-builtin-memcpy -fno-builtin-memset -fno-builtin-bzero -fno-builtin-stpcpy -fno-builtin-strncpy   -v CMakeFiles/cmTC_26912.dir/CMakeCXXCompilerABI.cpp.obj -o cmTC_26912
+        COLLECT_GCC_OPTIONS='-mdynconfig=xtensa_esp32.so' '-mlongcalls' '-Wno-frame-address' '-fno-builtin-memcpy' '-fno-builtin-memset' '-fno-builtin-bzero' '-fno-builtin-stpcpy' '-fno-builtin-strncpy' '-v' '-o' 'cmTC_84006' '-dumpdir' 'cmTC_84006.'
+         /Users/promex04/.espressif/tools/xtensa-esp-elf/esp-14.2.0_20250730/xtensa-esp-elf/bin/../libexec/gcc/xtensa-esp-elf/14.2.0/collect2 -plugin /Users/promex04/.espressif/tools/xtensa-esp-elf/esp-14.2.0_20250730/xtensa-esp-elf/bin/../libexec/gcc/xtensa-esp-elf/14.2.0/liblto_plugin.so -plugin-opt=/Users/promex04/.espressif/tools/xtensa-esp-elf/esp-14.2.0_20250730/xtensa-esp-elf/bin/../libexec/gcc/xtensa-esp-elf/14.2.0/lto-wrapper -plugin-opt=-fresolution=/var/folders/bk/40lzr35s3gg2hfbtrw2rg5x00000gn/T//ccsfaIdl.res -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lc -plugin-opt=-pass-through=-lnosys -plugin-opt=-pass-through=-lc -plugin-opt=-pass-through=-lgcc --sysroot=/Users/promex04/.espressif/tools/xtensa-esp-elf/esp-14.2.0_20250730/xtensa-esp-elf/bin/../xtensa-esp-elf --dynconfig=xtensa_esp32.so -o cmTC_84006 /Users/promex04/.espressif/tools/xtensa-esp-elf/esp-14.2.0_20250730/xtensa-esp-elf/bin/../lib/gcc/xtensa-esp-elf/14.2.0/../../../../xtensa-esp-elf/lib/esp32/crt0.o /Users/promex04/.espressif/tools/xtensa-esp-elf/esp-14.2.0_20250730/xtensa-esp-elf/bin/../lib/gcc/xtensa-esp-elf/14.2.0/esp32/crti.o /Users/promex04/.espressif/tools/xtensa-esp-elf/esp-14.2.0_20250730/xtensa-esp-elf/bin/../lib/gcc/xtensa-esp-elf/14.2.0/esp32/crtbegin.o -L/Users/promex04/.espressif/tools/xtensa-esp-elf/esp-14.2.0_20250730/xtensa-esp-elf/bin/../lib/gcc/xtensa-esp-elf/14.2.0/esp32 -L/Users/promex04/.espressif/tools/xtensa-esp-elf/esp-14.2.0_20250730/xtensa-esp-elf/bin/../lib/gcc/xtensa-esp-elf/14.2.0/../../../../xtensa-esp-elf/lib/esp32 -L/Users/promex04/.espressif/tools/xtensa-esp-elf/esp-14.2.0_20250730/xtensa-esp-elf/bin/../xtensa-esp-elf/lib/esp32 -L/Users/promex04/.espressif/tools/xtensa-esp-elf/esp-14.2.0_20250730/xtensa-esp-elf/bin/../lib/gcc/xtensa-esp-elf/14.2.0 -L/Users/promex04/.espressif/tools/xtensa-esp-elf/esp-14.2.0_20250730/xtensa-esp-elf/bin/../lib/gcc -L/Users/promex04/.espressif/tools/xtensa-esp-elf/esp-14.2.0_20250730/xtensa-esp-elf/bin/../lib/gcc/xtensa-esp-elf/14.2.0/../../../../xtensa-esp-elf/lib -L/Users/promex04/.espressif/tools/xtensa-esp-elf/esp-14.2.0_20250730/xtensa-esp-elf/bin/../xtensa-esp-elf/lib -L/Users/promex04/.espressif/tools/xtensa-esp-elf/esp-14.2.0_20250730/xtensa-esp-elf/bin/../xtensa-esp-elf/usr/lib CMakeFiles/cmTC_84006.dir/CMakeCXXCompilerABI.cpp.obj -lstdc++ -lm -lgcc -lc -lnosys -lc -lgcc /Users/promex04/.espressif/tools/xtensa-esp-elf/esp-14.2.0_20250730/xtensa-esp-elf/bin/../lib/gcc/xtensa-esp-elf/14.2.0/esp32/crtend.o /Users/promex04/.espressif/tools/xtensa-esp-elf/esp-14.2.0_20250730/xtensa-esp-elf/bin/../lib/gcc/xtensa-esp-elf/14.2.0/esp32/crtn.o
+        COLLECT_GCC_OPTIONS='-mdynconfig=xtensa_esp32.so' '-mlongcalls' '-Wno-frame-address' '-fno-builtin-memcpy' '-fno-builtin-memset' '-fno-builtin-bzero' '-fno-builtin-stpcpy' '-fno-builtin-strncpy' '-v' '-o' 'cmTC_84006' '-dumpdir' 'cmTC_84006.'
+        /Users/promex04/.espressif/tools/xtensa-esp-elf/esp-14.2.0_20250730/xtensa-esp-elf/bin/xtensa-esp32-elf-g++ -mlongcalls -Wno-frame-address  -fno-builtin-memcpy -fno-builtin-memset -fno-builtin-bzero -fno-builtin-stpcpy -fno-builtin-strncpy   -v CMakeFiles/cmTC_84006.dir/CMakeCXXCompilerABI.cpp.obj -o cmTC_84006
         
       exitCode: 0
   -
@@ -3671,12 +3877,12 @@ events:
       Parsed CXX implicit link information:
         link line regex: [^( *|.*[/\\])(ld[0-9]*(|\\.[a-rt-z][a-z]*|\\.s[a-np-z][a-z]*|\\.so[a-z]+)|CMAKE_LINK_STARTFILE-NOTFOUND|([^/\\]+-)?ld|collect2)[^/\\]*( |$)]
         linker tool regex: [^[ 	]*(->|")?[ 	]*(([^"]*[/\\])?(ld[0-9]*(|\\.[a-rt-z][a-z]*|\\.s[a-np-z][a-z]*|\\.so[a-z]+)))("|,| |$)]
-        ignore line: [Change Dir: '/Users/promex04/Desktop/guild/speech_recognition/wwe/LyratMini_RecordPlay/build/bootloader/CMakeFiles/CMakeScratch/TryCompile-0Gx128']
+        ignore line: [Change Dir: '/Users/promex04/Desktop/guild/speech_recognition/wwe/LyratMini_RecordPlay/build/bootloader/CMakeFiles/CMakeScratch/TryCompile-3SwIej']
         ignore line: []
-        ignore line: [Run Build Command(s): /opt/homebrew/bin/cmake -E env VERBOSE=1 /usr/bin/make -f Makefile cmTC_26912/fast]
-        ignore line: [/Library/Developer/CommandLineTools/usr/bin/make  -f CMakeFiles/cmTC_26912.dir/build.make CMakeFiles/cmTC_26912.dir/build]
-        ignore line: [Building CXX object CMakeFiles/cmTC_26912.dir/CMakeCXXCompilerABI.cpp.obj]
-        ignore line: [/Users/promex04/.espressif/tools/xtensa-esp-elf/esp-14.2.0_20250730/xtensa-esp-elf/bin/xtensa-esp32-elf-g++   -mlongcalls -Wno-frame-address  -fno-builtin-memcpy -fno-builtin-memset -fno-builtin-bzero -fno-builtin-stpcpy -fno-builtin-strncpy    -v -o CMakeFiles/cmTC_26912.dir/CMakeCXXCompilerABI.cpp.obj -c /opt/homebrew/share/cmake/Modules/CMakeCXXCompilerABI.cpp]
+        ignore line: [Run Build Command(s): /opt/homebrew/bin/cmake -E env VERBOSE=1 /usr/bin/make -f Makefile cmTC_84006/fast]
+        ignore line: [/Library/Developer/CommandLineTools/usr/bin/make  -f CMakeFiles/cmTC_84006.dir/build.make CMakeFiles/cmTC_84006.dir/build]
+        ignore line: [Building CXX object CMakeFiles/cmTC_84006.dir/CMakeCXXCompilerABI.cpp.obj]
+        ignore line: [/Users/promex04/.espressif/tools/xtensa-esp-elf/esp-14.2.0_20250730/xtensa-esp-elf/bin/xtensa-esp32-elf-g++   -mlongcalls -Wno-frame-address  -fno-builtin-memcpy -fno-builtin-memset -fno-builtin-bzero -fno-builtin-stpcpy -fno-builtin-strncpy    -v -o CMakeFiles/cmTC_84006.dir/CMakeCXXCompilerABI.cpp.obj -c /opt/homebrew/share/cmake/Modules/CMakeCXXCompilerABI.cpp]
         ignore line: [Using built-in specs.]
         ignore line: [COLLECT_GCC=/Users/promex04/.espressif/tools/xtensa-esp-elf/esp-14.2.0_20250730/xtensa-esp-elf/bin/xtensa-esp-elf-g++]
         ignore line: [Target: xtensa-esp-elf]
@@ -3684,8 +3890,8 @@ events:
         ignore line: [Thread model: posix]
         ignore line: [Supported LTO compression algorithms: zlib]
         ignore line: [gcc version 14.2.0 (crosstool-NG esp-14.2.0_20250730) ]
-        ignore line: [COLLECT_GCC_OPTIONS='-mdynconfig=xtensa_esp32.so' '-mlongcalls' '-Wno-frame-address' '-fno-builtin-memcpy' '-fno-builtin-memset' '-fno-builtin-bzero' '-fno-builtin-stpcpy' '-fno-builtin-strncpy' '-v' '-o' 'CMakeFiles/cmTC_26912.dir/CMakeCXXCompilerABI.cpp.obj' '-c' '-dumpdir' 'CMakeFiles/cmTC_26912.dir/']
-        ignore line: [ /Users/promex04/.espressif/tools/xtensa-esp-elf/esp-14.2.0_20250730/xtensa-esp-elf/bin/../libexec/gcc/xtensa-esp-elf/14.2.0/cc1plus -quiet -v -imultilib esp32 -iprefix /Users/promex04/.espressif/tools/xtensa-esp-elf/esp-14.2.0_20250730/xtensa-esp-elf/bin/../lib/gcc/xtensa-esp-elf/14.2.0/ -isysroot /Users/promex04/.espressif/tools/xtensa-esp-elf/esp-14.2.0_20250730/xtensa-esp-elf/bin/../xtensa-esp-elf /opt/homebrew/share/cmake/Modules/CMakeCXXCompilerABI.cpp -quiet -dumpdir CMakeFiles/cmTC_26912.dir/ -dumpbase CMakeCXXCompilerABI.cpp.cpp -dumpbase-ext .cpp -mdynconfig=xtensa_esp32.so -mlongcalls -Wno-frame-address -version -fno-builtin-memcpy -fno-builtin-memset -fno-builtin-bzero -fno-builtin-stpcpy -fno-builtin-strncpy -o /var/folders/bk/40lzr35s3gg2hfbtrw2rg5x00000gn/T//cc9SQZ4t.s]
+        ignore line: [COLLECT_GCC_OPTIONS='-mdynconfig=xtensa_esp32.so' '-mlongcalls' '-Wno-frame-address' '-fno-builtin-memcpy' '-fno-builtin-memset' '-fno-builtin-bzero' '-fno-builtin-stpcpy' '-fno-builtin-strncpy' '-v' '-o' 'CMakeFiles/cmTC_84006.dir/CMakeCXXCompilerABI.cpp.obj' '-c' '-dumpdir' 'CMakeFiles/cmTC_84006.dir/']
+        ignore line: [ /Users/promex04/.espressif/tools/xtensa-esp-elf/esp-14.2.0_20250730/xtensa-esp-elf/bin/../libexec/gcc/xtensa-esp-elf/14.2.0/cc1plus -quiet -v -imultilib esp32 -iprefix /Users/promex04/.espressif/tools/xtensa-esp-elf/esp-14.2.0_20250730/xtensa-esp-elf/bin/../lib/gcc/xtensa-esp-elf/14.2.0/ -isysroot /Users/promex04/.espressif/tools/xtensa-esp-elf/esp-14.2.0_20250730/xtensa-esp-elf/bin/../xtensa-esp-elf /opt/homebrew/share/cmake/Modules/CMakeCXXCompilerABI.cpp -quiet -dumpdir CMakeFiles/cmTC_84006.dir/ -dumpbase CMakeCXXCompilerABI.cpp.cpp -dumpbase-ext .cpp -mdynconfig=xtensa_esp32.so -mlongcalls -Wno-frame-address -version -fno-builtin-memcpy -fno-builtin-memset -fno-builtin-bzero -fno-builtin-stpcpy -fno-builtin-strncpy -o /var/folders/bk/40lzr35s3gg2hfbtrw2rg5x00000gn/T//ccG6xz3d.s]
         ignore line: [GNU C++17 (crosstool-NG esp-14.2.0_20250730) version 14.2.0 (xtensa-esp-elf)]
         ignore line: [	compiled by GNU C version Debian Clang 11.0.1  GMP version 6.2.1  MPFR version 4.2.1  MPC version 1.2.1  isl version isl-0.26-GMP]
         ignore line: []
@@ -3708,13 +3914,13 @@ events:
         ignore line: [ /Users/promex04/.espressif/tools/xtensa-esp-elf/esp-14.2.0_20250730/xtensa-esp-elf/bin/../lib/gcc/xtensa-esp-elf/14.2.0/../../../../xtensa-esp-elf/include]
         ignore line: [End of search list.]
         ignore line: [Compiler executable checksum: b7407f1371e10441e5957a443827c2db]
-        ignore line: [COLLECT_GCC_OPTIONS='-mdynconfig=xtensa_esp32.so' '-mlongcalls' '-Wno-frame-address' '-fno-builtin-memcpy' '-fno-builtin-memset' '-fno-builtin-bzero' '-fno-builtin-stpcpy' '-fno-builtin-strncpy' '-v' '-o' 'CMakeFiles/cmTC_26912.dir/CMakeCXXCompilerABI.cpp.obj' '-c' '-dumpdir' 'CMakeFiles/cmTC_26912.dir/']
-        ignore line: [ /Users/promex04/.espressif/tools/xtensa-esp-elf/esp-14.2.0_20250730/xtensa-esp-elf/bin/../lib/gcc/xtensa-esp-elf/14.2.0/../../../../xtensa-esp-elf/bin/as --traditional-format --longcalls --dynconfig=xtensa_esp32.so -o CMakeFiles/cmTC_26912.dir/CMakeCXXCompilerABI.cpp.obj /var/folders/bk/40lzr35s3gg2hfbtrw2rg5x00000gn/T//cc9SQZ4t.s]
+        ignore line: [COLLECT_GCC_OPTIONS='-mdynconfig=xtensa_esp32.so' '-mlongcalls' '-Wno-frame-address' '-fno-builtin-memcpy' '-fno-builtin-memset' '-fno-builtin-bzero' '-fno-builtin-stpcpy' '-fno-builtin-strncpy' '-v' '-o' 'CMakeFiles/cmTC_84006.dir/CMakeCXXCompilerABI.cpp.obj' '-c' '-dumpdir' 'CMakeFiles/cmTC_84006.dir/']
+        ignore line: [ /Users/promex04/.espressif/tools/xtensa-esp-elf/esp-14.2.0_20250730/xtensa-esp-elf/bin/../lib/gcc/xtensa-esp-elf/14.2.0/../../../../xtensa-esp-elf/bin/as --traditional-format --longcalls --dynconfig=xtensa_esp32.so -o CMakeFiles/cmTC_84006.dir/CMakeCXXCompilerABI.cpp.obj /var/folders/bk/40lzr35s3gg2hfbtrw2rg5x00000gn/T//ccG6xz3d.s]
         ignore line: [COMPILER_PATH=/Users/promex04/.espressif/tools/xtensa-esp-elf/esp-14.2.0_20250730/xtensa-esp-elf/bin/../libexec/gcc/xtensa-esp-elf/14.2.0/:/Users/promex04/.espressif/tools/xtensa-esp-elf/esp-14.2.0_20250730/xtensa-esp-elf/bin/../libexec/gcc/:/Users/promex04/.espressif/tools/xtensa-esp-elf/esp-14.2.0_20250730/xtensa-esp-elf/bin/../lib/gcc/xtensa-esp-elf/14.2.0/../../../../xtensa-esp-elf/bin/]
         ignore line: [LIBRARY_PATH=/Users/promex04/.espressif/tools/xtensa-esp-elf/esp-14.2.0_20250730/xtensa-esp-elf/bin/../lib/gcc/xtensa-esp-elf/14.2.0/esp32/:/Users/promex04/.espressif/tools/xtensa-esp-elf/esp-14.2.0_20250730/xtensa-esp-elf/bin/../lib/gcc/xtensa-esp-elf/14.2.0/../../../../xtensa-esp-elf/lib/esp32/:/Users/promex04/.espressif/tools/xtensa-esp-elf/esp-14.2.0_20250730/xtensa-esp-elf/bin/../xtensa-esp-elf/lib/esp32/:/Users/promex04/.espressif/tools/xtensa-esp-elf/esp-14.2.0_20250730/xtensa-esp-elf/bin/../lib/gcc/xtensa-esp-elf/14.2.0/:/Users/promex04/.espressif/tools/xtensa-esp-elf/esp-14.2.0_20250730/xtensa-esp-elf/bin/../lib/gcc/:/Users/promex04/.espressif/tools/xtensa-esp-elf/esp-14.2.0_20250730/xtensa-esp-elf/bin/../lib/gcc/xtensa-esp-elf/14.2.0/../../../../xtensa-esp-elf/lib/:/Users/promex04/.espressif/tools/xtensa-esp-elf/esp-14.2.0_20250730/xtensa-esp-elf/bin/../xtensa-esp-elf/lib/:/Users/promex04/.espressif/tools/xtensa-esp-elf/esp-14.2.0_20250730/xtensa-esp-elf/bin/../xtensa-esp-elf/usr/lib/]
-        ignore line: [COLLECT_GCC_OPTIONS='-mdynconfig=xtensa_esp32.so' '-mlongcalls' '-Wno-frame-address' '-fno-builtin-memcpy' '-fno-builtin-memset' '-fno-builtin-bzero' '-fno-builtin-stpcpy' '-fno-builtin-strncpy' '-v' '-o' 'CMakeFiles/cmTC_26912.dir/CMakeCXXCompilerABI.cpp.obj' '-c' '-dumpdir' 'CMakeFiles/cmTC_26912.dir/CMakeCXXCompilerABI.cpp.']
-        ignore line: [Linking CXX executable cmTC_26912]
-        ignore line: [/opt/homebrew/bin/cmake -E cmake_link_script CMakeFiles/cmTC_26912.dir/link.txt --verbose=1]
+        ignore line: [COLLECT_GCC_OPTIONS='-mdynconfig=xtensa_esp32.so' '-mlongcalls' '-Wno-frame-address' '-fno-builtin-memcpy' '-fno-builtin-memset' '-fno-builtin-bzero' '-fno-builtin-stpcpy' '-fno-builtin-strncpy' '-v' '-o' 'CMakeFiles/cmTC_84006.dir/CMakeCXXCompilerABI.cpp.obj' '-c' '-dumpdir' 'CMakeFiles/cmTC_84006.dir/CMakeCXXCompilerABI.cpp.']
+        ignore line: [Linking CXX executable cmTC_84006]
+        ignore line: [/opt/homebrew/bin/cmake -E cmake_link_script CMakeFiles/cmTC_84006.dir/link.txt --verbose=1]
         ignore line: [Using built-in specs.]
         ignore line: [COLLECT_GCC=/Users/promex04/.espressif/tools/xtensa-esp-elf/esp-14.2.0_20250730/xtensa-esp-elf/bin/xtensa-esp-elf-g++]
         ignore line: [COLLECT_LTO_WRAPPER=/Users/promex04/.espressif/tools/xtensa-esp-elf/esp-14.2.0_20250730/xtensa-esp-elf/bin/../libexec/gcc/xtensa-esp-elf/14.2.0/lto-wrapper]
@@ -3725,13 +3931,13 @@ events:
         ignore line: [gcc version 14.2.0 (crosstool-NG esp-14.2.0_20250730) ]
         ignore line: [COMPILER_PATH=/Users/promex04/.espressif/tools/xtensa-esp-elf/esp-14.2.0_20250730/xtensa-esp-elf/bin/../libexec/gcc/xtensa-esp-elf/14.2.0/:/Users/promex04/.espressif/tools/xtensa-esp-elf/esp-14.2.0_20250730/xtensa-esp-elf/bin/../libexec/gcc/:/Users/promex04/.espressif/tools/xtensa-esp-elf/esp-14.2.0_20250730/xtensa-esp-elf/bin/../lib/gcc/xtensa-esp-elf/14.2.0/../../../../xtensa-esp-elf/bin/]
         ignore line: [LIBRARY_PATH=/Users/promex04/.espressif/tools/xtensa-esp-elf/esp-14.2.0_20250730/xtensa-esp-elf/bin/../lib/gcc/xtensa-esp-elf/14.2.0/esp32/:/Users/promex04/.espressif/tools/xtensa-esp-elf/esp-14.2.0_20250730/xtensa-esp-elf/bin/../lib/gcc/xtensa-esp-elf/14.2.0/../../../../xtensa-esp-elf/lib/esp32/:/Users/promex04/.espressif/tools/xtensa-esp-elf/esp-14.2.0_20250730/xtensa-esp-elf/bin/../xtensa-esp-elf/lib/esp32/:/Users/promex04/.espressif/tools/xtensa-esp-elf/esp-14.2.0_20250730/xtensa-esp-elf/bin/../lib/gcc/xtensa-esp-elf/14.2.0/:/Users/promex04/.espressif/tools/xtensa-esp-elf/esp-14.2.0_20250730/xtensa-esp-elf/bin/../lib/gcc/:/Users/promex04/.espressif/tools/xtensa-esp-elf/esp-14.2.0_20250730/xtensa-esp-elf/bin/../lib/gcc/xtensa-esp-elf/14.2.0/../../../../xtensa-esp-elf/lib/:/Users/promex04/.espressif/tools/xtensa-esp-elf/esp-14.2.0_20250730/xtensa-esp-elf/bin/../xtensa-esp-elf/lib/:/Users/promex04/.espressif/tools/xtensa-esp-elf/esp-14.2.0_20250730/xtensa-esp-elf/bin/../xtensa-esp-elf/usr/lib/]
-        ignore line: [COLLECT_GCC_OPTIONS='-mdynconfig=xtensa_esp32.so' '-mlongcalls' '-Wno-frame-address' '-fno-builtin-memcpy' '-fno-builtin-memset' '-fno-builtin-bzero' '-fno-builtin-stpcpy' '-fno-builtin-strncpy' '-v' '-o' 'cmTC_26912' '-dumpdir' 'cmTC_26912.']
-        link line: [ /Users/promex04/.espressif/tools/xtensa-esp-elf/esp-14.2.0_20250730/xtensa-esp-elf/bin/../libexec/gcc/xtensa-esp-elf/14.2.0/collect2 -plugin /Users/promex04/.espressif/tools/xtensa-esp-elf/esp-14.2.0_20250730/xtensa-esp-elf/bin/../libexec/gcc/xtensa-esp-elf/14.2.0/liblto_plugin.so -plugin-opt=/Users/promex04/.espressif/tools/xtensa-esp-elf/esp-14.2.0_20250730/xtensa-esp-elf/bin/../libexec/gcc/xtensa-esp-elf/14.2.0/lto-wrapper -plugin-opt=-fresolution=/var/folders/bk/40lzr35s3gg2hfbtrw2rg5x00000gn/T//cc3L2nt8.res -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lc -plugin-opt=-pass-through=-lnosys -plugin-opt=-pass-through=-lc -plugin-opt=-pass-through=-lgcc --sysroot=/Users/promex04/.espressif/tools/xtensa-esp-elf/esp-14.2.0_20250730/xtensa-esp-elf/bin/../xtensa-esp-elf --dynconfig=xtensa_esp32.so -o cmTC_26912 /Users/promex04/.espressif/tools/xtensa-esp-elf/esp-14.2.0_20250730/xtensa-esp-elf/bin/../lib/gcc/xtensa-esp-elf/14.2.0/../../../../xtensa-esp-elf/lib/esp32/crt0.o /Users/promex04/.espressif/tools/xtensa-esp-elf/esp-14.2.0_20250730/xtensa-esp-elf/bin/../lib/gcc/xtensa-esp-elf/14.2.0/esp32/crti.o /Users/promex04/.espressif/tools/xtensa-esp-elf/esp-14.2.0_20250730/xtensa-esp-elf/bin/../lib/gcc/xtensa-esp-elf/14.2.0/esp32/crtbegin.o -L/Users/promex04/.espressif/tools/xtensa-esp-elf/esp-14.2.0_20250730/xtensa-esp-elf/bin/../lib/gcc/xtensa-esp-elf/14.2.0/esp32 -L/Users/promex04/.espressif/tools/xtensa-esp-elf/esp-14.2.0_20250730/xtensa-esp-elf/bin/../lib/gcc/xtensa-esp-elf/14.2.0/../../../../xtensa-esp-elf/lib/esp32 -L/Users/promex04/.espressif/tools/xtensa-esp-elf/esp-14.2.0_20250730/xtensa-esp-elf/bin/../xtensa-esp-elf/lib/esp32 -L/Users/promex04/.espressif/tools/xtensa-esp-elf/esp-14.2.0_20250730/xtensa-esp-elf/bin/../lib/gcc/xtensa-esp-elf/14.2.0 -L/Users/promex04/.espressif/tools/xtensa-esp-elf/esp-14.2.0_20250730/xtensa-esp-elf/bin/../lib/gcc -L/Users/promex04/.espressif/tools/xtensa-esp-elf/esp-14.2.0_20250730/xtensa-esp-elf/bin/../lib/gcc/xtensa-esp-elf/14.2.0/../../../../xtensa-esp-elf/lib -L/Users/promex04/.espressif/tools/xtensa-esp-elf/esp-14.2.0_20250730/xtensa-esp-elf/bin/../xtensa-esp-elf/lib -L/Users/promex04/.espressif/tools/xtensa-esp-elf/esp-14.2.0_20250730/xtensa-esp-elf/bin/../xtensa-esp-elf/usr/lib CMakeFiles/cmTC_26912.dir/CMakeCXXCompilerABI.cpp.obj -lstdc++ -lm -lgcc -lc -lnosys -lc -lgcc /Users/promex04/.espressif/tools/xtensa-esp-elf/esp-14.2.0_20250730/xtensa-esp-elf/bin/../lib/gcc/xtensa-esp-elf/14.2.0/esp32/crtend.o /Users/promex04/.espressif/tools/xtensa-esp-elf/esp-14.2.0_20250730/xtensa-esp-elf/bin/../lib/gcc/xtensa-esp-elf/14.2.0/esp32/crtn.o]
+        ignore line: [COLLECT_GCC_OPTIONS='-mdynconfig=xtensa_esp32.so' '-mlongcalls' '-Wno-frame-address' '-fno-builtin-memcpy' '-fno-builtin-memset' '-fno-builtin-bzero' '-fno-builtin-stpcpy' '-fno-builtin-strncpy' '-v' '-o' 'cmTC_84006' '-dumpdir' 'cmTC_84006.']
+        link line: [ /Users/promex04/.espressif/tools/xtensa-esp-elf/esp-14.2.0_20250730/xtensa-esp-elf/bin/../libexec/gcc/xtensa-esp-elf/14.2.0/collect2 -plugin /Users/promex04/.espressif/tools/xtensa-esp-elf/esp-14.2.0_20250730/xtensa-esp-elf/bin/../libexec/gcc/xtensa-esp-elf/14.2.0/liblto_plugin.so -plugin-opt=/Users/promex04/.espressif/tools/xtensa-esp-elf/esp-14.2.0_20250730/xtensa-esp-elf/bin/../libexec/gcc/xtensa-esp-elf/14.2.0/lto-wrapper -plugin-opt=-fresolution=/var/folders/bk/40lzr35s3gg2hfbtrw2rg5x00000gn/T//ccsfaIdl.res -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lc -plugin-opt=-pass-through=-lnosys -plugin-opt=-pass-through=-lc -plugin-opt=-pass-through=-lgcc --sysroot=/Users/promex04/.espressif/tools/xtensa-esp-elf/esp-14.2.0_20250730/xtensa-esp-elf/bin/../xtensa-esp-elf --dynconfig=xtensa_esp32.so -o cmTC_84006 /Users/promex04/.espressif/tools/xtensa-esp-elf/esp-14.2.0_20250730/xtensa-esp-elf/bin/../lib/gcc/xtensa-esp-elf/14.2.0/../../../../xtensa-esp-elf/lib/esp32/crt0.o /Users/promex04/.espressif/tools/xtensa-esp-elf/esp-14.2.0_20250730/xtensa-esp-elf/bin/../lib/gcc/xtensa-esp-elf/14.2.0/esp32/crti.o /Users/promex04/.espressif/tools/xtensa-esp-elf/esp-14.2.0_20250730/xtensa-esp-elf/bin/../lib/gcc/xtensa-esp-elf/14.2.0/esp32/crtbegin.o -L/Users/promex04/.espressif/tools/xtensa-esp-elf/esp-14.2.0_20250730/xtensa-esp-elf/bin/../lib/gcc/xtensa-esp-elf/14.2.0/esp32 -L/Users/promex04/.espressif/tools/xtensa-esp-elf/esp-14.2.0_20250730/xtensa-esp-elf/bin/../lib/gcc/xtensa-esp-elf/14.2.0/../../../../xtensa-esp-elf/lib/esp32 -L/Users/promex04/.espressif/tools/xtensa-esp-elf/esp-14.2.0_20250730/xtensa-esp-elf/bin/../xtensa-esp-elf/lib/esp32 -L/Users/promex04/.espressif/tools/xtensa-esp-elf/esp-14.2.0_20250730/xtensa-esp-elf/bin/../lib/gcc/xtensa-esp-elf/14.2.0 -L/Users/promex04/.espressif/tools/xtensa-esp-elf/esp-14.2.0_20250730/xtensa-esp-elf/bin/../lib/gcc -L/Users/promex04/.espressif/tools/xtensa-esp-elf/esp-14.2.0_20250730/xtensa-esp-elf/bin/../lib/gcc/xtensa-esp-elf/14.2.0/../../../../xtensa-esp-elf/lib -L/Users/promex04/.espressif/tools/xtensa-esp-elf/esp-14.2.0_20250730/xtensa-esp-elf/bin/../xtensa-esp-elf/lib -L/Users/promex04/.espressif/tools/xtensa-esp-elf/esp-14.2.0_20250730/xtensa-esp-elf/bin/../xtensa-esp-elf/usr/lib CMakeFiles/cmTC_84006.dir/CMakeCXXCompilerABI.cpp.obj -lstdc++ -lm -lgcc -lc -lnosys -lc -lgcc /Users/promex04/.espressif/tools/xtensa-esp-elf/esp-14.2.0_20250730/xtensa-esp-elf/bin/../lib/gcc/xtensa-esp-elf/14.2.0/esp32/crtend.o /Users/promex04/.espressif/tools/xtensa-esp-elf/esp-14.2.0_20250730/xtensa-esp-elf/bin/../lib/gcc/xtensa-esp-elf/14.2.0/esp32/crtn.o]
           arg [/Users/promex04/.espressif/tools/xtensa-esp-elf/esp-14.2.0_20250730/xtensa-esp-elf/bin/../libexec/gcc/xtensa-esp-elf/14.2.0/collect2] ==> ignore
           arg [-plugin] ==> ignore
           arg [/Users/promex04/.espressif/tools/xtensa-esp-elf/esp-14.2.0_20250730/xtensa-esp-elf/bin/../libexec/gcc/xtensa-esp-elf/14.2.0/liblto_plugin.so] ==> ignore
           arg [-plugin-opt=/Users/promex04/.espressif/tools/xtensa-esp-elf/esp-14.2.0_20250730/xtensa-esp-elf/bin/../libexec/gcc/xtensa-esp-elf/14.2.0/lto-wrapper] ==> ignore
-          arg [-plugin-opt=-fresolution=/var/folders/bk/40lzr35s3gg2hfbtrw2rg5x00000gn/T//cc3L2nt8.res] ==> ignore
+          arg [-plugin-opt=-fresolution=/var/folders/bk/40lzr35s3gg2hfbtrw2rg5x00000gn/T//ccsfaIdl.res] ==> ignore
           arg [-plugin-opt=-pass-through=-lgcc] ==> ignore
           arg [-plugin-opt=-pass-through=-lc] ==> ignore
           arg [-plugin-opt=-pass-through=-lnosys] ==> ignore
@@ -3740,7 +3946,7 @@ events:
           arg [--sysroot=/Users/promex04/.espressif/tools/xtensa-esp-elf/esp-14.2.0_20250730/xtensa-esp-elf/bin/../xtensa-esp-elf] ==> ignore
           arg [--dynconfig=xtensa_esp32.so] ==> ignore
           arg [-o] ==> ignore
-          arg [cmTC_26912] ==> ignore
+          arg [cmTC_84006] ==> ignore
           arg [/Users/promex04/.espressif/tools/xtensa-esp-elf/esp-14.2.0_20250730/xtensa-esp-elf/bin/../lib/gcc/xtensa-esp-elf/14.2.0/../../../../xtensa-esp-elf/lib/esp32/crt0.o] ==> obj [/Users/promex04/.espressif/tools/xtensa-esp-elf/esp-14.2.0_20250730/xtensa-esp-elf/bin/../lib/gcc/xtensa-esp-elf/14.2.0/../../../../xtensa-esp-elf/lib/esp32/crt0.o]
           arg [/Users/promex04/.espressif/tools/xtensa-esp-elf/esp-14.2.0_20250730/xtensa-esp-elf/bin/../lib/gcc/xtensa-esp-elf/14.2.0/esp32/crti.o] ==> obj [/Users/promex04/.espressif/tools/xtensa-esp-elf/esp-14.2.0_20250730/xtensa-esp-elf/bin/../lib/gcc/xtensa-esp-elf/14.2.0/esp32/crti.o]
           arg [/Users/promex04/.espressif/tools/xtensa-esp-elf/esp-14.2.0_20250730/xtensa-esp-elf/bin/../lib/gcc/xtensa-esp-elf/14.2.0/esp32/crtbegin.o] ==> obj [/Users/promex04/.espressif/tools/xtensa-esp-elf/esp-14.2.0_20250730/xtensa-esp-elf/bin/../lib/gcc/xtensa-esp-elf/14.2.0/esp32/crtbegin.o]
@@ -3752,7 +3958,7 @@ events:
           arg [-L/Users/promex04/.espressif/tools/xtensa-esp-elf/esp-14.2.0_20250730/xtensa-esp-elf/bin/../lib/gcc/xtensa-esp-elf/14.2.0/../../../../xtensa-esp-elf/lib] ==> dir [/Users/promex04/.espressif/tools/xtensa-esp-elf/esp-14.2.0_20250730/xtensa-esp-elf/bin/../lib/gcc/xtensa-esp-elf/14.2.0/../../../../xtensa-esp-elf/lib]
           arg [-L/Users/promex04/.espressif/tools/xtensa-esp-elf/esp-14.2.0_20250730/xtensa-esp-elf/bin/../xtensa-esp-elf/lib] ==> dir [/Users/promex04/.espressif/tools/xtensa-esp-elf/esp-14.2.0_20250730/xtensa-esp-elf/bin/../xtensa-esp-elf/lib]
           arg [-L/Users/promex04/.espressif/tools/xtensa-esp-elf/esp-14.2.0_20250730/xtensa-esp-elf/bin/../xtensa-esp-elf/usr/lib] ==> dir [/Users/promex04/.espressif/tools/xtensa-esp-elf/esp-14.2.0_20250730/xtensa-esp-elf/bin/../xtensa-esp-elf/usr/lib]
-          arg [CMakeFiles/cmTC_26912.dir/CMakeCXXCompilerABI.cpp.obj] ==> ignore
+          arg [CMakeFiles/cmTC_84006.dir/CMakeCXXCompilerABI.cpp.obj] ==> ignore
           arg [-lstdc++] ==> lib [stdc++]
           arg [-lm] ==> lib [m]
           arg [-lgcc] ==> lib [gcc]
@@ -3762,8 +3968,8 @@ events:
           arg [-lgcc] ==> lib [gcc]
           arg [/Users/promex04/.espressif/tools/xtensa-esp-elf/esp-14.2.0_20250730/xtensa-esp-elf/bin/../lib/gcc/xtensa-esp-elf/14.2.0/esp32/crtend.o] ==> obj [/Users/promex04/.espressif/tools/xtensa-esp-elf/esp-14.2.0_20250730/xtensa-esp-elf/bin/../lib/gcc/xtensa-esp-elf/14.2.0/esp32/crtend.o]
           arg [/Users/promex04/.espressif/tools/xtensa-esp-elf/esp-14.2.0_20250730/xtensa-esp-elf/bin/../lib/gcc/xtensa-esp-elf/14.2.0/esp32/crtn.o] ==> obj [/Users/promex04/.espressif/tools/xtensa-esp-elf/esp-14.2.0_20250730/xtensa-esp-elf/bin/../lib/gcc/xtensa-esp-elf/14.2.0/esp32/crtn.o]
-        ignore line: [COLLECT_GCC_OPTIONS='-mdynconfig=xtensa_esp32.so' '-mlongcalls' '-Wno-frame-address' '-fno-builtin-memcpy' '-fno-builtin-memset' '-fno-builtin-bzero' '-fno-builtin-stpcpy' '-fno-builtin-strncpy' '-v' '-o' 'cmTC_26912' '-dumpdir' 'cmTC_26912.']
-        ignore line: [/Users/promex04/.espressif/tools/xtensa-esp-elf/esp-14.2.0_20250730/xtensa-esp-elf/bin/xtensa-esp32-elf-g++ -mlongcalls -Wno-frame-address  -fno-builtin-memcpy -fno-builtin-memset -fno-builtin-bzero -fno-builtin-stpcpy -fno-builtin-strncpy   -v CMakeFiles/cmTC_26912.dir/CMakeCXXCompilerABI.cpp.obj -o cmTC_26912]
+        ignore line: [COLLECT_GCC_OPTIONS='-mdynconfig=xtensa_esp32.so' '-mlongcalls' '-Wno-frame-address' '-fno-builtin-memcpy' '-fno-builtin-memset' '-fno-builtin-bzero' '-fno-builtin-stpcpy' '-fno-builtin-strncpy' '-v' '-o' 'cmTC_84006' '-dumpdir' 'cmTC_84006.']
+        ignore line: [/Users/promex04/.espressif/tools/xtensa-esp-elf/esp-14.2.0_20250730/xtensa-esp-elf/bin/xtensa-esp32-elf-g++ -mlongcalls -Wno-frame-address  -fno-builtin-memcpy -fno-builtin-memset -fno-builtin-bzero -fno-builtin-stpcpy -fno-builtin-strncpy   -v CMakeFiles/cmTC_84006.dir/CMakeCXXCompilerABI.cpp.obj -o cmTC_84006]
         ignore line: []
         ignore line: []
         collapse obj [/Users/promex04/.espressif/tools/xtensa-esp-elf/esp-14.2.0_20250730/xtensa-esp-elf/bin/../lib/gcc/xtensa-esp-elf/14.2.0/../../../../xtensa-esp-elf/lib/esp32/crt0.o] ==> [/Users/promex04/.espressif/tools/xtensa-esp-elf/esp-14.2.0_20250730/xtensa-esp-elf/xtensa-esp-elf/lib/esp32/crt0.o]

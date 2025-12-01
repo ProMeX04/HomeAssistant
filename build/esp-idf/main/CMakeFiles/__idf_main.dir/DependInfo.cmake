@@ -9,6 +9,7 @@ set(CMAKE_DEPENDS_LANGUAGES
 # The set of dependency files which are needed:
 set(CMAKE_DEPENDS_DEPENDENCY_FILES
   "/Users/promex04/Desktop/guild/speech_recognition/wwe/LyratMini_RecordPlay/main/main_ws.c" "esp-idf/main/CMakeFiles/__idf_main.dir/main_ws.c.obj" "gcc" "esp-idf/main/CMakeFiles/__idf_main.dir/main_ws.c.obj.d"
+  "/Users/promex04/Desktop/guild/speech_recognition/wwe/LyratMini_RecordPlay/main/settings.c" "esp-idf/main/CMakeFiles/__idf_main.dir/settings.c.obj" "gcc" "esp-idf/main/CMakeFiles/__idf_main.dir/settings.c.obj.d"
   "/Users/promex04/Desktop/guild/speech_recognition/wwe/LyratMini_RecordPlay/main/wifi_helper.c" "esp-idf/main/CMakeFiles/__idf_main.dir/wifi_helper.c.obj" "gcc" "esp-idf/main/CMakeFiles/__idf_main.dir/wifi_helper.c.obj.d"
   )
 

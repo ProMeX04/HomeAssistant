@@ -1,7 +1,0 @@
-/Users/promex04/Desktop/guild/speech_recognition/wwe/LyratMini_RecordPlay/main/main_ws.c: In function 'init_play_pipeline':
-/Users/promex04/Desktop/guild/speech_recognition/wwe/LyratMini_RecordPlay/main/main_ws.c:122:18: error: 'raw_stream_cfg_t' has no member named 'write_time'
-  122 |     raw_write_cfg.write_time = pdMS_TO_TICKS(1000);
-      |                  ^
-make[2]: *** [esp-idf/main/CMakeFiles/__idf_main.dir/main_ws.c.obj] Error 1
-make[1]: *** [esp-idf/main/CMakeFiles/__idf_main.dir/all] Error 2
-make: *** [all] Error 2

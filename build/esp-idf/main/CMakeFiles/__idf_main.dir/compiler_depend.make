@@ -13,7 +13,6 @@ esp-idf/main/CMakeFiles/__idf_main.dir/main_ws.c.obj: /Users/promex04/Desktop/gu
   /Users/promex04/.espressif/tools/xtensa-esp-elf/esp-14.2.0_20250730/xtensa-esp-elf/xtensa-esp-elf/include/alloca.h \
   /Users/promex04/.espressif/tools/xtensa-esp-elf/esp-14.2.0_20250730/xtensa-esp-elf/xtensa-esp-elf/include/assert.h \
   /Users/promex04/.espressif/tools/xtensa-esp-elf/esp-14.2.0_20250730/xtensa-esp-elf/xtensa-esp-elf/include/ctype.h \
-  /Users/promex04/.espressif/tools/xtensa-esp-elf/esp-14.2.0_20250730/xtensa-esp-elf/xtensa-esp-elf/include/dirent.h \
   /Users/promex04/.espressif/tools/xtensa-esp-elf/esp-14.2.0_20250730/xtensa-esp-elf/xtensa-esp-elf/include/errno.h \
   /Users/promex04/.espressif/tools/xtensa-esp-elf/esp-14.2.0_20250730/xtensa-esp-elf/xtensa-esp-elf/include/inttypes.h \
   /Users/promex04/.espressif/tools/xtensa-esp-elf/esp-14.2.0_20250730/xtensa-esp-elf/xtensa-esp-elf/include/limits.h \
@@ -46,7 +45,6 @@ esp-idf/main/CMakeFiles/__idf_main.dir/main_ws.c.obj: /Users/promex04/Desktop/gu
   /Users/promex04/.espressif/tools/xtensa-esp-elf/esp-14.2.0_20250730/xtensa-esp-elf/xtensa-esp-elf/include/sys/_types.h \
   /Users/promex04/.espressif/tools/xtensa-esp-elf/esp-14.2.0_20250730/xtensa-esp-elf/xtensa-esp-elf/include/sys/cdefs.h \
   /Users/promex04/.espressif/tools/xtensa-esp-elf/esp-14.2.0_20250730/xtensa-esp-elf/xtensa-esp-elf/include/sys/config.h \
-  /Users/promex04/.espressif/tools/xtensa-esp-elf/esp-14.2.0_20250730/xtensa-esp-elf/xtensa-esp-elf/include/sys/dirent.h \
   /Users/promex04/.espressif/tools/xtensa-esp-elf/esp-14.2.0_20250730/xtensa-esp-elf/xtensa-esp-elf/include/sys/errno.h \
   /Users/promex04/.espressif/tools/xtensa-esp-elf/esp-14.2.0_20250730/xtensa-esp-elf/xtensa-esp-elf/include/sys/fcntl.h \
   /Users/promex04/.espressif/tools/xtensa-esp-elf/esp-14.2.0_20250730/xtensa-esp-elf/xtensa-esp-elf/include/sys/features.h \
@@ -67,6 +65,7 @@ esp-idf/main/CMakeFiles/__idf_main.dir/main_ws.c.obj: /Users/promex04/Desktop/gu
   /Users/promex04/.espressif/tools/xtensa-esp-elf/esp-14.2.0_20250730/xtensa-esp-elf/xtensa-esp-elf/include/unistd.h \
   config/sdkconfig.h \
   /Users/promex04/Desktop/guild/speech_recognition/wwe/LyratMini_RecordPlay/main/config.h \
+  /Users/promex04/Desktop/guild/speech_recognition/wwe/LyratMini_RecordPlay/main/settings.h \
   /Users/promex04/Desktop/guild/speech_recognition/wwe/LyratMini_RecordPlay/main/wifi_helper.h \
   /Users/promex04/Desktop/guild/speech_recognition/wwe/LyratMini_RecordPlay/managed_components/espressif__esp_websocket_client/include/esp_websocket_client.h \
   /Users/promex04/esp/esp-adf/components/audio_board/include/board_pins_config.h \
@@ -92,7 +91,9 @@ esp-idf/main/CMakeFiles/__idf_main.dir/main_ws.c.obj: /Users/promex04/Desktop/gu
   /Users/promex04/esp/esp-adf/components/display_service/include/display_service.h \
   /Users/promex04/esp/esp-adf/components/esp-adf-libs/esp_codec/include/codec/audio_type_def.h \
   /Users/promex04/esp/esp-adf/components/esp-adf-libs/esp_codec/include/codec/esp_id3_parse.h \
+  /Users/promex04/esp/esp-adf/components/esp-adf-libs/esp_codec/include/codec/filter_resample.h \
   /Users/promex04/esp/esp-adf/components/esp-adf-libs/esp_codec/include/codec/mp3_decoder.h \
+  /Users/promex04/esp/esp-adf/components/esp-adf-libs/esp_codec/include/processing/esp_resample.h \
   /Users/promex04/esp/esp-adf/components/esp-sr/include/esp32/dl_lib.h \
   /Users/promex04/esp/esp-adf/components/esp-sr/include/esp32/dl_lib_coefgetter_if.h \
   /Users/promex04/esp/esp-adf/components/esp-sr/include/esp32/dl_lib_conv_queue.h \
@@ -233,7 +234,6 @@ esp-idf/main/CMakeFiles/__idf_main.dir/main_ws.c.obj: /Users/promex04/Desktop/gu
   /Users/promex04/esp/esp-idf/components/newlib/platform_include/errno.h \
   /Users/promex04/esp/esp-idf/components/newlib/platform_include/esp_newlib.h \
   /Users/promex04/esp/esp-idf/components/newlib/platform_include/net/if.h \
-  /Users/promex04/esp/esp-idf/components/newlib/platform_include/sys/dirent.h \
   /Users/promex04/esp/esp-idf/components/newlib/platform_include/sys/ioctl.h \
   /Users/promex04/esp/esp-idf/components/newlib/platform_include/sys/lock.h \
   /Users/promex04/esp/esp-idf/components/newlib/platform_include/sys/poll.h \
@@ -254,6 +254,115 @@ esp-idf/main/CMakeFiles/__idf_main.dir/main_ws.c.obj: /Users/promex04/Desktop/gu
   /Users/promex04/esp/esp-idf/components/soc/esp32/register/soc/reg_base.h \
   /Users/promex04/esp/esp-idf/components/tcp_transport/include/esp_transport.h \
   /Users/promex04/esp/esp-idf/components/tcp_transport/include/esp_transport_ws.h \
+  /Users/promex04/esp/esp-idf/components/xtensa/esp32/include/xtensa/config/core-isa.h \
+  /Users/promex04/esp/esp-idf/components/xtensa/esp32/include/xtensa/config/core-matmap.h \
+  /Users/promex04/esp/esp-idf/components/xtensa/esp32/include/xtensa/config/core.h \
+  /Users/promex04/esp/esp-idf/components/xtensa/esp32/include/xtensa/config/extreg.h \
+  /Users/promex04/esp/esp-idf/components/xtensa/esp32/include/xtensa/config/specreg.h \
+  /Users/promex04/esp/esp-idf/components/xtensa/esp32/include/xtensa/config/system.h \
+  /Users/promex04/esp/esp-idf/components/xtensa/esp32/include/xtensa/config/tie.h \
+  /Users/promex04/esp/esp-idf/components/xtensa/include/xt_instr_macros.h \
+  /Users/promex04/esp/esp-idf/components/xtensa/include/xt_utils.h \
+  /Users/promex04/esp/esp-idf/components/xtensa/include/xtensa/corebits.h \
+  /Users/promex04/esp/esp-idf/components/xtensa/include/xtensa/hal.h \
+  /Users/promex04/esp/esp-idf/components/xtensa/include/xtensa/xtensa-versions.h \
+  /Users/promex04/esp/esp-idf/components/xtensa/include/xtensa/xtruntime-core-state.h \
+  /Users/promex04/esp/esp-idf/components/xtensa/include/xtensa/xtruntime-frames.h \
+  /Users/promex04/esp/esp-idf/components/xtensa/include/xtensa/xtruntime.h \
+  /Users/promex04/esp/esp-idf/components/xtensa/include/xtensa_api.h \
+  /Users/promex04/esp/esp-idf/components/xtensa/include/xtensa_config.h \
+  /Users/promex04/esp/esp-idf/components/xtensa/include/xtensa_context.h
+
+esp-idf/main/CMakeFiles/__idf_main.dir/settings.c.obj: /Users/promex04/Desktop/guild/speech_recognition/wwe/LyratMini_RecordPlay/main/settings.c \
+  /Users/promex04/.espressif/tools/xtensa-esp-elf/esp-14.2.0_20250730/xtensa-esp-elf/lib/gcc/xtensa-esp-elf/14.2.0/include/limits.h \
+  /Users/promex04/.espressif/tools/xtensa-esp-elf/esp-14.2.0_20250730/xtensa-esp-elf/lib/gcc/xtensa-esp-elf/14.2.0/include/stdarg.h \
+  /Users/promex04/.espressif/tools/xtensa-esp-elf/esp-14.2.0_20250730/xtensa-esp-elf/lib/gcc/xtensa-esp-elf/14.2.0/include/stdbool.h \
+  /Users/promex04/.espressif/tools/xtensa-esp-elf/esp-14.2.0_20250730/xtensa-esp-elf/lib/gcc/xtensa-esp-elf/14.2.0/include/stddef.h \
+  /Users/promex04/.espressif/tools/xtensa-esp-elf/esp-14.2.0_20250730/xtensa-esp-elf/lib/gcc/xtensa-esp-elf/14.2.0/include/stdint.h \
+  /Users/promex04/.espressif/tools/xtensa-esp-elf/esp-14.2.0_20250730/xtensa-esp-elf/lib/gcc/xtensa-esp-elf/14.2.0/include/syslimits.h \
+  /Users/promex04/.espressif/tools/xtensa-esp-elf/esp-14.2.0_20250730/xtensa-esp-elf/xtensa-esp-elf/include/_ansi.h \
+  /Users/promex04/.espressif/tools/xtensa-esp-elf/esp-14.2.0_20250730/xtensa-esp-elf/xtensa-esp-elf/include/_newlib_version.h \
+  /Users/promex04/.espressif/tools/xtensa-esp-elf/esp-14.2.0_20250730/xtensa-esp-elf/xtensa-esp-elf/include/alloca.h \
+  /Users/promex04/.espressif/tools/xtensa-esp-elf/esp-14.2.0_20250730/xtensa-esp-elf/xtensa-esp-elf/include/assert.h \
+  /Users/promex04/.espressif/tools/xtensa-esp-elf/esp-14.2.0_20250730/xtensa-esp-elf/xtensa-esp-elf/include/inttypes.h \
+  /Users/promex04/.espressif/tools/xtensa-esp-elf/esp-14.2.0_20250730/xtensa-esp-elf/xtensa-esp-elf/include/limits.h \
+  /Users/promex04/.espressif/tools/xtensa-esp-elf/esp-14.2.0_20250730/xtensa-esp-elf/xtensa-esp-elf/include/machine/_default_types.h \
+  /Users/promex04/.espressif/tools/xtensa-esp-elf/esp-14.2.0_20250730/xtensa-esp-elf/xtensa-esp-elf/include/machine/_types.h \
+  /Users/promex04/.espressif/tools/xtensa-esp-elf/esp-14.2.0_20250730/xtensa-esp-elf/xtensa-esp-elf/include/machine/ieeefp.h \
+  /Users/promex04/.espressif/tools/xtensa-esp-elf/esp-14.2.0_20250730/xtensa-esp-elf/xtensa-esp-elf/include/machine/stdlib.h \
+  /Users/promex04/.espressif/tools/xtensa-esp-elf/esp-14.2.0_20250730/xtensa-esp-elf/xtensa-esp-elf/include/newlib.h \
+  /Users/promex04/.espressif/tools/xtensa-esp-elf/esp-14.2.0_20250730/xtensa-esp-elf/xtensa-esp-elf/include/reent.h \
+  /Users/promex04/.espressif/tools/xtensa-esp-elf/esp-14.2.0_20250730/xtensa-esp-elf/xtensa-esp-elf/include/stdint.h \
+  /Users/promex04/.espressif/tools/xtensa-esp-elf/esp-14.2.0_20250730/xtensa-esp-elf/xtensa-esp-elf/include/stdio.h \
+  /Users/promex04/.espressif/tools/xtensa-esp-elf/esp-14.2.0_20250730/xtensa-esp-elf/xtensa-esp-elf/include/stdlib.h \
+  /Users/promex04/.espressif/tools/xtensa-esp-elf/esp-14.2.0_20250730/xtensa-esp-elf/xtensa-esp-elf/include/string.h \
+  /Users/promex04/.espressif/tools/xtensa-esp-elf/esp-14.2.0_20250730/xtensa-esp-elf/xtensa-esp-elf/include/strings.h \
+  /Users/promex04/.espressif/tools/xtensa-esp-elf/esp-14.2.0_20250730/xtensa-esp-elf/xtensa-esp-elf/include/sys/_intsup.h \
+  /Users/promex04/.espressif/tools/xtensa-esp-elf/esp-14.2.0_20250730/xtensa-esp-elf/xtensa-esp-elf/include/sys/_locale.h \
+  /Users/promex04/.espressif/tools/xtensa-esp-elf/esp-14.2.0_20250730/xtensa-esp-elf/xtensa-esp-elf/include/sys/_stdint.h \
+  /Users/promex04/.espressif/tools/xtensa-esp-elf/esp-14.2.0_20250730/xtensa-esp-elf/xtensa-esp-elf/include/sys/_types.h \
+  /Users/promex04/.espressif/tools/xtensa-esp-elf/esp-14.2.0_20250730/xtensa-esp-elf/xtensa-esp-elf/include/sys/cdefs.h \
+  /Users/promex04/.espressif/tools/xtensa-esp-elf/esp-14.2.0_20250730/xtensa-esp-elf/xtensa-esp-elf/include/sys/config.h \
+  /Users/promex04/.espressif/tools/xtensa-esp-elf/esp-14.2.0_20250730/xtensa-esp-elf/xtensa-esp-elf/include/sys/features.h \
+  /Users/promex04/.espressif/tools/xtensa-esp-elf/esp-14.2.0_20250730/xtensa-esp-elf/xtensa-esp-elf/include/sys/lock.h \
+  /Users/promex04/.espressif/tools/xtensa-esp-elf/esp-14.2.0_20250730/xtensa-esp-elf/xtensa-esp-elf/include/sys/reent.h \
+  /Users/promex04/.espressif/tools/xtensa-esp-elf/esp-14.2.0_20250730/xtensa-esp-elf/xtensa-esp-elf/include/sys/stdio.h \
+  /Users/promex04/.espressif/tools/xtensa-esp-elf/esp-14.2.0_20250730/xtensa-esp-elf/xtensa-esp-elf/include/sys/string.h \
+  /Users/promex04/.espressif/tools/xtensa-esp-elf/esp-14.2.0_20250730/xtensa-esp-elf/xtensa-esp-elf/include/sys/syslimits.h \
+  config/sdkconfig.h \
+  /Users/promex04/Desktop/guild/speech_recognition/wwe/LyratMini_RecordPlay/main/settings.h \
+  /Users/promex04/esp/esp-idf/components/esp_common/include/esp_assert.h \
+  /Users/promex04/esp/esp-idf/components/esp_common/include/esp_attr.h \
+  /Users/promex04/esp/esp-idf/components/esp_common/include/esp_bit_defs.h \
+  /Users/promex04/esp/esp-idf/components/esp_common/include/esp_compiler.h \
+  /Users/promex04/esp/esp-idf/components/esp_common/include/esp_err.h \
+  /Users/promex04/esp/esp-idf/components/esp_common/include/esp_idf_version.h \
+  /Users/promex04/esp/esp-idf/components/esp_common/include/esp_macros.h \
+  /Users/promex04/esp/esp-idf/components/esp_hw_support/include/esp_cpu.h \
+  /Users/promex04/esp/esp-idf/components/esp_hw_support/include/esp_intr_alloc.h \
+  /Users/promex04/esp/esp-idf/components/esp_hw_support/include/esp_intr_types.h \
+  /Users/promex04/esp/esp-idf/components/esp_hw_support/include/esp_memory_utils.h \
+  /Users/promex04/esp/esp-idf/components/esp_hw_support/include/spinlock.h \
+  /Users/promex04/esp/esp-idf/components/esp_partition/include/esp_partition.h \
+  /Users/promex04/esp/esp-idf/components/esp_rom/include/esp_rom_sys.h \
+  /Users/promex04/esp/esp-idf/components/esp_system/include/esp_private/crosscore_int.h \
+  /Users/promex04/esp/esp-idf/components/esp_system/include/esp_system.h \
+  /Users/promex04/esp/esp-idf/components/freertos/FreeRTOS-Kernel/include/freertos/FreeRTOS.h \
+  /Users/promex04/esp/esp-idf/components/freertos/FreeRTOS-Kernel/include/freertos/deprecated_definitions.h \
+  /Users/promex04/esp/esp-idf/components/freertos/FreeRTOS-Kernel/include/freertos/event_groups.h \
+  /Users/promex04/esp/esp-idf/components/freertos/FreeRTOS-Kernel/include/freertos/list.h \
+  /Users/promex04/esp/esp-idf/components/freertos/FreeRTOS-Kernel/include/freertos/message_buffer.h \
+  /Users/promex04/esp/esp-idf/components/freertos/FreeRTOS-Kernel/include/freertos/mpu_wrappers.h \
+  /Users/promex04/esp/esp-idf/components/freertos/FreeRTOS-Kernel/include/freertos/portable.h \
+  /Users/promex04/esp/esp-idf/components/freertos/FreeRTOS-Kernel/include/freertos/projdefs.h \
+  /Users/promex04/esp/esp-idf/components/freertos/FreeRTOS-Kernel/include/freertos/queue.h \
+  /Users/promex04/esp/esp-idf/components/freertos/FreeRTOS-Kernel/include/freertos/semphr.h \
+  /Users/promex04/esp/esp-idf/components/freertos/FreeRTOS-Kernel/include/freertos/stream_buffer.h \
+  /Users/promex04/esp/esp-idf/components/freertos/FreeRTOS-Kernel/include/freertos/task.h \
+  /Users/promex04/esp/esp-idf/components/freertos/FreeRTOS-Kernel/include/freertos/timers.h \
+  /Users/promex04/esp/esp-idf/components/freertos/FreeRTOS-Kernel/portable/xtensa/include/freertos/portbenchmark.h \
+  /Users/promex04/esp/esp-idf/components/freertos/FreeRTOS-Kernel/portable/xtensa/include/freertos/portmacro.h \
+  /Users/promex04/esp/esp-idf/components/freertos/config/include/freertos/FreeRTOSConfig.h \
+  /Users/promex04/esp/esp-idf/components/freertos/config/xtensa/include/freertos/FreeRTOSConfig_arch.h \
+  /Users/promex04/esp/esp-idf/components/freertos/esp_additions/include/freertos/idf_additions.h \
+  /Users/promex04/esp/esp-idf/components/heap/include/esp_heap_caps.h \
+  /Users/promex04/esp/esp-idf/components/heap/include/multi_heap.h \
+  /Users/promex04/esp/esp-idf/components/log/include/esp_log.h \
+  /Users/promex04/esp/esp-idf/components/log/include/esp_log_buffer.h \
+  /Users/promex04/esp/esp-idf/components/log/include/esp_log_color.h \
+  /Users/promex04/esp/esp-idf/components/log/include/esp_log_level.h \
+  /Users/promex04/esp/esp-idf/components/log/include/esp_log_timestamp.h \
+  /Users/promex04/esp/esp-idf/components/newlib/platform_include/assert.h \
+  /Users/promex04/esp/esp-idf/components/newlib/platform_include/esp_newlib.h \
+  /Users/promex04/esp/esp-idf/components/newlib/platform_include/sys/lock.h \
+  /Users/promex04/esp/esp-idf/components/newlib/platform_include/sys/reent.h \
+  /Users/promex04/esp/esp-idf/components/nvs_flash/include/nvs.h \
+  /Users/promex04/esp/esp-idf/components/nvs_flash/include/nvs_flash.h \
+  /Users/promex04/esp/esp-idf/components/soc/esp32/include/soc/interrupts.h \
+  /Users/promex04/esp/esp-idf/components/soc/esp32/include/soc/reset_reasons.h \
+  /Users/promex04/esp/esp-idf/components/soc/esp32/include/soc/soc.h \
+  /Users/promex04/esp/esp-idf/components/soc/esp32/include/soc/soc_caps.h \
+  /Users/promex04/esp/esp-idf/components/soc/esp32/register/soc/reg_base.h \
   /Users/promex04/esp/esp-idf/components/xtensa/esp32/include/xtensa/config/core-isa.h \
   /Users/promex04/esp/esp-idf/components/xtensa/esp32/include/xtensa/config/core-matmap.h \
   /Users/promex04/esp/esp-idf/components/xtensa/esp32/include/xtensa/config/core.h \
@@ -399,6 +508,8 @@ esp-idf/main/CMakeFiles/__idf_main.dir/wifi_helper.c.obj: /Users/promex04/Deskto
 
 /Users/promex04/Desktop/guild/speech_recognition/wwe/LyratMini_RecordPlay/main/wifi_helper.c:
 
+/Users/promex04/Desktop/guild/speech_recognition/wwe/LyratMini_RecordPlay/main/settings.c:
+
 /Users/promex04/esp/esp-idf/components/xtensa/include/xtensa_context.h:
 
 /Users/promex04/esp/esp-idf/components/xtensa/include/xtensa_config.h:
@@ -511,9 +622,9 @@ esp-idf/main/CMakeFiles/__idf_main.dir/wifi_helper.c.obj: /Users/promex04/Deskto
 
 /Users/promex04/esp/esp-idf/components/freertos/FreeRTOS-Kernel/include/freertos/timers.h:
 
-/Users/promex04/.espressif/tools/xtensa-esp-elf/esp-14.2.0_20250730/xtensa-esp-elf/xtensa-esp-elf/include/inttypes.h:
-
 /Users/promex04/esp/esp-adf/components/audio_recorder/include/recorder_sr.h:
+
+/Users/promex04/.espressif/tools/xtensa-esp-elf/esp-14.2.0_20250730/xtensa-esp-elf/xtensa-esp-elf/include/inttypes.h:
 
 /Users/promex04/esp/esp-idf/components/esp_driver_gpio/include/driver/gpio_etm.h:
 
@@ -637,6 +748,8 @@ esp-idf/main/CMakeFiles/__idf_main.dir/wifi_helper.c.obj: /Users/promex04/Deskto
 
 /Users/promex04/esp/esp-adf/components/esp-sr/include/esp32/esp_wn_iface.h:
 
+/Users/promex04/esp/esp-adf/components/esp-adf-libs/esp_codec/include/processing/esp_resample.h:
+
 /Users/promex04/esp/esp-adf/components/esp-sr/include/esp32/esp_vadn_models.h:
 
 /Users/promex04/esp/esp-idf/components/lwip/lwip/src/include/lwip/priv/memp_std.h:
@@ -681,8 +794,6 @@ esp-idf/main/CMakeFiles/__idf_main.dir/wifi_helper.c.obj: /Users/promex04/Deskto
 
 /Users/promex04/.espressif/tools/xtensa-esp-elf/esp-14.2.0_20250730/xtensa-esp-elf/xtensa-esp-elf/include/sys/_types.h:
 
-/Users/promex04/esp/esp-idf/components/newlib/platform_include/sys/dirent.h:
-
 /Users/promex04/esp/esp-adf/components/esp-sr/include/esp32/dl_lib_convq_queue.h:
 
 /Users/promex04/esp/esp-idf/components/freertos/FreeRTOS-Kernel/include/freertos/stream_buffer.h:
@@ -691,6 +802,8 @@ esp-idf/main/CMakeFiles/__idf_main.dir/wifi_helper.c.obj: /Users/promex04/Deskto
 
 /Users/promex04/esp/esp-adf/components/esp-sr/include/esp32/dl_lib_conv_queue.h:
 
+/Users/promex04/esp/esp-adf/components/esp-adf-libs/esp_codec/include/codec/filter_resample.h:
+
 /Users/promex04/esp/esp-idf/components/esp_wifi/include/esp_wifi_types_generic.h:
 
 /Users/promex04/esp/esp-idf/components/esp_hw_support/include/esp_memory_utils.h:
@@ -698,6 +811,14 @@ esp-idf/main/CMakeFiles/__idf_main.dir/wifi_helper.c.obj: /Users/promex04/Deskto
 /Users/promex04/esp/esp-idf/components/esp_common/include/esp_bit_defs.h:
 
 /Users/promex04/esp/esp-adf/components/audio_stream/include/tone_stream.h:
+
+/Users/promex04/esp/esp-idf/components/esp_system/include/esp_ipc.h:
+
+/Users/promex04/.espressif/tools/xtensa-esp-elf/esp-14.2.0_20250730/xtensa-esp-elf/xtensa-esp-elf/include/sys/stat.h:
+
+/Users/promex04/esp/esp-adf/components/audio_sal/include/audio_idf_version.h:
+
+/Users/promex04/esp/esp-adf/components/audio_stream/include/fatfs_stream.h:
 
 /Users/promex04/esp/esp-adf/components/audio_sal/include/audio_error.h:
 
@@ -755,12 +876,6 @@ esp-idf/main/CMakeFiles/__idf_main.dir/wifi_helper.c.obj: /Users/promex04/Deskto
 
 /Users/promex04/esp/esp-adf/components/audio_board/include/board_pins_config.h:
 
-/Users/promex04/esp/esp-adf/components/audio_stream/include/fatfs_stream.h:
-
-/Users/promex04/.espressif/tools/xtensa-esp-elf/esp-14.2.0_20250730/xtensa-esp-elf/xtensa-esp-elf/include/sys/stat.h:
-
-/Users/promex04/esp/esp-adf/components/audio_sal/include/audio_idf_version.h:
-
 /Users/promex04/esp/esp-idf/components/soc/esp32/include/soc/gpio_num.h:
 
 /Users/promex04/.espressif/tools/xtensa-esp-elf/esp-14.2.0_20250730/xtensa-esp-elf/xtensa-esp-elf/include/sys/syslimits.h:
@@ -787,13 +902,13 @@ esp-idf/main/CMakeFiles/__idf_main.dir/wifi_helper.c.obj: /Users/promex04/Deskto
 
 /Users/promex04/.espressif/tools/xtensa-esp-elf/esp-14.2.0_20250730/xtensa-esp-elf/xtensa-esp-elf/include/sys/select.h:
 
-/Users/promex04/esp/esp-adf/components/audio_hal/include/audio_hal.h:
+/Users/promex04/esp/esp-adf/components/audio_stream/include/i2s_stream.h:
 
-/Users/promex04/.espressif/tools/xtensa-esp-elf/esp-14.2.0_20250730/xtensa-esp-elf/xtensa-esp-elf/include/sys/dirent.h:
+/Users/promex04/.espressif/tools/xtensa-esp-elf/esp-14.2.0_20250730/xtensa-esp-elf/xtensa-esp-elf/include/_ansi.h:
+
+/Users/promex04/.espressif/tools/xtensa-esp-elf/esp-14.2.0_20250730/xtensa-esp-elf/xtensa-esp-elf/include/sys/features.h:
 
 /Users/promex04/.espressif/tools/xtensa-esp-elf/esp-14.2.0_20250730/xtensa-esp-elf/xtensa-esp-elf/include/sys/config.h:
-
-/Users/promex04/.espressif/tools/xtensa-esp-elf/esp-14.2.0_20250730/xtensa-esp-elf/xtensa-esp-elf/include/dirent.h:
 
 /Users/promex04/esp/esp-idf/components/esp_netif/include/esp_netif_ip_addr.h:
 
@@ -887,13 +1002,9 @@ esp-idf/main/CMakeFiles/__idf_main.dir/wifi_helper.c.obj: /Users/promex04/Deskto
 
 /Users/promex04/.espressif/tools/xtensa-esp-elf/esp-14.2.0_20250730/xtensa-esp-elf/xtensa-esp-elf/include/machine/ieeefp.h:
 
+/Users/promex04/Desktop/guild/speech_recognition/wwe/LyratMini_RecordPlay/main/settings.h:
+
 /Users/promex04/.espressif/tools/xtensa-esp-elf/esp-14.2.0_20250730/xtensa-esp-elf/xtensa-esp-elf/include/limits.h:
-
-/Users/promex04/esp/esp-adf/components/audio_stream/include/i2s_stream.h:
-
-/Users/promex04/.espressif/tools/xtensa-esp-elf/esp-14.2.0_20250730/xtensa-esp-elf/xtensa-esp-elf/include/_ansi.h:
-
-/Users/promex04/.espressif/tools/xtensa-esp-elf/esp-14.2.0_20250730/xtensa-esp-elf/xtensa-esp-elf/include/sys/features.h:
 
 /Users/promex04/.espressif/tools/xtensa-esp-elf/esp-14.2.0_20250730/xtensa-esp-elf/lib/gcc/xtensa-esp-elf/14.2.0/include/stddef.h:
 
@@ -901,17 +1012,15 @@ esp-idf/main/CMakeFiles/__idf_main.dir/wifi_helper.c.obj: /Users/promex04/Deskto
 
 /Users/promex04/.espressif/tools/xtensa-esp-elf/esp-14.2.0_20250730/xtensa-esp-elf/xtensa-esp-elf/include/ctype.h:
 
-/Users/promex04/esp/esp-idf/components/esp_system/include/esp_ipc.h:
+/Users/promex04/esp/esp-adf/components/audio_hal/include/audio_hal.h:
 
 /Users/promex04/.espressif/tools/xtensa-esp-elf/esp-14.2.0_20250730/xtensa-esp-elf/xtensa-esp-elf/include/_newlib_version.h:
 
 /Users/promex04/esp/esp-adf/components/audio_board/lyrat_mini_v1_1/board_def.h:
 
-/Users/promex04/esp/esp-idf/components/xtensa/esp32/include/xtensa/config/core-isa.h:
+/Users/promex04/esp/esp-idf/components/freertos/FreeRTOS-Kernel/include/freertos/mpu_wrappers.h:
 
-/Users/promex04/esp/esp-idf/components/hal/include/hal/gpio_types.h:
-
-/Users/promex04/esp/esp-adf/components/esp-sr/include/esp32/esp_nsn_iface.h:
+/Users/promex04/.espressif/tools/xtensa-esp-elf/esp-14.2.0_20250730/xtensa-esp-elf/xtensa-esp-elf/include/machine/_endian.h:
 
 /Users/promex04/esp/esp-idf/components/lwip/lwip/src/include/lwip/inet.h:
 
@@ -919,9 +1028,11 @@ esp-idf/main/CMakeFiles/__idf_main.dir/wifi_helper.c.obj: /Users/promex04/Deskto
 
 config/sdkconfig.h:
 
-/Users/promex04/esp/esp-idf/components/freertos/FreeRTOS-Kernel/include/freertos/mpu_wrappers.h:
+/Users/promex04/esp/esp-idf/components/xtensa/esp32/include/xtensa/config/core-isa.h:
 
-/Users/promex04/.espressif/tools/xtensa-esp-elf/esp-14.2.0_20250730/xtensa-esp-elf/xtensa-esp-elf/include/machine/_endian.h:
+/Users/promex04/esp/esp-idf/components/hal/include/hal/gpio_types.h:
+
+/Users/promex04/esp/esp-adf/components/esp-sr/include/esp32/esp_nsn_iface.h:
 
 /Users/promex04/esp/esp-adf/components/esp-sr/include/esp32/dl_lib.h:
 

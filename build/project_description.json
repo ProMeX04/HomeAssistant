@@ -1,7 +1,7 @@
 {
     "version":            "1.2",
     "project_name":       "lyrat_record_play",
-    "project_version":    "1",
+    "project_version":    "e556df0f-dirty",
     "project_path":       "/Users/promex04/Desktop/guild/speech_recognition/wwe/LyratMini_RecordPlay",
     "idf_path":           "/Users/promex04/esp/esp-idf",
     "build_dir":          "/Users/promex04/Desktop/guild/speech_recognition/wwe/LyratMini_RecordPlay/build",
@@ -1655,12 +1655,12 @@
             "dir": "/Users/promex04/Desktop/guild/speech_recognition/wwe/LyratMini_RecordPlay/main",
             "type": "LIBRARY",
             "lib": "__idf_main",
-            "reqs": [ "audio_pipeline", "audio_sal", "audio_hal", "esp_peripherals", "audio_stream", "audio_board", "esp-sr", "audio_recorder", "esp_http_client", "espressif__esp_websocket_client", "nvs_flash", "esp_wifi", "input_key_service" ],
+            "reqs": [],
             "priv_reqs": [ "esp-sr" ],
             "managed_reqs": [],
             "managed_priv_reqs": [ "esp-sr" ],
             "file": "/Users/promex04/Desktop/guild/speech_recognition/wwe/LyratMini_RecordPlay/build/esp-idf/main/libmain.a",
-            "sources": [ "/Users/promex04/Desktop/guild/speech_recognition/wwe/LyratMini_RecordPlay/main/main_ws.c", "/Users/promex04/Desktop/guild/speech_recognition/wwe/LyratMini_RecordPlay/main/wifi_helper.c" ],
+            "sources": [ "/Users/promex04/Desktop/guild/speech_recognition/wwe/LyratMini_RecordPlay/main/main_ws.c", "/Users/promex04/Desktop/guild/speech_recognition/wwe/LyratMini_RecordPlay/main/wifi_helper.c", "/Users/promex04/Desktop/guild/speech_recognition/wwe/LyratMini_RecordPlay/main/settings.c" ],
             "include_dirs": [ "." ]
         },
         "mbedtls": {
@@ -3366,7 +3366,7 @@
             "prefix": "idf",
             "dir": "/Users/promex04/Desktop/guild/speech_recognition/wwe/LyratMini_RecordPlay/main",
             "lib": "__idf_main",
-            "reqs": [ "audio_pipeline", "audio_sal", "audio_hal", "esp_peripherals", "audio_stream", "audio_board", "esp-sr", "audio_recorder", "esp_http_client", "espressif__esp_websocket_client", "nvs_flash", "esp_wifi", "input_key_service" ],
+            "reqs": [],
             "priv_reqs": [ "esp-sr" ],
             "managed_reqs": [],
             "managed_priv_reqs": [ "esp-sr" ],

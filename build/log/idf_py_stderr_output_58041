@@ -1,3 +1,0 @@
-/Users/promex04/Desktop/guild/speech_recognition/wwe/LyratMini_RecordPlay/main/main_ws.c:60:14: warning: 'calculate_rms' defined but not used [-Wunused-function]
-   60 | static float calculate_rms(int16_t *buffer, int len) {
-      |              ^~~~~~~~~~~~~

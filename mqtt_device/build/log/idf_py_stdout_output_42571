@@ -1,0 +1,143 @@
+(�5
+[0;32mI (670) phets Jul 29 2019 12:21:46[0m
+
+rst:0x1 (POWERON_RESET),boot:0x13 (SPI_FAST_FLASH_BOOT)
+configsip: 0, SPIWP:0xee
+clk_drv:0x00,q_drv:0x00,d_drv:0x00,cs0_drv:0x00,hd_drv:0x00,wp_drv:0x00
+mode:DIO, clock div:2
+load:0x3fff0030,len:6280
+load:0x40078000,len:15736
+load:0x40080400,len:4
+load:0x40080404,len:3920
+entry 0x40080648
+[0;32mI (29) boot: ESP-IDF v5.4.3-357-gb8af6f5141-dirty 2nd stage bootloader[0m
+[0;32mI (29) boot: compile time Nov 30 2025 23:42:17[0m
+[0;32mI (30) boot: Multicore bootloader[0m
+[0;32mI (33) boot: chip revision: v3.1[0m
+[0;32mI (35) boot.esp32: SPI Speed      : 40MHz[0m
+[0;32mI (39) boot.esp32: SPI Mode       : DIO[0m
+[0;32mI (43) boot.esp32: SPI Flash Size : 2MB[0m
+[0;32mI (46) boot: Enabling RNG early entropy source...[0m
+[0;32mI (51) boot: Partition Table:[0m
+[0;32mI (53) boot: ## Label            Usage          Type ST Offset   Length[0m
+[0;32mI (60) boot:  0 nvs              WiFi data        01 02 00009000 00006000[0m
+[0;32mI (66) boot:  1 phy_init         RF data          01 01 0000f000 00001000[0m
+[0;32mI (73) boot:  2 factory          factory app      00 00 00010000 00100000[0m
+[0;32mI (79) boot: End of partition table[0m
+[0;32mI (83) esp_image: segment 0: paddr=00010020 vaddr=3f400020 size=1e6a4h (124580) map[0m
+[0;32mI (133) esp_image: segment 1: paddr=0002e6cc vaddr=3ffb0000 size=0194ch (  6476) load[0m
+[0;32mI (135) esp_image: segment 2: paddr=00030020 vaddr=400d0020 size=9e87ch (649340) map[0m
+[0;32mI (358) esp_image: segment 3: paddr=000ce8a4 vaddr=3ffb194c size=026e8h (  9960) load[0m
+[0;32mI (362) esp_image: segment 4: paddr=000d0f94 vaddr=40080000 size=17d54h ( 97620) load[0m
+[0;32mI (400) esp_image: segment 5: paddr=000e8cf0 vaddr=50000000 size=0001ch (    28) load[0m
+[0;32mI (412) boot: Loaded app from partition at offset 0x10000[0m
+[0;32mI (412) boot: Disabling RNG early entropy source...[0m
+[0;32mI (423) cpu_start: Multicore app[0m
+[0;32mI (431) cpu_start: Pro cpu start user code[0m
+[0;32mI (431) cpu_start: cpu freq: 160000000 Hz[0m
+[0;32mI (431) app_init: Application information:[0m
+[0;32mI (431) app_init: Project name:     esp32_mqtt_controller[0m
+[0;32mI (436) app_init: App version:      e556df0f-dirty[0m
+[0;32mI (441) app_init: Compile time:     Nov 30 2025 23:42:32[0m
+[0;32mI (446) app_init: ELF file SHA256:  128c6162f...[0m
+[0;32mI (450) app_init: ESP-IDF:          v5.4.3-357-gb8af6f5141-dirty[0m
+[0;32mI (456) efuse_init: Min chip rev:     v0.0[0m
+[0;32mI (460) efuse_init: Max chip rev:     v3.99 [0m
+[0;32mI (464) efuse_init: Chip rev:         v3.1[0m
+[0;32mI (468) heap_init: Initializing. RAM available for dynamic allocation:[0m
+[0;32mI (474) heap_init: At 3FFAE6E0 len 00001920 (6 KiB): DRAM[0m
+[0;32mI (479) heap_init: At 3FFB8968 len 00027698 (157 KiB): DRAM[0m
+[0;32mI (484) heap_init: At 3FFE0440 len 00003AE0 (14 KiB): D/IRAM[0m
+[0;32mI (490) heap_init: At 3FFE4350 len 0001BCB0 (111 KiB): D/IRAM[0m
+[0;32mI (495) heap_init: At 40097D54 len 000082AC (32 KiB): IRAM[0m
+[0;32mI (502) spi_flash: detected chip: generic[0m
+[0;32mI (504) spi_flash: flash io: dio[0m
+[0;33mW (507) spi_flash: Detected size(4096k) larger than the size in the binary image header(2048k). Using the size in the binary image header.[0m
+[0;32mI (520) main_task: Started on CPU0[0m
+[0;32mI (530) main_task: Calling app_main()[0m
+[0;32mI (530) MQTT_DEVICE: Startup...[0m
+[0;32mI (550) gpio: GPIO[19]| InputEn: 0| OutputEn: 1| OpenDrain: 0| Pullup: 0| Pulldown: 0| Intr:0 [0m
+[0;32mI (550) gpio: GPIO[21]| InputEn: 0| OutputEn: 1| OpenDrain: 0| Pullup: 0| Pulldown: 0| Intr:0 [0m
+[0;32mI (560) gpio: GPIO[22]| InputEn: 0| OutputEn: 1| OpenDrain: 0| Pullup: 0| Pulldown: 0| Intr:0 [0m
+[0;32mI (560) gpio: GPIO[23]| InputEn: 0| OutputEn: 1| OpenDrain: 0| Pullup: 0| Pulldown: 0| Intr:0 [0m
+[0;32mI (570) gpio: GPIO[25]| InputEn: 0| OutputEn: 1| OpenDrain: 0| Pullup: 0| Pulldown: 0| Intr:0 [0m
+[0;32mI (590) wifi:wifi driver task: 3ffc09fc, prio:23, stack:6656, core=0[0m
+[0;32mI (600) wifi:wifi firmware version: a21091b[0m
+[0;32mI (600) wifi:wifi certification version: v7.0[0m
+[0;32mI (600) wifi:config NVS flash: enabled[0m
+[0;32mI (600) wifi:config nano formatting: disabled[0m
+[0;32mI (600) wifi:Init data frame dynamic rx buffer num: 32[0m
+[0;32mI (610) wifi:Init static rx mgmt buffer num: 5[0m
+[0;32mI (610) wifi:Init management short buffer num: 32[0m
+[0;32mI (620) wifi:Init dynamic tx buffer num: 32[0m
+[0;32mI (620) wifi:Init static rx buffer size: 1600[0m
+[0;32mI (630) wifi:Init static rx buffer num: 10[0m
+[0;32mI (630) wifi:Init dynamic rx buffer num: 32[0m
+[0;32mI (630) wifi_init: rx ba win: 6[0m
+[0;32mI (640) wifi_init: accept mbox: 6[0m
+[0;32mI (640) wifi_init: tcpip mbox: 32[0m
+[0;32mI (640) wifi_init: udp mbox: 6[0m
+[0;32mI (650) wifi_init: tcp mbox: 6[0m
+[0;32mI (650) wifi_init: tcp tx win: 5760[0m
+[0;32mI (650) wifi_init: tcp rx win: 5760[0m
+[0;32mI (650) wifi_init: tcp mss: 1440[0m
+[0;32mI (660) wifi_init: WiFi IRAM OP enabled[0m
+[0;32mI (660) wifi_init: WiFi RX IRAM OP enabled[0m
+[0;32mI (670) phy_init: phy_version 4863,a3a4459,Oct 28 2025,14:30:06[0m
+[0;33mW (670) phy_init: failed to load RF calibration data (0xffffffff), falling back to full calibration[0m
+[0;32mI (750) phy_init: Saving new calibration data due to checksum failure or outdated calibration data, mode(2)[0m
+[0;32mI (780) wifi:mode : sta (68:25:dd:21:08:f8)[0m
+[0;32mI (780) wifi:enable tsf[0m
+[0;32mI (790) main_task: Returned from app_main()[0m
+[1;31mE (790) esp-tls: couldn't get hostname for :laihieu2714.ddns.net: getaddrinfo() returns 202, addrinfo=0x0[0m
+[1;31mE (790) transport_base: Failed to open a new connection: 32769[0m
+[1;31mE (790) mqtt_client: Error transport connect[0m
+[0;33mW (810) MQTT_DEVICE: Failed to read DHT11[0m
+[0;32mI (1980) wifi:new:<10,0>, old:<1,0>, ap:<255,255>, sta:<10,0>, prof:1, snd_ch_cfg:0x0[0m
+[0;32mI (1980) wifi:state: init -> auth (0xb0)[0m
+[0;32mI (1990) wifi:state: auth -> assoc (0x0)[0m
+[0;32mI (2000) wifi:state: assoc -> run (0x10)[0m
+[0;32mI (2100) wifi:connected with Nguyen Van Hai, aid = 4, channel 10, BW20, bssid = 24:43:e2:d4:65:60[0m
+[0;32mI (2100) wifi:security: WPA2-PSK, phy: bgn, rssi: -62[0m
+[0;32mI (2120) wifi:pm start, type: 1[0m
+
+[0;32mI (2120) wifi:dp: 1, bi: 102400, li: 3, scale listen interval from 307200 us to 307200 us[0m
+[0;32mI (2180) wifi:AP's beacon interval = 102400 us, DTIM period = 1[0m
+[0;32mI (2390) wifi:<ba-add>idx:0 (ifx:0, 24:43:e2:d4:65:60), tid:7, ssn:2, winSize:64[0m
+[0;32mI (3750) esp_netif_handlers: sta ip: 192.168.1.18, mask: 255.255.255.0, gw: 192.168.1.1[0m
+[0;32mI (3750) MQTT_DEVICE: Got IP:192.168.1.18[0m
+[0;33mW (10830) MQTT_DEVICE: Failed to read DHT11[0m
+[0;32mI (15840) wifi:<ba-add>idx:1 (ifx:0, 24:43:e2:d4:65:60), tid:5, ssn:1, winSize:64[0m
+[1;31mE (15850) esp-tls: [sock=54] delayed connect error: Connection reset by peer[0m
+[1;31mE (15850) transport_base: Failed to open a new connection: 32772[0m
+[1;31mE (15850) mqtt_client: Error transport connect[0m
+[0;32mI (15850) wifi:<ba-del>idx:1, tid:5[0m
+[0;32mI (15860) wifi:<ba-add>idx:1 (ifx:0, 24:43:e2:d4:65:60), tid:0, ssn:1, winSize:64[0m
+[0;33mW (20850) MQTT_DEVICE: Failed to read DHT11[0m
+[0;33mW (30870) MQTT_DEVICE: Failed to read DHT11[0m
+[1;31mE (30880) esp-tls: [sock=54] delayed connect error: Connection reset by peer[0m
+[1;31mE (30880) transport_base: Failed to open a new connection: 32772[0m
+[1;31mE (30880) mqtt_client: Error transport connect[0m
+[0;33mW (40890) MQTT_DEVICE: Failed to read DHT11[0m
+[1;31mE (45900) esp-tls: [sock=54] delayed connect error: Connection reset by peer[0m
+[1;31mE (45900) transport_base: Failed to open a new connection: 32772[0m
+[1;31mE (45900) mqtt_client: Error transport connect[0m
+[0;33mW (50910) MQTT_DEVICE: Failed to read DHT11[0m
+[0;33mW (60930) MQTT_DEVICE: Failed to read DHT11[0m
+[1;31mE (60930) esp-tls: [sock=54] delayed connect error: Connection reset by peer[0m
+[1;31mE (60930) transport_base: Failed to open a new connection: 32772[0m
+[1;31mE (60930) mqtt_client: Error transport connect[0m
+[0;33mW (70950) MQTT_DEVICE: Failed to read DHT11[0m
+[1;31mE (76040) esp-tls: [sock=54] delayed connect error: Connection reset by peer[0m
+[1;31mE (76040) transport_base: Failed to open a new connection: 32772[0m
+[1;31mE (76040) mqtt_client: Error transport connect[0m
+[0;33mW (80970) MQTT_DEVICE: Failed to read DHT11[0m
+[0;33mW (90990) MQTT_DEVICE: Failed to read DHT11[0m
+[1;31mE (91380) esp-tls: [sock=54] delayed connect error: Connection reset by peer[0m
+[1;31mE (91380) transport_base: Failed to open a new connection: 32772[0m
+[1;31mE (91380) mqtt_client: Error transport connect[0m
+[0;33mW (101010) MQTT_DEVICE: Failed to read DHT11[0m
+[1;31mE (106420) esp-tls: [sock=54] delayed connect error: Connection reset by peer[0m
+[1;31mE (106420) transport_base: Failed to open a new connection: 32772[0m
+[1;31mE (106420) mqtt_client: Error transport connect[0m
+[0;33mW (111030) MQTT_DEVICE: Failed to read DHT11[0m

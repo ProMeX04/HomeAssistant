@@ -1,0 +1,198 @@
+[0;32mI (369) quad_psram: This chip is ESP32-D0WD[0m
+[0;32mI (369) esp_psram: Found 8MB PSRAM device[0m
+[0;32mI (370) esp_psram: Speed: 80MHz[0m
+[0;32mI (371) esp_psram: PSRAM initialized, cache is in low/high (2-core) mode.[0m
+[0;33mW (379) esp_psram: Virtual address not enough for PSRAM, map as much as we can. 4MB is mapped[0m
+[0;32mI (388) cpu_start: Multicore app[0m
+[0;32mI (882) esp_psram: SPI SRAM memory test OK[0m
+[0;32mI (889) cpu_start: Pro cpu start user code[0m
+[0;32mI (890) cpu_start: cpu freq: 240000000 Hz[0m
+[0;32mI (890) app_init: Application information:[0m
+[0;32mI (892) app_init: Project name:     lyrat_record_play[0m
+[0;32mI (898) app_init: App version:      e556df0f-dirty[0m
+[0;32mI (904) app_init: Compile time:     Dec  1 2025 16:07:00[0m
+[0;32mI (910) app_init: ELF file SHA256:  a37e87529...[0m
+[0;32mI (915) app_init: ESP-IDF:          v5.4.3-357-gb8af6f5141-dirty[0m
+[0;32mI (922) efuse_init: Min chip rev:     v0.0[0m
+[0;32mI (926) efuse_init: Max chip rev:     v3.99 [0m
+[0;32mI (931) efuse_init: Chip rev:         v3.1[0m
+[0;32mI (936) heap_init: Initializing. RAM available for dynamic allocation:[0m
+[0;32mI (943) heap_init: At 3FFAE6E0 len 00001920 (6 KiB): DRAM[0m
+[0;32mI (949) heap_init: At 3FFBA4D0 len 00025B30 (150 KiB): DRAM[0m
+[0;32mI (956) heap_init: At 3FFE0440 len 00003AE0 (14 KiB): D/IRAM[0m
+[0;32mI (962) heap_init: At 3FFE4350 len 0001BCB0 (111 KiB): D/IRAM[0m
+[0;32mI (968) heap_init: At 4009837C len 00007C84 (31 KiB): IRAM[0m
+[0;32mI (975) esp_psram: Adding pool of 4096K of PSRAM memory to heap allocator[0m
+[0;32mI (983) spi_flash: detected chip: generic[0m
+[0;32mI (987) spi_flash: flash io: dio[0m
+[0;32mI (992) main_task: Started on CPU0[0m
+[0;32mI (995) esp_psram: Reserving pool of 32K of internal memory for DMA/internal allocations[0m
+[0;32mI (1004) main_task: Calling app_main()[0m
+
+/********** General AFE (Audio Front End) Parameter **********/
+pcm_config.total_ch_num: 2
+pcm_config.mic_num: 1: [ ch1 ]
+pcm_config.ref_num: 0: [  ]
+pcm_config.sample_rate: 16000
+afe_type: SR
+afe_mode: HIGH PERF
+afe_perferred_core: 0
+afe_perferred_priority: 5
+afe_ringbuf_size: 50
+memory_alloc_mode: 3
+afe_linear_gain: 1.0
+debug_init: false
+fixed_first_channel: false
+
+/********** AEC (Acoustic Echo Cancellation) **********/
+aec_init: false
+aec mode: SR_LOW_COST
+aec_filter_length: 4
+
+/********** SE (Speech Enhancement, Microphone Array Processing) **********/
+se_init: false, model: BSS
+
+/********** NS (Noise Suppression) **********/
+ns_init: false
+ns model name: WEBRTC
+
+/********** VAD (Voice Activity Detection) **********/
+vad_init: true
+vad_mode: 4
+vad_model_name: NULL
+vad_min_speech_ms: 128
+vad_min_noise_ms: 1000
+vad_delay_ms: 128
+vad_mute_playback: false
+vad_enable_channel_trigger: false
+
+/********** WakeNet (Wake Word Engine) **********/
+wakenet_init: true
+wakenet_model_name: wn9_jarvis_tts
+wakenet_model_name_2: NULL
+wakenet_mode: 0
+
+/********** AGC (Automatic Gain Control) **********/
+agc_init: false
+agc_mode: WAKENET
+agc_compression_gain_db: 9
+agc_target_level_dbfs: 9
+
+/**************************************************/
+MC Quantized wakenet9: wakenet9l_tts1h8_Jarvis_3_0.627_0.632, tigger:v4, mode:0, p:0, (Aug 11 2025 15:20:26)
+[0;33mW (60260) LYRAT_MINI_WS: 🛑 Server requested STOP (silence detected)[0m
+[0;33mW (70663) LYRAT_MINI_WS: === AI RESPONSE COMPLETE ===[0m
+[0;33mW (82899) LYRAT_MINI_WS: 🛑 Server requested STOP (silence detected)[0m
+[0;31mE (101283) task_wdt: Task watchdog got triggered. The following tasks/users did not reset the watchdog in time:[0m
+[0;31mE (101283) task_wdt:  - IDLE1 (CPU 1)[0m
+[0;31mE (101283) task_wdt: Tasks currently running:[0m
+[0;31mE (101283) task_wdt: CPU 0: IDLE0[0m
+[0;31mE (101283) task_wdt: CPU 1: fetch_task[0m
+[0;31mE (101283) task_wdt: Print CPU 1 backtrace[0m
+
+
+Backtrace: 0x40085CF3:0x3FFB3F20 0x4008457D:0x3FFB3F40 0x400F42CE:0x3FAB7790 0x400F32CF:0x3FAB78A0 0x400F2E30:0x3FAB78C0 0x400EFC61:0x3FAB7910 0x400F0CCB:0x3FAB7930 0x400F0DA7:0x3FAB7950 0x4019068E:0x3FAB7970 0x400E65DE:0x3FAB79A0 0x400E660D:0x3FAB79C0 0x400DF6F6:0x3FAB79E0
+
+[0;31mE (106283) task_wdt: Task watchdog got triggered. The following tasks/users did not reset the watchdog in time:[0m
+[0;31mE (106283) task_wdt:  - IDLE1 (CPU 1)[0m
+[0;31mE (106283) task_wdt: Tasks currently running:[0m
+[0;31mE (106283) task_wdt: CPU 0: IDLE0[0m
+[0;31mE (106283) task_wdt: CPU 1: fetch_task[0m
+[0;31mE (106283) task_wdt: Print CPU 1 backtrace[0m
+
+
+Backtrace: 0x40085CF3:0x3FFB3F20 0x4008457D:0x3FFB3F40 0x401842CD:0x3FAB7890 0x40181E1B:0x3FAB78C0 0x400F6FFA:0x3FAB78F0 0x400F6D0B:0x3FAB7920 0x400F0D84:0x3FAB7950 0x4019068E:0x3FAB7970 0x400E65DE:0x3FAB79A0 0x400E660D:0x3FAB79C0 0x400DF6F6:0x3FAB79E0
+
+[0;31mE (111283) task_wdt: Task watchdog got triggered. The following tasks/users did not reset the watchdog in time:[0m
+[0;31mE (111283) task_wdt:  - IDLE1 (CPU 1)[0m
+[0;31mE (111283) task_wdt: Tasks currently running:[0m
+[0;31mE (111283) task_wdt: CPU 0: IDLE0[0m
+[0;31mE (111283) task_wdt: CPU 1: fetch_task[0m
+[0;31mE (111283) task_wdt: Print CPU 1 backtrace[0m
+
+
+Backtrace: 0x40085CF3:0x3FFB3F20 0x4008457D:0x3FFB3F40 0x400F42A3:0x3FAB7790 0x400F32CF:0x3FAB78A0 0x400F2E30:0x3FAB78C0 0x400EFC35:0x3FAB7910 0x400F0CB5:0x3FAB7930 0x400F0DA7:0x3FAB7950 0x4019068E:0x3FAB7970 0x400E65DE:0x3FAB79A0 0x400E660D:0x3FAB79C0 0x400DF6F6:0x3FAB79E0
+
+[0;33mW (143074) LYRAT_MINI_WS: ⏱️ AI response timeout after 60001 ms[0m
+[0;32mI (369) quad_psram: This chip is ESP32-D0WD[0m
+[0;32mI (369) esp_psram: Found 8MB PSRAM device[0m
+[0;32mI (370) esp_psram: Speed: 80MHz[0m
+[0;32mI (371) esp_psram: PSRAM initialized, cache is in low/high (2-core) mode.[0m
+[0;33mW (379) esp_psram: Virtual address not enough for PSRAM, map as much as we can. 4MB is mapped[0m
+[0;32mI (388) cpu_start: Multicore app[0m
+[0;32mI (882) esp_psram: SPI SRAM memory test OK[0m
+[0;32mI (889) cpu_start: Pro cpu start user code[0m
+[0;32mI (890) cpu_start: cpu freq: 240000000 Hz[0m
+[0;32mI (890) app_init: Application information:[0m
+[0;32mI (892) app_init: Project name:     lyrat_record_play[0m
+[0;32mI (898) app_init: App version:      e556df0f-dirty[0m
+[0;32mI (904) app_init: Compile time:     Dec  1 2025 16:07:00[0m
+[0;32mI (910) app_init: ELF file SHA256:  a37e87529...[0m
+[0;32mI (915) app_init: ESP-IDF:          v5.4.3-357-gb8af6f5141-dirty[0m
+[0;32mI (922) efuse_init: Min chip rev:     v0.0[0m
+[0;32mI (926) efuse_init: Max chip rev:     v3.99 [0m
+[0;32mI (931) efuse_init: Chip rev:         v3.1[0m
+[0;32mI (936) heap_init: Initializing. RAM available for dynamic allocation:[0m
+[0;32mI (943) heap_init: At 3FFAE6E0 len 00001920 (6 KiB): DRAM[0m
+[0;32mI (949) heap_init: At 3FFBA4D0 len 00025B30 (150 KiB): DRAM[0m
+[0;32mI (956) heap_init: At 3FFE0440 len 00003AE0 (14 KiB): D/IRAM[0m
+[0;32mI (962) heap_init: At 3FFE4350 len 0001BCB0 (111 KiB): D/IRAM[0m
+[0;32mI (968) heap_init: At 4009837C len 00007C84 (31 KiB): IRAM[0m
+[0;32mI (975) esp_psram: Adding pool of 4096K of PSRAM memory to heap allocator[0m
+[0;32mI (983) spi_flash: detected chip: generic[0m
+[0;32mI (987) spi_flash: flash io: dio[0m
+[0;32mI (992) main_task: Started on CPU0[0m
+[0;32mI (995) esp_psram: Reserving pool of 32K of internal memory for DMA/internal allocations[0m
+[0;32mI (1004) main_task: Calling app_main()[0m
+
+/********** General AFE (Audio Front End) Parameter **********/
+pcm_config.total_ch_num: 2
+pcm_config.mic_num: 1: [ ch1 ]
+pcm_config.ref_num: 0: [  ]
+pcm_config.sample_rate: 16000
+afe_type: SR
+afe_mode: HIGH PERF
+afe_perferred_core: 0
+afe_perferred_priority: 5
+afe_ringbuf_size: 50
+memory_alloc_mode: 3
+afe_linear_gain: 1.0
+debug_init: false
+fixed_first_channel: false
+
+/********** AEC (Acoustic Echo Cancellation) **********/
+aec_init: false
+aec mode: SR_LOW_COST
+aec_filter_length: 4
+
+/********** SE (Speech Enhancement, Microphone Array Processing) **********/
+se_init: false, model: BSS
+
+/********** NS (Noise Suppression) **********/
+ns_init: false
+ns model name: WEBRTC
+
+/********** VAD (Voice Activity Detection) **********/
+vad_init: true
+vad_mode: 4
+vad_model_name: NULL
+vad_min_speech_ms: 128
+vad_min_noise_ms: 1000
+vad_delay_ms: 128
+vad_mute_playback: false
+vad_enable_channel_trigger: false
+
+/********** WakeNet (Wake Word Engine) **********/
+wakenet_init: true
+wakenet_model_name: wn9_jarvis_tts
+wakenet_model_name_2: NULL
+wakenet_mode: 0
+
+/********** AGC (Automatic Gain Control) **********/
+agc_init: false
+agc_mode: WAKENET
+agc_compression_gain_db: 9
+agc_target_level_dbfs: 9
+
+/**************************************************/
+MC Quantized wakenet9: wakenet9l_tts1h8_Jarvis_3_0.627_0.632, tigger:v4, mode:0, p:0, (Aug 11 2025 15:20:26)

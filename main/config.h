@@ -1,34 +1,19 @@
 #ifndef _CONFIG_H_
 #define _CONFIG_H_
 
-// ========================================
-// FEATURE TOGGLES
-// ========================================
-// Enable/Disable features to save resources
-#define ENABLE_WAKE_WORD_MODE   1   // 1=Enable wake word detection, 0=Disable
-#define ENABLE_MP3_PLAYER_MODE  1   // 1=Enable MP3 player from SD, 0=Disable
-#define ENABLE_BLUETOOTH_MODE   1   // 1=Enable Bluetooth speaker, 0=Disable
-
-// Default mode on startup (0=Wake Word, 1=MP3, 2=Bluetooth)
-#define DEFAULT_STARTUP_MODE    1   // Start in MP3 mode
-
-// Bluetooth Configuration
-#define BT_DEVICE_NAME          "ESP32-LyraT-Speaker"
-#define BT_DISCOVERABLE         1   // Always discoverable
-
 // WiFi Configuration
 #define WIFI_SSID               "Nguyen Van Hai"
 #define WIFI_PASS               "0964822864"
 #define WIFI_RETRY_COUNT        5
 
 // WebSocket Configuration
-#define WS_URI                  "ws://laihieu2714.ddns.net:6666/audio"
-#define WS_BUFFER_SIZE          4096
+#define WS_URI                  "ws://laihieu2714.ddns.net:6666"
+#define WS_BUFFER_SIZE          (128 * 1024)  // 128KB Network Buffer (Enhanced for burst traffic)
 #define WS_PING_INTERVAL_SEC    10
 #define WS_RETRY_MAX            20
 #define WS_RETRY_DELAY_MS       500
 #define WS_MAX_RETRY_DELAY_MS   8000
-#define WS_SEND_TIMEOUT_MS      5000
+#define WS_SEND_TIMEOUT_MS      10000
 #define WS_CONNECT_TIMEOUT_MS   10000
 
 // Audio Configuration
@@ -38,24 +23,26 @@
 #define REC_BITS                16
 #define REC_CHANNELS            1
 #define REC_TIME_SEC            10
+#define PLAY_SAMPLE_RATE        48000 // High Quality Audio
 
-// Buffer Sizes
-#define RAW_WRITE_BUFFER_SIZE   (32 * 1024) // Increased to 32KB for burst handling
-#define I2S_WRITE_BUFFER_SIZE   (16 * 1024) // Increased to 16KB for smoother playback
-#define RAW_READ_BUFFER_SIZE    (64 * 1024)
-#define AUDIO_CHUNK_SIZE        4096
-#define AUDIO_WRITE_TIMEOUT_MS  2000 // Timeout for writing audio data
+// Buffer Sizes (Optimized PSRAM - Total ~2.75MB)
+#define RAW_WRITE_BUFFER_SIZE   (2 * 1024 * 1024) // 2MB Jitter Buffer (~21s audio at 48kHz)
+#define I2S_WRITE_BUFFER_SIZE   (512 * 1024)      // 512KB Playback Buffer
+#define RAW_READ_BUFFER_SIZE    (256 * 1024)      // 256KB Recording Buffer
+#define AUDIO_CHUNK_SIZE        8192              // 8KB chunks
+#define AUDIO_WRITE_TIMEOUT_MS  2000
 
 // Task Configuration
-#define STREAM_TASK_STACK_SIZE  4096
-#define STREAM_TASK_PRIORITY    5
+#define STREAM_TASK_STACK_SIZE  16384  // 16KB - Increased for WebSocket + VAD processing
+#define STREAM_TASK_PRIORITY    8     // Increased priority for network stability
 #define RECORDER_TASK_PRIORITY  10
 
-// VAD & Silence Skipping
-#define VAD_RMS_THRESHOLD       1000  // Threshold for silence detection (adjust based on mic)
-#define VAD_WAIT_TIMEOUT_MS     5000  // Max time to wait for speech before aborting
-#define VAD_BUFFER_PRE_ROLL     2     // Number of chunks to keep before speech starts (optional)
-#define VAD_IGNORE_CHUNKS       3     // Number of chunks to ignore after wake word (residue)
+// VAD & Silence Skipping - UPDATED CONFIGURATION
+#define VAD_RMS_THRESHOLD       1000   // Based on noise floor: ~900 RMS when silent
+#define VAD_WAIT_TIMEOUT_MS     10000  // Max time to wait for speech before aborting (10s)
+#define VAD_PREROLL_CHUNKS      5      // INCREASED: Buffer 5 chunks (~640ms) before speech for context
+#define VAD_MIN_SPEECH_CHUNKS   3      // Minimum chunks of speech before confirming (anti-noise)
+#define VAD_SILENCE_CHUNKS      4      // Consecutive silent chunks to end speech (was MAX_SILENT_READS)
 
 // Misc Configuration
 #define CODEC_VOLUME_PERCENT    80

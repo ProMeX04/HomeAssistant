@@ -1,0 +1,93 @@
+/Users/promex04/esp/esp-adf/components/esp-adf-libs/esp_codec/audio_sonic.c: In function 'sonic_open':
+/Users/promex04/esp/esp-adf/components/esp-adf-libs/esp_codec/audio_sonic.c:134:43: warning: 'calloc' sizes specified with 'sizeof' in the earlier argument and not in the later argument [-Wcalloc-transposed-args]
+  134 |     sonic->inbuf = (short *)calloc(sizeof(short), BUF_SIZE);
+      |                                           ^~~~~
+/Users/promex04/esp/esp-adf/components/esp-adf-libs/esp_codec/audio_sonic.c:134:43: note: earlier argument should specify number of elements, later size of each element
+/Users/promex04/esp/esp-adf/components/esp-adf-libs/esp_codec/audio_sonic.c:139:44: warning: 'calloc' sizes specified with 'sizeof' in the earlier argument and not in the later argument [-Wcalloc-transposed-args]
+  139 |     sonic->outbuf = (short *)calloc(sizeof(short), BUF_SIZE);
+      |                                            ^~~~~
+/Users/promex04/esp/esp-adf/components/esp-adf-libs/esp_codec/audio_sonic.c:139:44: note: earlier argument should specify number of elements, later size of each element
+/Users/promex04/esp/esp-adf/components/esp-adf-libs/esp_codec/audio_forge.c: In function 'audio_forge_sonic_set_speed':
+/Users/promex04/esp/esp-adf/components/esp-adf-libs/esp_codec/audio_forge.c:988:15: warning: using integer absolute value function 'abs' when argument is of floating-point type 'float' [-Wabsolute-value]
+  988 |     if ((int)(abs((sonic_speed - audio_forge->sonic_speed) * 100)) <= 5) {
+      |               ^~~
+/Users/promex04/esp/esp-adf/components/esp-adf-libs/esp_codec/audio_forge.c: In function 'audio_forge_sonic_set_pitch':
+/Users/promex04/esp/esp-adf/components/esp-adf-libs/esp_codec/audio_forge.c:1013:15: warning: using integer absolute value function 'abs' when argument is of floating-point type 'float' [-Wabsolute-value]
+ 1013 |     if ((int)(abs((sonic_pitch - audio_forge->sonic_pitch) * 100)) <= 5) {
+      |               ^~~
+/Users/promex04/esp/esp-adf/components/audio_recorder/audio_recorder.c:235:18: warning: 'audio_recorder_mn_monitor' defined but not used [-Wunused-function]
+  235 | static esp_err_t audio_recorder_mn_monitor(recorder_sr_result_t *result, void *user_ctx)
+      |                  ^~~~~~~~~~~~~~~~~~~~~~~~~
+In file included from /Users/promex04/esp/esp-adf/components/esp_peripherals/periph_ws2812.c:29:
+/Users/promex04/esp/esp-idf/components/driver/deprecated/driver/rmt.h:18:2: warning: #warning "The legacy RMT driver is deprecated, please use driver/rmt_tx.h and/or driver/rmt_rx.h" [-Wcpp]
+   18 | #warning "The legacy RMT driver is deprecated, please use driver/rmt_tx.h and/or driver/rmt_rx.h"
+      |  ^~~~~~~
+/Users/promex04/esp/esp-adf/components/esp_peripherals/periph_console.c: In function '_console_init':
+/Users/promex04/esp/esp-adf/components/esp_peripherals/periph_console.c:252:5: warning: 'esp_vfs_dev_uart_port_set_rx_line_endings' is deprecated: Please use uart_vfs_dev_port_set_rx_line_endings() instead [-Wdeprecated-declarations]
+  252 |     esp_vfs_dev_uart_port_set_rx_line_endings(CONFIG_ESP_CONSOLE_UART_NUM, ESP_LINE_ENDINGS_CR);
+      |     ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+In file included from /Users/promex04/esp/esp-adf/components/esp_peripherals/periph_console.c:29:
+/Users/promex04/esp/esp-idf/components/vfs/include/esp_vfs_dev.h:22:5: note: declared here
+   22 | int esp_vfs_dev_uart_port_set_rx_line_endings(int uart_num, esp_line_endings_t mode) __attribute__((deprecated("Please use uart_vfs_dev_port_set_rx_line_endings() instead")));
+      |     ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/Users/promex04/esp/esp-adf/components/esp_peripherals/periph_console.c:258:5: warning: 'esp_vfs_dev_uart_port_set_tx_line_endings' is deprecated: Please use uart_vfs_dev_port_set_tx_line_endings() instead [-Wdeprecated-declarations]
+  258 |     esp_vfs_dev_uart_port_set_tx_line_endings(CONFIG_ESP_CONSOLE_UART_NUM, ESP_LINE_ENDINGS_CRLF);
+      |     ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/Users/promex04/esp/esp-idf/components/vfs/include/esp_vfs_dev.h:24:5: note: declared here
+   24 | int esp_vfs_dev_uart_port_set_tx_line_endings(int uart_num, esp_line_endings_t mode) __attribute__((deprecated("Please use uart_vfs_dev_port_set_tx_line_endings() instead")));
+      |     ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/Users/promex04/esp/esp-adf/components/esp_peripherals/periph_console.c:271:5: warning: 'esp_vfs_dev_uart_use_driver' is deprecated: Please use uart_vfs_dev_use_driver() instead [-Wdeprecated-declarations]
+  271 |     esp_vfs_dev_uart_use_driver(CONFIG_ESP_CONSOLE_UART_NUM);
+      |     ^~~~~~~~~~~~~~~~~~~~~~~~~~~
+/Users/promex04/esp/esp-idf/components/vfs/include/esp_vfs_dev.h:20:6: note: declared here
+   20 | void esp_vfs_dev_uart_use_driver(int uart_num) __attribute__((deprecated("Please use uart_vfs_dev_use_driver() instead")));
+      |      ^~~~~~~~~~~~~~~~~~~~~~~~~~~
+In file included from /Users/promex04/esp/esp-adf/components/esp_peripherals/periph_wifi.c:26:
+/Users/promex04/esp/esp-idf/components/wpa_supplicant/esp_supplicant/include/esp_wpa2.h:10:9: note: '#pragma message: esp_wpa2.h is deprecated. Use esp_eap_client.h instead.'
+   10 | #pragma message("esp_wpa2.h is deprecated. Use esp_eap_client.h instead.")
+      |         ^~~~~~~
+/Users/promex04/esp/esp-adf/components/esp_peripherals/periph_wifi.c: In function '_wifi_init':
+/Users/promex04/esp/esp-adf/components/esp_peripherals/periph_wifi.c:436:9: warning: 'esp_wifi_sta_wpa2_ent_set_ca_cert' is deprecated: Use 'esp_eap_client_set_ca_cert' instead [-Wdeprecated-declarations]
+  436 |         ESP_ERROR_CHECK(esp_wifi_sta_wpa2_ent_set_ca_cert((const unsigned char *)periph_wifi->wpa2_e_cfg->ca_pem_start, ca_pem_bytes));
+      |         ^~~~~~~~~~~~~~~
+/Users/promex04/esp/esp-idf/components/wpa_supplicant/esp_supplicant/include/esp_wpa2.h:174:11: note: declared here
+  174 | esp_err_t esp_wifi_sta_wpa2_ent_set_ca_cert(const unsigned char *ca_cert, int ca_cert_len);
+      |           ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/Users/promex04/esp/esp-adf/components/esp_peripherals/periph_wifi.c:437:9: warning: 'esp_wifi_sta_wpa2_ent_set_cert_key' is deprecated: Use 'esp_eap_client_set_certificate_and_key' instead [-Wdeprecated-declarations]
+  437 |         ESP_ERROR_CHECK(esp_wifi_sta_wpa2_ent_set_cert_key((const unsigned char *)periph_wifi->wpa2_e_cfg->wpa2_e_cert_start, client_crt_bytes, \
+      |         ^~~~~~~~~~~~~~~
+/Users/promex04/esp/esp-idf/components/wpa_supplicant/esp_supplicant/include/esp_wpa2.h:206:11: note: declared here
+  206 | esp_err_t esp_wifi_sta_wpa2_ent_set_cert_key(const unsigned char *client_cert, int client_cert_len,
+      |           ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/Users/promex04/esp/esp-adf/components/esp_peripherals/periph_wifi.c:439:9: warning: 'esp_wifi_sta_wpa2_ent_set_identity' is deprecated: Use 'esp_eap_client_set_identity' instead [-Wdeprecated-declarations]
+  439 |         ESP_ERROR_CHECK(esp_wifi_sta_wpa2_ent_set_identity((uint8_t *)periph_wifi->wpa2_e_cfg->eap_id, strlen(periph_wifi->wpa2_e_cfg->eap_id)));
+      |         ^~~~~~~~~~~~~~~
+/Users/promex04/esp/esp-idf/components/wpa_supplicant/esp_supplicant/include/esp_wpa2.h:65:11: note: declared here
+   65 | esp_err_t esp_wifi_sta_wpa2_ent_set_identity(const unsigned char *identity, int len);
+      |           ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/Users/promex04/esp/esp-adf/components/esp_peripherals/periph_wifi.c:441:13: warning: 'esp_wifi_sta_wpa2_ent_set_username' is deprecated: Use 'esp_eap_client_set_username' instead [-Wdeprecated-declarations]
+  441 |             ESP_ERROR_CHECK(esp_wifi_sta_wpa2_ent_set_username((uint8_t *)periph_wifi->wpa2_e_cfg->eap_username, strlen(periph_wifi->wpa2_e_cfg->eap_username)));
+      |             ^~~~~~~~~~~~~~~
+/Users/promex04/esp/esp-idf/components/wpa_supplicant/esp_supplicant/include/esp_wpa2.h:92:11: note: declared here
+   92 | esp_err_t esp_wifi_sta_wpa2_ent_set_username(const unsigned char *username, int len);
+      |           ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/Users/promex04/esp/esp-adf/components/esp_peripherals/periph_wifi.c:442:13: warning: 'esp_wifi_sta_wpa2_ent_set_password' is deprecated: Use 'esp_eap_client_set_password' instead [-Wdeprecated-declarations]
+  442 |             ESP_ERROR_CHECK(esp_wifi_sta_wpa2_ent_set_password((uint8_t *)periph_wifi->wpa2_e_cfg->eap_password, strlen(periph_wifi->wpa2_e_cfg->eap_password)));
+      |             ^~~~~~~~~~~~~~~
+/Users/promex04/esp/esp-idf/components/wpa_supplicant/esp_supplicant/include/esp_wpa2.h:118:11: note: declared here
+  118 | esp_err_t esp_wifi_sta_wpa2_ent_set_password(const unsigned char *password, int len);
+      |           ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/Users/promex04/esp/esp-adf/components/esp_peripherals/periph_wifi.c:446:9: warning: 'esp_wifi_sta_wpa2_ent_enable' is deprecated: Use 'esp_wifi_sta_enterprise_enable' instead [-Wdeprecated-declarations]
+  446 |         ESP_ERROR_CHECK(esp_wifi_sta_wpa2_ent_enable());
+      |         ^~~~~~~~~~~~~~~
+/Users/promex04/esp/esp-idf/components/wpa_supplicant/esp_supplicant/include/esp_wpa2.h:31:11: note: declared here
+   31 | esp_err_t esp_wifi_sta_wpa2_ent_enable(void);
+      |           ^~~~~~~~~~~~~~~~~~~~~~~~~~~~
+In file included from /Users/promex04/esp/esp-adf/components/audio_stream/include/pwm_stream.h:29,
+                 from /Users/promex04/esp/esp-adf/components/audio_stream/pwm_stream.c:39:
+/Users/promex04/esp/esp-idf/components/driver/deprecated/driver/timer.h:16:2: warning: #warning "legacy timer group driver is deprecated, please migrate to driver/gptimer.h" [-Wcpp]
+   16 | #warning "legacy timer group driver is deprecated, please migrate to driver/gptimer.h"
+      |  ^~~~~~~
+/Users/promex04/Desktop/guild/speech_recognition/wwe/LyratMini_RecordPlay/main/main_ws.c:65:14: warning: 'calculate_rms' defined but not used [-Wunused-function]
+   65 | static float calculate_rms(int16_t *buffer, int len) {
+      |              ^~~~~~~~~~~~~

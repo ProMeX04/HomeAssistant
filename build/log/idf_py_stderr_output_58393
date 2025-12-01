@@ -1,7 +1,0 @@
-/Users/promex04/Desktop/guild/speech_recognition/wwe/LyratMini_RecordPlay/main/main_ws.c:28:10: fatal error: input_key_service.h: No such file or directory
-   28 | #include "input_key_service.h"
-      |          ^~~~~~~~~~~~~~~~~~~~~
-compilation terminated.
-make[2]: *** [esp-idf/main/CMakeFiles/__idf_main.dir/main_ws.c.obj] Error 1
-make[1]: *** [esp-idf/main/CMakeFiles/__idf_main.dir/all] Error 2
-make: *** [all] Error 2

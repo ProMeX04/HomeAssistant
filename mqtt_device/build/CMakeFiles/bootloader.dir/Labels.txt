@@ -1,0 +1,13 @@
+# Target labels
+ bootloader
+# Source files and their labels
+/Users/promex04/Desktop/guild/speech_recognition/wwe/LyratMini_RecordPlay/mqtt_device/build/CMakeFiles/bootloader
+/Users/promex04/Desktop/guild/speech_recognition/wwe/LyratMini_RecordPlay/mqtt_device/build/CMakeFiles/bootloader.rule
+/Users/promex04/Desktop/guild/speech_recognition/wwe/LyratMini_RecordPlay/mqtt_device/build/CMakeFiles/bootloader-complete.rule
+/Users/promex04/Desktop/guild/speech_recognition/wwe/LyratMini_RecordPlay/mqtt_device/build/bootloader-prefix/src/bootloader-stamp/bootloader-build.rule
+/Users/promex04/Desktop/guild/speech_recognition/wwe/LyratMini_RecordPlay/mqtt_device/build/bootloader-prefix/src/bootloader-stamp/bootloader-configure.rule
+/Users/promex04/Desktop/guild/speech_recognition/wwe/LyratMini_RecordPlay/mqtt_device/build/bootloader-prefix/src/bootloader-stamp/bootloader-download.rule
+/Users/promex04/Desktop/guild/speech_recognition/wwe/LyratMini_RecordPlay/mqtt_device/build/bootloader-prefix/src/bootloader-stamp/bootloader-install.rule
+/Users/promex04/Desktop/guild/speech_recognition/wwe/LyratMini_RecordPlay/mqtt_device/build/bootloader-prefix/src/bootloader-stamp/bootloader-mkdir.rule
+/Users/promex04/Desktop/guild/speech_recognition/wwe/LyratMini_RecordPlay/mqtt_device/build/bootloader-prefix/src/bootloader-stamp/bootloader-patch.rule
+/Users/promex04/Desktop/guild/speech_recognition/wwe/LyratMini_RecordPlay/mqtt_device/build/bootloader-prefix/src/bootloader-stamp/bootloader-update.rule

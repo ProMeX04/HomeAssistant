@@ -1956,162 +1956,6 @@ __idf_wifi_provisioning/fast:
 .PHONY : __idf_wifi_provisioning/fast
 
 #=============================================================================
-# Target rules for targets named __idf_audio_sal
-
-# Build rule for target.
-__idf_audio_sal: cmake_check_build_system
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 __idf_audio_sal
-.PHONY : __idf_audio_sal
-
-# fast build rule for target.
-__idf_audio_sal/fast:
-	$(MAKE) $(MAKESILENT) -f esp-idf/audio_sal/CMakeFiles/__idf_audio_sal.dir/build.make esp-idf/audio_sal/CMakeFiles/__idf_audio_sal.dir/build
-.PHONY : __idf_audio_sal/fast
-
-#=============================================================================
-# Target rules for targets named __idf_espressif__nghttp
-
-# Build rule for target.
-__idf_espressif__nghttp: cmake_check_build_system
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 __idf_espressif__nghttp
-.PHONY : __idf_espressif__nghttp
-
-# fast build rule for target.
-__idf_espressif__nghttp/fast:
-	$(MAKE) $(MAKESILENT) -f esp-idf/espressif__nghttp/CMakeFiles/__idf_espressif__nghttp.dir/build.make esp-idf/espressif__nghttp/CMakeFiles/__idf_espressif__nghttp.dir/build
-.PHONY : __idf_espressif__nghttp/fast
-
-#=============================================================================
-# Target rules for targets named __idf_esp-adf-libs
-
-# Build rule for target.
-__idf_esp-adf-libs: cmake_check_build_system
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 __idf_esp-adf-libs
-.PHONY : __idf_esp-adf-libs
-
-# fast build rule for target.
-__idf_esp-adf-libs/fast:
-	$(MAKE) $(MAKESILENT) -f esp-idf/esp-adf-libs/CMakeFiles/__idf_esp-adf-libs.dir/build.make esp-idf/esp-adf-libs/CMakeFiles/__idf_esp-adf-libs.dir/build
-.PHONY : __idf_esp-adf-libs/fast
-
-#=============================================================================
-# Target rules for targets named __idf_audio_pipeline
-
-# Build rule for target.
-__idf_audio_pipeline: cmake_check_build_system
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 __idf_audio_pipeline
-.PHONY : __idf_audio_pipeline
-
-# fast build rule for target.
-__idf_audio_pipeline/fast:
-	$(MAKE) $(MAKESILENT) -f esp-idf/audio_pipeline/CMakeFiles/__idf_audio_pipeline.dir/build.make esp-idf/audio_pipeline/CMakeFiles/__idf_audio_pipeline.dir/build
-.PHONY : __idf_audio_pipeline/fast
-
-#=============================================================================
-# Target rules for targets named __idf_display_service
-
-# Build rule for target.
-__idf_display_service: cmake_check_build_system
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 __idf_display_service
-.PHONY : __idf_display_service
-
-# fast build rule for target.
-__idf_display_service/fast:
-	$(MAKE) $(MAKESILENT) -f esp-idf/display_service/CMakeFiles/__idf_display_service.dir/build.make esp-idf/display_service/CMakeFiles/__idf_display_service.dir/build
-.PHONY : __idf_display_service/fast
-
-#=============================================================================
-# Target rules for targets named __idf_esp_dispatcher
-
-# Build rule for target.
-__idf_esp_dispatcher: cmake_check_build_system
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 __idf_esp_dispatcher
-.PHONY : __idf_esp_dispatcher
-
-# fast build rule for target.
-__idf_esp_dispatcher/fast:
-	$(MAKE) $(MAKESILENT) -f esp-idf/esp_dispatcher/CMakeFiles/__idf_esp_dispatcher.dir/build.make esp-idf/esp_dispatcher/CMakeFiles/__idf_esp_dispatcher.dir/build
-.PHONY : __idf_esp_dispatcher/fast
-
-#=============================================================================
-# Target rules for targets named __idf_esp_peripherals
-
-# Build rule for target.
-__idf_esp_peripherals: cmake_check_build_system
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 __idf_esp_peripherals
-.PHONY : __idf_esp_peripherals
-
-# fast build rule for target.
-__idf_esp_peripherals/fast:
-	$(MAKE) $(MAKESILENT) -f esp-idf/esp_peripherals/CMakeFiles/__idf_esp_peripherals.dir/build.make esp-idf/esp_peripherals/CMakeFiles/__idf_esp_peripherals.dir/build
-.PHONY : __idf_esp_peripherals/fast
-
-#=============================================================================
-# Target rules for targets named __idf_espressif__esp_lcd_ili9341
-
-# Build rule for target.
-__idf_espressif__esp_lcd_ili9341: cmake_check_build_system
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 __idf_espressif__esp_lcd_ili9341
-.PHONY : __idf_espressif__esp_lcd_ili9341
-
-# fast build rule for target.
-__idf_espressif__esp_lcd_ili9341/fast:
-	$(MAKE) $(MAKESILENT) -f esp-idf/espressif__esp_lcd_ili9341/CMakeFiles/__idf_espressif__esp_lcd_ili9341.dir/build.make esp-idf/espressif__esp_lcd_ili9341/CMakeFiles/__idf_espressif__esp_lcd_ili9341.dir/build
-.PHONY : __idf_espressif__esp_lcd_ili9341/fast
-
-#=============================================================================
-# Target rules for targets named __idf_audio_board
-
-# Build rule for target.
-__idf_audio_board: cmake_check_build_system
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 __idf_audio_board
-.PHONY : __idf_audio_board
-
-# fast build rule for target.
-__idf_audio_board/fast:
-	$(MAKE) $(MAKESILENT) -f esp-idf/audio_board/CMakeFiles/__idf_audio_board.dir/build.make esp-idf/audio_board/CMakeFiles/__idf_audio_board.dir/build
-.PHONY : __idf_audio_board/fast
-
-#=============================================================================
-# Target rules for targets named __idf_audio_hal
-
-# Build rule for target.
-__idf_audio_hal: cmake_check_build_system
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 __idf_audio_hal
-.PHONY : __idf_audio_hal
-
-# fast build rule for target.
-__idf_audio_hal/fast:
-	$(MAKE) $(MAKESILENT) -f esp-idf/audio_hal/CMakeFiles/__idf_audio_hal.dir/build.make esp-idf/audio_hal/CMakeFiles/__idf_audio_hal.dir/build
-.PHONY : __idf_audio_hal/fast
-
-#=============================================================================
-# Target rules for targets named __idf_wifi_service
-
-# Build rule for target.
-__idf_wifi_service: cmake_check_build_system
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 __idf_wifi_service
-.PHONY : __idf_wifi_service
-
-# fast build rule for target.
-__idf_wifi_service/fast:
-	$(MAKE) $(MAKESILENT) -f esp-idf/wifi_service/CMakeFiles/__idf_wifi_service.dir/build.make esp-idf/wifi_service/CMakeFiles/__idf_wifi_service.dir/build
-.PHONY : __idf_wifi_service/fast
-
-#=============================================================================
-# Target rules for targets named __idf_espressif__zlib
-
-# Build rule for target.
-__idf_espressif__zlib: cmake_check_build_system
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 __idf_espressif__zlib
-.PHONY : __idf_espressif__zlib
-
-# fast build rule for target.
-__idf_espressif__zlib/fast:
-	$(MAKE) $(MAKESILENT) -f esp-idf/espressif__zlib/CMakeFiles/__idf_espressif__zlib.dir/build.make esp-idf/espressif__zlib/CMakeFiles/__idf_espressif__zlib.dir/build
-.PHONY : __idf_espressif__zlib/fast
-
-#=============================================================================
 # Target rules for targets named __idf_espressif__dl_fft
 
 # Build rule for target.
@@ -2164,6 +2008,175 @@ srmodels_bin/fast:
 .PHONY : srmodels_bin/fast
 
 #=============================================================================
+# Target rules for targets named __idf_main
+
+# Build rule for target.
+__idf_main: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 __idf_main
+.PHONY : __idf_main
+
+# fast build rule for target.
+__idf_main/fast:
+	$(MAKE) $(MAKESILENT) -f esp-idf/main/CMakeFiles/__idf_main.dir/build.make esp-idf/main/CMakeFiles/__idf_main.dir/build
+.PHONY : __idf_main/fast
+
+#=============================================================================
+# Target rules for targets named __idf_audio_sal
+
+# Build rule for target.
+__idf_audio_sal: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 __idf_audio_sal
+.PHONY : __idf_audio_sal
+
+# fast build rule for target.
+__idf_audio_sal/fast:
+	$(MAKE) $(MAKESILENT) -f esp-idf/audio_sal/CMakeFiles/__idf_audio_sal.dir/build.make esp-idf/audio_sal/CMakeFiles/__idf_audio_sal.dir/build
+.PHONY : __idf_audio_sal/fast
+
+#=============================================================================
+# Target rules for targets named __idf_adf_utils
+
+# Build rule for target.
+__idf_adf_utils: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 __idf_adf_utils
+.PHONY : __idf_adf_utils
+
+# fast build rule for target.
+__idf_adf_utils/fast:
+	$(MAKE) $(MAKESILENT) -f esp-idf/adf_utils/CMakeFiles/__idf_adf_utils.dir/build.make esp-idf/adf_utils/CMakeFiles/__idf_adf_utils.dir/build
+.PHONY : __idf_adf_utils/fast
+
+#=============================================================================
+# Target rules for targets named __idf_display_service
+
+# Build rule for target.
+__idf_display_service: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 __idf_display_service
+.PHONY : __idf_display_service
+
+# fast build rule for target.
+__idf_display_service/fast:
+	$(MAKE) $(MAKESILENT) -f esp-idf/display_service/CMakeFiles/__idf_display_service.dir/build.make esp-idf/display_service/CMakeFiles/__idf_display_service.dir/build
+.PHONY : __idf_display_service/fast
+
+#=============================================================================
+# Target rules for targets named __idf_esp_dispatcher
+
+# Build rule for target.
+__idf_esp_dispatcher: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 __idf_esp_dispatcher
+.PHONY : __idf_esp_dispatcher
+
+# fast build rule for target.
+__idf_esp_dispatcher/fast:
+	$(MAKE) $(MAKESILENT) -f esp-idf/esp_dispatcher/CMakeFiles/__idf_esp_dispatcher.dir/build.make esp-idf/esp_dispatcher/CMakeFiles/__idf_esp_dispatcher.dir/build
+.PHONY : __idf_esp_dispatcher/fast
+
+#=============================================================================
+# Target rules for targets named __idf_audio_hal
+
+# Build rule for target.
+__idf_audio_hal: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 __idf_audio_hal
+.PHONY : __idf_audio_hal
+
+# fast build rule for target.
+__idf_audio_hal/fast:
+	$(MAKE) $(MAKESILENT) -f esp-idf/audio_hal/CMakeFiles/__idf_audio_hal.dir/build.make esp-idf/audio_hal/CMakeFiles/__idf_audio_hal.dir/build
+.PHONY : __idf_audio_hal/fast
+
+#=============================================================================
+# Target rules for targets named __idf_espressif__nghttp
+
+# Build rule for target.
+__idf_espressif__nghttp: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 __idf_espressif__nghttp
+.PHONY : __idf_espressif__nghttp
+
+# fast build rule for target.
+__idf_espressif__nghttp/fast:
+	$(MAKE) $(MAKESILENT) -f esp-idf/espressif__nghttp/CMakeFiles/__idf_espressif__nghttp.dir/build.make esp-idf/espressif__nghttp/CMakeFiles/__idf_espressif__nghttp.dir/build
+.PHONY : __idf_espressif__nghttp/fast
+
+#=============================================================================
+# Target rules for targets named __idf_esp-adf-libs
+
+# Build rule for target.
+__idf_esp-adf-libs: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 __idf_esp-adf-libs
+.PHONY : __idf_esp-adf-libs
+
+# fast build rule for target.
+__idf_esp-adf-libs/fast:
+	$(MAKE) $(MAKESILENT) -f esp-idf/esp-adf-libs/CMakeFiles/__idf_esp-adf-libs.dir/build.make esp-idf/esp-adf-libs/CMakeFiles/__idf_esp-adf-libs.dir/build
+.PHONY : __idf_esp-adf-libs/fast
+
+#=============================================================================
+# Target rules for targets named __idf_audio_pipeline
+
+# Build rule for target.
+__idf_audio_pipeline: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 __idf_audio_pipeline
+.PHONY : __idf_audio_pipeline
+
+# fast build rule for target.
+__idf_audio_pipeline/fast:
+	$(MAKE) $(MAKESILENT) -f esp-idf/audio_pipeline/CMakeFiles/__idf_audio_pipeline.dir/build.make esp-idf/audio_pipeline/CMakeFiles/__idf_audio_pipeline.dir/build
+.PHONY : __idf_audio_pipeline/fast
+
+#=============================================================================
+# Target rules for targets named __idf_esp_peripherals
+
+# Build rule for target.
+__idf_esp_peripherals: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 __idf_esp_peripherals
+.PHONY : __idf_esp_peripherals
+
+# fast build rule for target.
+__idf_esp_peripherals/fast:
+	$(MAKE) $(MAKESILENT) -f esp-idf/esp_peripherals/CMakeFiles/__idf_esp_peripherals.dir/build.make esp-idf/esp_peripherals/CMakeFiles/__idf_esp_peripherals.dir/build
+.PHONY : __idf_esp_peripherals/fast
+
+#=============================================================================
+# Target rules for targets named __idf_espressif__esp_lcd_ili9341
+
+# Build rule for target.
+__idf_espressif__esp_lcd_ili9341: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 __idf_espressif__esp_lcd_ili9341
+.PHONY : __idf_espressif__esp_lcd_ili9341
+
+# fast build rule for target.
+__idf_espressif__esp_lcd_ili9341/fast:
+	$(MAKE) $(MAKESILENT) -f esp-idf/espressif__esp_lcd_ili9341/CMakeFiles/__idf_espressif__esp_lcd_ili9341.dir/build.make esp-idf/espressif__esp_lcd_ili9341/CMakeFiles/__idf_espressif__esp_lcd_ili9341.dir/build
+.PHONY : __idf_espressif__esp_lcd_ili9341/fast
+
+#=============================================================================
+# Target rules for targets named __idf_audio_board
+
+# Build rule for target.
+__idf_audio_board: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 __idf_audio_board
+.PHONY : __idf_audio_board
+
+# fast build rule for target.
+__idf_audio_board/fast:
+	$(MAKE) $(MAKESILENT) -f esp-idf/audio_board/CMakeFiles/__idf_audio_board.dir/build.make esp-idf/audio_board/CMakeFiles/__idf_audio_board.dir/build
+.PHONY : __idf_audio_board/fast
+
+#=============================================================================
+# Target rules for targets named __idf_audio_mixer
+
+# Build rule for target.
+__idf_audio_mixer: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 __idf_audio_mixer
+.PHONY : __idf_audio_mixer
+
+# fast build rule for target.
+__idf_audio_mixer/fast:
+	$(MAKE) $(MAKESILENT) -f esp-idf/audio_mixer/CMakeFiles/__idf_audio_mixer.dir/build.make esp-idf/audio_mixer/CMakeFiles/__idf_audio_mixer.dir/build
+.PHONY : __idf_audio_mixer/fast
+
+#=============================================================================
 # Target rules for targets named __idf_audio_recorder
 
 # Build rule for target.
@@ -2175,6 +2188,32 @@ __idf_audio_recorder: cmake_check_build_system
 __idf_audio_recorder/fast:
 	$(MAKE) $(MAKESILENT) -f esp-idf/audio_recorder/CMakeFiles/__idf_audio_recorder.dir/build.make esp-idf/audio_recorder/CMakeFiles/__idf_audio_recorder.dir/build
 .PHONY : __idf_audio_recorder/fast
+
+#=============================================================================
+# Target rules for targets named __idf_wifi_service
+
+# Build rule for target.
+__idf_wifi_service: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 __idf_wifi_service
+.PHONY : __idf_wifi_service
+
+# fast build rule for target.
+__idf_wifi_service/fast:
+	$(MAKE) $(MAKESILENT) -f esp-idf/wifi_service/CMakeFiles/__idf_wifi_service.dir/build.make esp-idf/wifi_service/CMakeFiles/__idf_wifi_service.dir/build
+.PHONY : __idf_wifi_service/fast
+
+#=============================================================================
+# Target rules for targets named __idf_espressif__zlib
+
+# Build rule for target.
+__idf_espressif__zlib: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 __idf_espressif__zlib
+.PHONY : __idf_espressif__zlib
+
+# fast build rule for target.
+__idf_espressif__zlib/fast:
+	$(MAKE) $(MAKESILENT) -f esp-idf/espressif__zlib/CMakeFiles/__idf_espressif__zlib.dir/build.make esp-idf/espressif__zlib/CMakeFiles/__idf_espressif__zlib.dir/build
+.PHONY : __idf_espressif__zlib/fast
 
 #=============================================================================
 # Target rules for targets named __idf_dueros_service
@@ -2229,71 +2268,6 @@ __idf_audio_stream/fast:
 .PHONY : __idf_audio_stream/fast
 
 #=============================================================================
-# Target rules for targets named __idf_espressif__esp_websocket_client
-
-# Build rule for target.
-__idf_espressif__esp_websocket_client: cmake_check_build_system
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 __idf_espressif__esp_websocket_client
-.PHONY : __idf_espressif__esp_websocket_client
-
-# fast build rule for target.
-__idf_espressif__esp_websocket_client/fast:
-	$(MAKE) $(MAKESILENT) -f esp-idf/espressif__esp_websocket_client/CMakeFiles/__idf_espressif__esp_websocket_client.dir/build.make esp-idf/espressif__esp_websocket_client/CMakeFiles/__idf_espressif__esp_websocket_client.dir/build
-.PHONY : __idf_espressif__esp_websocket_client/fast
-
-#=============================================================================
-# Target rules for targets named __idf_input_key_service
-
-# Build rule for target.
-__idf_input_key_service: cmake_check_build_system
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 __idf_input_key_service
-.PHONY : __idf_input_key_service
-
-# fast build rule for target.
-__idf_input_key_service/fast:
-	$(MAKE) $(MAKESILENT) -f esp-idf/input_key_service/CMakeFiles/__idf_input_key_service.dir/build.make esp-idf/input_key_service/CMakeFiles/__idf_input_key_service.dir/build
-.PHONY : __idf_input_key_service/fast
-
-#=============================================================================
-# Target rules for targets named __idf_main
-
-# Build rule for target.
-__idf_main: cmake_check_build_system
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 __idf_main
-.PHONY : __idf_main
-
-# fast build rule for target.
-__idf_main/fast:
-	$(MAKE) $(MAKESILENT) -f esp-idf/main/CMakeFiles/__idf_main.dir/build.make esp-idf/main/CMakeFiles/__idf_main.dir/build
-.PHONY : __idf_main/fast
-
-#=============================================================================
-# Target rules for targets named __idf_adf_utils
-
-# Build rule for target.
-__idf_adf_utils: cmake_check_build_system
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 __idf_adf_utils
-.PHONY : __idf_adf_utils
-
-# fast build rule for target.
-__idf_adf_utils/fast:
-	$(MAKE) $(MAKESILENT) -f esp-idf/adf_utils/CMakeFiles/__idf_adf_utils.dir/build.make esp-idf/adf_utils/CMakeFiles/__idf_adf_utils.dir/build
-.PHONY : __idf_adf_utils/fast
-
-#=============================================================================
-# Target rules for targets named __idf_audio_mixer
-
-# Build rule for target.
-__idf_audio_mixer: cmake_check_build_system
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 __idf_audio_mixer
-.PHONY : __idf_audio_mixer
-
-# fast build rule for target.
-__idf_audio_mixer/fast:
-	$(MAKE) $(MAKESILENT) -f esp-idf/audio_mixer/CMakeFiles/__idf_audio_mixer.dir/build.make esp-idf/audio_mixer/CMakeFiles/__idf_audio_mixer.dir/build
-.PHONY : __idf_audio_mixer/fast
-
-#=============================================================================
 # Target rules for targets named __idf_battery_service
 
 # Build rule for target.
@@ -2346,6 +2320,19 @@ __idf_esp_codec_dev/fast:
 .PHONY : __idf_esp_codec_dev/fast
 
 #=============================================================================
+# Target rules for targets named __idf_espressif__esp_websocket_client
+
+# Build rule for target.
+__idf_espressif__esp_websocket_client: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 __idf_espressif__esp_websocket_client
+.PHONY : __idf_espressif__esp_websocket_client
+
+# fast build rule for target.
+__idf_espressif__esp_websocket_client/fast:
+	$(MAKE) $(MAKESILENT) -f esp-idf/espressif__esp_websocket_client/CMakeFiles/__idf_espressif__esp_websocket_client.dir/build.make esp-idf/espressif__esp_websocket_client/CMakeFiles/__idf_espressif__esp_websocket_client.dir/build
+.PHONY : __idf_espressif__esp_websocket_client/fast
+
+#=============================================================================
 # Target rules for targets named __idf_esp_coze
 
 # Build rule for target.
@@ -2370,6 +2357,19 @@ __idf_esp_event_cast: cmake_check_build_system
 __idf_esp_event_cast/fast:
 	$(MAKE) $(MAKESILENT) -f esp-idf/esp_event_cast/CMakeFiles/__idf_esp_event_cast.dir/build.make esp-idf/esp_event_cast/CMakeFiles/__idf_esp_event_cast.dir/build
 .PHONY : __idf_esp_event_cast/fast
+
+#=============================================================================
+# Target rules for targets named __idf_input_key_service
+
+# Build rule for target.
+__idf_input_key_service: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 __idf_input_key_service
+.PHONY : __idf_input_key_service
+
+# fast build rule for target.
+__idf_input_key_service/fast:
+	$(MAKE) $(MAKESILENT) -f esp-idf/input_key_service/CMakeFiles/__idf_input_key_service.dir/build.make esp-idf/input_key_service/CMakeFiles/__idf_input_key_service.dir/build
+.PHONY : __idf_input_key_service/fast
 
 #=============================================================================
 # Target rules for targets named __idf_ota_service

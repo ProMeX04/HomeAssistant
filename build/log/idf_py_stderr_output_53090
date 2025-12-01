@@ -1,8 +1,0 @@
-/Users/promex04/Desktop/guild/speech_recognition/wwe/LyratMini_RecordPlay/main/main_ws.c: In function 'button_task':
-/Users/promex04/Desktop/guild/speech_recognition/wwe/LyratMini_RecordPlay/main/main_ws.c:502:5: error: implicit declaration of function 'esp_periph_set_listen'; did you mean 'esp_periph_set_list_run'? [-Wimplicit-function-declaration]
-  502 |     esp_periph_set_listen(set, evt);
-      |     ^~~~~~~~~~~~~~~~~~~~~
-      |     esp_periph_set_list_run
-make[2]: *** [esp-idf/main/CMakeFiles/__idf_main.dir/main_ws.c.obj] Error 1
-make[1]: *** [esp-idf/main/CMakeFiles/__idf_main.dir/all] Error 2
-make: *** [all] Error 2

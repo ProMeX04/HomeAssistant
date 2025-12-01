@@ -30,9 +30,6 @@ esp-idf/main/CMakeFiles/__idf_main.dir/main_ws.c.obj: \
  /Users/promex04/.espressif/tools/xtensa-esp-elf/esp-14.2.0_20250730/xtensa-esp-elf/xtensa-esp-elf/include/assert.h \
  /Users/promex04/.espressif/tools/xtensa-esp-elf/esp-14.2.0_20250730/xtensa-esp-elf/xtensa-esp-elf/include/strings.h \
  /Users/promex04/.espressif/tools/xtensa-esp-elf/esp-14.2.0_20250730/xtensa-esp-elf/xtensa-esp-elf/include/sys/string.h \
- /Users/promex04/.espressif/tools/xtensa-esp-elf/esp-14.2.0_20250730/xtensa-esp-elf/xtensa-esp-elf/include/dirent.h \
- /Users/promex04/esp/esp-idf/components/newlib/platform_include/sys/dirent.h \
- /Users/promex04/.espressif/tools/xtensa-esp-elf/esp-14.2.0_20250730/xtensa-esp-elf/xtensa-esp-elf/include/sys/dirent.h \
  /Users/promex04/esp/esp-idf/components/freertos/FreeRTOS-Kernel/include/freertos/FreeRTOS.h \
  /Users/promex04/esp/esp-idf/components/freertos/config/include/freertos/FreeRTOSConfig.h \
  /Users/promex04/esp/esp-idf/components/freertos/config/xtensa/include/freertos/FreeRTOSConfig_arch.h \
@@ -179,7 +176,6 @@ esp-idf/main/CMakeFiles/__idf_main.dir/main_ws.c.obj: \
  /Users/promex04/esp/esp-idf/components/esp_driver_i2s/include/driver/i2s_std.h \
  /Users/promex04/esp/esp-adf/components/audio_sal/include/audio_idf_version.h \
  /Users/promex04/esp/esp-adf/components/audio_stream/include/raw_stream.h \
- /Users/promex04/esp/esp-adf/components/audio_stream/include/fatfs_stream.h \
  /Users/promex04/esp/esp-adf/components/audio_recorder/include/audio_recorder.h \
  /Users/promex04/esp/esp-adf/components/audio_recorder/include/recorder_encoder_iface.h \
  /Users/promex04/esp/esp-adf/components/audio_recorder/include/recorder_subproc_iface.h \
@@ -277,9 +273,13 @@ esp-idf/main/CMakeFiles/__idf_main.dir/main_ws.c.obj: \
  /Users/promex04/esp/esp-idf/components/bootloader_support/include/esp_image_format.h \
  /Users/promex04/esp/esp-idf/components/bootloader_support/include/esp_flash_partitions.h \
  /Users/promex04/esp/esp-idf/components/bootloader_support/include/esp_app_format.h \
+ /Users/promex04/esp/esp-adf/components/audio_stream/include/fatfs_stream.h \
  /Users/promex04/esp/esp-adf/components/esp-adf-libs/esp_codec/include/codec/mp3_decoder.h \
  /Users/promex04/esp/esp-adf/components/esp-adf-libs/esp_codec/include/codec/esp_id3_parse.h \
+ /Users/promex04/esp/esp-adf/components/esp-adf-libs/esp_codec/include/codec/filter_resample.h \
+ /Users/promex04/esp/esp-adf/components/esp-adf-libs/esp_codec/include/processing/esp_resample.h \
  /Users/promex04/.espressif/tools/xtensa-esp-elf/esp-14.2.0_20250730/xtensa-esp-elf/xtensa-esp-elf/include/math.h \
  /Users/promex04/esp/esp-idf/components/esp_timer/include/esp_timer.h \
  /Users/promex04/esp/esp-adf/components/audio_pipeline/include/ringbuf.h \
- /Users/promex04/Desktop/guild/speech_recognition/wwe/LyratMini_RecordPlay/main/config.h
+ /Users/promex04/Desktop/guild/speech_recognition/wwe/LyratMini_RecordPlay/main/config.h \
+ /Users/promex04/Desktop/guild/speech_recognition/wwe/LyratMini_RecordPlay/main/settings.h

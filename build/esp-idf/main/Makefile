@@ -199,6 +199,30 @@ main_ws.c.s:
 	cd /Users/promex04/Desktop/guild/speech_recognition/wwe/LyratMini_RecordPlay/build && $(MAKE) $(MAKESILENT) -f esp-idf/main/CMakeFiles/__idf_main.dir/build.make esp-idf/main/CMakeFiles/__idf_main.dir/main_ws.c.s
 .PHONY : main_ws.c.s
 
+settings.obj: settings.c.obj
+.PHONY : settings.obj
+
+# target to build an object file
+settings.c.obj:
+	cd /Users/promex04/Desktop/guild/speech_recognition/wwe/LyratMini_RecordPlay/build && $(MAKE) $(MAKESILENT) -f esp-idf/main/CMakeFiles/__idf_main.dir/build.make esp-idf/main/CMakeFiles/__idf_main.dir/settings.c.obj
+.PHONY : settings.c.obj
+
+settings.i: settings.c.i
+.PHONY : settings.i
+
+# target to preprocess a source file
+settings.c.i:
+	cd /Users/promex04/Desktop/guild/speech_recognition/wwe/LyratMini_RecordPlay/build && $(MAKE) $(MAKESILENT) -f esp-idf/main/CMakeFiles/__idf_main.dir/build.make esp-idf/main/CMakeFiles/__idf_main.dir/settings.c.i
+.PHONY : settings.c.i
+
+settings.s: settings.c.s
+.PHONY : settings.s
+
+# target to generate assembly for a file
+settings.c.s:
+	cd /Users/promex04/Desktop/guild/speech_recognition/wwe/LyratMini_RecordPlay/build && $(MAKE) $(MAKESILENT) -f esp-idf/main/CMakeFiles/__idf_main.dir/build.make esp-idf/main/CMakeFiles/__idf_main.dir/settings.c.s
+.PHONY : settings.c.s
+
 wifi_helper.obj: wifi_helper.c.obj
 .PHONY : wifi_helper.obj
 
@@ -239,6 +263,9 @@ help:
 	@echo "... main_ws.obj"
 	@echo "... main_ws.i"
 	@echo "... main_ws.s"
+	@echo "... settings.obj"
+	@echo "... settings.i"
+	@echo "... settings.s"
 	@echo "... wifi_helper.obj"
 	@echo "... wifi_helper.i"
 	@echo "... wifi_helper.s"
