@@ -1,2 +1,0 @@
-/Users/promex04/.espressif/tools/xtensa-esp-elf/esp-14.2.0_20250730/xtensa-esp-elf/bin/xtensa-esp32-elf-ar qc libota_service.a CMakeFiles/__idf_ota_service.dir/esp_fs_ota.c.obj CMakeFiles/__idf_ota_service.dir/ota_service.c.obj CMakeFiles/__idf_ota_service.dir/ota_proc_default.c.obj
-/Users/promex04/.espressif/tools/xtensa-esp-elf/esp-14.2.0_20250730/xtensa-esp-elf/bin/xtensa-esp32-elf-ranlib libota_service.a

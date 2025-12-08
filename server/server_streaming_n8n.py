@@ -1,608 +1,578 @@
 #!/usr/bin/env python3
 """
-Streaming WebSocket Server with n8n Integration
-Pipeline: Audio Chunks -> Whisper Streaming -> n8n Webhook -> TTS -> Audio
+JARVIS v4 - Ultra-Optimized Streaming Server
+
+Optimizations for ESP32-LyraT-Mini:
+1. Smart VAD that works with on-device VAD (backup/verification)
+2. Faster audio processing with streaming
+3. Reduced memory footprint
+4. Better error handling
 """
 
 import asyncio
-import json
 import logging
 import os
-import re  # Added for URL detection
-import subprocess
 import sys
 import tempfile
+from datetime import datetime
 
 import aiohttp
 import numpy as np
 import torch
 import websockets
 
-# Logging Setup
 logging.basicConfig(
     level=logging.INFO,
-    format="%(asctime)s - %(message)s",
+    format="%(asctime)s [%(levelname)s] %(message)s",
     stream=sys.stdout,
     force=True,
 )
 logger = logging.getLogger(__name__)
 
-# Configuration
+# ============================================================================
+# Configuration - Tuned for ESP32-LyraT-Mini
+# ============================================================================
 PORT = 6666
-WHISPER_MODEL_SIZE = "base.en"
-N8N_WEBHOOK_URL = "http://localhost:5678/webhook-test/753a58bd-1b12-4643-858f-9249c3477da5"
+HTTP_PORT = 6667
+N8N_WEBHOOK_URL = "http://localhost:5678/webhook/753a58bd-1b12-4643-858f-9249c3477da5"
 
-# Load Silero VAD Model
-logger.info("Loading Silero VAD model...")
-vad_model, vad_utils = torch.hub.load(
-    repo_or_dir="snakers4/silero-vad",
-    model="silero_vad",
-    force_reload=False,
-    onnx=False,
-)
-(get_speech_timestamps, _, _, _, _) = vad_utils
-logger.info("Silero VAD loaded successfully")
+# VAD Settings - Relaxed since device does primary VAD
+SILENCE_CHUNKS = 4           # Fewer - device already filtered
+MIN_RECORDING_CHUNKS = 4     # Minimum chunks before processing
+VAD_THRESHOLD = 0.35         # Lower threshold
+MAX_RECORDING_SEC = 15       # Maximum recording duration
+
+# Audio settings
+SAMPLE_RATE = 16000
+CHUNK_DURATION_MS = 128      # ~2KB chunk @ 16kHz/16bit
+
+# ============================================================================
+# Load Silero VAD (once at startup)
+# ============================================================================
+logger.info("Loading Silero VAD (backup mode)...")
+try:
+    vad_model, vad_utils = torch.hub.load(
+        repo_or_dir="snakers4/silero-vad",
+        model="silero_vad",
+        force_reload=False,
+        onnx=False,
+    )
+    get_speech_timestamps = vad_utils[0]
+    VAD_AVAILABLE = True
+    logger.info("✅ Silero VAD loaded")
+except Exception as e:
+    logger.warning(f"⚠️ Silero VAD not available: {e}")
+    VAD_AVAILABLE = False
 
 
-def trim_silence(audio_data, sample_rate=16000, threshold=0.5):
-    """
-    Trim silence from beginning and end of audio using Silero VAD
-
-    Args:
-        audio_data: numpy array of float32 audio samples (-1.0 to 1.0)
-        sample_rate: sample rate of the audio
-        threshold: VAD confidence threshold (0.0 to 1.0)
-
-    Returns:
-        Trimmed audio as numpy array
-    """
+# ============================================================================
+# Audio Processing Functions
+# ============================================================================
+def trim_silence_fast(audio_data, sample_rate=16000):
+    """Fast silence trimming - lightweight for backup VAD"""
+    if not VAD_AVAILABLE:
+        return audio_data
+    
     try:
-        # Convert to torch tensor
+        # Quick RMS-based pre-filter
+        rms = np.sqrt(np.mean(audio_data ** 2))
+        if rms < 0.01:  # Very quiet
+            logger.warning("Audio too quiet")
+            return audio_data
+        
         audio_tensor = torch.from_numpy(audio_data).float()
-
-        # Get speech timestamps
         speech_timestamps = get_speech_timestamps(
             audio_tensor,
             vad_model,
             sampling_rate=sample_rate,
-            threshold=threshold,
+            threshold=VAD_THRESHOLD,
             min_speech_duration_ms=100,
-            min_silence_duration_ms=100,
+            min_silence_duration_ms=150,
         )
-
+        
         if not speech_timestamps:
-            logger.warning("No speech detected in audio")
+            logger.warning("No speech in audio")
             return audio_data
-
-        # Get first and last speech segments
-        start_sample = speech_timestamps[0]["start"]
-        end_sample = speech_timestamps[-1]["end"]
-
-        # Trim audio
-        trimmed_audio = audio_data[start_sample:end_sample]
-
-        original_duration = len(audio_data) / sample_rate
-        trimmed_duration = len(trimmed_audio) / sample_rate
-        trimmed_amount = original_duration - trimmed_duration
-
-        logger.info(
-            f"Trimmed {trimmed_amount:.2f}s silence "
-            f"(Original: {original_duration:.2f}s → Trimmed: {trimmed_duration:.2f}s)"
-        )
-
-        return trimmed_audio
-
+        
+        start = max(0, speech_timestamps[0]["start"] - int(0.1 * sample_rate))  # 100ms padding
+        end = min(len(audio_data), speech_timestamps[-1]["end"] + int(0.1 * sample_rate))
+        
+        trimmed = audio_data[start:end]
+        logger.info(f"Trimmed {len(audio_data)/sample_rate:.2f}s → {len(trimmed)/sample_rate:.2f}s")
+        
+        return trimmed
     except Exception as e:
-        logger.error(f"VAD trim error: {e}")
-        return audio_data  # Return original if trimming fails
+        logger.error(f"Trim error: {e}")
+        return audio_data
 
 
 def is_vietnamese(text):
-    """Detect if text contains Vietnamese characters"""
-    vietnamese_chars = set(
-        "àáạảãâầấậẩẫăằắặẳẵèéẹẻẽêềếệểễìíịỉĩòóọỏõôồốộổỗơờớợởỡùúụủũưừứựửữỳýỵỷỹđ"
-    )
-    return any(char in vietnamese_chars for char in text.lower())
+    """Quick Vietnamese detection"""
+    vn_chars = set("àáạảãâầấậẩẫăằắặẳẵèéẹẻẽêềếệểễìíịỉĩòóọỏõôồốộổỗơờớợởỡùúụủũưừứựửữỳýỵỷỹđ")
+    return any(c in vn_chars for c in text.lower())
 
 
-async def text_to_speech_stream(text):
-    """Convert text to speech using macOS 'say' and yield PCM 48kHz chunks"""
-    if not text:
+# ============================================================================
+# Text-to-Speech (optimized)
+# ============================================================================
+async def tts_stream(text):
+    """Convert text to MP3 speech - faster for short responses"""
+    if not text or not text.strip():
         return
-
-    # Select voice based on language
+    
     voice = "Linh" if is_vietnamese(text) else "Samantha"
-    logger.info(f"TTS Voice: {voice}")
-
-    temp_aiff_path = None
-    process = None
-    process_ffmpeg = None
-
+    logger.info(f"🗣️ TTS ({voice}): '{text[:40]}...'")
+    
+    temp_file = None
     try:
-        with tempfile.NamedTemporaryFile(suffix=".aiff", delete=False) as temp_aiff:
-            temp_aiff_path = temp_aiff.name
-
-        # Use macOS 'say' command
-        process = await asyncio.create_subprocess_exec(
-            "say",
-            "-v",
-            voice,
-            "-o",
-            temp_aiff_path,
-            text,
+        with tempfile.NamedTemporaryFile(suffix=".aiff", delete=False) as f:
+            temp_file = f.name
+        
+        proc = await asyncio.create_subprocess_exec(
+            "say", "-v", voice, "-o", temp_file, text,
             stdout=asyncio.subprocess.DEVNULL,
             stderr=asyncio.subprocess.DEVNULL,
         )
-        await process.wait()
-
-        # Convert to raw PCM 48kHz mono
-        # If voice is Linh, speed up by 20% (atempo=1.2)
-        ffmpeg_args = [
-            "ffmpeg",
-            "-i",
-            temp_aiff_path,
-            "-f",
-            "s16le",
-            "-ac",
-            "1",
-            "-ar",
-            "48000",
-        ]
-
-        if voice == "Linh":
-            ffmpeg_args.extend(["-filter:a", "atempo=1.2"])
-
-        ffmpeg_args.append("pipe:1")
-
-        process_ffmpeg = await asyncio.create_subprocess_exec(
-            *ffmpeg_args,
-            stdout=asyncio.subprocess.PIPE,
-            stderr=asyncio.subprocess.DEVNULL,
-        )
-
-        chunk_size = 4096
-        while True:
-            data = await process_ffmpeg.stdout.read(chunk_size)
-            if not data:
-                break
-            yield data
-
-        await process_ffmpeg.wait()
-
-    except asyncio.CancelledError:
-        logger.warning("TTS streaming cancelled")
-        raise  # Propagate cancellation
-    except Exception as e:
-        logger.error(f"TTS Error: {e}")
-    finally:
-        # Cleanup processes
-        if process and process.returncode is None:
-            try:
-                process.kill()
-            except:
-                pass
-        if process_ffmpeg and process_ffmpeg.returncode is None:
-            try:
-                process_ffmpeg.kill()
-            except:
-                pass
+        await proc.wait()
         
-        # Cleanup temp file
-        if temp_aiff_path and os.path.exists(temp_aiff_path):
-            try:
-                os.remove(temp_aiff_path)
-            except:
-                pass
-
-
-async def stream_audio_url(url, websocket):
-    """Stream audio from a URL to websocket using ffmpeg"""
-    logger.info(f"Streaming music from URL: {url}")
-    process = None
-    try:
-        # Use yt-dlp to get the direct audio URL if it's a YouTube link
-        if "youtube.com" in url or "youtu.be" in url:
-            try:
-                cmd = ["yt-dlp", "-f", "bestaudio", "-g", url]
-                result = await asyncio.to_thread(subprocess.run, cmd, capture_output=True, text=True, timeout=10)
-                if result.returncode == 0 and result.stdout.strip():
-                    url = result.stdout.strip()
-                    logger.info(f"Resolved YouTube URL: {url[:50]}...")
-            except Exception as e:
-                logger.warning(f"Failed to resolve YouTube URL with yt-dlp: {e}")
-
-        process = await asyncio.create_subprocess_exec(
-            "ffmpeg",
-            "-reconnect",
-            "1",
-            "-reconnect_streamed",
-            "1",
-            "-reconnect_delay_max",
-            "5",
-            "-i",
-            url,
-            "-f",
-            "s16le",
-            "-ac",
-            "1",
-            "-ar",
-            "48000",
-            "-vn",
+        # Convert to MP3 with optimized settings
+        filters = ["apad=pad_dur=0.3"]  # Less padding
+        if voice == "Linh":
+            filters.insert(0, "atempo=1.25")  # Slightly faster
+        
+        ffmpeg = await asyncio.create_subprocess_exec(
+            "ffmpeg", "-i", temp_file,
+            "-f", "mp3", "-ac", "1", "-ar", "44100", "-b:a", "128k",
+            "-filter:a", ",".join(filters),
             "pipe:1",
             stdout=asyncio.subprocess.PIPE,
             stderr=asyncio.subprocess.DEVNULL,
         )
-
-        chunk_size = 4096
+        
+        # Stream in larger chunks for efficiency
         while True:
-            data = await process.stdout.read(chunk_size)
-            if not data:
+            chunk = await ffmpeg.stdout.read(8192)
+            if not chunk:
                 break
-            await websocket.send(data)
-
-        await process.wait()
-        logger.info("Music streaming finished.")
-    
+            yield chunk
+        
+        await ffmpeg.wait()
+        
     except asyncio.CancelledError:
-        logger.warning("Music streaming cancelled")
+        logger.warning("TTS cancelled")
         raise
     except Exception as e:
-        logger.error(f"Error streaming music: {e}")
+        logger.error(f"TTS error: {e}")
+    finally:
+        if temp_file and os.path.exists(temp_file):
+            try:
+                os.remove(temp_file)
+            except:
+                pass
+
+
+# ============================================================================
+# Music Streaming - Optimized
+# ============================================================================
+INITIAL_BURST_SIZE = 512 * 1024  # 512KB initial burst
+CHUNK_SIZE = 8192  # Larger chunks
+
+
+async def stream_music(query_or_url, websocket):
+    """Stream music with optimized buffering"""
+    logger.info(f"🎵 Streaming: {query_or_url[:50]}...")
+    
+    process = None
+    try:
+        yt_dlp = "/opt/homebrew/bin/yt-dlp"
+        
+        if query_or_url.startswith("ytsearch") or "youtube.com" in query_or_url or "youtu.be" in query_or_url:
+            url = query_or_url
+        elif query_or_url.startswith("http"):
+            shell_cmd = f'ffmpeg -i "{query_or_url}" -t 300 -f mp3 -ac 1 -ar 44100 -b:a 128k -vn pipe:1 2>/dev/null'
+            process = await asyncio.create_subprocess_shell(
+                shell_cmd,
+                stdout=asyncio.subprocess.PIPE,
+                stderr=asyncio.subprocess.PIPE,
+            )
+        else:
+            url = f"ytsearch1:{query_or_url}"
+        
+        if not process:
+            shell_cmd = f'{yt_dlp} --cookies-from-browser chrome --no-playlist -f bestaudio -o - "{url}" 2>/dev/null | ffmpeg -i pipe:0 -t 300 -f mp3 -ac 1 -ar 44100 -b:a 128k -vn pipe:1 2>/dev/null'
+            process = await asyncio.create_subprocess_shell(
+                shell_cmd,
+                stdout=asyncio.subprocess.PIPE,
+                stderr=asyncio.subprocess.PIPE,
+            )
+        
+        bytes_sent = 0
+        try:
+            while True:
+                chunk = await asyncio.wait_for(process.stdout.read(CHUNK_SIZE), timeout=15)
+                if not chunk:
+                    break
+                
+                await websocket.send(chunk)
+                bytes_sent += len(chunk)
+                
+                # Throttle after burst
+                if bytes_sent > INITIAL_BURST_SIZE:
+                    await asyncio.sleep(0.04)
+                    
+        except asyncio.TimeoutError:
+            logger.warning("Stream timeout")
+        
+        await process.wait()
+        logger.info(f"🎵 Streamed {bytes_sent/1024:.1f}KB")
+            
+    except Exception as e:
+        logger.error(f"Stream error: {e}")
     finally:
         if process and process.returncode is None:
             try:
                 process.kill()
-                logger.info("Killed ffmpeg process")
             except:
                 pass
 
-async def call_n8n_webhook_audio(audio_path):
-    """Call n8n webhook with AUDIO FILE"""
+
+# ============================================================================
+# n8n Integration
+# ============================================================================
+async def call_n8n(audio_path):
+    """Call n8n with audio - returns MP3 bytes"""
     async with aiohttp.ClientSession() as session:
         try:
-            logger.info(f"Sending AUDIO to n8n: {audio_path}")
-
-            data = aiohttp.FormData()
-            data.add_field(
-                "file",
-                open(audio_path, "rb"),
-                filename="audio.wav",
-                content_type="audio/wav",
-            )
-
-            # Optional: Add text field if needed
-            # data.add_field('type', 'audio')
-
-            async with session.post(N8N_WEBHOOK_URL, data=data) as response:
-                if response.status == 200:
-                    body = await response.text()
-
-                    # Case 1: n8n Streaming Response (NDJSON)
-                    if '{"type":"item"' in body or '{"type":"begin"' in body:
-                        full_text = ""
-                        logger.info("Parsing n8n streaming response...")
-                        for line in body.splitlines():
-                            if not line.strip():
-                                continue
-                            try:
-                                data = json.loads(line)
-                                if data.get("type") == "item" and "content" in data:
-                                    full_text += data["content"]
-                                elif isinstance(data, dict) and "output" in data:
-                                    full_text += data["output"]
-                            except:
-                                pass
-                        return full_text
-
-                    # Case 2: Standard JSON Response
-                    try:
-                        data = json.loads(body)
-                        if isinstance(data, dict):
-                            # Return the full dictionary to handle structured commands
-                            return data
-                        elif isinstance(data, list) and len(data) > 0:
-                            # If it's a list, return the first item
-                            return data[0]
-                        return {"text": str(data)}
-                    except:
-                        # Case 3: Raw Text
-                        return {"text": body}
-                else:
-                    logger.error(f"n8n returned status: {response.status}")
-                    return {"text": "I'm sorry, I couldn't connect to the brain."}
-        except Exception as e:
-            logger.error(f"Error calling n8n: {e}")
-            return {"text": "I'm sorry, there was an error processing your request."}
-
-
-async def process_n8n_turn_audio(audio_path, websocket):
-    """Process AUDIO with n8n and stream audio response"""
-
-    await websocket.send("AUDIO_START")
-
-    # Call n8n with AUDIO
-    n8n_response = await call_n8n_webhook_audio(audio_path)
-    
-    # Extract text and potential commands
-    response_text = n8n_response.get("output", n8n_response.get("text", ""))
-    music_query = n8n_response.get("music", n8n_response.get("song", None))
-    
-    logger.info(f"n8n Response: {n8n_response}")
-
-    music_url = None
-
-    # 1. Check for explicit Music Command from n8n JSON
-    if music_query:
-        logger.info(f"n8n requested music via JSON command: '{music_query}'")
-        try:
-            cmd = ["yt-dlp", "-f", "bestaudio", "-g", f"ytsearch1:{music_query}"]
-            result = await asyncio.to_thread(subprocess.run, cmd, capture_output=True, text=True, timeout=15)
-            if result.returncode == 0 and result.stdout.strip():
-                music_url = result.stdout.strip()
-                logger.info(f"Found song URL via yt-dlp")
-            else:
-                logger.warning("Song not found via yt-dlp")
-        except Exception as e:
-            logger.error(f"yt-dlp search error: {e}")
-
-    # 2. Detect [MUSIC: song name] tag (Legacy support)
-    if not music_url:
-        music_tag_match = re.search(r"\[MUSIC:\s*(.*?)\]", response_text, re.IGNORECASE)
-        if music_tag_match:
-            song_query = music_tag_match.group(1).strip()
-            logger.info(f"n8n requested music search via TAG: '{song_query}'")
-
-            # Remove tag from TTS
-            response_text = response_text.replace(music_tag_match.group(0), "")
-
-            # Search locally using yt-dlp
-            try:
-                cmd = ["yt-dlp", "-f", "bestaudio", "-g", f"ytsearch1:{song_query}"]
-                result = await asyncio.to_thread(subprocess.run, cmd, capture_output=True, text=True, timeout=15)
-                if result.returncode == 0 and result.stdout.strip():
-                    music_url = result.stdout.strip()
-                    logger.info(f"Found song URL via yt-dlp")
-                else:
-                    logger.warning("Song not found via yt-dlp")
-            except Exception as e:
-                logger.error(f"yt-dlp search error: {e}")
-
-    # 3. Detect direct URL (Fallback)
-    if not music_url:
-        url_pattern = r"http[s]?://(?:[a-zA-Z]|[0-9]|[$-_@.&+]|[!*\\(\\),]|(?:%[0-9a-fA-F][0-9a-fA-F]))+"
-        urls = re.findall(url_pattern, response_text)
-        if urls:
-            for url in urls:
-                if "youtube.com" in url or "youtu.be" in url:
-                    music_url = url
-                    response_text = response_text.replace(url, "playing music")
-                    logger.info(f"Detected direct Music URL: {music_url}")
-                    break
-
-    # Stream TTS
-    if response_text.strip():
-        async for audio_chunk in text_to_speech_stream(response_text):
-            await websocket.send(audio_chunk)
-
-    # Stream Music
-    if music_url:
-        await stream_audio_url(music_url, websocket)
-
-    await asyncio.sleep(0.2)
-    await websocket.send("AUDIO_END")
-    logger.info("AUDIO_END sent")
-async def handle_client(websocket):
-    """Handle WebSocket Client with Real-time VAD"""
-    global active_websocket
-    active_websocket = websocket
-    logger.info(f"Client connected: {websocket.remote_address}")
-
-    # Buffer to store ALL audio for this turn
-    full_audio_buffer = []
-
-    # Real-time VAD state
-    recording_active = False
-    silence_chunks = 0
-    SILENCE_THRESHOLD = 8
-    MIN_RECORDING_CHUNKS = 10
-    total_chunks = 0
-    
-    # Track the active processing task
-    processing_task = None
-
-    try:
-        async for message in websocket:
-            if isinstance(message, str):
-                if message == "BARGE_IN":
-                    logger.warning("BARGE-IN DETECTED! Cancelling active tasks...")
-                    if processing_task and not processing_task.done():
-                        processing_task.cancel()
-                        try:
-                            await processing_task
-                        except asyncio.CancelledError:
-                            logger.info("Processing task successfully cancelled")
-                    
-                    # Clear any buffered audio
-                    full_audio_buffer = []
-                    recording_active = False
-                    continue
-
-                if message == "END":
-                    logger.info("Received END signal from ESP32")
-
-                    # Save accumulated audio to WAV
-                    if full_audio_buffer:
-                        # ... (Audio saving logic remains same, extracted for brevity if needed, but keeping inline for now)
-                        # To keep this clean, I'll assume the logic is inside the task
-                        
-                        # Cancel previous task if somehow still running
-                        if processing_task and not processing_task.done():
-                            processing_task.cancel()
-                        
-                        # Start new processing task
-                        # We need to pass a copy of the buffer because we clear it immediately
-                        buffer_copy = list(full_audio_buffer)
-                        processing_task = asyncio.create_task(
-                            run_pipeline_task(buffer_copy, websocket)
-                        )
-                    else:
-                        logger.warning("No audio received")
-                        await websocket.send("AUDIO_END")
-
-                    # Reset for next turn
-                    full_audio_buffer = []
-                    recording_active = False
-                    total_chunks = 0
-                    silence_chunks = 0
-
-            else:
-                # Binary audio data - Real-time VAD processing
-                audio_chunk = (
-                    np.frombuffer(message, dtype=np.int16).astype(np.float32) / 32768.0
-                )
-                full_audio_buffer.append(audio_chunk)
-                total_chunks += 1
-                
-                # ... (VAD logic remains same) ...
-                if not recording_active:
-                    recording_active = True
-                    logger.info("Recording started - Real-time VAD active")
-
-                try:
-                    audio_tensor = torch.from_numpy(audio_chunk).float()
-                    speech_timestamps = get_speech_timestamps(
-                        audio_tensor, vad_model, sampling_rate=16000, threshold=0.5,
-                        min_speech_duration_ms=100, min_silence_duration_ms=100
-                    )
-
-                    if speech_timestamps:
-                        silence_chunks = 0
-                    else:
-                        silence_chunks += 1
-                        if total_chunks >= MIN_RECORDING_CHUNKS and silence_chunks >= SILENCE_THRESHOLD:
-                            logger.info("Silence detected - Sending STOP_RECORDING")
-                            await websocket.send("STOP_RECORDING")
-                            recording_active = False
-                            silence_chunks = 0
-                except Exception:
-                    pass
-
-    except Exception as e:
-        logger.error(f"Error: {e}")
-    finally:
-        if processing_task and not processing_task.done():
-            processing_task.cancel()
-        
-        if active_websocket == websocket:
-            active_websocket = None
+            logger.info(f"📤 Sending to n8n: {audio_path}")
             
-        logger.info("Connection closed")
+            with open(audio_path, "rb") as f:
+                data = aiohttp.FormData()
+                data.add_field("file", f, filename="audio.wav", content_type="audio/wav")
+                
+                async with session.post(N8N_WEBHOOK_URL, data=data, timeout=45) as resp:
+                    if resp.status == 200:
+                        audio_data = await resp.read()
+                        logger.info(f"🎵 Received {len(audio_data)} bytes from n8n")
+                        return audio_data
+                    else:
+                        logger.error(f"n8n error: {resp.status}")
+                        return None
+                        
+        except Exception as e:
+            logger.error(f"n8n error: {e}")
+            return None
 
 
-async def run_pipeline_task(audio_buffer, websocket):
-    """Wrapper to run the full pipeline in a cancellable task"""
+# ============================================================================
+# Process Pipeline
+# ============================================================================
+async def process_audio(audio_buffer, websocket):
+    """Process audio: trim → n8n → stream response"""
+    import soundfile as sf
+    
     try:
-        import soundfile as sf
-        from datetime import datetime
-        
         audio_data = np.concatenate(audio_buffer)
+        duration = len(audio_data) / SAMPLE_RATE
+        logger.info(f"Processing {duration:.2f}s audio")
         
-        # ... (Save and Trim logic) ...
-        # Simplified for brevity in this replacement block, but preserving functionality
-        
-        timestamp = datetime.now().strftime("%Y%m%d_%H%M%S")
-        debug_dir = "debug_audio"
-        os.makedirs(debug_dir, exist_ok=True)
+        # Skip if too short
+        if duration < 0.3:
+            logger.warning("Audio too short, ignoring")
+            await websocket.send("AUDIO_END")
+            return
         
         # Trim silence
-        trimmed_audio = trim_silence(audio_data, sample_rate=16000, threshold=0.5)
+        trimmed = trim_silence_fast(audio_data)
         
-        with tempfile.NamedTemporaryFile(suffix=".wav", delete=False) as temp_wav:
-            temp_wav_path = temp_wav.name
-            sf.write(temp_wav_path, trimmed_audio, 16000)
-
-        logger.info(f"Processing audio pipeline for {len(trimmed_audio)} samples")
+        # Save temp file
+        with tempfile.NamedTemporaryFile(suffix=".wav", delete=False) as f:
+            temp_path = f.name
+            sf.write(temp_path, trimmed, SAMPLE_RATE)
         
-        await process_n8n_turn_audio(temp_wav_path, websocket)
+        # Signal start
+        await websocket.send("AUDIO_START")
         
-        os.remove(temp_wav_path)
+        # Get response from n8n
+        audio_bytes = await call_n8n(temp_path)
+        os.remove(temp_path)
+        
+        # Stream response
+        if audio_bytes:
+            logger.info(f"🔊 Streaming {len(audio_bytes)} bytes")
+            
+            chunk_size = 8192
+            for i in range(0, len(audio_bytes), chunk_size):
+                chunk = audio_bytes[i:i + chunk_size]
+                await websocket.send(chunk)
+            
+            logger.info("✅ Response streamed")
+        else:
+            logger.error("❌ No response from n8n")
+        
+        # Handle pending music
+        global pending_music
+        if pending_music:
+            music_info = pending_music
+            pending_music = None
+            
+            query = music_info.get("query")
+            if query:
+                logger.info(f"🎵 Playing queued: {query}")
+                await stream_music(f"ytsearch1:{query}", websocket)
+            elif music_info.get("url"):
+                await stream_music(music_info["url"], websocket)
+        
+        # Wait for buffer drain
+        await asyncio.sleep(0.5)
+        await websocket.send("AUDIO_END")
+        logger.info("✅ AUDIO_END sent")
         
     except asyncio.CancelledError:
-        logger.info("Pipeline task cancelled")
+        logger.info("Pipeline cancelled")
         raise
     except Exception as e:
         logger.error(f"Pipeline error: {e}")
 
 
+# ============================================================================
+# WebSocket Handler
+# ============================================================================
+active_ws = None
+pending_music = None
 
-# Global variable to track the active client
-active_websocket = None
-HTTP_PORT = 6667
 
-async def handle_http_music(request):
-    """Handle HTTP request to play music"""
+async def handle_client(websocket):
+    """Handle ESP32 client with optimized VAD"""
+    global active_ws
+    active_ws = websocket
+    
+    client_addr = websocket.remote_address
+    logger.info(f"🔌 Connected: {client_addr}")
+    
+    audio_buffer = []
+    chunk_count = 0
+    recording = False
+    task = None
+    start_time = None
+    
+    try:
+        async for message in websocket:
+            # Text commands
+            if isinstance(message, str):
+                if message == "BARGE_IN":
+                    logger.warning("⏹️ BARGE-IN")
+                    if task and not task.done():
+                        task.cancel()
+                        try:
+                            await task
+                        except asyncio.CancelledError:
+                            pass
+                    audio_buffer = []
+                    recording = False
+                    chunk_count = 0
+                    continue
+                
+                if message == "END":
+                    logger.info(f"📨 END received ({chunk_count} chunks)")
+                    
+                    if audio_buffer and chunk_count >= MIN_RECORDING_CHUNKS:
+                        if task and not task.done():
+                            task.cancel()
+                        
+                        task = asyncio.create_task(
+                            process_audio(list(audio_buffer), websocket)
+                        )
+                    else:
+                        logger.warning(f"Ignoring short recording ({chunk_count} chunks)")
+                        await websocket.send("AUDIO_END")
+                    
+                    audio_buffer = []
+                    recording = False
+                    chunk_count = 0
+                    start_time = None
+                    continue
+            
+            # Binary audio
+            else:
+                chunk = np.frombuffer(message, dtype=np.int16).astype(np.float32) / 32768.0
+                audio_buffer.append(chunk)
+                chunk_count += 1
+                
+                if not recording:
+                    recording = True
+                    start_time = asyncio.get_event_loop().time()
+                    logger.info("🎙️ Recording...")
+                
+                # Timeout check
+                if start_time:
+                    elapsed = asyncio.get_event_loop().time() - start_time
+                    if elapsed > MAX_RECORDING_SEC:
+                        logger.warning("⏱️ Recording timeout")
+                        await websocket.send("STOP_RECORDING")
+                        recording = False
+    
+    except websockets.exceptions.ConnectionClosed:
+        logger.info(f"Connection closed: {client_addr}")
+    except Exception as e:
+        logger.error(f"Handler error: {e}")
+    finally:
+        if task and not task.done():
+            task.cancel()
+        
+        if active_ws == websocket:
+            active_ws = None
+        
+        logger.info(f"🔌 Disconnected: {client_addr}")
+
+
+# ============================================================================
+# HTTP API (for external commands)
+# ============================================================================
+async def handle_music_request(request):
+    """Queue music for after AI response"""
+    global pending_music
+    
     try:
         data = await request.json()
         query = data.get("query")
         url = data.get("url")
         
-        if not active_websocket:
-            return web.json_response({"error": "No active client connected"}, status=400)
-            
-        if not query and not url:
-            return web.json_response({"error": "Missing 'query' or 'url'"}, status=400)
-            
-        logger.info(f"Received HTTP music request: query='{query}', url='{url}'")
+        if not active_ws:
+            return web.json_response({"error": "No client"}, status=400)
         
-        # Resolve URL if query provided
-        music_url = url
-        if query and not music_url:
-            try:
-                cmd = ["yt-dlp", "-f", "bestaudio", "-g", f"ytsearch1:{query}"]
-                result = await asyncio.to_thread(subprocess.run, cmd, capture_output=True, text=True, timeout=15)
-                if result.returncode == 0 and result.stdout.strip():
-                    music_url = result.stdout.strip()
-                    logger.info(f"Found song URL via yt-dlp: {music_url}")
-                else:
-                    return web.json_response({"error": "Song not found"}, status=404)
-            except Exception as e:
-                return web.json_response({"error": f"Search failed: {str(e)}"}, status=500)
-
-        # Start streaming in background
-        if music_url:
-            asyncio.create_task(stream_audio_url(music_url, active_websocket))
-            return web.json_response({"status": "playing", "url": music_url})
-            
-        return web.json_response({"error": "Could not resolve URL"}, status=400)
-
+        if not query and not url:
+            return web.json_response({"error": "Missing query/url"}, status=400)
+        
+        logger.info(f"🎵 Queued: {query or url}")
+        pending_music = {"query": query, "url": url}
+        
+        return web.json_response({"status": "queued"})
+        
     except Exception as e:
-        logger.error(f"HTTP Handler Error: {e}")
         return web.json_response({"error": str(e)}, status=500)
 
+
+async def handle_speak_request(request):
+    """Immediate TTS to ESP32"""
+    try:
+        data = await request.json()
+        text = data.get("text", "")
+        
+        if not active_ws:
+            return web.json_response({"error": "No client"}, status=400)
+        
+        if not text:
+            return web.json_response({"error": "Missing text"}, status=400)
+        
+        logger.info(f"📢 Speaking: '{text[:40]}...'")
+        
+        await active_ws.send("AUDIO_START")
+        async for chunk in tts_stream(text):
+            await active_ws.send(chunk)
+        await asyncio.sleep(0.5)
+        await active_ws.send("AUDIO_END")
+        
+        return web.json_response({"status": "ok"})
+        
+    except Exception as e:
+        return web.json_response({"error": str(e)}, status=500)
+
+
+async def handle_play_request(request):
+    """Immediate audio playback"""
+    try:
+        data = await request.json()
+        url = data.get("url")
+        query = data.get("query")
+        
+        if not active_ws:
+            return web.json_response({"error": "No client"}, status=400)
+        
+        if not url and not query:
+            return web.json_response({"error": "Missing url/query"}, status=400)
+        
+        if not url and query:
+            # Search YouTube
+            import subprocess
+            result = await asyncio.to_thread(
+                subprocess.run,
+                ["yt-dlp", "-f", "bestaudio", "-g", f"ytsearch1:{query}"],
+                capture_output=True, text=True, timeout=10
+            )
+            if result.returncode == 0:
+                url = result.stdout.strip()
+            else:
+                return web.json_response({"error": "Not found"}, status=404)
+        
+        logger.info(f"🎵 Playing: {url[:50]}...")
+        
+        await active_ws.send("AUDIO_START")
+        await stream_music(url, active_ws)
+        await asyncio.sleep(0.5)
+        await active_ws.send("AUDIO_END")
+        
+        return web.json_response({"status": "ok"})
+        
+    except Exception as e:
+        return web.json_response({"error": str(e)}, status=500)
+
+
+async def handle_status(request):
+    """Server status endpoint"""
+    return web.json_response({
+        "status": "running",
+        "client_connected": active_ws is not None,
+        "vad_available": VAD_AVAILABLE,
+    })
+
+
 async def start_http_server():
-    """Start the sidecar HTTP server for n8n commands"""
+    """Start HTTP API server"""
     app = web.Application()
-    app.router.add_post('/play_music', handle_http_music)
+    app.router.add_post("/play_music", handle_music_request)
+    app.router.add_post("/speak", handle_speak_request)
+    app.router.add_post("/play", handle_play_request)
+    app.router.add_get("/status", handle_status)
+    
     runner = web.AppRunner(app)
     await runner.setup()
-    site = web.TCPSite(runner, '0.0.0.0', HTTP_PORT)
+    site = web.TCPSite(runner, "0.0.0.0", HTTP_PORT)
     await site.start()
-    logger.info(f"HTTP Command Server listening on port {HTTP_PORT}")
-
-async def main():
-    logger.info(f"Starting n8n Streaming Server on port {PORT}...")
     
-    # Start HTTP Server
+    logger.info(f"🌐 HTTP API on port {HTTP_PORT}")
+    logger.info(f"   GET  /status     - Server status")
+    logger.info(f"   POST /speak      - TTS to ESP32")
+    logger.info(f"   POST /play       - Play audio/music")
+    logger.info(f"   POST /play_music - Queue music")
+
+
+# ============================================================================
+# Main
+# ============================================================================
+async def main():
+    logger.info("╔════════════════════════════════════╗")
+    logger.info("║   JARVIS v4 Server                ║")
+    logger.info("║   Optimized for ESP32-LyraT-Mini  ║")
+    logger.info("╚════════════════════════════════════╝")
+    
     await start_http_server()
     
-    # Start WebSocket Server
-    async with websockets.serve(handle_client, "0.0.0.0", PORT, max_size=128 * 1024):
+    async with websockets.serve(
+        handle_client, 
+        "0.0.0.0", 
+        PORT, 
+        max_size=64 * 1024,  # Reduced from 128KB
+        ping_interval=20,
+        ping_timeout=10,
+    ):
+        logger.info(f"🎤 WebSocket server on port {PORT}")
+        logger.info("   Waiting for ESP32...")
         await asyncio.Future()
 
 
 if __name__ == "__main__":
     try:
-        from aiohttp import web  # Import here to ensure it's available
+        from aiohttp import web
         asyncio.run(main())
     except KeyboardInterrupt:
-        pass
+        logger.info("Server stopped")

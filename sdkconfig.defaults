@@ -1,85 +1,147 @@
-# ESP32-LyraT-Mini V1.2 Configuration (STABLE)
-# Note: V1.2 uses the same configuration as V1.1 in ESP-ADF
-# This configuration prioritizes stability for real-time audio/VAD processing
+# ESP32-LyraT-Mini JARVIS v4 Configuration
+# Optimized for: 4MB PSRAM, ESP32 (not S3), stability over features
 
-# Audio Board Selection - FORCE LyraT Mini V1.1
+# ============================================================================
+# Audio Board Selection - LyraT Mini V1.1/V1.2
+# ============================================================================
 CONFIG_ESP_LYRAT_MINI_V1_1_BOARD=y
 CONFIG_ESP_LYRAT_V4_3_BOARD=n
 CONFIG_ESP_LYRAT_V4_2_BOARD=n
 CONFIG_ESP_LYRATD_MSC_V2_1_BOARD=n
 CONFIG_ESP_LYRATD_MSC_V2_2_BOARD=n
 
-# PSRAM Configuration - BALANCED FOR VAD PERFORMANCE
+# ============================================================================
+# PSRAM Configuration - Conservative for 4MB
+# ============================================================================
 CONFIG_SPIRAM_SUPPORT=y
 CONFIG_SPIRAM_BOOT_INIT=y
 CONFIG_SPIRAM_USE_MALLOC=y
 CONFIG_SPIRAM_TYPE_AUTO=y
 CONFIG_SPIRAM_SIZE=-1
-CONFIG_SPIRAM_SPEED_80M=y  # CHANGED: Back to 80MHz - 40MHz too slow for VAD
+CONFIG_SPIRAM_SPEED_80M=y
 CONFIG_SPIRAM_MEMTEST=y
+# Keep more in internal RAM for speed-critical code
 CONFIG_SPIRAM_MALLOC_ALWAYSINTERNAL=16384
 CONFIG_SPIRAM_TRY_ALLOCATE_WIFI_LWIP=y
-CONFIG_SPIRAM_MALLOC_RESERVE_INTERNAL=32768
-# Stack in PSRAM enabled for memory efficiency
+CONFIG_SPIRAM_MALLOC_RESERVE_INTERNAL=49152
 CONFIG_SPIRAM_ALLOW_STACK_EXTERNAL_MEMORY=y
 
+# ============================================================================
 # Flash Configuration
+# ============================================================================
 CONFIG_ESPTOOLPY_FLASHMODE_DIO=y
 CONFIG_ESPTOOLPY_FLASHFREQ_80M=y
 CONFIG_ESPTOOLPY_FLASHSIZE_8MB=y
 
+# ============================================================================
 # Partition Table
+# ============================================================================
 CONFIG_PARTITION_TABLE_CUSTOM=y
 CONFIG_PARTITION_TABLE_CUSTOM_FILENAME="partitions.csv"
 CONFIG_PARTITION_TABLE_FILENAME="partitions.csv"
 
-# FreeRTOS - HIGH TICK RATE (Maximum Responsiveness - May affect VAD stability)
-CONFIG_FREERTOS_HZ=1000  # 1000Hz = 1ms resolution, highest responsiveness (WARNING: may crash with VAD)
+# ============================================================================
+# FreeRTOS - Balanced for stability
+# ============================================================================
+CONFIG_FREERTOS_HZ=500
 CONFIG_FREERTOS_UNICORE=n
 CONFIG_FREERTOS_ENABLE_BACKWARD_COMPATIBILITY=y
-# Keep critical functions in IRAM
 CONFIG_FREERTOS_PLACE_FUNCTIONS_INTO_FLASH=n
+# Timer task in internal RAM for stability
+CONFIG_FREERTOS_TIMER_TASK_STACK_DEPTH=3072
 
-# ESP32-specific - KEEP HIGH PERFORMANCE CPU
+# ============================================================================
+# ESP32 CPU Configuration
+# ============================================================================
 CONFIG_ESP32_DEFAULT_CPU_FREQ_240=y
 CONFIG_ESP32_SPIRAM_SUPPORT=y
+# Optimize for instruction cache
+CONFIG_ESP32_INSTRUCTION_CACHE_32KB=y
+CONFIG_ESP32_DATA_CACHE_32KB=y
 
-# Watchdog - Disabled idle check to prevent timeout during wake word detection
-CONFIG_ESP_TASK_WDT_TIMEOUT_S=30  # CHANGED: Increased to 30s for heavy neural network processing
-CONFIG_ESP_TASK_WDT_CHECK_IDLE_TASK_CPU0=n  # CHANGED: Disabled - wake word detection can block
-CONFIG_ESP_TASK_WDT_CHECK_IDLE_TASK_CPU1=n  # CHANGED: Disabled - prevents timeout during barge-in
+# ============================================================================
+# Watchdog Configuration - Relaxed for WakeNet processing
+# ============================================================================
+CONFIG_ESP_TASK_WDT_TIMEOUT_S=20
+CONFIG_ESP_TASK_WDT_CHECK_IDLE_TASK_CPU0=n
+CONFIG_ESP_TASK_WDT_CHECK_IDLE_TASK_CPU1=n
+CONFIG_ESP_INT_WDT_TIMEOUT_MS=500
 
-# Log output
+# ============================================================================
+# Logging Configuration
+# ============================================================================
 CONFIG_LOG_DEFAULT_LEVEL_INFO=y
 CONFIG_LOG_COLORS=y
-
-# Reduce bootloader verbosity
 CONFIG_BOOTLOADER_LOG_LEVEL_WARN=y
 
+# ============================================================================
 # Wake Word Configuration
+# ============================================================================
 CONFIG_SR_WN_WN9_JARVIS_TTS=y
 CONFIG_SR_MN_CN_NONE=y
 CONFIG_SR_MN_EN_NONE=y
 
-# WiFi Configuration - Enhanced buffer settings
-CONFIG_ESP_WIFI_STATIC_RX_BUFFER_NUM=10
-CONFIG_ESP_WIFI_DYNAMIC_RX_BUFFER_NUM=32
+# ============================================================================
+# AFE Configuration - Light mode for ESP32
+# ============================================================================
+# Use high perf mode but with reduced features
+CONFIG_AFE_TYPE_SR=y
+CONFIG_AFE_MODE_HIGH_PERF=y
+
+# ============================================================================
+# WiFi Configuration - Optimized for streaming
+# ============================================================================
+CONFIG_ESP_WIFI_STATIC_RX_BUFFER_NUM=8
+CONFIG_ESP_WIFI_DYNAMIC_RX_BUFFER_NUM=24
 CONFIG_ESP_WIFI_DYNAMIC_TX_BUFFER=y
 CONFIG_ESP_WIFI_TX_BUFFER_TYPE=1
-CONFIG_ESP_WIFI_DYNAMIC_TX_BUFFER_NUM=32
+CONFIG_ESP_WIFI_DYNAMIC_TX_BUFFER_NUM=24
 CONFIG_ESP_WIFI_AMPDU_TX_ENABLED=y
 CONFIG_ESP_WIFI_TX_BA_WIN=6
 CONFIG_ESP_WIFI_AMPDU_RX_ENABLED=y
 CONFIG_ESP_WIFI_RX_BA_WIN=6
+# WiFi in IRAM for lower latency
+CONFIG_ESP_WIFI_IRAM_OPT=y
+CONFIG_ESP_WIFI_RX_IRAM_OPT=y
+# Power save disabled for lower latency
+CONFIG_ESP_WIFI_SLP_IRAM_OPT=n
 
-# Compiler optimization - SIZE is safer than RELEASE for interrupt-heavy code
-CONFIG_COMPILER_OPTIMIZATION_SIZE=y  # KEEP: Good balance
+# ============================================================================
+# Compiler Optimization - Balanced
+# ============================================================================
+CONFIG_COMPILER_OPTIMIZATION_SIZE=y
 CONFIG_COMPILER_OPTIMIZATION_DEFAULT=n
 CONFIG_COMPILER_OPTIMIZATION_PERF=n
+# Reduce debug overhead
+CONFIG_COMPILER_OPTIMIZATION_ASSERTIONS_SILENT=y
 
-# LWIP - Don't put in IRAM to save space
+# ============================================================================
+# LWIP Network Stack
+# ============================================================================
 CONFIG_LWIP_IRAM_OPTIMIZATION=n
+# TCP optimizations for WebSocket
+CONFIG_LWIP_TCP_SND_BUF_DEFAULT=8192
+CONFIG_LWIP_TCP_WND_DEFAULT=8192
+CONFIG_LWIP_TCP_RECVMBOX_SIZE=12
+CONFIG_LWIP_UDP_RECVMBOX_SIZE=12
+CONFIG_LWIP_TCPIP_RECVMBOX_SIZE=32
 
-# Additional stability settings
-CONFIG_ESP_WIFI_IRAM_OPT=n
-CONFIG_ESP_WIFI_RX_IRAM_OPT=n
+# ============================================================================
+# WebSocket Client
+# ============================================================================
+CONFIG_WS_BUFFER_SIZE=65536
+CONFIG_WS_TRANSPORT=y
+
+# ============================================================================
+# Heap Configuration
+# ============================================================================
+CONFIG_HEAP_POISONING_DISABLED=y
+CONFIG_HEAP_TRACING_OFF=y
+
+# ============================================================================
+# Task Priorities (Reference)
+# ============================================================================
+# WakeNet/AFE: Priority 12 on Core 1
+# Streaming: Priority 6 on Core 0
+# Playback: Priority 8 on Core 0
+# I2S: Priority 23 on Core 0/1

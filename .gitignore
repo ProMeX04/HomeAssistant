@@ -1,0 +1,227 @@
+# ============================================================================
+# JARVIS Project - Git Ignore
+# ESP32-LyraT-Mini + Python Server
+# ============================================================================
+
+# ============================================================================
+# macOS System Files
+# ============================================================================
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
+*.swp
+*.swo
+*~
+
+# ============================================================================
+# ESP-IDF Build Artifacts
+# ============================================================================
+build/
+mqtt_device/build/
+*/build/
+
+# Generated config (use sdkconfig.defaults instead)
+sdkconfig
+sdkconfig.old
+mqtt_device/sdkconfig
+mqtt_device/sdkconfig.old
+
+# Managed components (downloaded automatically)
+managed_components/
+mqtt_device/managed_components/
+
+# Dependencies lock (regenerated on build)
+dependencies.lock
+mqtt_device/dependencies.lock
+
+# Component cache
+.cache/
+mqtt_device/.cache/
+
+# ============================================================================
+# Python Virtual Environments & Cache
+# ============================================================================
+server/venv/
+server/venv_py312/
+server/venv*/
+venv/
+.venv/
+env/
+.env/
+ENV/
+
+# Python bytecode
+__pycache__/
+*.py[cod]
+*$py.class
+*.pyc
+*.pyo
+
+# Python egg files
+*.egg
+*.egg-info/
+dist/
+eggs/
+.eggs/
+
+# Pytest
+.pytest_cache/
+.coverage
+htmlcov/
+
+# ============================================================================
+# IDE & Editor Files
+# ============================================================================
+# VS Code
+.vscode/
+*.code-workspace
+
+# JetBrains IDEs
+.idea/
+*.iml
+*.ipr
+*.iws
+
+# Eclipse
+.project
+.cproject
+.settings/
+
+# Sublime Text
+*.sublime-project
+*.sublime-workspace
+
+# Vim
+*.swp
+*.swo
+Session.vim
+.netrwhist
+
+# ============================================================================
+# ZIP & Archive Files (Large!)
+# ============================================================================
+*.zip
+*.rar
+*.7z
+*.tar
+*.tar.gz
+*.tgz
+Archive*.zip
+
+# ============================================================================
+# Temporary & Debug Files
+# ============================================================================
+# Audio debug files
+server/debug_audio/
+debug_audio/
+*.wav
+*.mp3
+*.aiff
+*.ogg
+*.flac
+
+# Video test files
+*.webm
+*.mp4
+*.avi
+*.mkv
+test.webm
+
+# Log files
+*.log
+logs/
+
+# Temporary files
+*.tmp
+*.temp
+tmp/
+temp/
+
+# ============================================================================
+# Credentials & Secrets
+# ============================================================================
+.env
+*.env
+.env.local
+.env.*.local
+secrets.py
+credentials.py
+config.local.h
+
+# WiFi credentials (if separate file)
+wifi_credentials.h
+
+# ============================================================================
+# Documentation Build
+# ============================================================================
+docs/_build/
+site/
+
+# ============================================================================
+# ESP-ADF Examples (Reference only, don't commit)
+# ============================================================================
+espressif esp-adf master examples/
+
+# ============================================================================
+# Large Binary Files
+# ============================================================================
+*.bin
+!build/srmodels/srmodels.bin
+
+# Firmware files
+*.elf
+*.map
+
+# ============================================================================
+# Backup Files
+# ============================================================================
+*.bak
+*.backup
+*_backup*
+*.orig
+
+# ============================================================================
+# Report/Documentation Archives
+# ============================================================================
+BaoCao_Nhom8.zip
+
+# ============================================================================
+# Local Notes (keep OPTIMIZATION_NOTES.md)
+# ============================================================================
+TODO.md
+NOTES.md
+infomation
+
+# ============================================================================
+# N8N Data (local database, logs)
+# ============================================================================
+n8n_data/
+n8n/
+
+# ============================================================================
+# Old/Deprecated Files
+# ============================================================================
+docs/
+server/server.py
+server/server_async.py
+server/server_full_audio.py
+server/server_streaming.py
+server/server_whisper.py
+server/server_ws.py
+server/start_full_audio.sh
+server/start_streaming.sh
+server/start_whisper.sh
+server/start_whisper_api.sh
+server/transcribe_whisper.py
+server/whisper_api.py
+server/whisper_online.py
+main/main.c
+
+# ============================================================================
+# IPCAM Server (if not needed in repo)
+# ============================================================================
+IPCAMSERVER/

@@ -1,2 +1,0 @@
-/Users/promex04/.espressif/tools/xtensa-esp-elf/esp-14.2.0_20250730/xtensa-esp-elf/bin/xtensa-esp32-elf-ar qc libadf_utils.a CMakeFiles/__idf_adf_utils.dir/json_utils.c.obj CMakeFiles/__idf_adf_utils.dir/cloud_services/aws_sig_v4_signing.c.obj CMakeFiles/__idf_adf_utils.dir/cloud_services/baidu_access_token.c.obj
-/Users/promex04/.espressif/tools/xtensa-esp-elf/esp-14.2.0_20250730/xtensa-esp-elf/bin/xtensa-esp32-elf-ranlib libadf_utils.a

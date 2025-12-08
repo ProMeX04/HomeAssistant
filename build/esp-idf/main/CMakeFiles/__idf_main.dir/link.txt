@@ -1,2 +1,0 @@
-/Users/promex04/.espressif/tools/xtensa-esp-elf/esp-14.2.0_20250730/xtensa-esp-elf/bin/xtensa-esp32-elf-ar qc libmain.a CMakeFiles/__idf_main.dir/main_ws.c.obj CMakeFiles/__idf_main.dir/wifi_helper.c.obj CMakeFiles/__idf_main.dir/settings.c.obj
-/Users/promex04/.espressif/tools/xtensa-esp-elf/esp-14.2.0_20250730/xtensa-esp-elf/bin/xtensa-esp32-elf-ranlib libmain.a

@@ -1,2 +1,0 @@
-/Users/promex04/.espressif/tools/xtensa-esp-elf/esp-14.2.0_20250730/xtensa-esp-elf/bin/xtensa-esp32-elf-ar qc libaudio_board.a CMakeFiles/__idf_audio_board.dir/lyrat_mini_v1_1/board.c.obj CMakeFiles/__idf_audio_board.dir/lyrat_mini_v1_1/board_pins_config.c.obj
-/Users/promex04/.espressif/tools/xtensa-esp-elf/esp-14.2.0_20250730/xtensa-esp-elf/bin/xtensa-esp32-elf-ranlib libaudio_board.a

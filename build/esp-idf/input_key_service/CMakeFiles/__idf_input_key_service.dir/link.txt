@@ -1,2 +1,0 @@
-/Users/promex04/.espressif/tools/xtensa-esp-elf/esp-14.2.0_20250730/xtensa-esp-elf/bin/xtensa-esp32-elf-ar qc libinput_key_service.a CMakeFiles/__idf_input_key_service.dir/input_key_service.c.obj
-/Users/promex04/.espressif/tools/xtensa-esp-elf/esp-14.2.0_20250730/xtensa-esp-elf/bin/xtensa-esp32-elf-ranlib libinput_key_service.a

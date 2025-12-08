@@ -1,2 +1,0 @@
-/Users/promex04/.espressif/tools/xtensa-esp-elf/esp-14.2.0_20250730/xtensa-esp-elf/bin/xtensa-esp32-elf-ar qc libbattery_service.a CMakeFiles/__idf_battery_service.dir/battery_service.c.obj CMakeFiles/__idf_battery_service.dir/monitors/voltage_monitor.c.obj
-/Users/promex04/.espressif/tools/xtensa-esp-elf/esp-14.2.0_20250730/xtensa-esp-elf/bin/xtensa-esp32-elf-ranlib libbattery_service.a
