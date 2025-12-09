@@ -55,7 +55,7 @@ SPEECH_START_CHUNKS = 3  # Consecutive speech chunks to start recording
 
 # Software gain - amplify weak mic signal from ESP32
 # ESP32-LyraT mic is weak without AGC, multiply to boost signal
-SOFTWARE_GAIN = 20.0  # Increase this if audio still too quiet (try 10-50)
+SOFTWARE_GAIN = 200.0  # TEMP: Increased to 200x to test if mic is working at all
 
 # Debug: Save audio to file for inspection
 DEBUG_SAVE_AUDIO = True  # Set to True to save audio files
