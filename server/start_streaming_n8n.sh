@@ -1,6 +1,12 @@
 #!/bin/bash
-# Activate virtual environment if needed
-source venv/bin/activate
+cd "$(dirname "$0")"
+
+# Activate virtual environment
+if [ -d "env" ]; then
+    source env/bin/activate
+elif [ -d "venv" ]; then
+    source venv/bin/activate
+fi
 
 # Run the n8n streaming server
-python3 server_streaming_n8n.py
+python server_streaming_n8n.py
